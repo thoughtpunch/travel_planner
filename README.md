@@ -27,8 +27,9 @@ to confirm the fare exists for the whole party before it can be promoted to
 ## Setup
 
 Requires [mise](https://mise.jdx.dev) — it brings in pinned Python 3.12 and
-uv automatically. The fork at `../flights` is wired as a local editable
-dependency in `pyproject.toml`.
+uv automatically. `fast-flights` is pinned to the GitHub fork
+(`thoughtpunch/flights`) in `pyproject.toml` so every install pulls the
+current head.
 
 ```bash
 cd trip_planner
@@ -45,7 +46,7 @@ That's it — http://127.0.0.1:8000.
 |----------------|-------------------------------------------------------------|
 | `mise run dev`   | Start dev server with auto-reload (idempotent first-run)   |
 | `mise run setup` | Install + init DB + seed engagement configs                |
-| `mise run test`  | Run the test suite (24 tests)                              |
+| `mise run test`  | Run the test suite (39 tests)                              |
 | `mise run seed`  | (Re-)seed Structures A and B                               |
 | `mise run quota` | Show SerpAPI monthly quota usage                           |
 | `mise run run -- 1` | Execute a run for config #1, print top results synchronously |

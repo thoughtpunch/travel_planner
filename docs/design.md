@@ -38,6 +38,8 @@ than assuming either.
 
 ## Data model (SQLite)
 
+> Phase-1 seed creates one Config per structure (A and B as separate configs) so each leg's RT-vs-OW semantics stay unambiguous per run; see `app/seed.py`.
+
 ```
 config(id, name, budget_party_total, passengers_json, structures_json,
        blackout_ranges_json, created_at, updated_at)

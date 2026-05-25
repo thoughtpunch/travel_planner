@@ -39,7 +39,7 @@ the user never books against an optimistic number.
 - NEW capability: `web-api` — FastAPI service exposing config CRUD, run
   triggering, and result retrieval over SQLite.
 - NEW capability: `web-ui` — Vue 3 + PrimeVue SPA for configuring searches,
-  running them, and reviewing ranked results.
+  running them, and reviewing ranked results. (Phase 2; Phase 1 ships a Jinja UI — see openspec/specs/web-ui/)
 
 ## Impact
 

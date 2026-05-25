@@ -55,6 +55,11 @@ API response or to the frontend.
 
 # Spec Delta: web-ui
 
+> **Phase 2 — deferred.** The Vue 3 + PrimeVue SPA described below is not what
+> Phase 1 ships. Phase 1 serves a Jinja-templated UI from the FastAPI process;
+> the authoritative Phase-1 spec is `openspec/specs/web-ui/spec.md`. A future
+> Phase-2 change will MODIFY or REPLACE that spec with the requirements below.
+
 ## ADDED Requirements
 
 ### Requirement: Vue 3 + PrimeVue configuration UI
