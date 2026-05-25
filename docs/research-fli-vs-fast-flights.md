@@ -1,5 +1,7 @@
 # fli vs fast-flights: head-to-head research
 
+> **Status:** recommendation implemented by OpenSpec change `migrate-fare-search-to-fli` — `fli` is now the default primary source (toggleable via `PRIMARY_SOURCE`).
+
 ## Summary & recommendation
 
 **Recommendation: migrate to `fli`.** Both libraries scrape Google Flights without a license (Google has no public flights API since the 2018 QPX shutdown — see fast-flights' README rationale), so license risk is equal. Everything else favours `fli`: it is an order of magnitude more actively maintained (last commit `2026-05-24`, 2,667 stars, 160 commits by the lead maintainer, 11 open issues, MIT) versus fast-flights (last commit `2026-02-16`, 1,089 stars, 69 commits by one maintainer, 19 open issues, MIT, v3.0rc1 release candidate). `fli` hits Google's `FlightsFrontendService` POST endpoints directly via `curl_cffi` with a Pydantic-typed filter model, built-in token-bucket rate limiting (10 req/s shared across threads), tenacity-backed retries, typed exceptions, and a richer per-fare data model that includes per-leg flight numbers, layovers, CO2 emissions, amenities, aircraft type, and a follow-up `get_booking_options()` call that returns vendor-by-vendor fare URLs. fast-flights v3.0rc1 fetches `flights.google.com` HTML via `primp` with a chrome impersonation and pulls JSON out of an inline `<script class="ds:1">` tag using positional indices like `single_flight[20]` — fragile to UI changes, dataclass-based (not Pydantic), and has no rate limiter, no retries, no typed errors.

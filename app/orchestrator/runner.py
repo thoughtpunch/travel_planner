@@ -20,6 +20,7 @@ from ..gateways import venice_metadata
 from ..models import Config, Fare, Itinerary, Leg, Run
 from ..sources.base import FareOffer
 from ..sources.fast_flights_source import FastFlightsSource
+from ..sources.fli_source import FliSource
 from ..sources.quota import QuotaTracker
 from ..sources.router import SourceRouter
 from ..sources.serpapi_source import SerpApiSource
@@ -92,7 +93,10 @@ def execute_run(run_id: int, session_factory) -> None:
             used_before_run=used_before,
         )
 
-        primary = FastFlightsSource(currency=cfg.currency)
+        if settings.primary_source == "fli":
+            primary = FliSource(currency=cfg.currency)
+        else:
+            primary = FastFlightsSource(currency=cfg.currency)
         # Two SerpAPI instances sharing the same QuotaTracker:
         # - fallback: fast, deep_search=False — used by the sweep router
         # - validator: deep_search=True — used for the authoritative

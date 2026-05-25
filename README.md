@@ -97,6 +97,7 @@ the frontend.
 | `VALIDATION_TOLERANCE_PCT`   | 15                               | Validated-vs-lead price tolerance      |
 | `VALIDATION_TOP_N`           | 5                                | Per structure                          |
 | `ENVELOPE_LONG_GAP_DAYS`     | 30                               | Beyond this, inner RT gets LONG_GAP   |
+| `PRIMARY_SOURCE`             | `fli`                            | Sweep scraper: `fli` (default) or `fast-flights` (legacy, one-cycle rollback) |
 
 ## Failure modes the design defends against
 

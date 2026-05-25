@@ -8,6 +8,7 @@ class Structure(StrEnum):
 
 class Source(StrEnum):
     FAST_FLIGHTS = "fast-flights"
+    FLI = "fli"
     SERPAPI = "serpapi"
 
 

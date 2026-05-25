@@ -1,9 +1,9 @@
 """Source router: scraper-first sweep with SerpAPI fallback.
 
 Per design.md Decision 2, SerpAPI is co-primary, not rare. The router calls
-fast-flights first; if it raises, returns empty, or times out, it falls back
-to SerpAPI. Empty scraper results are SOFT failures — they trigger fallback
-and are NEVER recorded as a confirmed "no flights".
+the configured primary scraper first; if it raises, returns empty, or times
+out, it falls back to SerpAPI. Empty scraper results are SOFT failures —
+they trigger fallback and are NEVER recorded as a confirmed "no flights".
 
 Validation queries should call SerpAPI directly, not through this router.
 """
@@ -13,8 +13,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from ..enums import Source, VerificationStatus
-from .base import FareOffer, FareQuery, NoFallbackAvailable, QuotaExceeded, SourceError
-from .fast_flights_source import FastFlightsSource
+from .base import FareOffer, FareQuery, FareSource, NoFallbackAvailable, QuotaExceeded, SourceError
 from .serpapi_source import SerpApiSource
 
 
@@ -29,7 +28,7 @@ class RoutedResult:
 class SourceRouter:
     def __init__(
         self,
-        primary: FastFlightsSource,
+        primary: FareSource,
         fallback: SerpApiSource | None,
     ) -> None:
         self.primary = primary
@@ -40,7 +39,7 @@ class SourceRouter:
         try:
             offers = self.primary.search(query)
             if offers:
-                return RoutedResult(offers=offers, served_by=Source.FAST_FLIGHTS, fallback_used=False)
+                return RoutedResult(offers=offers, served_by=self.primary.name, fallback_used=False)
             # empty: soft failure
         except SourceError as e:
             primary_error = str(e)
@@ -49,7 +48,7 @@ class SourceRouter:
 
         if self.fallback is None:
             return RoutedResult(
-                offers=[_failed_marker(query, reason="no_fallback_available")],
+                offers=[_failed_marker(query, self.primary.name, reason="no_fallback_available")],
                 served_by=None,
                 fallback_used=False,
                 error=f"primary failed ({primary_error}); no fallback configured",
@@ -67,7 +66,7 @@ class SourceRouter:
             )
         except SourceError as e:
             return RoutedResult(
-                offers=[_failed_marker(query, reason=f"fallback_failed: {e}")],
+                offers=[_failed_marker(query, self.primary.name, reason=f"fallback_failed: {e}")],
                 served_by=None,
                 fallback_used=True,
                 error=f"primary failed ({primary_error}); fallback failed ({e})",
@@ -91,9 +90,11 @@ def _skipped_quota_marker(query: FareQuery) -> FareOffer:
     )
 
 
-def _failed_marker(query: FareQuery, reason: str) -> FareOffer:
+def _failed_marker(query: FareQuery, primary_source: Source, reason: str) -> FareOffer:
     """FAILED marker offer — persisted as a Fare row so the audit trail
-    records the failure rather than silently dropping the query."""
+    records the failure rather than silently dropping the query. The
+    `source` field reflects the configured primary so logs can attribute
+    the failure to the actual scraper that was attempted."""
     return FareOffer(
         origin=query.origin,
         destination=query.destination,
@@ -104,7 +105,7 @@ def _failed_marker(query: FareQuery, reason: str) -> FareOffer:
         currency="USD",
         stops=0,
         duration_minutes=0,
-        source=Source.FAST_FLIGHTS,
+        source=primary_source,
         verification_status=VerificationStatus.FAILED,
         passengers_queried=query.passenger_count,
         raw={"reason": reason},

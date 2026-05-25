@@ -37,15 +37,16 @@ def _patch_sources(monkeypatch):
     from app.enums import Source, VerificationStatus
     from app.sources.base import FareOffer
 
-    def fake_ff_search(self, query):
-        # Return one cheap LEAD per query.
-        return [FareOffer(
-            origin=query.origin, destination=query.destination, date=query.date,
-            carrier="LH", price_per_pax=600, currency="USD", stops=0, duration_minutes=600,
-            source=Source.FAST_FLIGHTS,
-            verification_status=VerificationStatus.LEAD,
-            passengers_queried=query.passenger_count,
-        )]
+    def _fake_primary_search(source_id: Source):
+        def _impl(self, query):
+            return [FareOffer(
+                origin=query.origin, destination=query.destination, date=query.date,
+                carrier="LH", price_per_pax=600, currency="USD", stops=0, duration_minutes=600,
+                source=source_id,
+                verification_status=VerificationStatus.LEAD,
+                passengers_queried=query.passenger_count,
+            )]
+        return _impl
 
     def fake_serp_search(self, query):
         # Re-query at full pax returns a slightly higher price (within tolerance).
@@ -57,10 +58,13 @@ def _patch_sources(monkeypatch):
             passengers_queried=query.passenger_count,
         )]
 
+    # Patch both primaries so the test is agnostic to PRIMARY_SOURCE default.
     from app.sources.fast_flights_source import FastFlightsSource
+    from app.sources.fli_source import FliSource
     from app.sources.serpapi_source import SerpApiSource
 
-    monkeypatch.setattr(FastFlightsSource, "search", fake_ff_search)
+    monkeypatch.setattr(FastFlightsSource, "search", _fake_primary_search(Source.FAST_FLIGHTS))
+    monkeypatch.setattr(FliSource, "search", _fake_primary_search(Source.FLI))
     monkeypatch.setattr(SerpApiSource, "search", fake_serp_search)
 
 
@@ -160,15 +164,17 @@ def test_scraper_failure_with_no_fallback_persists_failed_fares(engine, monkeypa
     from app.enums import Source, VerificationStatus
     from app.sources.base import SourceError
     from app.sources.fast_flights_source import FastFlightsSource
+    from app.sources.fli_source import FliSource
     from app.sources.serpapi_source import SerpApiSource
 
-    def fake_ff_raise(self, query):
+    def fake_primary_raise(self, query):
         raise SourceError("scraper unreachable")
 
     def fake_serp_unused(self, query):
         return []
 
-    monkeypatch.setattr(FastFlightsSource, "search", fake_ff_raise)
+    monkeypatch.setattr(FastFlightsSource, "search", fake_primary_raise)
+    monkeypatch.setattr(FliSource, "search", fake_primary_raise)
     monkeypatch.setattr(SerpApiSource, "search", fake_serp_unused)
     monkeypatch.setenv("SERPAPI_KEY", "")
     from importlib import reload
@@ -212,7 +218,8 @@ def test_scraper_failure_with_no_fallback_persists_failed_fares(engine, monkeypa
         ).all()
     assert len(failed_fares) > 0
     assert all(f.price_per_pax == 0 for f in failed_fares)
-    assert all(f.source == Source.FAST_FLIGHTS.value for f in failed_fares)
+    # FAILED rows carry the configured primary source identifier (fli by default).
+    assert all(f.source == Source.FLI.value for f in failed_fares)
     # Each FAILED row carries a reason in notes (json-encoded).
     import json as _json
     reasons = {_json.loads(f.notes)["reason"] for f in failed_fares if f.notes}
