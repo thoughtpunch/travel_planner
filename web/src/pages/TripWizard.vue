@@ -33,12 +33,40 @@ const previewData = ref<Record<string, unknown> | null>(null);
 const finalizing = ref(false);
 const finalizeError = ref<string | null>(null);
 
-const AXES: { axis: Axis; label: string; hardYes: boolean; threshold?: string }[] = [
-  { axis: "transfer_length", label: "Transfer length", hardYes: false, threshold: "Filter out transfer longer than (min)" },
-  { axis: "layover_length", label: "Layover length", hardYes: false, threshold: "Filter out any layover longer than (min)" },
-  { axis: "stopover", label: "Stopover (24h+ break)", hardYes: true },
-  { axis: "plane_changes", label: "Number of plane changes", hardYes: false, threshold: "Filter out more than (count)" },
-  { axis: "red_eye", label: "Red-eye / pre-dawn arrival", hardYes: false },
+const AXES: { axis: Axis; label: string; question: string; hardYes: boolean; threshold?: string }[] = [
+  {
+    axis: "transfer_length",
+    label: "Ground transfer length",
+    question: "How much ground travel after landing is OK? (e.g. Milan → Venice rail is 4h.)",
+    hardYes: false,
+    threshold: "Filter out transfer longer than (min)",
+  },
+  {
+    axis: "layover_length",
+    label: "Layover length",
+    question: "How long are you willing to sit in an airport between flights?",
+    hardYes: false,
+    threshold: "Filter out any layover longer than (min)",
+  },
+  {
+    axis: "stopover",
+    label: "Stopover (24h+ rest break in another city)",
+    question: "An intentional overnight in a city on the way. HARD YES builds it into the route.",
+    hardYes: true,
+  },
+  {
+    axis: "plane_changes",
+    label: "Number of plane changes",
+    question: "How many separate flights are you OK boarding per leg?",
+    hardYes: false,
+    threshold: "Filter out more than (count)",
+  },
+  {
+    axis: "red_eye",
+    label: "Red-eye / pre-dawn arrival",
+    question: "Tolerance for arriving between 23:00 and 06:00 local — bad with kids.",
+    hardYes: false,
+  },
 ];
 
 const SAMPLE_GATEWAYS = ["VCE", "MXP", "LIN", "BLQ", "VRN", "TRS", "ZRH", "MUC", "FCO"];
@@ -190,6 +218,7 @@ async function finalize() {
                 :key="a.axis"
                 :axis="a.axis"
                 :label="a.label"
+                :question="a.question"
                 :hard-yes-admitted="a.hardYes"
                 :threshold-label="a.threshold"
                 :modelValue="config.preferences.defaults[a.axis] || { position: 'neutral' }"

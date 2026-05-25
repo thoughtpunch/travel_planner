@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     validation_tolerance_pct: int = 15
     validation_top_n: int = 5
     envelope_long_gap_days: int = 30
-    primary_source: Literal["fli", "fast-flights"] = "fli"
+    primary_source: Literal["fli", "fast-flights", "mock"] = "fli"
 
 
 settings = Settings()

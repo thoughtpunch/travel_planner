@@ -16,8 +16,11 @@ const props = defineProps<{
   hardYesAdmitted?: boolean;
   // For HARD NO threshold-requiring axes (layover, transfer, plane_changes).
   thresholdLabel?: string;
-  // Friendly axis label for ARIA.
+  // Friendly axis label (rendered as <h3>, used by aria-labelledby).
   label: string;
+  // Short user-facing question / hint shown under the title — without this
+  // the scale is just an unlabelled slider. Recommended for every axis.
+  question?: string;
   // HARD YES stopover only: the current target shape (city or sweep).
   stopoverTarget?: StopoverTarget | null;
 }>();
@@ -117,7 +120,11 @@ function confirmSweep() {
 </script>
 
 <template>
-  <div class="bookended-scale" :aria-label="props.label">
+  <div class="bookended-scale" :aria-labelledby="`scale-label-${props.axis}`">
+    <div class="scale-title-row">
+      <h3 class="scale-title" :id="`scale-label-${props.axis}`">{{ props.label }}</h3>
+      <p v-if="props.question" class="scale-question">{{ props.question }}</p>
+    </div>
     <div class="scale-header">
       <Tag :severity="isHardNo ? 'danger' : 'secondary'">HARD NO</Tag>
       <span class="scale-current" aria-live="polite">{{ currentLabel }}</span>
@@ -213,6 +220,17 @@ function confirmSweep() {
   padding: 1rem;
   background: var(--color-surface);
   margin-bottom: 0.75rem;
+}
+.scale-title-row { margin-bottom: 0.75rem; }
+.scale-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.scale-question {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
 }
 .scale-header {
   display: flex;

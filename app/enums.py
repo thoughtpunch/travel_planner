@@ -10,6 +10,7 @@ class Source(StrEnum):
     FAST_FLIGHTS = "fast-flights"
     FLI = "fli"
     SERPAPI = "serpapi"
+    MOCK = "mock"
 
 
 class VerificationStatus(StrEnum):

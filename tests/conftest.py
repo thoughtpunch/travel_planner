@@ -10,6 +10,17 @@ from __future__ import annotations
 import pytest
 
 
+@pytest.fixture(autouse=True)
+def _pin_primary_source_for_tests(monkeypatch):
+    """Pin PRIMARY_SOURCE=fli for tests so monkey-patched FliSource is exercised.
+
+    The dev `.env` may set `PRIMARY_SOURCE=mock` for browser-driven testing;
+    we don't want that leaking into the pytest suite (the runner tests
+    monkey-patch FastFlightsSource and FliSource only).
+    """
+    monkeypatch.setenv("PRIMARY_SOURCE", "fli")
+
+
 @pytest.fixture
 def db_engine(tmp_path, monkeypatch):
     """Per-test sqlite DB pointed at a tmp file, migrated to head."""

@@ -108,6 +108,9 @@ def execute_run(run_id: int, session_factory) -> None:
 
         if settings.primary_source == "fli":
             primary = FliSource(currency=cfg.currency)
+        elif settings.primary_source == "mock":
+            from ..sources.mock_source import MockSource
+            primary = MockSource(currency=cfg.currency)
         else:
             primary = FastFlightsSource(currency=cfg.currency)
         # Two SerpAPI instances sharing the same QuotaTracker:
@@ -115,20 +118,28 @@ def execute_run(run_id: int, session_factory) -> None:
         # - validator: deep_search=True — used for the authoritative
         #   re-query at full pax (slower per call, but produces results
         #   identical to Google Flights in the browser per SerpAPI docs)
-        fallback = (
-            SerpApiSource(
-                api_key=settings.serpapi_key, quota=quota,
-                currency=cfg.currency, deep_search=False,
+        # When primary_source is `mock`, ALSO mock the validator so dev
+        # iteration doesn't burn SerpAPI credits — the mock source pretends
+        # to validate by re-using its deterministic offers.
+        if settings.primary_source == "mock":
+            from ..sources.mock_source import MockSource
+            fallback = MockSource(currency=cfg.currency)
+            validator_source = MockSource(currency=cfg.currency)
+        else:
+            fallback = (
+                SerpApiSource(
+                    api_key=settings.serpapi_key, quota=quota,
+                    currency=cfg.currency, deep_search=False,
+                )
+                if settings.serpapi_key else None
             )
-            if settings.serpapi_key else None
-        )
-        validator_source = (
-            SerpApiSource(
-                api_key=settings.serpapi_key, quota=quota,
-                currency=cfg.currency, deep_search=True,
+            validator_source = (
+                SerpApiSource(
+                    api_key=settings.serpapi_key, quota=quota,
+                    currency=cfg.currency, deep_search=True,
+                )
+                if settings.serpapi_key else None
             )
-            if settings.serpapi_key else None
-        )
         router = SourceRouter(primary=primary, fallback=fallback)
 
         # Parse preferences + cost_assumptions from the config (Pydantic guards
@@ -328,7 +339,7 @@ def execute_run(run_id: int, session_factory) -> None:
                 cand_fare_rows.append(Fare(
                     run_id=run.id,
                     leg_ordinal=idx,
-                    structure=cand.structure,
+                    structure=cand.structure.value if hasattr(cand.structure, "value") else str(cand.structure),
                     origin=leg_offer.origin,
                     destination=leg_offer.destination,
                     date=leg_offer.date,
@@ -339,8 +350,8 @@ def execute_run(run_id: int, session_factory) -> None:
                     currency=leg_offer.currency,
                     stops=leg_offer.stops,
                     duration_minutes=leg_offer.duration_minutes,
-                    source=leg_offer.source,
-                    verification_status=leg_offer.verification_status,
+                    source=leg_offer.source.value if hasattr(leg_offer.source, "value") else str(leg_offer.source),
+                    verification_status=leg_offer.verification_status.value if hasattr(leg_offer.verification_status, "value") else str(leg_offer.verification_status),
                     passengers_queried=leg_offer.passengers_queried,
                     flags=[],
                     notes=json.dumps(leg_offer.raw)[:500] if leg_offer.raw else None,
@@ -353,7 +364,7 @@ def execute_run(run_id: int, session_factory) -> None:
                 structure=cand.structure,
                 total_party_price=cand.total_party_price,
                 currency=cand.currency,
-                verification_status=cand.verification_status,
+                verification_status=cand.verification_status.value if hasattr(cand.verification_status, "value") else str(cand.verification_status),
                 fare_ids=ids,
                 gateway=cand.gateway,
                 train_to_venice=venice_metadata(cand.gateway) if cand.gateway else None,

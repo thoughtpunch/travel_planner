@@ -309,10 +309,15 @@ def structure_completeness(
     candidates: list[ItineraryCandidate],
     structures_requested: list[str],
 ) -> dict[str, str]:
-    """Return per-structure completeness: 'complete' / 'incomplete' / 'absent'."""
+    """Return per-structure completeness: 'complete' / 'incomplete' / 'absent'.
+
+    `cand.structure` is normally the `Structure` enum, but when candidates are
+    re-hydrated from persisted Itinerary rows it's a plain string. Coerce.
+    """
     by_struct: dict[str, list[ItineraryCandidate]] = {}
     for cand in candidates:
-        by_struct.setdefault(cand.structure.value, []).append(cand)
+        key = cand.structure.value if hasattr(cand.structure, "value") else str(cand.structure)
+        by_struct.setdefault(key, []).append(cand)
 
     result: dict[str, str] = {}
     for s in ["A", "B"]:
