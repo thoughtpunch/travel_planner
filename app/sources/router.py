@@ -49,7 +49,7 @@ class SourceRouter:
 
         if self.fallback is None:
             return RoutedResult(
-                offers=[],
+                offers=[_failed_marker(query, reason="no_fallback_available")],
                 served_by=None,
                 fallback_used=False,
                 error=f"primary failed ({primary_error}); no fallback configured",
@@ -67,7 +67,7 @@ class SourceRouter:
             )
         except SourceError as e:
             return RoutedResult(
-                offers=[],
+                offers=[_failed_marker(query, reason=f"fallback_failed: {e}")],
                 served_by=None,
                 fallback_used=True,
                 error=f"primary failed ({primary_error}); fallback failed ({e})",
@@ -88,6 +88,26 @@ def _skipped_quota_marker(query: FareQuery) -> FareOffer:
         verification_status=VerificationStatus.SKIPPED_QUOTA,
         passengers_queried=query.passenger_count,
         raw={},
+    )
+
+
+def _failed_marker(query: FareQuery, reason: str) -> FareOffer:
+    """FAILED marker offer — persisted as a Fare row so the audit trail
+    records the failure rather than silently dropping the query."""
+    return FareOffer(
+        origin=query.origin,
+        destination=query.destination,
+        date=query.date,
+        return_date=query.return_date,
+        carrier="",
+        price_per_pax=0,
+        currency="USD",
+        stops=0,
+        duration_minutes=0,
+        source=Source.FAST_FLIGHTS,
+        verification_status=VerificationStatus.FAILED,
+        passengers_queried=query.passenger_count,
+        raw={"reason": reason},
     )
 
 

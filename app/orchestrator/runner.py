@@ -116,6 +116,11 @@ def execute_run(run_id: int, session_factory) -> None:
 
         sweep_calls = 0
         sweep_offers_by_leg: dict[int, list[FareOffer]] = {}
+        # FAILED / SKIPPED_QUOTA markers from the router carry zero prices
+        # and would poison _cheapest_per_route if they fed into assembly.
+        # Persist them as out-of-band Fare rows so the audit trail records
+        # the failure without contaminating the itinerary math.
+        out_of_band_markers: list[tuple[int, FareOffer]] = []
         for leg in sorted(legs, key=lambda x: x.ordinal):
             spec = LegSpec(
                 ordinal=leg.ordinal,
@@ -141,7 +146,14 @@ def execute_run(run_id: int, session_factory) -> None:
                 result = router.sweep(q)
                 if result.error:
                     log.warning("sweep %s→%s on %s: %s", q.origin, q.destination, q.date, result.error)
-                leg_offers.extend(result.offers)
+                for o in result.offers:
+                    if o.verification_status in (
+                        VerificationStatus.FAILED,
+                        VerificationStatus.SKIPPED_QUOTA,
+                    ):
+                        out_of_band_markers.append((leg.ordinal, o))
+                    else:
+                        leg_offers.append(o)
             sweep_offers_by_leg[leg.ordinal] = leg_offers
 
         # Structure assembly
@@ -184,6 +196,32 @@ def execute_run(run_id: int, session_factory) -> None:
 
         validated = mark_incomplete_structures(validated)
         ranked = rank_candidates(validated)
+
+        # Persist FAILED / SKIPPED_QUOTA markers as Fare rows up-front so
+        # they show up in the run's audit trail even when no itinerary
+        # references them.
+        for leg_ord, marker in out_of_band_markers:
+            session.add(Fare(
+                run_id=run.id,
+                leg_ordinal=leg_ord,
+                structure="",
+                origin=marker.origin,
+                destination=marker.destination,
+                date=marker.date,
+                return_date=marker.return_date,
+                carrier="",
+                price_per_pax=0,
+                price_party=0,
+                currency=marker.currency,
+                stops=0,
+                duration_minutes=0,
+                source=marker.source,
+                verification_status=marker.verification_status,
+                passengers_queried=marker.passengers_queried,
+                flags=[],
+                notes=json.dumps(marker.raw)[:500] if marker.raw else None,
+            ))
+        session.flush()
 
         # Persist — track fare ids per candidate explicitly to avoid mis-mapping
         # when multiple candidates share a leg (cheap pointer to same offer).

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import threading
 from datetime import datetime, timezone
 
@@ -11,7 +12,7 @@ from ..db import get_session
 from ..enums import RunStatus, VerificationStatus
 from ..models import Config, Fare, Itinerary, Leg, Run
 from ..orchestrator.runner import execute_run
-from ..schemas import FareOut, ItineraryOut, ResultsOut, RunOut
+from ..schemas import FailedFareOut, FareOut, ItineraryOut, ResultsOut, RunOut
 
 router = APIRouter(prefix="/api/runs", tags=["runs"])
 
@@ -168,6 +169,25 @@ def _build_results_payload(run_id: int) -> ResultsOut:
         }
         structures_requested = list((cfg.structures if cfg else []) or [])
         structures = structure_completeness(candidates_for_verdict, structures_requested)
+        failed_fares_raw = [f for f in fare_rows if f.verification_status == VerificationStatus.FAILED.value]
+        failed_fares: list[FailedFareOut] = []
+        for f in failed_fares_raw:
+            reason: str | None = None
+            if f.notes:
+                try:
+                    reason = json.loads(f.notes).get("reason")
+                except (json.JSONDecodeError, AttributeError):
+                    reason = f.notes
+            failed_fares.append(FailedFareOut(
+                leg_ordinal=f.leg_ordinal,
+                origin=f.origin,
+                destination=f.destination,
+                date=f.date,
+                return_date=f.return_date,
+                source=f.source,
+                reason=reason,
+                fetched_at=f.fetched_at,
+            ))
 
         return ResultsOut(
             run=_run_to_out(run),
@@ -175,6 +195,8 @@ def _build_results_payload(run_id: int) -> ResultsOut:
             budget_verdict=verdict,
             quota=quota,
             structures=structures,
+            failed_query_count=len(failed_fares),
+            failed_fares=failed_fares,
         )
 
 

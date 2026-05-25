@@ -152,3 +152,72 @@ def test_run_without_serpapi_key_skips_validation(engine, monkeypatch):
     # With no validation, no structure reaches VALIDATED → all itineraries flagged INCOMPLETE.
     from app.enums import Flag
     assert all(Flag.INCOMPLETE.value in it.flags for it in itineraries)
+
+
+def test_scraper_failure_with_no_fallback_persists_failed_fares(engine, monkeypatch):
+    """Force the primary scraper to raise + clear SerpAPI key → audit trail
+    should contain at least one FAILED Fare row and ResultsOut.failed_query_count > 0."""
+    from app.enums import Source, VerificationStatus
+    from app.sources.base import SourceError
+    from app.sources.fast_flights_source import FastFlightsSource
+    from app.sources.serpapi_source import SerpApiSource
+
+    def fake_ff_raise(self, query):
+        raise SourceError("scraper unreachable")
+
+    def fake_serp_unused(self, query):
+        return []
+
+    monkeypatch.setattr(FastFlightsSource, "search", fake_ff_raise)
+    monkeypatch.setattr(SerpApiSource, "search", fake_serp_unused)
+    monkeypatch.setenv("SERPAPI_KEY", "")
+    from importlib import reload
+
+    import app.config as config_module
+    reload(config_module)
+    import app.orchestrator.runner as runner_module
+    reload(runner_module)
+
+    from app.api.runs import _build_results_payload
+    from app.db import get_session
+    from app.enums import RunStatus
+    from app.models import Fare, Run
+    from app.seed import seed_all
+
+    ids = seed_all()
+    a_id = ids["A"]
+    from app.models import Leg as LegModel
+    with get_session() as s:
+        legs = s.exec(select(LegModel).where(LegModel.config_id == a_id)).all()
+        for l in legs:
+            l.sampling_strategy = "anchor"
+            s.add(l)
+        s.commit()
+
+    with get_session() as s:
+        run = Run(config_id=a_id, config_snapshot={}, status=RunStatus.PENDING.value)
+        s.add(run)
+        s.commit()
+        s.refresh(run)
+        run_id = run.id
+
+    runner_module.execute_run(run_id, get_session)
+
+    with get_session() as s:
+        failed_fares = s.exec(
+            select(Fare).where(
+                Fare.run_id == run_id,
+                Fare.verification_status == VerificationStatus.FAILED.value,
+            )
+        ).all()
+    assert len(failed_fares) > 0
+    assert all(f.price_per_pax == 0 for f in failed_fares)
+    assert all(f.source == Source.FAST_FLIGHTS.value for f in failed_fares)
+    # Each FAILED row carries a reason in notes (json-encoded).
+    import json as _json
+    reasons = {_json.loads(f.notes)["reason"] for f in failed_fares if f.notes}
+    assert "no_fallback_available" in reasons
+
+    payload = _build_results_payload(run_id)
+    assert payload.failed_query_count == len(failed_fares)
+    assert payload.failed_fares and payload.failed_fares[0].reason == "no_fallback_available"

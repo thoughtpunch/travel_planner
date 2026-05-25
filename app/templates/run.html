@@ -104,6 +104,34 @@
 {% endif %}
 {% endfor %}
 
+{% if results.failed_query_count and results.failed_query_count > 0 %}
+<details style="margin-top:2rem">
+  <summary>
+    <span class="badge b-FAILED">FAILED</span>
+    Failed queries ({{ results.failed_query_count }})
+    <span class="muted">— audit trail; not used in any verdict</span>
+  </summary>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Route</th><th>Date</th><th>Source</th><th>Reason</th></tr>
+    </thead>
+    <tbody>
+      {% for f in results.failed_fares %}
+      <tr>
+        <td>{{ f.leg_ordinal }}</td>
+        <td>
+          {% if f.return_date %}{{ f.origin }} ⇄ {{ f.destination }}{% else %}{{ f.origin }} → {{ f.destination }}{% endif %}
+        </td>
+        <td>{{ f.date }}{% if f.return_date %} → {{ f.return_date }}{% endif %}</td>
+        <td class="muted">{{ f.source }}</td>
+        <td><code>{{ f.reason or "—" }}</code></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</details>
+{% endif %}
+
 <p class="muted" style="margin-top:2rem">
   Reminder: LEAD fares are unverified display prices and may collapse at party size.
   Budget verdict is computed from VALIDATED fares only.
