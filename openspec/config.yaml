@@ -1,0 +1,42 @@
+schema: spec-driven
+
+context: |
+  Trip Planner — Multi-Leg Flight Fare Orchestrator (MLFO). Phase 1 only.
+
+  Tech stack: Python 3.12, FastAPI, SQLModel (porting to SQLAlchemy 2.0 +
+  Pydantic v2 + Alembic — see change `port-models-to-pydantic-with-alembic`),
+  SQLite, Jinja templates, uv, mise. Vue 3 + PrimeVue is Phase 2.
+
+  Domain invariants (do not write a spec that violates these):
+    - Every fare from the `fast-flights` scraper is a LEAD. Google Flights'
+      display fare collapses at party size; LEADs are never bookable truth.
+    - VALIDATED fares come only from a SerpAPI re-query at full party size,
+      within a configurable price tolerance of the LEAD.
+    - Budget verdicts are computed from VALIDATED fares only.
+    - SerpAPI has a HARD monthly ceiling. Any spec that orders SerpAPI
+      calls must declare what happens when the ceiling is reached
+      (status: SKIPPED_QUOTA, FAILED, or planned-but-not-issued).
+    - Failed queries (scraper down with no fallback; both sources fail)
+      are PERSISTED as FAILED Fare rows, never silently dropped.
+
+  Vocabulary:
+    - "leg" — one origin × destination × date(window) hop in an itinerary.
+    - "gateway" — one of the European airports near Venice (VCE, MXP, …)
+      candidate for Leg 1's destination.
+    - "structure" — A (three one-ways) or B (nested envelope).
+    - "party total" — fare × passenger count for the engagement
+      (currently 6 adults, $6,000 ceiling).
+
+rules:
+  proposal:
+    - State which Phase (1 or 2) the change targets.
+    - Map the change to a failure mode from docs/design.md ("Failure modes
+      the design defends against"), or explain why it doesn't.
+    - If the change touches SerpAPI, declare the worst-case quota cost.
+  design:
+    - For any new persistence column, note whether it requires an Alembic
+      revision once port-models-to-pydantic-with-alembic lands.
+  tasks:
+    - Group tasks by module touched.
+    - Always include a "Spec + validate" group: spec delta + openspec
+      validate + mise run test.

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Run {{ results.run.id }} — Trip Planner{% endblock %}
+{% block content %}
+{% set run = results.run %}
+{% set verdict = results.budget_verdict %}
+<h1>Run {{ run.id }} <span class="badge b-{{ run.status }}">{{ run.status }}</span></h1>
+<p class="muted">
+  Config {{ run.config_id }} · started {{ run.started_at.strftime("%Y-%m-%d %H:%M") }}
+  {% if run.finished_at %}· finished {{ run.finished_at.strftime("%Y-%m-%d %H:%M") }}{% endif %}
+  · scraper calls: {{ run.scraper_calls }}
+  · SerpAPI calls: {{ run.serpapi_calls }}
+  · quota remaining: {{ run.serpapi_quota_remaining }}
+</p>
+{% if run.error %}
+<p class="verdict-not-met">Error: {{ run.error }}</p>
+{% endif %}
+
+<h2>Budget verdict</h2>
+{% if verdict.met %}
+  <p class="verdict-met">Budget MET — {{ verdict.reason }}</p>
+{% else %}
+  <p class="verdict-not-met">Budget NOT met — {{ verdict.reason }}</p>
+{% endif %}
+
+<h2>Itineraries (ranked)</h2>
+{% if not results.itineraries %}
+<p class="muted">No itineraries produced.</p>
+{% endif %}
+
+{% for s in ["A", "B"] %}
+{% set group = results.itineraries | selectattr("structure", "equalto", s) | list %}
+{% if group %}
+<h3 class="struct-{{ s }}">
+  Structure {{ s }} — {{ "Three one-ways" if s == "A" else "Nested envelope" }}
+  <span class="muted">({{ group|length }} candidates)</span>
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th><th>Status</th><th>Gateway</th><th>Party total</th><th>Train to Venice</th><th>Flags</th><th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for it in group[:15] %}
+    <tr>
+      <td>{{ it.rank }}</td>
+      <td><span class="badge b-{{ it.verification_status }}">{{ it.verification_status }}</span></td>
+      <td>{{ it.gateway or "—" }}</td>
+      <td class="price">{{ it.currency }} {{ '{:,}'.format(it.total_party_price) }}</td>
+      <td>
+        {% if it.train_to_venice and it.train_to_venice.train_minutes is not none %}
+          {{ it.train_to_venice.train_minutes // 60 }}h{{ "%02d"|format(it.train_to_venice.train_minutes % 60) }}
+          · €{{ it.train_to_venice.train_eur_per_pax }}/pax
+        {% else %}
+          —
+        {% endif %}
+      </td>
+      <td>
+        {% for fl in it.flags %}<span class="badge b-{{ fl }}">{{ fl }}</span> {% endfor %}
+      </td>
+      <td>
+        <details>
+          <summary>{{ it.fares|length }} legs</summary>
+          <table>
+            <thead><tr><th>#</th><th>Route</th><th>Date</th><th>Carrier</th><th>Stops</th><th>$/pax</th><th>Source</th><th>Status</th></tr></thead>
+            <tbody>
+              {% for f in it.fares %}
+              <tr>
+                <td>{{ f.leg_ordinal }}</td>
+                <td>
+                  {% if f.return_date %}{{ f.origin }} ⇄ {{ f.destination }}{% else %}{{ f.origin }} → {{ f.destination }}{% endif %}
+                </td>
+                <td>
+                  {{ f.date }}{% if f.return_date %} → {{ f.return_date }}{% endif %}
+                  {% if f.return_date %}<span class="muted"> (RT)</span>{% endif %}
+                </td>
+                <td>{{ f.carrier or "—" }}</td>
+                <td>{{ f.stops }}</td>
+                <td class="price">{{ f.currency }} {{ '{:,}'.format(f.price_per_pax) }}{% if f.return_date %} <span class="muted">RT/pax</span>{% endif %}</td>
+                <td class="muted">{{ f.source }}</td>
+                <td><span class="badge b-{{ f.verification_status }}">{{ f.verification_status }}</span></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </details>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endfor %}
+
+<p class="muted" style="margin-top:2rem">
+  Reminder: LEAD fares are unverified display prices and may collapse at party size.
+  Budget verdict is computed from VALIDATED fares only.
+</p>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Trip Planner — Home{% endblock %}
+{% block content %}
+<h1>Trip Planner</h1>
+
+<h2>Configs</h2>
+{% if configs %}
+<table>
+  <thead><tr><th>ID</th><th>Name</th><th>Budget (party)</th><th>Pax</th><th>Structures</th><th></th></tr></thead>
+  <tbody>
+  {% for c in configs %}
+    <tr>
+      <td>{{ c.id }}</td>
+      <td>{{ c.name }}</td>
+      <td class="price">{{ c.currency }} {{ '{:,}'.format(c.budget_party_total) }}</td>
+      <td>{{ c.passengers }}</td>
+      <td>{{ c.structures | join(", ") }}</td>
+      <td>
+        <form method="post" action="/api/runs?config_id={{ c.id }}">
+          <button type="submit">Trigger run</button>
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No configs yet. Use the CLI: <code>uv run trip-planner seed</code></p>
+{% endif %}
+
+<h2>Recent runs</h2>
+{% if runs %}
+<table>
+  <thead><tr><th>ID</th><th>Config</th><th>Status</th><th>Scraper calls</th><th>SerpAPI calls</th><th>Started</th><th></th></tr></thead>
+  <tbody>
+  {% for r in runs %}
+    <tr>
+      <td>{{ r.id }}</td>
+      <td>{{ r.config_id }}</td>
+      <td><span class="badge b-{{ r.status }}">{{ r.status }}</span></td>
+      <td>{{ r.scraper_calls }}</td>
+      <td>{{ r.serpapi_calls }}</td>
+      <td class="muted">{{ r.started_at.strftime("%Y-%m-%d %H:%M") }}</td>
+      <td><a href="/runs/{{ r.id }}">View →</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No runs yet.</p>
+{% endif %}
+{% endblock %}

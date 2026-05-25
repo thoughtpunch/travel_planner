@@ -1,0 +1,76 @@
+[tools]
+python = "3.12"
+uv = "latest"
+
+[env]
+_.file = [".env"]
+PYTHONDONTWRITEBYTECODE = "1"
+PYTHONUNBUFFERED = "1"
+
+[settings]
+# Don't auto-confirm tool installs — let the user see what's happening.
+experimental = true
+
+[tasks.install]
+description = "Install Python deps via uv"
+run = "uv sync --extra dev"
+sources = ["pyproject.toml", "uv.lock"]
+outputs = ["uv.lock"]
+
+[tasks.setup]
+description = "First-time setup: deps + DB + seed configs"
+depends = ["install"]
+run = [
+    "uv run trip-planner init",
+    "uv run trip-planner seed",
+]
+
+[tasks.dev]
+description = "Run the dev server with auto-reload on http://127.0.0.1:8000"
+depends = ["install"]
+run = """
+if [ ! -f trip_planner.db ]; then
+    echo '→ first run: initializing DB and seeding engagement configs…'
+    uv run trip-planner init
+    uv run trip-planner seed
+fi
+echo
+echo '  ✈  Trip Planner — http://127.0.0.1:8000'
+echo '     API docs:    http://127.0.0.1:8000/docs'
+echo '     Quota:       http://127.0.0.1:8000/api/quota'
+echo
+exec uv run trip-planner serve --reload
+"""
+
+[tasks.test]
+description = "Run the test suite"
+depends = ["install"]
+run = "uv run pytest"
+
+[tasks.seed]
+description = "Seed the engagement configs (Structures A and B)"
+depends = ["install"]
+run = "uv run trip-planner seed"
+
+[tasks.quota]
+description = "Show SerpAPI monthly quota usage"
+depends = ["install"]
+run = "uv run trip-planner quota"
+
+[tasks.run]
+description = "Execute a run for a config id (e.g. `mise run run -- 1`)"
+depends = ["install"]
+run = "uv run trip-planner run"
+
+[tasks.reset]
+description = "Delete the local SQLite DB (does NOT touch .env)"
+run = "rm -f trip_planner.db && echo '→ trip_planner.db removed'"
+
+[tasks.clean]
+description = "Remove DB, venv, and caches"
+run = """
+rm -f trip_planner.db
+rm -rf .venv .pytest_cache __pycache__
+find . -type d -name __pycache__ -not -path './.venv/*' -exec rm -rf {} +
+echo '→ cleaned'
+"""
