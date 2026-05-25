@@ -6,8 +6,11 @@ from app.orchestrator.dates import sample_dates
 from app.orchestrator.matrix import LegSpec, expand_leg
 from app.orchestrator.ranker import budget_verdict, rank_candidates
 from app.orchestrator.structures import (
+    ItineraryCandidate,
     assemble_structure_a,
     assemble_structure_b,
+    mark_incomplete_structures,
+    structure_completeness,
 )
 from app.sources.base import FareOffer
 
@@ -158,3 +161,46 @@ def test_budget_verdict_uses_validated():
     verdict = budget_verdict([v], budget_party_total=6000)
     assert verdict["met"] is True
     assert verdict["best_validated_price"] == 5800
+
+
+def _cand(structure, status, flags=None):
+    return ItineraryCandidate(
+        structure=structure, legs=[], gateway="VCE",
+        total_party_price=5000, currency="USD",
+        verification_status=status,
+        flags=list(flags) if flags else [],
+    )
+
+
+def test_mark_incomplete_flags_only_unvalidated_structure():
+    a_validated = _cand(Structure.A_THREE_ONEWAYS, VerificationStatus.VALIDATED)
+    a_lead = _cand(Structure.A_THREE_ONEWAYS, VerificationStatus.LEAD)
+    b_lead = _cand(Structure.B_NESTED_ENVELOPE, VerificationStatus.LEAD)
+    b_failed = _cand(Structure.B_NESTED_ENVELOPE, VerificationStatus.VALIDATION_FAILED)
+
+    out = mark_incomplete_structures([a_validated, a_lead, b_lead, b_failed])
+
+    assert Flag.INCOMPLETE.value not in a_validated.flags
+    assert Flag.INCOMPLETE.value not in a_lead.flags
+    assert Flag.INCOMPLETE.value in b_lead.flags
+    assert Flag.INCOMPLETE.value in b_failed.flags
+    completeness = structure_completeness(out, ["A", "B"])
+    assert completeness == {"A": "complete", "B": "incomplete"}
+
+
+def test_mark_incomplete_noop_when_both_structures_have_validated():
+    a = _cand(Structure.A_THREE_ONEWAYS, VerificationStatus.VALIDATED)
+    a_lead = _cand(Structure.A_THREE_ONEWAYS, VerificationStatus.LEAD)
+    b = _cand(Structure.B_NESTED_ENVELOPE, VerificationStatus.VALIDATED)
+
+    mark_incomplete_structures([a, a_lead, b])
+
+    assert all(Flag.INCOMPLETE.value not in c.flags for c in [a, a_lead, b])
+    assert structure_completeness([a, a_lead, b], ["A", "B"]) == {
+        "A": "complete", "B": "complete",
+    }
+
+
+def test_structure_completeness_marks_unrequested_as_absent():
+    a = _cand(Structure.A_THREE_ONEWAYS, VerificationStatus.VALIDATED)
+    assert structure_completeness([a], ["A"]) == {"A": "complete", "B": "absent"}

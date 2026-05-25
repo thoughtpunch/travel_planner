@@ -113,7 +113,7 @@ def get_results(run_id: int):
 
 def _build_results_payload(run_id: int) -> ResultsOut:
     from ..orchestrator.ranker import budget_verdict
-    from ..orchestrator.structures import ItineraryCandidate
+    from ..orchestrator.structures import ItineraryCandidate, structure_completeness
 
     with get_session() as session:
         run = session.get(Run, run_id)
@@ -166,12 +166,15 @@ def _build_results_payload(run_id: int) -> ResultsOut:
             "used_this_run": run.serpapi_calls,
             "remaining_after_run": run.serpapi_quota_remaining,
         }
+        structures_requested = list((cfg.structures if cfg else []) or [])
+        structures = structure_completeness(candidates_for_verdict, structures_requested)
 
         return ResultsOut(
             run=_run_to_out(run),
             itineraries=itineraries,
             budget_verdict=verdict,
             quota=quota,
+            structures=structures,
         )
 
 

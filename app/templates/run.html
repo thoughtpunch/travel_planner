@@ -29,6 +29,18 @@
 
 {% for s in ["A", "B"] %}
 {% set group = results.itineraries | selectattr("structure", "equalto", s) | list %}
+{% set state = results.structures.get(s, "absent") if results.structures else "absent" %}
+{% if state == "incomplete" %}
+<h3 class="struct-{{ s }}">
+  Structure {{ s }} — {{ "Three one-ways" if s == "A" else "Nested envelope" }}
+  <span class="badge b-INCOMPLETE">INCOMPLETE</span>
+</h3>
+<p class="incomplete-note">
+  Structure {{ s }} — incomplete; cannot compare. No candidates reached
+  <strong>VALIDATED</strong>, so this structure is shown for context only
+  and the budget verdict ignores it.
+</p>
+{% endif %}
 {% if group %}
 <h3 class="struct-{{ s }}">
   Structure {{ s }} — {{ "Three one-ways" if s == "A" else "Nested envelope" }}

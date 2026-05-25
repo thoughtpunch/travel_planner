@@ -200,9 +200,61 @@ def attach_train_metadata(c: ItineraryCandidate) -> dict | None:
     return venice_metadata(c.gateway) if c.gateway else None
 
 
+def mark_incomplete_structures(
+    candidates: list[ItineraryCandidate],
+) -> list[ItineraryCandidate]:
+    """Tag every candidate of a structure with no VALIDATED member as INCOMPLETE.
+
+    The spec calls a structure "complete" when at least one of its candidates
+    reaches VALIDATED. Anything else (only LEAD, only VALIDATION_FAILED, mixed
+    LEAD/FAILED, etc.) is "incomplete" and gets flagged so the UI can show
+    "incomplete — cannot compare" rather than silently dropping the structure.
+    """
+    has_validated: dict[Structure, bool] = {}
+    for cand in candidates:
+        if cand.verification_status == VerificationStatus.VALIDATED:
+            has_validated[cand.structure] = True
+        else:
+            has_validated.setdefault(cand.structure, False)
+
+    flag = Flag.INCOMPLETE.value
+    for cand in candidates:
+        if not has_validated.get(cand.structure, False):
+            if flag not in cand.flags:
+                cand.flags.append(flag)
+    return candidates
+
+
+def structure_completeness(
+    candidates: list[ItineraryCandidate],
+    structures_requested: list[str],
+) -> dict[str, str]:
+    """Return per-structure completeness: 'complete' / 'incomplete' / 'absent'."""
+    by_struct: dict[str, list[ItineraryCandidate]] = {}
+    for cand in candidates:
+        by_struct.setdefault(cand.structure.value, []).append(cand)
+
+    result: dict[str, str] = {}
+    for s in ["A", "B"]:
+        if s not in structures_requested:
+            result[s] = "absent"
+            continue
+        group = by_struct.get(s, [])
+        if not group:
+            result[s] = "incomplete"
+            continue
+        if any(c.verification_status == VerificationStatus.VALIDATED for c in group):
+            result[s] = "complete"
+        else:
+            result[s] = "incomplete"
+    return result
+
+
 __all__ = [
     "ItineraryCandidate",
     "assemble_structure_a",
     "assemble_structure_b",
     "attach_train_metadata",
+    "mark_incomplete_structures",
+    "structure_completeness",
 ]

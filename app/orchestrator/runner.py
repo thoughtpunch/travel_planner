@@ -30,6 +30,7 @@ from .structures import (
     ItineraryCandidate,
     assemble_structure_a,
     assemble_structure_b,
+    mark_incomplete_structures,
 )
 
 log = logging.getLogger("trip_planner.runner")
@@ -181,6 +182,7 @@ def execute_run(run_id: int, session_factory) -> None:
         else:
             validated = all_candidates
 
+        validated = mark_incomplete_structures(validated)
         ranked = rank_candidates(validated)
 
         # Persist — track fare ids per candidate explicitly to avoid mis-mapping

@@ -149,3 +149,6 @@ def test_run_without_serpapi_key_skips_validation(engine, monkeypatch):
     # No SerpAPI key → all itineraries remain LEAD
     assert itineraries
     assert all(it.verification_status == VerificationStatus.LEAD.value for it in itineraries)
+    # With no validation, no structure reaches VALIDATED → all itineraries flagged INCOMPLETE.
+    from app.enums import Flag
+    assert all(Flag.INCOMPLETE.value in it.flags for it in itineraries)

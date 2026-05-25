@@ -84,6 +84,7 @@ class ResultsOut(BaseModel):
     itineraries: list[ItineraryOut]
     budget_verdict: dict[str, Any]
     quota: dict[str, Any]
+    structures: dict[str, str] = Field(default_factory=dict)
 
 
 class QuotaOut(BaseModel):
