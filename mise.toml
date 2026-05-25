@@ -25,8 +25,8 @@ run = [
     "uv run trip-planner seed",
 ]
 
-[tasks.dev]
-description = "Run the dev server with auto-reload on http://127.0.0.1:8000"
+[tasks."dev:api"]
+description = "Backend only: FastAPI + auto-reload on :8000"
 depends = ["install"]
 run = """
 if [ ! -f trip_planner.db ]; then
@@ -34,12 +34,99 @@ if [ ! -f trip_planner.db ]; then
     uv run trip-planner db upgrade
     uv run trip-planner seed
 fi
-echo
-echo '  ✈  Trip Planner — http://127.0.0.1:8000'
-echo '     API docs:    http://127.0.0.1:8000/docs'
-echo '     Quota:       http://127.0.0.1:8000/api/quota'
-echo
 exec uv run trip-planner serve --reload
+"""
+
+[tasks."dev:web"]
+description = "Frontend only: Vite SPA on :5173"
+dir = "web"
+depends = ["web:install"]
+run = "exec npm run dev"
+
+[tasks.dev]
+description = "Start backend (:8000) + frontend (:5173) together. Releases stale ports, prefixes output, Ctrl-C stops both."
+depends = ["install", "web:install"]
+run = """
+# Idempotent first-run setup: migrate + seed if no DB; otherwise apply any
+# pending migrations (no-op when on head). Hide expected noise.
+if [ ! -f trip_planner.db ]; then
+  echo '→ first run: migrating + seeding…'
+  uv run trip-planner db upgrade
+  uv run trip-planner seed
+else
+  uv run trip-planner db upgrade > /dev/null 2>&1 || true
+fi
+
+# Release :8000 / :5173 if a stale dev process is still holding them.
+# Common case: a previous mise run dev that wasn't shut down cleanly.
+free_port() {
+  port=$1
+  pids=$(lsof -ti:"$port" 2>/dev/null || true)
+  if [ -n "$pids" ]; then
+    procs=$(ps -p $pids -o comm= 2>/dev/null | xargs -n1 basename 2>/dev/null | sort -u | tr '\\n' ',' | sed 's/,$//')
+    echo "→ port $port held by $procs (pid: $pids) — releasing"
+    kill $pids 2>/dev/null || true
+    i=0
+    while [ $i -lt 10 ]; do
+      sleep 0.3
+      if ! lsof -ti:"$port" > /dev/null 2>&1; then
+        return 0
+      fi
+      i=$((i+1))
+    done
+    echo "  port $port still held after SIGTERM — escalating to SIGKILL"
+    kill -9 $pids 2>/dev/null || true
+    sleep 0.5
+  fi
+}
+free_port 8000
+free_port 5173
+
+cat <<'EOF'
+
+  ✈  Trip Planner
+
+      Backend  (FastAPI):     http://127.0.0.1:8000
+      Frontend (SPA, Vite):   http://127.0.0.1:5173
+      API docs:               http://127.0.0.1:8000/docs
+
+  Ctrl-C stops both. Logs are prefixed [api] / [web].
+
+EOF
+
+# Output prefixer — awk is line-buffered by default on macOS + Linux and
+# avoids the GNU/BSD sed -u/-l incompatibility.
+prefix() {
+  awk -v t="$1" '{ print t, $0; fflush(); }'
+}
+
+# Start each child in the background. Track PIDs so the trap can kill both
+# (and their descendants — uvicorn --reload forks a worker).
+(uv run trip-planner serve --reload 2>&1 | prefix "[api]") &
+API_PID=$!
+
+(cd web && npm run dev 2>&1 | prefix "[web]") &
+WEB_PID=$!
+
+cleanup() {
+  echo
+  echo '→ stopping…'
+  for pid in $API_PID $WEB_PID; do
+    if kill -0 "$pid" 2>/dev/null; then
+      pkill -P "$pid" 2>/dev/null || true
+      kill "$pid" 2>/dev/null || true
+    fi
+  done
+  # Belt + suspenders for forked workers (uvicorn reload child, Vite ESBuild).
+  lsof -ti:8000 2>/dev/null | xargs -r kill 2>/dev/null || true
+  lsof -ti:5173 2>/dev/null | xargs -r kill 2>/dev/null || true
+  wait 2>/dev/null || true
+}
+trap cleanup INT TERM HUP
+
+# Wait for both children. If one exits unexpectedly the user sees it in the
+# prefixed output and can Ctrl-C to take down the other.
+wait
 """
 
 [tasks.migrate]
