@@ -35,8 +35,11 @@ current head.
 cd trip_planner
 cp .env.example .env          # add your SERPAPI_KEY
 mise trust                    # one-time, approve mise.toml
-mise run dev                  # installs deps, inits DB, seeds, starts server
+mise run dev                  # installs deps, runs migrations, seeds, starts server
 ```
+
+`mise run dev` migrates the DB on first run; for explicit control use
+`mise run migrate` (= `alembic upgrade head`) and `mise run seed`.
 
 That's it — http://127.0.0.1:8000.
 
@@ -45,8 +48,10 @@ That's it — http://127.0.0.1:8000.
 | Task           | What it does                                                |
 |----------------|-------------------------------------------------------------|
 | `mise run dev`   | Start dev server with auto-reload (idempotent first-run)   |
-| `mise run setup` | Install + init DB + seed engagement configs                |
-| `mise run test`  | Run the test suite (39 tests)                              |
+| `mise run setup` | Install + migrate DB + seed engagement configs             |
+| `mise run migrate` | Run pending Alembic migrations to head                   |
+| `mise run revision -- "msg"` | Create a new auto-generated Alembic revision   |
+| `mise run test`  | Run the test suite                                         |
 | `mise run seed`  | (Re-)seed Structures A and B                               |
 | `mise run quota` | Show SerpAPI monthly quota usage                           |
 | `mise run run -- 1` | Execute a run for config #1, print top results synchronously |
@@ -58,13 +63,22 @@ If you'd rather skip mise: `uv sync --extra dev && uv run trip-planner serve`.
 ## CLI
 
 ```
-trip-planner init           # create the SQLite DB
-trip-planner seed           # seed the two engagement configs
-trip-planner configs        # list configs
-trip-planner quota          # SerpAPI quota status
-trip-planner run <config>   # run synchronously, print top results
-trip-planner serve          # start the FastAPI server
+trip-planner db upgrade               # apply Alembic migrations (alias for `alembic upgrade head`)
+trip-planner db revision -m "msg"     # create a new Alembic revision (--autogenerate optional)
+trip-planner seed                     # seed the two engagement configs
+trip-planner configs                  # list configs
+trip-planner quota                    # SerpAPI quota status
+trip-planner run <config>             # run synchronously, print top results
+trip-planner serve                    # start the FastAPI server
 ```
+
+### DB migrations
+
+Schema changes go through Alembic. The on-disk shape is wire-compatible with
+the pre-migration SQLModel era — to carry an existing `trip_planner.db`
+forward, run `alembic stamp head` (or `uv run alembic stamp head`) once
+before the next `mise run migrate`. The server refuses to start against a
+DB without an `alembic_version` table and tells you what to run.
 
 ## HTTP API
 

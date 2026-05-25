@@ -1,97 +1,107 @@
 from datetime import datetime, timezone
 from typing import Any
 
-from sqlalchemy import JSON, Column
-from sqlmodel import Field, SQLModel
+from sqlalchemy import JSON, ForeignKey
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
 def utcnow() -> datetime:
     return datetime.now(timezone.utc)
 
 
-class Config(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
-    name: str
-    budget_party_total: int
-    currency: str = "USD"
-    passengers: dict[str, int] = Field(sa_column=Column(JSON))
-    structures: list[str] = Field(sa_column=Column(JSON))
-    blackout_ranges: list[dict[str, str]] = Field(default_factory=list, sa_column=Column(JSON))
-    validation_tolerance_pct: int = 15
-    validation_top_n: int = 5
-    envelope_long_gap_days: int = 30
-    created_at: datetime = Field(default_factory=utcnow)
-    updated_at: datetime = Field(default_factory=utcnow)
+class Base(DeclarativeBase):
+    pass
 
 
-class Leg(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
-    config_id: int = Field(foreign_key="config.id")
-    ordinal: int
-    origins: list[str] = Field(sa_column=Column(JSON))
-    destinations: list[str] = Field(sa_column=Column(JSON))
-    date_anchor: str
-    window_days: int = 7
-    sampling_strategy: str = "anchor,+/-3,+/-7"
-    # When any return_* is set, this leg is a round-trip leg: every
-    # (outbound × return) date pair is swept as one RT fare query.
-    return_date_anchor: str | None = None
-    return_window_days: int | None = None
-    return_sampling_strategy: str | None = None
+class Config(Base):
+    __tablename__ = "config"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str]
+    budget_party_total: Mapped[int]
+    currency: Mapped[str] = mapped_column(default="USD")
+    passengers: Mapped[dict[str, int]] = mapped_column(JSON)
+    structures: Mapped[list[str]] = mapped_column(JSON)
+    blackout_ranges: Mapped[list[dict[str, str]]] = mapped_column(JSON, default=list)
+    validation_tolerance_pct: Mapped[int] = mapped_column(default=15)
+    validation_top_n: Mapped[int] = mapped_column(default=5)
+    envelope_long_gap_days: Mapped[int] = mapped_column(default=30)
+    created_at: Mapped[datetime] = mapped_column(default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(default=utcnow)
+
+
+class Leg(Base):
+    __tablename__ = "leg"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    config_id: Mapped[int] = mapped_column(ForeignKey("config.id"))
+    ordinal: Mapped[int]
+    origins: Mapped[list[str]] = mapped_column(JSON)
+    destinations: Mapped[list[str]] = mapped_column(JSON)
+    date_anchor: Mapped[str]
+    window_days: Mapped[int] = mapped_column(default=7)
+    sampling_strategy: Mapped[str] = mapped_column(default="anchor,+/-3,+/-7")
+    return_date_anchor: Mapped[str | None] = mapped_column(default=None)
+    return_window_days: Mapped[int | None] = mapped_column(default=None)
+    return_sampling_strategy: Mapped[str | None] = mapped_column(default=None)
 
     @property
     def is_round_trip(self) -> bool:
         return self.return_date_anchor is not None
 
 
-class Run(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
-    config_id: int = Field(foreign_key="config.id")
-    config_snapshot: dict[str, Any] = Field(sa_column=Column(JSON))
-    status: str = "PENDING"
-    started_at: datetime = Field(default_factory=utcnow)
-    finished_at: datetime | None = None
-    scraper_calls: int = 0
-    serpapi_calls: int = 0
-    serpapi_quota_remaining: int | None = None
-    error: str | None = None
+class Run(Base):
+    __tablename__ = "run"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    config_id: Mapped[int] = mapped_column(ForeignKey("config.id"))
+    config_snapshot: Mapped[dict[str, Any]] = mapped_column(JSON)
+    status: Mapped[str] = mapped_column(default="PENDING")
+    started_at: Mapped[datetime] = mapped_column(default=utcnow)
+    finished_at: Mapped[datetime | None] = mapped_column(default=None)
+    scraper_calls: Mapped[int] = mapped_column(default=0)
+    serpapi_calls: Mapped[int] = mapped_column(default=0)
+    serpapi_quota_remaining: Mapped[int | None] = mapped_column(default=None)
+    error: Mapped[str | None] = mapped_column(default=None)
 
 
-class Fare(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
-    run_id: int = Field(foreign_key="run.id", index=True)
-    leg_ordinal: int
-    structure: str
-    origin: str
-    destination: str
-    date: str
-    # Set when this fare represents a round-trip; price_per_pax is then the
-    # round-trip total per passenger.
-    return_date: str | None = None
-    carrier: str = ""
-    price_per_pax: int
-    price_party: int
-    currency: str = "USD"
-    stops: int = 0
-    duration_minutes: int = 0
-    source: str
-    verification_status: str
-    passengers_queried: int
-    fetched_at: datetime = Field(default_factory=utcnow)
-    ttl_seconds: int = 86400
-    flags: list[str] = Field(default_factory=list, sa_column=Column(JSON))
-    notes: str | None = None
+class Fare(Base):
+    __tablename__ = "fare"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    run_id: Mapped[int] = mapped_column(ForeignKey("run.id"), index=True)
+    leg_ordinal: Mapped[int]
+    structure: Mapped[str]
+    origin: Mapped[str]
+    destination: Mapped[str]
+    date: Mapped[str]
+    return_date: Mapped[str | None] = mapped_column(default=None)
+    carrier: Mapped[str] = mapped_column(default="")
+    price_per_pax: Mapped[int]
+    price_party: Mapped[int]
+    currency: Mapped[str] = mapped_column(default="USD")
+    stops: Mapped[int] = mapped_column(default=0)
+    duration_minutes: Mapped[int] = mapped_column(default=0)
+    source: Mapped[str]
+    verification_status: Mapped[str]
+    passengers_queried: Mapped[int]
+    fetched_at: Mapped[datetime] = mapped_column(default=utcnow)
+    ttl_seconds: Mapped[int] = mapped_column(default=86400)
+    flags: Mapped[list[str]] = mapped_column(JSON, default=list)
+    notes: Mapped[str | None] = mapped_column(default=None)
 
 
-class Itinerary(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
-    run_id: int = Field(foreign_key="run.id", index=True)
-    structure: str
-    total_party_price: int
-    currency: str = "USD"
-    verification_status: str
-    fare_ids: list[int] = Field(sa_column=Column(JSON))
-    gateway: str | None = None
-    train_to_venice: dict[str, Any] | None = Field(default=None, sa_column=Column(JSON))
-    flags: list[str] = Field(default_factory=list, sa_column=Column(JSON))
-    rank: int = 0
+class Itinerary(Base):
+    __tablename__ = "itinerary"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    run_id: Mapped[int] = mapped_column(ForeignKey("run.id"), index=True)
+    structure: Mapped[str]
+    total_party_price: Mapped[int]
+    currency: Mapped[str] = mapped_column(default="USD")
+    verification_status: Mapped[str]
+    fare_ids: Mapped[list[int]] = mapped_column(JSON)
+    gateway: Mapped[str | None] = mapped_column(default=None)
+    train_to_venice: Mapped[dict[str, Any] | None] = mapped_column(JSON, default=None)
+    flags: Mapped[list[str]] = mapped_column(JSON, default=list)
+    rank: Mapped[int] = mapped_column(default=0)

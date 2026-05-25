@@ -6,21 +6,31 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi.staticfiles import StaticFiles  # noqa: F401
 from fastapi.templating import Jinja2Templates
+from sqlalchemy import inspect, select
 from starlette.requests import Request
 
 from .api import configs as configs_api
 from .api import quota as quota_api
 from .api import runs as runs_api
-from .db import get_session, init_db
+from .db import engine, get_session
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
 
+def _assert_migrations_applied() -> None:
+    inspector = inspect(engine)
+    if "alembic_version" not in inspector.get_table_names():
+        raise RuntimeError(
+            "Database has no `alembic_version` table. "
+            "Run `mise run migrate` (or `alembic upgrade head`) before starting the server."
+        )
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    init_db()
+    _assert_migrations_applied()
     yield
 
 
@@ -36,13 +46,11 @@ templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-    from sqlmodel import select
-
     from .models import Config, Run
 
     with get_session() as session:
-        configs = session.exec(select(Config).order_by(Config.id)).all()
-        runs = session.exec(select(Run).order_by(Run.id.desc()).limit(20)).all()
+        configs = session.scalars(select(Config).order_by(Config.id)).all()
+        runs = session.scalars(select(Run).order_by(Run.id.desc()).limit(20)).all()
     return templates.TemplateResponse(request, "home.html", {
         "configs": configs,
         "runs": runs,

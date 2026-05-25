@@ -18,10 +18,10 @@ sources = ["pyproject.toml", "uv.lock"]
 outputs = ["uv.lock"]
 
 [tasks.setup]
-description = "First-time setup: deps + DB + seed configs"
+description = "First-time setup: deps + DB migration + seed configs"
 depends = ["install"]
 run = [
-    "uv run trip-planner init",
+    "uv run trip-planner db upgrade",
     "uv run trip-planner seed",
 ]
 
@@ -30,8 +30,8 @@ description = "Run the dev server with auto-reload on http://127.0.0.1:8000"
 depends = ["install"]
 run = """
 if [ ! -f trip_planner.db ]; then
-    echo '→ first run: initializing DB and seeding engagement configs…'
-    uv run trip-planner init
+    echo '→ first run: migrating DB and seeding engagement configs…'
+    uv run trip-planner db upgrade
     uv run trip-planner seed
 fi
 echo
@@ -41,6 +41,16 @@ echo '     Quota:       http://127.0.0.1:8000/api/quota'
 echo
 exec uv run trip-planner serve --reload
 """
+
+[tasks.migrate]
+description = "Run pending Alembic migrations to head"
+depends = ["install"]
+run = "uv run alembic upgrade head"
+
+[tasks.revision]
+description = "Create a new Alembic revision (usage: mise run revision -- \"add foo column\")"
+depends = ["install"]
+run = "uv run alembic revision --autogenerate -m"
 
 [tasks.test]
 description = "Run the test suite"

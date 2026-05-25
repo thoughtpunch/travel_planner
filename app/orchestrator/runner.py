@@ -12,7 +12,8 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from sqlmodel import Session, select
+from sqlalchemy import select
+from sqlalchemy.orm import Session
 
 from ..config import settings
 from ..enums import RunStatus, Source, Structure, VerificationStatus
@@ -63,7 +64,7 @@ def _config_to_snapshot(cfg: Config, legs: list[Leg]) -> dict[str, Any]:
 
 
 def _sum_used_serpapi_calls(session: Session) -> int:
-    rows = session.exec(select(Run.serpapi_calls).where(Run.status == RunStatus.COMPLETE.value)).all()
+    rows = session.scalars(select(Run.serpapi_calls).where(Run.status == RunStatus.COMPLETE.value)).all()
     return int(sum(r or 0 for r in rows))
 
 
@@ -74,7 +75,7 @@ def execute_run(run_id: int, session_factory) -> None:
         if run is None:
             raise RuntimeError(f"Run {run_id} not found")
         cfg = session.get(Config, run.config_id)
-        legs = session.exec(select(Leg).where(Leg.config_id == cfg.id)).all()
+        legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
         snapshot = _config_to_snapshot(cfg, legs)
         run.config_snapshot = snapshot
         run.status = RunStatus.RUNNING.value

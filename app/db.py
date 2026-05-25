@@ -1,4 +1,5 @@
-from sqlmodel import Session, SQLModel, create_engine
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
 from .config import settings
 
@@ -8,12 +9,8 @@ engine = create_engine(
     connect_args={"check_same_thread": False} if "sqlite" in settings.database_url else {},
 )
 
-
-def init_db() -> None:
-    from . import models  # noqa: F401 — register tables
-
-    SQLModel.metadata.create_all(engine)
+SessionLocal = sessionmaker(bind=engine, expire_on_commit=False, class_=Session)
 
 
 def get_session() -> Session:
-    return Session(engine)
+    return SessionLocal()

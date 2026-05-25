@@ -1,11 +1,11 @@
 from datetime import date, datetime, timezone
 
 from fastapi import APIRouter, HTTPException
-from sqlmodel import select
+from sqlalchemy import select
 
 from ..db import get_session
 from ..models import Config, Leg
-from ..schemas import ConfigOut, ConfigPayload
+from ..schemas import ConfigOut, ConfigPayload, LegPayload
 
 router = APIRouter(prefix="/api/configs", tags=["configs"])
 
@@ -43,20 +43,7 @@ def _to_out(cfg: Config, legs: list[Leg]) -> ConfigOut:
         validation_tolerance_pct=cfg.validation_tolerance_pct,
         validation_top_n=cfg.validation_top_n,
         envelope_long_gap_days=cfg.envelope_long_gap_days,
-        legs=[
-            {
-                "ordinal": l.ordinal,
-                "origins": l.origins,
-                "destinations": l.destinations,
-                "date_anchor": l.date_anchor,
-                "window_days": l.window_days,
-                "sampling_strategy": l.sampling_strategy,
-                "return_date_anchor": l.return_date_anchor,
-                "return_window_days": l.return_window_days,
-                "return_sampling_strategy": l.return_sampling_strategy,
-            }
-            for l in sorted(legs, key=lambda x: x.ordinal)
-        ],
+        legs=[LegPayload.model_validate(l) for l in sorted(legs, key=lambda x: x.ordinal)],
         created_at=cfg.created_at,
         updated_at=cfg.updated_at,
     )
@@ -65,11 +52,11 @@ def _to_out(cfg: Config, legs: list[Leg]) -> ConfigOut:
 @router.get("", response_model=list[ConfigOut])
 def list_configs():
     with get_session() as session:
-        cfgs = session.exec(select(Config).order_by(Config.id)).all()
+        cfgs = session.scalars(select(Config).order_by(Config.id)).all()
         out = []
         for c in cfgs:
-            legs = session.exec(select(Leg).where(Leg.config_id == c.id)).all()
-            out.append(_to_out(c, legs))
+            legs = session.scalars(select(Leg).where(Leg.config_id == c.id)).all()
+            out.append(_to_out(c, list(legs)))
         return out
 
 
@@ -105,8 +92,8 @@ def create_config(payload: ConfigPayload):
                 return_sampling_strategy=leg_p.return_sampling_strategy,
             ))
         session.commit()
-        legs = session.exec(select(Leg).where(Leg.config_id == cfg.id)).all()
-        return _to_out(cfg, legs)
+        legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
+        return _to_out(cfg, list(legs))
 
 
 @router.get("/{config_id}", response_model=ConfigOut)
@@ -115,8 +102,8 @@ def get_config(config_id: int):
         cfg = session.get(Config, config_id)
         if cfg is None:
             raise HTTPException(404, "config not found")
-        legs = session.exec(select(Leg).where(Leg.config_id == cfg.id)).all()
-        return _to_out(cfg, legs)
+        legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
+        return _to_out(cfg, list(legs))
 
 
 @router.put("/{config_id}", response_model=ConfigOut)
@@ -138,7 +125,7 @@ def update_config(config_id: int, payload: ConfigPayload):
         cfg.updated_at = datetime.now(timezone.utc)
         session.add(cfg)
         # Replace legs wholesale
-        existing = session.exec(select(Leg).where(Leg.config_id == cfg.id)).all()
+        existing = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
         for l in existing:
             session.delete(l)
         for leg_p in payload.legs:
@@ -155,8 +142,8 @@ def update_config(config_id: int, payload: ConfigPayload):
                 return_sampling_strategy=leg_p.return_sampling_strategy,
             ))
         session.commit()
-        legs = session.exec(select(Leg).where(Leg.config_id == cfg.id)).all()
-        return _to_out(cfg, legs)
+        legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
+        return _to_out(cfg, list(legs))
 
 
 @router.delete("/{config_id}", status_code=204)
@@ -165,7 +152,7 @@ def delete_config(config_id: int):
         cfg = session.get(Config, config_id)
         if cfg is None:
             raise HTTPException(404, "config not found")
-        for l in session.exec(select(Leg).where(Leg.config_id == cfg.id)).all():
+        for l in session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all():
             session.delete(l)
         session.delete(cfg)
         session.commit()

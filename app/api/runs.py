@@ -5,7 +5,7 @@ import threading
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException
-from sqlmodel import select
+from sqlalchemy import select
 
 from ..config import settings
 from ..db import get_session
@@ -84,7 +84,7 @@ def list_runs(config_id: int | None = None, limit: int = 50):
         q = select(Run).order_by(Run.id.desc()).limit(limit)
         if config_id is not None:
             q = select(Run).where(Run.config_id == config_id).order_by(Run.id.desc()).limit(limit)
-        return [_run_to_out(r) for r in session.exec(q).all()]
+        return [_run_to_out(r) for r in session.scalars(q).all()]
 
 
 def _planned_serpapi_calls_for_config(config_id: int) -> int:
@@ -98,7 +98,7 @@ def _planned_serpapi_calls_for_config(config_id: int) -> int:
         cfg = session.get(Config, config_id)
         if cfg is None:
             return 0
-        legs = session.exec(select(Leg).where(Leg.config_id == config_id)).all()
+        legs = session.scalars(select(Leg).where(Leg.config_id == config_id)).all()
         structures = cfg.structures or []
         per_struct = {
             "A": 3,  # three one-ways → 3 SerpAPI calls per top-N candidate
@@ -121,10 +121,10 @@ def _build_results_payload(run_id: int) -> ResultsOut:
         if run is None:
             raise HTTPException(404, "run not found")
         cfg = session.get(Config, run.config_id)
-        itin_rows = session.exec(
+        itin_rows = session.scalars(
             select(Itinerary).where(Itinerary.run_id == run_id).order_by(Itinerary.rank)
         ).all()
-        fare_rows = session.exec(
+        fare_rows = session.scalars(
             select(Fare).where(Fare.run_id == run_id)
         ).all()
         fares_by_id = {f.id: f for f in fare_rows}

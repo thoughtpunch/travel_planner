@@ -1,36 +1,22 @@
-"""End-to-end runner test against an in-memory SQLite, with both sources
+"""End-to-end runner test against an on-disk SQLite, with both sources
 mocked. Verifies persistence, ranking, and budget verdict propagation."""
 
 from __future__ import annotations
 
-import os
-
 import pytest
-from sqlmodel import Session, SQLModel, create_engine, select
+from sqlalchemy import select
 
 
 @pytest.fixture
-def engine(tmp_path, monkeypatch):
-    db_path = tmp_path / "test.db"
-    monkeypatch.setenv("DATABASE_URL", f"sqlite:///{db_path}")
+def engine(db_engine, monkeypatch):
     monkeypatch.setenv("SERPAPI_KEY", "test-key")
     monkeypatch.setenv("SERPAPI_MONTHLY_CEILING", "999")
 
-    # Reload settings + db engine to pick up new env
     from importlib import reload
 
     import app.config as config_module
     reload(config_module)
-    import app.db as db_module
-    reload(db_module)
-    db_module.init_db()
-    return db_module.engine
-
-
-def _session_factory(engine):
-    def _factory():
-        return Session(engine)
-    return _factory
+    return db_engine
 
 
 def _patch_sources(monkeypatch):
@@ -82,7 +68,7 @@ def test_seed_run_a_validates_and_meets_budget(engine, monkeypatch):
     # Use a TINY config for speed: monkey-patch sampling to just the anchor.
     from app.models import Leg as LegModel
     with get_session() as s:
-        legs = s.exec(select(LegModel).where(LegModel.config_id == a_id)).all()
+        legs = s.scalars(select(LegModel).where(LegModel.config_id == a_id)).all()
         for l in legs:
             l.sampling_strategy = "anchor"
             s.add(l)
@@ -100,7 +86,7 @@ def test_seed_run_a_validates_and_meets_budget(engine, monkeypatch):
     with get_session() as s:
         run = s.get(Run, run_id)
         assert run.status == RunStatus.COMPLETE.value
-        itineraries = s.exec(
+        itineraries = s.scalars(
             select(Itinerary).where(Itinerary.run_id == run_id).order_by(Itinerary.rank)
         ).all()
 
@@ -131,7 +117,7 @@ def test_run_without_serpapi_key_skips_validation(engine, monkeypatch):
     a_id = ids["A"]
     from app.models import Leg as LegModel
     with get_session() as s:
-        legs = s.exec(select(LegModel).where(LegModel.config_id == a_id)).all()
+        legs = s.scalars(select(LegModel).where(LegModel.config_id == a_id)).all()
         for l in legs:
             l.sampling_strategy = "anchor"
             s.add(l)
@@ -147,7 +133,7 @@ def test_run_without_serpapi_key_skips_validation(engine, monkeypatch):
     runner_module.execute_run(run_id, get_session)
 
     with get_session() as s:
-        itineraries = s.exec(
+        itineraries = s.scalars(
             select(Itinerary).where(Itinerary.run_id == run_id)
         ).all()
     # No SerpAPI key → all itineraries remain LEAD
@@ -194,7 +180,7 @@ def test_scraper_failure_with_no_fallback_persists_failed_fares(engine, monkeypa
     a_id = ids["A"]
     from app.models import Leg as LegModel
     with get_session() as s:
-        legs = s.exec(select(LegModel).where(LegModel.config_id == a_id)).all()
+        legs = s.scalars(select(LegModel).where(LegModel.config_id == a_id)).all()
         for l in legs:
             l.sampling_strategy = "anchor"
             s.add(l)
@@ -210,7 +196,7 @@ def test_scraper_failure_with_no_fallback_persists_failed_fares(engine, monkeypa
     runner_module.execute_run(run_id, get_session)
 
     with get_session() as s:
-        failed_fares = s.exec(
+        failed_fares = s.scalars(
             select(Fare).where(
                 Fare.run_id == run_id,
                 Fare.verification_status == VerificationStatus.FAILED.value,

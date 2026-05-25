@@ -15,9 +15,9 @@ unambiguous per run.
 
 from __future__ import annotations
 
-from sqlmodel import select
+from sqlalchemy import select
 
-from .db import get_session, init_db
+from .db import get_session
 from .models import Config, Leg
 from .orchestrator.blackout import thanksgiving_weekend
 
@@ -28,7 +28,7 @@ DC_AIRPORTS = ["IAD", "DCA", "BWI"]
 
 def seed_config_a(session) -> int:
     name = "Engagement — Structure A (3 one-ways)"
-    existing = session.exec(select(Config).where(Config.name == name)).first()
+    existing = session.scalars(select(Config).where(Config.name == name)).first()
     if existing:
         return existing.id
     cfg = Config(
@@ -59,7 +59,7 @@ def seed_config_a(session) -> int:
 
 def seed_config_b(session) -> int:
     name = "Engagement — Structure B (nested envelope)"
-    existing = session.exec(select(Config).where(Config.name == name)).first()
+    existing = session.scalars(select(Config).where(Config.name == name)).first()
     if existing:
         return existing.id
     cfg = Config(
@@ -103,7 +103,6 @@ def seed_config_b(session) -> int:
 
 
 def seed_all() -> dict[str, int]:
-    init_db()
     with get_session() as session:
         a_id = seed_config_a(session)
         b_id = seed_config_b(session)

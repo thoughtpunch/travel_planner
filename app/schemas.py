@@ -1,10 +1,12 @@
 from datetime import datetime
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class LegPayload(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     ordinal: int
     origins: list[str]
     destinations: list[str]
@@ -30,12 +32,16 @@ class ConfigPayload(BaseModel):
 
 
 class ConfigOut(ConfigPayload):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     created_at: datetime
     updated_at: datetime
 
 
 class RunOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     config_id: int
     status: str
@@ -48,6 +54,8 @@ class RunOut(BaseModel):
 
 
 class FareOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     leg_ordinal: int
     structure: str
@@ -67,6 +75,8 @@ class FareOut(BaseModel):
 
 
 class ItineraryOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     structure: str
     total_party_price: int
@@ -80,6 +90,8 @@ class ItineraryOut(BaseModel):
 
 
 class FailedFareOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     leg_ordinal: int
     origin: str
     destination: str

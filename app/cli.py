@@ -3,27 +3,41 @@ from __future__ import annotations
 import json
 
 import typer
+from alembic.config import main as alembic_main
 from rich.console import Console
 from rich.table import Table
+from sqlalchemy import select
 
 from .config import settings
-from .db import get_session, init_db
+from .db import get_session
 from .enums import RunStatus
 from .models import Config, Itinerary, Run
 from .orchestrator.runner import execute_run
 from .seed import seed_all
 from .sources.quota import QuotaTracker
-from sqlmodel import select
 
 cli = typer.Typer(help="Trip Planner — MLFO Phase 1 CLI")
+db_app = typer.Typer(help="Database migrations (Alembic shim).")
+cli.add_typer(db_app, name="db")
 console = Console()
 
 
-@cli.command()
-def init():
-    """Create the SQLite database."""
-    init_db()
-    console.print(f"[green]Initialized[/green] {settings.database_url}")
+@db_app.command("upgrade")
+def db_upgrade(revision: str = "head"):
+    """Upgrade the database to a given revision (default: head)."""
+    alembic_main(["upgrade", revision])
+
+
+@db_app.command("revision")
+def db_revision(
+    message: str = typer.Option(..., "-m", "--message", help="Revision message"),
+    autogenerate: bool = typer.Option(False, "--autogenerate", help="Autogenerate from model diff"),
+):
+    """Create a new Alembic revision."""
+    argv = ["revision", "-m", message]
+    if autogenerate:
+        argv.append("--autogenerate")
+    alembic_main(argv)
 
 
 @cli.command()
@@ -36,10 +50,9 @@ def seed():
 @cli.command()
 def configs():
     """List configs."""
-    init_db()
     table = Table("ID", "Name", "Budget", "Pax", "Structures")
     with get_session() as s:
-        for c in s.exec(select(Config).order_by(Config.id)).all():
+        for c in s.scalars(select(Config).order_by(Config.id)).all():
             table.add_row(str(c.id), c.name, f"${c.budget_party_total:,}",
                           json.dumps(c.passengers), ",".join(c.structures))
     console.print(table)
@@ -49,7 +62,6 @@ def configs():
 def quota():
     """Show SerpAPI quota status."""
     from .orchestrator.runner import _sum_used_serpapi_calls
-    init_db()
     with get_session() as s:
         used = _sum_used_serpapi_calls(s)
     q = QuotaTracker(ceiling=settings.serpapi_monthly_ceiling, used_before_run=used)
@@ -63,7 +75,6 @@ def quota():
 @cli.command()
 def run(config_id: int):
     """Execute a run synchronously and print the top results."""
-    init_db()
     with get_session() as s:
         r = Run(config_id=config_id, config_snapshot={}, status=RunStatus.PENDING.value)
         s.add(r)
@@ -80,7 +91,7 @@ def run(config_id: int):
 
     with get_session() as s:
         finished = s.get(Run, run_id)
-        itineraries = s.exec(
+        itineraries = s.scalars(
             select(Itinerary).where(Itinerary.run_id == run_id).order_by(Itinerary.rank).limit(10)
         ).all()
 
