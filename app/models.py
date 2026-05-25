@@ -26,6 +26,12 @@ class Config(Base):
     validation_tolerance_pct: Mapped[int] = mapped_column(default=15)
     validation_top_n: Mapped[int] = mapped_column(default=5)
     envelope_long_gap_days: Mapped[int] = mapped_column(default=30)
+    # Preferences (bookended scale per friction axis, global + per-leg) and
+    # user-owned cost assumptions feed the landed-cost ranking pipeline.
+    # Serialised as JSON because their shape changes more often than the
+    # rest of the schema (axis additions, new override types).
+    preferences: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+    cost_assumptions: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
     updated_at: Mapped[datetime] = mapped_column(default=utcnow)
 
@@ -63,6 +69,8 @@ class Run(Base):
     serpapi_calls: Mapped[int] = mapped_column(default=0)
     serpapi_quota_remaining: Mapped[int | None] = mapped_column(default=None)
     error: Mapped[str | None] = mapped_column(default=None)
+    # Per-axis count of itineraries removed by HARD NO filters during scoring.
+    filtered_out_count_by_axis: Mapped[dict[str, int]] = mapped_column(JSON, default=dict)
 
 
 class Fare(Base):
@@ -105,3 +113,10 @@ class Itinerary(Base):
     train_to_venice: Mapped[dict[str, Any] | None] = mapped_column(JSON, default=None)
     flags: Mapped[list[str]] = mapped_column(JSON, default=list)
     rank: Mapped[int] = mapped_column(default=0)
+    # Landed cost (validated airfare + ground transfer + any lodging) becomes
+    # the ranking key per `landed-cost-model`. None until the landed-cost
+    # calculator has run (FAILED itineraries stay None).
+    landed_cost: Mapped[int | None] = mapped_column(default=None)
+    cost_breakdown: Mapped[dict[str, Any] | None] = mapped_column(JSON, default=None)
+    friction_attributes: Mapped[dict[str, Any] | None] = mapped_column(JSON, default=None)
+    preference_explanations: Mapped[list[dict[str, Any]]] = mapped_column(JSON, default=list)

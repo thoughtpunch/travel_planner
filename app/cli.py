@@ -44,7 +44,10 @@ def db_revision(
 def seed():
     """Seed the engagement configs (Structures A and B)."""
     ids = seed_all()
-    console.print(f"[green]Seeded[/green]: A=config #{ids['A']}, B=config #{ids['B']}")
+    console.print(
+        f"[green]Seeded[/green]: A=config #{ids['A']}, B=config #{ids['B']}, "
+        f"Venice=config #{ids.get('Venice', '?')}"
+    )
 
 
 @cli.command()

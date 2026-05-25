@@ -62,6 +62,17 @@ def _validate_leg(
     candidates = sorted(offers, key=lambda o: o.price_per_pax)
     for o in candidates:
         if _within_tolerance(lead.price_per_pax, o.price_per_pax, tolerance_pct):
+            # Merge raws: SerpAPI carries the validated price; lead carries
+            # the richer fli friction data (layovers, arrival_local_time,
+            # stopover_city). SerpAPI's raw wins on shared keys so the
+            # validated source's view is authoritative where it has an
+            # opinion, but the friction attributes survive.
+            merged_raw = {**(lead.raw or {}), **(o.raw or {})}
+            merged_raw.update({
+                "lead_price_per_pax": lead.price_per_pax,
+                "validated_at": _now().isoformat(),
+                "ttl_seconds": ttl_seconds,
+            })
             return FareOffer(
                 origin=o.origin,
                 destination=o.destination,
@@ -75,9 +86,7 @@ def _validate_leg(
                 source=o.source,
                 verification_status=VerificationStatus.VALIDATED,
                 passengers_queried=adults,
-                raw={**o.raw, "lead_price_per_pax": lead.price_per_pax,
-                     "validated_at": _now().isoformat(),
-                     "ttl_seconds": ttl_seconds},
+                raw=merged_raw,
             )
     # Authoritative source returned offers, but all are outside tolerance —
     # the lead price was unobtainable at full party. Classic 6-seat collapse.

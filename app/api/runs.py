@@ -147,12 +147,23 @@ def _build_results_payload(run_id: int) -> ResultsOut:
                     source=f.source, verification_status=f.verification_status,
                     fetched_at=f.fetched_at,
                 ))
+            from ..preferences import FrictionAttributes, LandedCost, PreferenceExplanation
+
+            cb = LandedCost.model_validate(it.cost_breakdown) if it.cost_breakdown else None
+            fa = FrictionAttributes.model_validate(it.friction_attributes) if it.friction_attributes else None
+            explanations = [
+                PreferenceExplanation.model_validate(e) for e in (it.preference_explanations or [])
+            ]
             itineraries.append(ItineraryOut(
                 id=it.id, structure=it.structure,
                 total_party_price=it.total_party_price, currency=it.currency,
                 verification_status=it.verification_status, gateway=it.gateway,
                 train_to_venice=it.train_to_venice, flags=it.flags, rank=it.rank,
                 fares=f_outs,
+                landed_cost=it.landed_cost,
+                cost_breakdown=cb,
+                friction_attributes=fa,
+                preference_explanations=explanations,
             ))
             candidates_for_verdict.append(ItineraryCandidate(
                 structure=it.structure, legs=[], gateway=it.gateway,
@@ -189,6 +200,13 @@ def _build_results_payload(run_id: int) -> ResultsOut:
                 fetched_at=f.fetched_at,
             ))
 
+        from ..preferences import Axis as _Axis
+        filtered = {}
+        for k, v in (run.filtered_out_count_by_axis or {}).items():
+            try:
+                filtered[_Axis(k)] = int(v)
+            except (ValueError, TypeError):
+                continue
         return ResultsOut(
             run=_run_to_out(run),
             itineraries=itineraries,
@@ -197,6 +215,7 @@ def _build_results_payload(run_id: int) -> ResultsOut:
             structures=structures,
             failed_query_count=len(failed_fares),
             failed_fares=failed_fares,
+            filtered_out_count_by_axis=filtered,
         )
 
 

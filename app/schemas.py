@@ -3,6 +3,15 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from .preferences import (
+    Axis,
+    CostAssumptions,
+    FrictionAttributes,
+    LandedCost,
+    Preferences,
+    PreferenceExplanation,
+)
+
 
 class LegPayload(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -28,6 +37,8 @@ class ConfigPayload(BaseModel):
     validation_tolerance_pct: int = 15
     validation_top_n: int = 5
     envelope_long_gap_days: int = 30
+    preferences: Preferences = Field(default_factory=Preferences)
+    cost_assumptions: CostAssumptions = Field(default_factory=CostAssumptions)
     legs: list[LegPayload]
 
 
@@ -87,6 +98,11 @@ class ItineraryOut(BaseModel):
     flags: list[str]
     rank: int
     fares: list[FareOut]
+    # Landed-cost + friction + preference fields per add-preference-weighted-landed-cost.
+    landed_cost: int | None = None
+    cost_breakdown: LandedCost | None = None
+    friction_attributes: FrictionAttributes | None = None
+    preference_explanations: list[PreferenceExplanation] = Field(default_factory=list)
 
 
 class FailedFareOut(BaseModel):
@@ -110,6 +126,8 @@ class ResultsOut(BaseModel):
     structures: dict[str, str] = Field(default_factory=dict)
     failed_query_count: int = 0
     failed_fares: list[FailedFareOut] = Field(default_factory=list)
+    # Per-axis count of itineraries removed by HARD NO filters during scoring.
+    filtered_out_count_by_axis: dict[Axis, int] = Field(default_factory=dict)
 
 
 class QuotaOut(BaseModel):

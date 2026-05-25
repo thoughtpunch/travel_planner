@@ -11,6 +11,7 @@ from datetime import timedelta
 
 from ..enums import Flag, Structure, VerificationStatus
 from ..gateways import venice_metadata
+from ..preferences import FrictionAttributes, LandedCost, PreferenceExplanation
 from ..sources.base import FareOffer
 from .blackout import is_blackout
 from .dates import parse_date
@@ -25,6 +26,12 @@ class ItineraryCandidate:
     currency: str
     flags: list[str] = field(default_factory=list)
     verification_status: VerificationStatus = VerificationStatus.LEAD
+    # Landed-cost + scoring fields (populated by the orchestrator after
+    # validation; preferences.apply_preferences sets explanations).
+    landed_cost: int | None = None
+    cost_breakdown: LandedCost | None = None
+    friction_attributes: FrictionAttributes | None = None
+    preference_explanations: list[PreferenceExplanation] = field(default_factory=list)
 
 
 def _party_total(offers: list[FareOffer]) -> int:
@@ -196,6 +203,79 @@ def assemble_structure_b(
     return candidates
 
 
+def assemble_stopover_variant_a(
+    leg1a_offers: list[FareOffer],  # SJO → stopover
+    leg1b_offers: list[FareOffer],  # stopover → EU gateway
+    leg2_offers: list[FareOffer],   # EU gateway → DC
+    leg3_offers: list[FareOffer],   # DC → SJO
+    stopover_city: str,
+    blackout_ranges: list[dict[str, str]],
+    currency: str = "USD",
+) -> list[ItineraryCandidate]:
+    """Constructed-stopover variant of Structure A — 4 legs total.
+
+    `landed-cost-model` will add the stopover lodging assumption because the
+    last leg's `raw.stopover_city` flag triggers `FrictionAttributes.has_stopover`.
+    """
+    l1a = _cheapest_per_route(leg1a_offers)
+    l1b = _cheapest_per_route(leg1b_offers)
+    l2 = _cheapest_per_route(leg2_offers)
+    l3 = _cheapest_per_route(leg3_offers)
+
+    candidates: list[ItineraryCandidate] = []
+    eu_gateways = sorted({k[1] for k in l1b})
+    dc_airports = sorted({k[1] for k in l2})
+
+    # Cheapest SJO → stopover (date-agnostic for simplicity in v1).
+    l1a_options = [v for v in l1a.values() if v.destination == stopover_city]
+    if not l1a_options:
+        return []
+    best_l1a = min(l1a_options, key=lambda o: o.price_per_pax)
+
+    for eu in eu_gateways:
+        l1b_options = [v for k, v in l1b.items() if k[0] == stopover_city and k[1] == eu]
+        if not l1b_options:
+            continue
+        best_l1b = min(l1b_options, key=lambda o: o.price_per_pax)
+        for dc in dc_airports:
+            l2_options = [v for k, v in l2.items() if k[0] == eu and k[1] == dc]
+            l3_options = [v for k, v in l3.items() if k[0] == dc]
+            if not l2_options or not l3_options:
+                continue
+            best_l2 = min(l2_options, key=lambda o: o.price_per_pax)
+            best_l3 = min(l3_options, key=lambda o: o.price_per_pax)
+
+            # Mark every leg's raw with the stopover_city so the friction
+            # extractor flags this itinerary as having_stopover.
+            legs = []
+            for o in [best_l1a, best_l1b, best_l2, best_l3]:
+                raw = dict(o.raw or {})
+                raw["stopover_city"] = stopover_city
+                legs.append(FareOffer(
+                    origin=o.origin, destination=o.destination, date=o.date,
+                    return_date=o.return_date, carrier=o.carrier,
+                    price_per_pax=o.price_per_pax, currency=o.currency,
+                    stops=o.stops, duration_minutes=o.duration_minutes,
+                    source=o.source, verification_status=o.verification_status,
+                    passengers_queried=o.passengers_queried, raw=raw,
+                ))
+
+            flags = []
+            for leg in legs:
+                if is_blackout(leg.date, blackout_ranges):
+                    flags.append(Flag.BLACKOUT.value)
+                    break
+
+            candidates.append(ItineraryCandidate(
+                structure=Structure.A_THREE_ONEWAYS,
+                legs=legs, gateway=eu,
+                total_party_price=_party_total(legs),
+                currency=currency, flags=flags,
+                verification_status=_worst_status(legs),
+            ))
+    return candidates
+
+
 def attach_train_metadata(c: ItineraryCandidate) -> dict | None:
     return venice_metadata(c.gateway) if c.gateway else None
 
@@ -254,6 +334,7 @@ __all__ = [
     "ItineraryCandidate",
     "assemble_structure_a",
     "assemble_structure_b",
+    "assemble_stopover_variant_a",
     "attach_train_metadata",
     "mark_incomplete_structures",
     "structure_completeness",

@@ -19,6 +19,7 @@ from ..config import settings
 from ..enums import RunStatus, Source, Structure, VerificationStatus
 from ..gateways import venice_metadata
 from ..models import Config, Fare, Itinerary, Leg, Run
+from ..preferences import Axis, CostAssumptions, Preferences, ScalePosition
 from ..sources.base import FareOffer
 from ..sources.fast_flights_source import FastFlightsSource
 from ..sources.fli_source import FliSource
@@ -26,10 +27,13 @@ from ..sources.quota import QuotaTracker
 from ..sources.router import SourceRouter
 from ..sources.serpapi_source import SerpApiSource
 from ..validator import validate_top_n
+from .landed_cost import compute_landed_cost
 from .matrix import LegSpec, expand_leg
-from .ranker import rank_candidates
+from .preferences import apply_preferences
+from .stopover import construct_stopover_itineraries
 from .structures import (
     ItineraryCandidate,
+    assemble_stopover_variant_a,
     assemble_structure_a,
     assemble_structure_b,
     mark_incomplete_structures,
@@ -39,6 +43,11 @@ log = logging.getLogger("trip_planner.runner")
 
 
 def _config_to_snapshot(cfg: Config, legs: list[Leg]) -> dict[str, Any]:
+    # `gateway_transfers_at_run_time` records the `last_reviewed` date of
+    # every transfer-table entry as of run time so a historical run remains
+    # interpretable after the table is updated (see search-config spec).
+    from ..data.gateway_transfers import snapshot_table
+
     return {
         "name": cfg.name,
         "budget_party_total": cfg.budget_party_total,
@@ -49,6 +58,9 @@ def _config_to_snapshot(cfg: Config, legs: list[Leg]) -> dict[str, Any]:
         "validation_tolerance_pct": cfg.validation_tolerance_pct,
         "validation_top_n": cfg.validation_top_n,
         "envelope_long_gap_days": cfg.envelope_long_gap_days,
+        "preferences": cfg.preferences or {},
+        "cost_assumptions": cfg.cost_assumptions or {},
+        "gateway_transfers_at_run_time": snapshot_table(),
         "legs": [
             {
                 "ordinal": l.ordinal,
@@ -119,33 +131,59 @@ def execute_run(run_id: int, session_factory) -> None:
         )
         router = SourceRouter(primary=primary, fallback=fallback)
 
+        # Parse preferences + cost_assumptions from the config (Pydantic guards
+        # incoherent settings; corrupted JSON → defaults).
+        try:
+            preferences = Preferences.model_validate(cfg.preferences or {})
+        except Exception as e:  # noqa: BLE001
+            log.warning("invalid preferences on config %s, using defaults: %s", cfg.id, e)
+            preferences = Preferences()
+        try:
+            cost_assumptions = CostAssumptions.model_validate(cfg.cost_assumptions or {})
+        except Exception as e:  # noqa: BLE001
+            log.warning("invalid cost_assumptions on config %s, using defaults: %s", cfg.id, e)
+            cost_assumptions = CostAssumptions()
+
+        # Stage 0 (HARD YES stopover): construct stopover leg variants BEFORE
+        # the sweep so they price through the unchanged pipeline. Empty when
+        # stopover is not HARD YES.
+        base_leg_specs = [
+            LegSpec(
+                ordinal=l.ordinal, origins=l.origins, destinations=l.destinations,
+                date_anchor=l.date_anchor, window_days=l.window_days,
+                sampling_strategy=l.sampling_strategy,
+                return_date_anchor=l.return_date_anchor,
+                return_window_days=l.return_window_days,
+                return_sampling_strategy=l.return_sampling_strategy,
+            )
+            for l in sorted(legs, key=lambda x: x.ordinal)
+        ]
+        stopover_default = preferences.defaults.get(Axis.STOPOVER)
+        stopover_structures = []
+        if (
+            stopover_default is not None
+            and stopover_default.position == ScalePosition.HARD_YES
+            and preferences.stopover_target is not None
+        ):
+            stopover_structures = construct_stopover_itineraries(
+                base_legs=base_leg_specs,
+                stopover_target=preferences.stopover_target,
+                gap_nights=1,
+            )
+
         sweep_calls = 0
         sweep_offers_by_leg: dict[int, list[FareOffer]] = {}
-        # FAILED / SKIPPED_QUOTA markers from the router carry zero prices
-        # and would poison _cheapest_per_route if they fed into assembly.
-        # Persist them as out-of-band Fare rows so the audit trail records
-        # the failure without contaminating the itinerary math.
         out_of_band_markers: list[tuple[int, FareOffer]] = []
-        for leg in sorted(legs, key=lambda x: x.ordinal):
-            spec = LegSpec(
-                ordinal=leg.ordinal,
-                origins=leg.origins,
-                destinations=leg.destinations,
-                date_anchor=leg.date_anchor,
-                window_days=leg.window_days,
-                sampling_strategy=leg.sampling_strategy,
-                return_date_anchor=leg.return_date_anchor,
-                return_window_days=leg.return_window_days,
-                return_sampling_strategy=leg.return_sampling_strategy,
-            )
+
+        def _sweep_leg(spec: LegSpec) -> list[FareOffer]:
+            nonlocal sweep_calls
             queries = expand_leg(
-                spec,
-                adults=adults,
+                spec, adults=adults,
                 children=pax.get("children", 0),
                 infants_in_seat=pax.get("infants_in_seat", 0),
                 infants_on_lap=pax.get("infants_on_lap", 0),
             )
-            leg_offers: list[FareOffer] = []
+            collected: list[FareOffer] = []
             for q in queries:
                 sweep_calls += 1
                 result = router.sweep(q)
@@ -156,10 +194,22 @@ def execute_run(run_id: int, session_factory) -> None:
                         VerificationStatus.FAILED,
                         VerificationStatus.SKIPPED_QUOTA,
                     ):
-                        out_of_band_markers.append((leg.ordinal, o))
+                        out_of_band_markers.append((spec.ordinal, o))
                     else:
-                        leg_offers.append(o)
-            sweep_offers_by_leg[leg.ordinal] = leg_offers
+                        collected.append(o)
+            return collected
+
+        # Sweep base legs (Structure A / B as configured).
+        for spec in base_leg_specs:
+            sweep_offers_by_leg[spec.ordinal] = _sweep_leg(spec)
+
+        # Sweep each constructed stopover variant separately, keyed by city.
+        stopover_offers_by_city: dict[str, dict[int, list[FareOffer]]] = {}
+        for sv in stopover_structures:
+            per_leg: dict[int, list[FareOffer]] = {}
+            for spec in sv.legs:
+                per_leg[spec.ordinal] = _sweep_leg(spec)
+            stopover_offers_by_city[sv.stopover_city] = per_leg
 
         # Structure assembly
         structures_to_price = set(cfg.structures or [])
@@ -176,7 +226,6 @@ def execute_run(run_id: int, session_factory) -> None:
             all_candidates.extend(a)
 
         if Structure.B_NESTED_ENVELOPE.value in structures_to_price:
-            # For B with RT pricing: leg 1 = SJO ⇄ DC outer RT, leg 2 = DC ⇄ EU inner RT.
             b = assemble_structure_b(
                 outer_rt_offers=sweep_offers_by_leg.get(1, []),
                 inner_rt_offers=sweep_offers_by_leg.get(2, []),
@@ -185,6 +234,19 @@ def execute_run(run_id: int, session_factory) -> None:
                 currency=cfg.currency,
             )
             all_candidates.extend(b)
+
+        # Constructed-stopover variants: assemble each (Structure A-shaped, 4 legs).
+        for stopover_city, per_leg in stopover_offers_by_city.items():
+            sv_candidates = assemble_stopover_variant_a(
+                leg1a_offers=per_leg.get(1, []),
+                leg1b_offers=per_leg.get(2, []),
+                leg2_offers=per_leg.get(3, []),
+                leg3_offers=per_leg.get(4, []),
+                stopover_city=stopover_city,
+                blackout_ranges=cfg.blackout_ranges,
+                currency=cfg.currency,
+            )
+            all_candidates.extend(sv_candidates)
 
         # Validation pass — uses deep_search=True for accuracy.
         if validator_source is not None and all_candidates:
@@ -200,7 +262,36 @@ def execute_run(run_id: int, session_factory) -> None:
             validated = all_candidates
 
         validated = mark_incomplete_structures(validated)
-        ranked = rank_candidates(validated)
+
+        # Compute landed cost on every candidate that has at least one leg
+        # priced; FAILED itineraries skip cost computation (their landed_cost
+        # remains None and ranking puts them at the end via status order).
+        party_size = sum(int(v) for v in pax.values()) or 1
+        for cand in validated:
+            if cand.verification_status == VerificationStatus.FAILED:
+                continue
+            try:
+                lc, friction = compute_landed_cost(
+                    legs=cand.legs, gateway=cand.gateway,
+                    assumptions=cost_assumptions, party_size=party_size,
+                    currency=cand.currency,
+                )
+                cand.landed_cost = lc.total
+                cand.cost_breakdown = lc
+                cand.friction_attributes = friction
+            except Exception as e:  # noqa: BLE001
+                log.warning("landed-cost failed for candidate gateway=%s: %s", cand.gateway, e)
+
+        # Cheapest VALIDATED landed cost feeds the soft-band bound.
+        validated_costs = [
+            c.landed_cost for c in validated
+            if c.verification_status == VerificationStatus.VALIDATED and c.landed_cost is not None
+        ]
+        cheapest_validated_landed_cost = min(validated_costs) if validated_costs else None
+
+        scored = apply_preferences(validated, preferences, cheapest_validated_landed_cost)
+        ranked = scored.ranked
+        filtered_out_by_axis = {axis.value: count for axis, count in scored.filtered_out.items()}
 
         # Persist FAILED / SKIPPED_QUOTA markers as Fare rows up-front so
         # they show up in the run's audit trail even when no itinerary
@@ -268,12 +359,17 @@ def execute_run(run_id: int, session_factory) -> None:
                 train_to_venice=venice_metadata(cand.gateway) if cand.gateway else None,
                 flags=cand.flags,
                 rank=rank,
+                landed_cost=cand.landed_cost,
+                cost_breakdown=cand.cost_breakdown.model_dump(mode="json") if cand.cost_breakdown else None,
+                friction_attributes=cand.friction_attributes.model_dump(mode="json") if cand.friction_attributes else None,
+                preference_explanations=[e.model_dump(mode="json") for e in (cand.preference_explanations or [])],
             ))
         session.add_all(itin_rows)
 
         run.scraper_calls = sweep_calls
         run.serpapi_calls = quota.used_this_run
         run.serpapi_quota_remaining = quota.remaining
+        run.filtered_out_count_by_axis = filtered_out_by_axis
         run.status = RunStatus.COMPLETE.value
         run.finished_at = datetime.now(timezone.utc)
         session.add(run)
