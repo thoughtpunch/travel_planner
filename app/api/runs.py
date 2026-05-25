@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import threading
 from datetime import datetime, timezone
+from typing import AsyncIterator
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException
+from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
+from fastapi.responses import StreamingResponse
 from sqlalchemy import select
 
 from ..config import settings
@@ -217,6 +220,108 @@ def _build_results_payload(run_id: int) -> ResultsOut:
             failed_fares=failed_fares,
             filtered_out_count_by_axis=filtered,
         )
+
+
+@router.get("/{run_id}/stream")
+async def stream_run(run_id: int, request: Request):
+    """Server-Sent Events stream for a run.
+
+    Emits events as the run progresses:
+      - `event: status` — status transitions (PENDING → RUNNING → COMPLETE/FAILED)
+      - `event: sweep_fare` — each persisted Fare row
+      - `event: validation_result` — each persisted Itinerary row
+      - `event: scoring_complete` — once the run reaches a terminal status
+
+    Reconnect: clients pass `Last-Event-ID` (handled automatically by
+    EventSource); the endpoint replays events with id > last seen.
+
+    Implementation is poll-and-emit against the DB rather than a true
+    in-process event bus — adequate for a single-operator tool, robust
+    to runner crashes (DB is the source of truth).
+    """
+
+    def _build_events(last_event_id: int) -> tuple[list[tuple[int, str, dict]], str | None]:
+        """Snapshot current run state into (event_id, event_type, data) tuples
+        with monotonic ids based on persistence order. Returns (events, status)."""
+        with get_session() as s:
+            run = s.get(Run, run_id)
+            if run is None:
+                return [], None
+            events: list[tuple[int, str, dict]] = []
+            # Status event has stable id = 0 so the first message is always
+            # delivered, even after reconnect with Last-Event-ID=0.
+            events.append((0, "status", {
+                "status": run.status,
+                "stage": _stage_from_status(run.status),
+            }))
+            fares = s.scalars(
+                select(Fare).where(Fare.run_id == run_id).order_by(Fare.id)
+            ).all()
+            for f in fares:
+                # Fare ids are dense per run; pad into id space starting at 1000
+                # so they don't collide with status (0) or status-complete (1).
+                events.append((1000 + f.id, "sweep_fare", {
+                    "fare_id": f.id, "leg_ordinal": f.leg_ordinal,
+                    "origin": f.origin, "destination": f.destination,
+                    "date": f.date, "source": f.source,
+                    "price_per_pax": f.price_per_pax,
+                    "verification_status": f.verification_status,
+                }))
+            itins = s.scalars(
+                select(Itinerary).where(Itinerary.run_id == run_id).order_by(Itinerary.id)
+            ).all()
+            for it in itins:
+                events.append((2_000_000 + it.id, "validation_result", {
+                    "itinerary_id": it.id, "rank": it.rank,
+                    "status": it.verification_status,
+                    "landed_cost": it.landed_cost,
+                    "gateway": it.gateway,
+                }))
+            if run.status in (RunStatus.COMPLETE.value, RunStatus.FAILED.value):
+                events.append((9_000_000_000, "scoring_complete", {
+                    "ranked_itinerary_ids": [it.id for it in itins],
+                    "filtered_out_count_by_axis": run.filtered_out_count_by_axis or {},
+                }))
+            return [(eid, etype, data) for (eid, etype, data) in events if eid > last_event_id], run.status
+
+    def _stage_from_status(status: str) -> str:
+        return {
+            RunStatus.PENDING.value: "pending",
+            RunStatus.RUNNING.value: "sweep",
+            RunStatus.COMPLETE.value: "done",
+            RunStatus.FAILED.value: "done",
+        }.get(status, "unknown")
+
+    last_event_id = int(request.headers.get("Last-Event-ID", "0") or 0)
+
+    async def event_stream() -> AsyncIterator[bytes]:
+        nonlocal last_event_id
+        max_idle_loops = 600  # ~10 minutes at 1s poll
+        idle = 0
+        while True:
+            if await request.is_disconnected():
+                break
+            events, status = _build_events(last_event_id)
+            for eid, etype, data in events:
+                last_event_id = eid
+                line = f"id: {eid}\nevent: {etype}\ndata: {json.dumps(data)}\n\n"
+                yield line.encode("utf-8")
+            if status in (RunStatus.COMPLETE.value, RunStatus.FAILED.value):
+                break
+            if status is None:  # run vanished
+                yield b"event: error\ndata: {\"message\": \"run not found\", \"fatal\": true}\n\n"
+                break
+            idle += 1
+            if idle >= max_idle_loops:
+                yield b"event: error\ndata: {\"message\": \"stream idle timeout\", \"fatal\": false}\n\n"
+                break
+            await asyncio.sleep(1)
+
+    return StreamingResponse(
+        event_stream(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
 
 
 @router.get("/estimate/{config_id}")

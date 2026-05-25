@@ -134,3 +134,79 @@ class QuotaOut(BaseModel):
     ceiling: int
     used_this_month: int
     remaining: int
+
+
+class TripPayload(BaseModel):
+    name: str = Field(min_length=1)
+    config_id: int | None = None
+    notes: str = ""
+
+
+class TripOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    name: str
+    config_id: int
+    notes: str
+    deleted_at: datetime | None
+    created_at: datetime
+    updated_at: datetime
+
+
+class TripUpdate(BaseModel):
+    name: str | None = None
+    notes: str | None = None
+
+
+class ShortlistItemPayload(BaseModel):
+    run_id: int
+    itinerary_id: int
+
+
+class ShortlistItemUpdate(BaseModel):
+    notes: str | None = None
+    tags: list[str] | None = None
+    order_index: int | None = None
+
+
+class ShortlistItemOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    trip_id: int
+    run_id: int
+    itinerary_id: int
+    snapshot: dict[str, Any]
+    notes: str
+    tags: list[str]
+    order_index: int
+    created_at: datetime
+
+
+class CopilotSuggestion(BaseModel):
+    """A copilot suggestion targeting a specific config field path. Cost
+    suggestions MUST set `unverified=True` (enforced at the API gateway)."""
+
+    path: str
+    value: Any
+    confidence: float = Field(ge=0, le=1)
+    rationale: str = ""
+    unverified: bool = False
+
+
+class CopilotResponse(BaseModel):
+    suggestions: list[CopilotSuggestion]
+
+
+class PreferenceSuggestRequest(BaseModel):
+    natural_language: str = Field(min_length=1)
+
+
+class CostAssumptionSuggestRequest(BaseModel):
+    trip_context: dict[str, Any] = Field(default_factory=dict)
+
+
+class StopoverWaypointSuggestRequest(BaseModel):
+    origin: str
+    destination_gateways: list[str]

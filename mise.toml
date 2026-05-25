@@ -84,3 +84,28 @@ rm -rf .venv .pytest_cache __pycache__
 find . -type d -name __pycache__ -not -path './.venv/*' -exec rm -rf {} +
 echo '→ cleaned'
 """
+
+# ---- Phase-2 SPA tasks ----
+
+[tasks."web:install"]
+description = "Install Vue 3 + PrimeVue SPA deps"
+dir = "web"
+run = "npm install"
+
+[tasks."web:dev"]
+description = "Vite dev server (proxied to FastAPI on :8000)"
+dir = "web"
+depends = ["web:install"]
+run = "npm run dev"
+
+[tasks."web:build"]
+description = "Production build of the SPA into app/static/web-dist/"
+dir = "web"
+depends = ["web:install"]
+run = "npm run build"
+
+[tasks."web:test"]
+description = "Run Vitest unit tests"
+dir = "web"
+depends = ["web:install"]
+run = "npm test"

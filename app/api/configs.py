@@ -1,6 +1,7 @@
 from datetime import date, datetime, timezone
+from typing import Any
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Body, HTTPException
 from sqlalchemy import select
 
 from ..db import get_session
@@ -150,6 +151,88 @@ def update_config(config_id: int, payload: ConfigPayload):
                 return_sampling_strategy=leg_p.return_sampling_strategy,
             ))
         session.commit()
+        legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
+        return _to_out(cfg, list(legs))
+
+
+def _deep_merge(base: dict, patch: dict) -> dict:
+    """JSON-merge-patch style: scalars/lists replace; dicts merge recursively.
+    Used by the idempotent PATCH endpoint."""
+    out = dict(base)
+    for k, v in patch.items():
+        if isinstance(v, dict) and isinstance(out.get(k), dict):
+            out[k] = _deep_merge(out[k], v)
+        else:
+            out[k] = v
+    return out
+
+
+@router.patch("/{config_id}", response_model=ConfigOut)
+def patch_config(config_id: int, patch: dict[str, Any] = Body(...)):
+    """Idempotent partial update. Accepts any subset of fields including
+    partial `preferences` and `cost_assumptions` (merged via JSON-merge-patch).
+    Returns the full updated config so the client can reconcile."""
+    from ..preferences import CostAssumptions, Preferences
+
+    with get_session() as session:
+        cfg = session.get(Config, config_id)
+        if cfg is None:
+            raise HTTPException(404, "config not found")
+
+        if "name" in patch:
+            cfg.name = patch["name"]
+        if "budget_party_total" in patch:
+            cfg.budget_party_total = int(patch["budget_party_total"])
+        if "currency" in patch:
+            cfg.currency = patch["currency"]
+        if "passengers" in patch:
+            cfg.passengers = _deep_merge(cfg.passengers or {}, patch["passengers"])
+        if "structures" in patch:
+            cfg.structures = patch["structures"]
+        if "blackout_ranges" in patch:
+            cfg.blackout_ranges = patch["blackout_ranges"]
+        if "validation_tolerance_pct" in patch:
+            cfg.validation_tolerance_pct = int(patch["validation_tolerance_pct"])
+        if "validation_top_n" in patch:
+            cfg.validation_top_n = int(patch["validation_top_n"])
+        if "envelope_long_gap_days" in patch:
+            cfg.envelope_long_gap_days = int(patch["envelope_long_gap_days"])
+        if "preferences" in patch:
+            merged = _deep_merge(cfg.preferences or {}, patch["preferences"])
+            try:
+                Preferences.model_validate(merged)  # validate before accepting
+            except Exception as e:  # noqa: BLE001
+                raise HTTPException(422, f"invalid preferences: {e}") from e
+            cfg.preferences = merged
+        if "cost_assumptions" in patch:
+            merged = _deep_merge(cfg.cost_assumptions or {}, patch["cost_assumptions"])
+            try:
+                CostAssumptions.model_validate(merged)
+            except Exception as e:  # noqa: BLE001
+                raise HTTPException(422, f"invalid cost_assumptions: {e}") from e
+            cfg.cost_assumptions = merged
+        cfg.updated_at = datetime.now(timezone.utc)
+        session.add(cfg)
+        session.commit()
+        legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
+        return _to_out(cfg, list(legs))
+
+
+@router.post("/{config_id}/finalize", response_model=ConfigOut)
+def finalize_config(config_id: int):
+    """Promote a draft config — validates the full schema and raises 422 with
+    structured errors if anything is incoherent (per `preference-elicitation`)."""
+    from ..preferences import CostAssumptions, Preferences
+
+    with get_session() as session:
+        cfg = session.get(Config, config_id)
+        if cfg is None:
+            raise HTTPException(404, "config not found")
+        try:
+            Preferences.model_validate(cfg.preferences or {})
+            CostAssumptions.model_validate(cfg.cost_assumptions or {})
+        except Exception as e:  # noqa: BLE001
+            raise HTTPException(422, f"finalize rejected: {e}") from e
         legs = session.scalars(select(Leg).where(Leg.config_id == cfg.id)).all()
         return _to_out(cfg, list(legs))
 

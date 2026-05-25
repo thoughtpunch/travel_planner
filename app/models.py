@@ -120,3 +120,40 @@ class Itinerary(Base):
     cost_breakdown: Mapped[dict[str, Any] | None] = mapped_column(JSON, default=None)
     friction_attributes: Mapped[dict[str, Any] | None] = mapped_column(JSON, default=None)
     preference_explanations: Mapped[list[dict[str, Any]]] = mapped_column(JSON, default=list)
+
+
+class Trip(Base):
+    """A trip is the persistent unit the SPA works in: it owns one Config,
+    many Runs, one Shortlist, and free-form Notes. Soft-deletable with a
+    7-day grace window (per web-api spec)."""
+
+    __tablename__ = "trip"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str]
+    config_id: Mapped[int] = mapped_column(ForeignKey("config.id"))
+    notes: Mapped[str] = mapped_column(default="")
+    deleted_at: Mapped[datetime | None] = mapped_column(default=None)
+    created_at: Mapped[datetime] = mapped_column(default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(default=utcnow)
+
+
+class ShortlistItem(Base):
+    """Immutable snapshot of an itinerary saved to a trip's shortlist.
+
+    `snapshot` is a frozen JSON copy of the itinerary at save-time so future
+    edits to the originating run or the gateway-transfer table do NOT mutate
+    the saved view (per web-api spec).
+    """
+
+    __tablename__ = "shortlist_item"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    trip_id: Mapped[int] = mapped_column(ForeignKey("trip.id"), index=True)
+    run_id: Mapped[int] = mapped_column(ForeignKey("run.id"))
+    itinerary_id: Mapped[int] = mapped_column(ForeignKey("itinerary.id"))
+    snapshot: Mapped[dict[str, Any]] = mapped_column(JSON)
+    notes: Mapped[str] = mapped_column(default="")
+    tags: Mapped[list[str]] = mapped_column(JSON, default=list)
+    order_index: Mapped[int] = mapped_column(default=0)
+    created_at: Mapped[datetime] = mapped_column(default=utcnow)
