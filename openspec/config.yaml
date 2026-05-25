@@ -38,5 +38,4 @@ rules:
       revision once port-models-to-pydantic-with-alembic lands.
   tasks:
     - Group tasks by module touched.
-    - Always include a "Spec + validate" group: spec delta + openspec
-      validate + mise run test.
+    - 'Always include a "Spec + validate" group: spec delta + openspec validate + mise run test.'
