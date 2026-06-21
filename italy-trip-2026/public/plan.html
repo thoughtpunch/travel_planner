@@ -670,6 +670,8 @@
     letter-spacing: 0.5px;
   }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -742,6 +744,9 @@
 </nav>
 
 <main>
+<div style="background:rgba(196,83,26,0.1);border-left:4px solid var(--terra);padding:14px 20px;margin:18px 0 0;font-size:14px">
+  <strong>This is the older v1 four-base plan.</strong> The current trip is the big no-backtrack loop. <a href="/" style="color:var(--terra);border-bottom:1px solid var(--terra)">See the live map &amp; current plan →</a>
+</div>
 
 <!-- ── SUMMARY ─────────────────────────────────────────────── -->
 <section id="summary">
@@ -819,129 +824,8 @@
   </div>
 
   <h4>The Route on a Map</h4>
-  <div class="italy-map-wrap">
-    <svg class="italy-svg" viewBox="0 0 400 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Italy showing the four trip bases and route">
-      <!-- Italy outline (simplified boot) -->
-      <path class="country" d="
-        M 70 60
-        L 130 35
-        L 195 32
-        L 245 50
-        L 270 75
-        L 260 95
-        L 245 105
-        L 225 110
-        L 215 130
-        L 220 160
-        L 230 185
-        L 240 215
-        L 250 240
-        L 270 260
-        L 295 275
-        L 320 280
-        L 332 295
-        L 310 305
-        L 285 308
-        L 260 320
-        L 240 345
-        L 225 375
-        L 215 405
-        L 200 425
-        L 188 440
-        L 178 432
-        L 175 410
-        L 182 388
-        L 193 365
-        L 200 340
-        L 190 320
-        L 175 305
-        L 160 290
-        L 145 268
-        L 135 245
-        L 130 218
-        L 125 195
-        L 115 175
-        L 100 155
-        L 88 135
-        L 75 115
-        L 65 95
-        L 62 75
-        Z
-      "/>
-
-      <!-- Sicily -->
-      <path class="country" d="
-        M 130 460
-        L 165 450
-        L 180 460
-        L 175 472
-        L 155 478
-        L 135 475
-        L 125 470
-        Z
-      "/>
-
-      <!-- Sardinia -->
-      <path class="country" d="
-        M 60 280
-        L 80 275
-        L 88 295
-        L 82 320
-        L 65 325
-        L 55 305
-        Z
-      "/>
-
-      <!-- Route lines (in trip order) -->
-      <!-- Rome to Bologna -->
-      <line class="route-line" x1="158" y1="240" x2="190" y2="135" stroke="#C4531A"/>
-      <!-- Bologna to Venice -->
-      <line class="route-line" x1="190" y1="135" x2="232" y2="95" stroke="#D4920A"/>
-      <!-- Venice to Naples -->
-      <line class="route-line" x1="232" y1="95" x2="210" y2="305" stroke="#1B6B8A"/>
-      <!-- Naples to Rome -->
-      <line class="route-line" x1="210" y1="305" x2="158" y2="240" stroke="#8C2D1A"/>
-
-      <!-- City dots and labels (in trip order, numbered) -->
-      <!-- 01 Rome -->
-      <circle class="city-dot" cx="158" cy="240" r="9" fill="#C4531A"/>
-      <text class="city-label" x="170" y="237">01 · Rome</text>
-      <text class="city-sub" x="170" y="251">Sept 6 – 24 · 18 nights</text>
-
-      <!-- 02 Bologna -->
-      <circle class="city-dot" cx="190" cy="135" r="9" fill="#D4920A"/>
-      <text class="city-label" x="202" y="132">02 · Bologna</text>
-      <text class="city-sub" x="202" y="146">Sept 24 – Oct 15 · 21 nights</text>
-
-      <!-- 03 Venice/Lido -->
-      <circle class="city-dot" cx="232" cy="95" r="9" fill="#1B6B8A"/>
-      <text class="city-label" x="244" y="92">03 · Lido di Venezia</text>
-      <text class="city-sub" x="244" y="106">Oct 15 – Nov 5 · 21 nights</text>
-
-      <!-- 04 Naples -->
-      <circle class="city-dot" cx="210" cy="305" r="9" fill="#8C2D1A"/>
-      <text class="city-label" x="222" y="302">04 · Naples</text>
-      <text class="city-sub" x="222" y="316">Nov 5 – 19 · 14 nights</text>
-
-      <!-- Route leg labels -->
-      <text class="leg-label" x="183" y="185" fill="#C4531A">→ Train 2h 45m</text>
-      <text class="leg-label" x="214" y="114" fill="#D4920A">→ Train 2h + Vap.</text>
-      <text class="leg-label" x="242" y="200" fill="#1B6B8A">→ Train ~5h</text>
-      <text class="leg-label" x="174" y="278" fill="#8C2D1A">→ Train 70m</text>
-
-      <!-- North arrow -->
-      <g transform="translate(355, 50)">
-        <circle cx="0" cy="0" r="16" fill="rgba(245,240,232,0.9)" stroke="#C4B9A8" stroke-width="1"/>
-        <text x="0" y="-2" text-anchor="middle" font-family="DM Mono" font-size="9" fill="#8C7B6B">N</text>
-        <path d="M 0 -10 L -4 -2 L 0 -6 L 4 -2 Z" fill="#C4531A"/>
-      </g>
-
-      <!-- Adriatic / Tyrrhenian labels -->
-      <text x="295" y="160" font-family="DM Mono" font-size="9" fill="#8C7B6B" font-style="italic">Adriatic</text>
-      <text x="80" y="240" font-family="DM Mono" font-size="9" fill="#8C7B6B" font-style="italic">Tyrrhenian</text>
-    </svg>
-    <div class="map-caption">Four bases · ~1,650 km total · zero mid-trip flights</div>
-  </div>
+  <div id="plan-map" style="height:460px;border:1px solid var(--rule);margin:16px 0 6px;background:var(--warm-white)"></div>
+  <div class="map-caption">The 2026 loop · Rome → Naples → Sicily → Bologna → Dolomites → Venice → Croatia → Rome</div>
 
   <h4>And the Day-by-Day Order</h4>
   <div class="route-flow">
@@ -1661,5 +1545,32 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var el = document.getElementById('plan-map');
+  if (!el || !window.L) return;
+  var stops = [
+    { n: 1, name: 'Rome (arrival)', c: '#C4531A', ll: [41.9028, 12.4964] },
+    { n: 2, name: 'Naples', c: '#8C2D1A', ll: [40.8518, 14.2681] },
+    { n: 3, name: 'Sicily', c: '#5A7A5C', ll: [38.1157, 13.3615] },
+    { n: 4, name: 'Bologna + Florence', c: '#D4920A', ll: [44.4949, 11.3426] },
+    { n: 5, name: 'Dolomites (Bolzano)', c: '#1B6B8A', ll: [46.4983, 11.3548] },
+    { n: 6, name: 'Venice / Lido', c: '#1B6B8A', ll: [45.4283, 12.3686] },
+    { n: 7, name: 'Croatia', c: '#7A4FB5', ll: [43.5081, 16.4402] },
+    { n: 8, name: 'Rome (departure)', c: '#C4531A', ll: [41.835, 12.72] }
+  ];
+  var legs = [[0,1,'rail'],[1,2,'sea'],[2,3,'rail'],[3,4,'rail'],[4,5,'rail'],[5,6,'sea'],[6,7,'sea']];
+  var map = L.map('plan-map', { scrollWheelZoom: false }).setView([42.6, 13.6], 5);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO' }).addTo(map);
+  legs.forEach(function (g) {
+    var a = stops[g[0]].ll, b = stops[g[1]].ll, sea = g[2] === 'sea';
+    L.polyline([a, b], sea ? { color: '#1B6B8A', weight: 3, dashArray: '2 9' } : { color: '#C4531A', weight: 3 }).addTo(map);
+  });
+  stops.forEach(function (s) {
+    L.marker(s.ll, { icon: L.divIcon({ className: '', html: '<div style="width:28px;height:28px;border-radius:50%;background:' + s.c + ';color:#fff;border:2px solid #FDFAF4;display:flex;align-items:center;justify-content:center;font-family:DM Mono,monospace;font-size:12px;box-shadow:0 1px 5px rgba(0,0,0,.35)">' + s.n + '</div>', iconSize: [28, 28], iconAnchor: [14, 14] }) }).addTo(map).bindPopup('<b>' + s.n + ' &middot; ' + s.name + '</b>');
+  });
+})();
+</script>
+<script src="/menu.js" defer></script>
 </body>
 </html>
