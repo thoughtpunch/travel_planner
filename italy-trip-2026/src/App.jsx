@@ -77,8 +77,8 @@ export default function App() {
 
           <div className="callout">
             <span className="callout-title">Two things to confirm</span>
-            <strong>Rhys's 18th (Sept 18)</strong> falls in Naples, not Rome — an 18th in the pizza
-            capital, or stretch the Rome opener. And the only long transit days are
+            <strong>Rhys's 18th (Sept 18) is in Naples</strong> — locked: an 18th in the birthplace
+            of pizza, since the Rome opener is a short landing. And the only long transit days are
             <strong> Sicily→Bologna</strong> and <strong>Croatia→Rome</strong> — unavoidable with
             Sicily south and Croatia northeast, but one travel day each.
           </div>
