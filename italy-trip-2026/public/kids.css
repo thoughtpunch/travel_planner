@@ -807,3 +807,26 @@
     color: var(--terra);
     margin: -4px 0 10px;
   }
+
+  /* ── PER-STOP TOP 10 LIST ── */
+  .top10 { list-style: none; margin: 8px 0 28px; counter-reset: t; }
+  .top10 li {
+    display: flex; gap: 16px; padding: 16px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .top10 li:first-child { border-top: none; }
+  .top10 .t-num {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--accent, var(--terra)); color: #fff;
+    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .top10 .t-body { flex: 1; }
+  .top10 .t-name { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; }
+  .top10 .t-where { font-size: 12px; color: var(--stone); font-family: 'DM Mono', monospace; }
+  .top10 .t-desc { font-size: 14px; color: rgba(26,21,16,0.82); margin: 3px 0 5px; }
+  .top10 .t-meta { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3px; color: var(--sage); }
+  .top10 .t-meta a { color: var(--terra); border-bottom: 1px solid rgba(196,83,26,0.4); }
+  .who-family { color: var(--ochre); }
+  .who-adult { color: var(--adriatic); }
+  .stop-hero-meta { display:flex; gap:22px; flex-wrap:wrap; margin-top:10px; font-family:'DM Mono',monospace; font-size:12px; color:rgba(245,240,232,0.85); }

@@ -147,3 +147,10 @@ section { padding: 56px 0; border-top: 1px solid var(--rule); }
 .foot p { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.5px; color: var(--light-stone); }
 .foot-links { margin-top: 10px; }
 .foot-links a { color: var(--ochre); }
+
+/* stop-page links */
+.pop-link { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--terra); border-bottom: 1px solid rgba(196,83,26,0.4); display: inline-block; margin-top: 4px; }
+a.itin-name { color: var(--ink); border-bottom: 2px solid transparent; transition: border-color .15s, color .15s; }
+a.itin-name:hover { color: var(--terra); border-bottom-color: var(--terra); }
+.itin-more { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--terra); white-space: nowrap; border-bottom: 1px solid rgba(196,83,26,0.4); }
+.itin-more:hover { color: var(--ink); }

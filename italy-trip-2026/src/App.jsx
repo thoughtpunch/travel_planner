@@ -58,11 +58,11 @@ export default function App() {
                   <div className="itin-num" style={{ background: s.color }}>{s.n}</div>
                   <div className="itin-body">
                     <div className="itin-head">
-                      <span className="itin-name">{s.name}</span>
+                      <a className="itin-name" href={s.page}>{s.name}</a>
                       <span className="itin-sub">{s.sub}</span>
                       <span className="itin-when">{s.dates} · {s.nights} nts</span>
                     </div>
-                    <p className="itin-note">{s.note}</p>
+                    <p className="itin-note">{s.note} <a className="itin-more" href={s.page}>Top 10 &amp; things to do →</a></p>
                     {leg && (
                       <div className="itin-leg">
                         {leg.mode === 'sea' ? '⛴' : '🚆'} {leg.label}

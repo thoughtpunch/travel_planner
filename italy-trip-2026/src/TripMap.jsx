@@ -72,6 +72,7 @@ export default function TripMap() {
               <div className="pop-sub">{stop.sub}</div>
               <div className="pop-dates">{stop.dates} · {stop.nights} nights</div>
               <p className="pop-note">{stop.note}</p>
+              <a className="pop-link" href={stop.page}>Top 10 &amp; things to do →</a>
             </div>
           </Popup>
         </Marker>
