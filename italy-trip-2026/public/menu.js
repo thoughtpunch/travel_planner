@@ -30,7 +30,7 @@
         { label: 'Activities hub', href: '/activities' },
         { label: 'Boy adventures', href: '/adventures' },
         { label: 'Worldschooling families', href: '/worldschooling' },
-        { label: 'Detailed base notes (v1)', href: '/plan' },
+        { label: 'The full plan', href: '/plan' },
       ],
     },
   ]

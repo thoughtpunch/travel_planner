@@ -21,7 +21,7 @@ export default function App() {
             <a href="/activities">Activities by kid</a>
             <a href="/adventures">Boy adventures</a>
             <a href="/worldschooling">Worldschool families</a>
-            <a href="/plan.html">Detailed base notes (v1)</a>
+            <a href="/plan.html">The full plan</a>
           </nav>
         </div>
       </header>
@@ -90,7 +90,7 @@ export default function App() {
           <p>Draft v2 · the big loop · Italy 2026 — replaces the earlier four-base plan.</p>
           <p className="foot-links">
             <a href="/activities">Activities</a> · <a href="/adventures">Adventures</a> ·
-            <a href="/worldschooling"> Worldschool</a> · <a href="/plan.html"> Detailed base notes (v1)</a>
+            <a href="/worldschooling"> Worldschool</a> · <a href="/plan.html"> The full plan</a>
           </p>
         </div>
       </footer>
