@@ -1,0 +1,149 @@
+:root {
+  --cream: #F5F0E8;
+  --warm-white: #FDFAF4;
+  --ink: #1A1510;
+  --terra: #C4531A;
+  --ochre: #D4920A;
+  --sage: #5A7A5C;
+  --adriatic: #1B6B8A;
+  --vesuvio: #8C2D1A;
+  --stone: #8C7B6B;
+  --light-stone: #D4C9B8;
+  --rule: #C4B9A8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  font-size: 16px;
+}
+a { color: inherit; text-decoration: none; }
+strong, b { font-weight: 500; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 72px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.masthead::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 320px; height: 320px; border-radius: 50%;
+  border: 60px solid rgba(196,83,26,0.15);
+}
+.masthead-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
+.draft-badge {
+  display: inline-block; padding: 5px 12px; border: 1px solid var(--ochre);
+  color: var(--ochre); font-family: 'DM Mono', monospace; font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px;
+}
+.trip-label {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 16px;
+}
+.trip-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(38px, 6vw, 68px);
+  font-weight: 900; line-height: 1.02; margin-bottom: 20px;
+}
+.trip-title em { font-style: italic; color: var(--ochre); font-weight: 400; }
+.trip-tagline {
+  font-size: 17px; max-width: 680px; color: rgba(245,240,232,0.85);
+  margin-bottom: 28px; line-height: 1.55;
+}
+.topnav { display: flex; flex-wrap: wrap; gap: 22px; }
+.topnav a {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--cream);
+  border-bottom: 2px solid transparent; padding-bottom: 4px;
+  transition: color .15s, border-color .15s;
+}
+.topnav a:hover { color: var(--ochre); border-bottom-color: var(--ochre); }
+
+/* ── SECTIONS ── */
+section { padding: 56px 0; border-top: 1px solid var(--rule); }
+.section-label {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--stone); margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 40px);
+  font-weight: 700; line-height: 1.1; margin-bottom: 14px;
+}
+.section-title em { font-style: italic; color: var(--terra); font-weight: 400; }
+.section-intro { font-size: 16px; max-width: 720px; color: rgba(26,21,16,0.78); margin-bottom: 6px; }
+.k-rail { color: var(--terra); font-weight: 500; }
+.k-sea { color: var(--adriatic); font-weight: 500; }
+
+/* ── MAP ── */
+.map-section { padding-bottom: 40px; }
+.map-holder { max-width: 1180px; margin: 24px auto 12px; padding: 0 20px; }
+.trip-map {
+  width: 100%; height: 600px; border: 1px solid var(--rule);
+  background: var(--warm-white);
+}
+@media (max-width: 720px) { .trip-map { height: 460px; } }
+.map-caption {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px;
+  color: var(--stone); text-transform: uppercase; text-align: center;
+}
+
+/* numbered pins */
+.trip-pin {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500;
+  border: 2px solid var(--warm-white); box-shadow: 0 1px 5px rgba(0,0,0,0.35);
+}
+
+/* popups */
+.pop { font-family: 'DM Sans', sans-serif; min-width: 180px; }
+.pop-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+.pop-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; line-height: 1.1; }
+.pop-sub { font-size: 13px; color: var(--stone); margin-bottom: 4px; }
+.pop-dates { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--terra); margin-bottom: 6px; }
+.pop-note { font-size: 13px; color: var(--ink); }
+.leaflet-popup-content { margin: 14px 16px; }
+
+/* ── ITINERARY ── */
+.itin-section { background: var(--warm-white); }
+.itin { list-style: none; margin-top: 24px; }
+.itin-row { display: flex; gap: 18px; padding: 18px 0; border-top: 1px solid var(--rule); }
+.itin-row:first-child { border-top: none; }
+.itin-num {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; color: #fff;
+  font-family: 'Playfair Display', serif; font-weight: 900; font-size: 17px;
+  display: flex; align-items: center; justify-content: center;
+}
+.itin-body { flex: 1; }
+.itin-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+.itin-name { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; }
+.itin-sub { font-size: 13px; color: var(--stone); }
+.itin-when { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--terra); margin-left: auto; }
+.itin-note { font-size: 14px; color: rgba(26,21,16,0.82); margin: 4px 0 6px; }
+.itin-leg { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--stone); letter-spacing: 0.3px; }
+.itin-arrow { color: var(--rule); }
+
+/* ── CALLOUT ── */
+.callout {
+  padding: 16px 22px; background: rgba(212,146,10,0.08);
+  border-left: 4px solid var(--ochre); margin-top: 28px; font-size: 14px;
+}
+.callout-title {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--ochre); margin-bottom: 6px; display: block;
+}
+
+/* ── FOOTER ── */
+.foot { background: var(--ink); color: var(--cream); padding: 48px 40px; border: none; }
+.foot p { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.5px; color: var(--light-stone); }
+.foot-links { margin-top: 10px; }
+.foot-links a { color: var(--ochre); }
