@@ -25,12 +25,18 @@
       ],
     },
     {
+      title: 'Planning',
+      links: [
+        { label: 'Housing · cheaper + carless', href: '/housing' },
+        { label: 'The full plan', href: '/plan' },
+      ],
+    },
+    {
       title: 'More',
       links: [
         { label: 'Activities hub', href: '/activities' },
         { label: 'Boy adventures', href: '/adventures' },
         { label: 'Worldschooling families', href: '/worldschooling' },
-        { label: 'The full plan', href: '/plan' },
       ],
     },
   ]
