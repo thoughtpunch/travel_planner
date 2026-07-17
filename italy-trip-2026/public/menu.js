@@ -27,6 +27,7 @@
     {
       title: 'Planning',
       links: [
+        { label: 'Budget · per city, per day', href: '/budget' },
         { label: 'Housing · cheaper + carless', href: '/housing' },
         { label: 'The full plan', href: '/plan' },
       ],
