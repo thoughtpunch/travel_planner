@@ -6,13 +6,24 @@
       title: 'The loop',
       links: [
         { label: 'Home · the map', href: '/' },
-        { label: '1 · Rome', href: '/rome' },
-        { label: '2 · Naples', href: '/naples' },
-        { label: '3 · Sicily', href: '/sicily' },
-        { label: '4 · Bologna + Florence', href: '/bologna' },
-        { label: '5 · Dolomites (Bolzano)', href: '/bolzano' },
-        { label: '6 · Venice / Lido', href: '/venice' },
-        { label: '7 · Croatia', href: '/croatia' },
+        { label: '1 · Milan', href: '/milan' },
+        { label: '2 · Lake Como', href: '/como' },
+        { label: '3 · Cinque Terre', href: '/cinqueterre' },
+        { label: '4 · Florence', href: '/florence' },
+        { label: '5 · Rome', href: '/rome' },
+        { label: '6 · Bologna', href: '/bologna' },
+        { label: '7 · Venice / Lido', href: '/venice' },
+        { label: '8 · Dolomites', href: '/dolomites' },
+        { label: '9 · Malpensa (depart)', href: '/trains' },
+      ],
+    },
+    {
+      title: 'Milestones',
+      links: [
+        { label: 'All three celebrations', href: '/celebrations' },
+        { label: 'Rhys turns 18 · Florence', href: '/celebrations#rhys' },
+        { label: 'Anniversary · Dolomites', href: '/celebrations#anniversary' },
+        { label: "Grey turns 12 · Dolomites", href: '/celebrations#grey' },
       ],
     },
     {
@@ -27,8 +38,9 @@
     {
       title: 'Planning',
       links: [
+        { label: 'Trains · lines + costs', href: '/trains' },
+        { label: 'Stays · belt strategy', href: '/housing' },
         { label: 'Budget · per city, per day', href: '/budget' },
-        { label: 'Housing · cheaper + carless', href: '/housing' },
         { label: 'The full plan', href: '/plan' },
       ],
     },

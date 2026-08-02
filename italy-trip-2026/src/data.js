@@ -1,72 +1,79 @@
-// The 2026 family loop — start + end in Rome, all trains + two ferries, no backtracking.
+// The 2026 family loop — LOCKED. Flights booked (Icelandair BWI⇄MXP, Sep 11 arr / Oct 15 dep).
+// Milan back to Milan: a rail arc down the spine to Rome, then up the east/north — Bologna,
+// Venice, the Dolomites — and out of Malpensa. Family of six, carless except the Dolomites.
 // Coordinates are real lat/lng so the map places cities truthfully.
 // Each stop links to its own page (in /public) with a Top 10 + full things-to-do.
 
 export const STOPS = [
   {
-    n: 1, key: 'rome-in', name: 'Rome', sub: 'Arrival', color: '#C4531A', page: '/rome',
+    n: 1, key: 'milan', name: 'Milan', sub: 'Arrival', color: '#55606E', page: '/milan',
+    lat: 45.4642, lng: 9.1900,
+    dates: 'Sep 11–13', nights: 2,
+    note: 'Land MXP 9:55pm Fri. Duomo rooftop, The Last Supper, Navigli, San Bernardino alle Ossa, Milanese food.',
+  },
+  {
+    n: 2, key: 'como', name: 'Lake Como', sub: 'Ferries + funicular', color: '#2C7A8C', page: '/como',
+    lat: 45.8081, lng: 9.0852,
+    dates: 'Sep 13–16', nights: 3,
+    note: 'Bellagio–Varenna ferry day, Brunate funicular, Como lakefront, villa views, optional Orrido di Bellano.',
+  },
+  {
+    n: 3, key: 'cinqueterre', name: 'Cinque Terre', sub: 'Ligurian coast', color: '#C85A2B', page: '/cinqueterre',
+    lat: 44.1263, lng: 9.6841,
+    dates: 'Sep 16–18', nights: 2,
+    note: 'Manarola, Vernazza, Monterosso; the coastal train and boat; focaccia and pesto. Based Levanto/La Spezia.',
+  },
+  {
+    n: 4, key: 'florence', name: 'Florence', sub: 'Work base · Rhys turns 18', color: '#9C6B2E', page: '/florence',
+    lat: 43.7696, lng: 11.2558,
+    dates: 'Sep 18–25', nights: 7,
+    note: "Rhys's 18th (Sep 18) + splurge pasta dinner. Duomo climb, Stibbert armor, Galileo/HZERO, artisan workshop, Lucca/Pisa day.",
+  },
+  {
+    n: 5, key: 'rome', name: 'Rome', sub: 'Work base', color: '#C4531A', page: '/rome',
     lat: 41.9028, lng: 12.4964,
-    dates: 'Sep 6 – 11', nights: 5,
-    note: 'Land at FCO, decompress. Short opener — the big Rome block is at the end.',
+    dates: 'Sep 25 – Oct 2', nights: 7,
+    note: 'Colosseum + Forum, Vatican, pizza class, Baths of Caracalla, Appian Way, San Clemente, Quartiere Coppedè.',
   },
   {
-    n: 2, key: 'naples', name: 'Naples', sub: 'Pizza + Salerno', color: '#8C2D1A', page: '/naples',
-    lat: 40.8518, lng: 14.2681,
-    dates: 'Sep 11 – 21', nights: 10,
-    note: "Neapolitan pizza, Vesuvius, Pompeii, Salerno beaches. Rhys's 18th lands here (Sep 18).",
-  },
-  {
-    n: 3, key: 'sicily', name: 'Sicily', sub: 'Palermo + island', color: '#5A7A5C', page: '/sicily',
-    lat: 38.1157, lng: 13.3615,
-    dates: 'Sep 21 – 28', nights: 7,
-    note: 'Overnight ferry from Naples. Etna, Greek temples, mosaics; optional Malta hop.',
-  },
-  {
-    n: 4, key: 'bologna', name: 'Bologna', sub: 'Hub · Motor Valley · Florence', color: '#D4920A', page: '/bologna',
+    n: 6, key: 'bologna', name: 'Bologna', sub: 'Food weekend', color: '#D4920A', page: '/bologna',
     lat: 44.4949, lng: 11.3426,
-    dates: 'Sep 28 – Oct 19', nights: 21,
-    note: 'Cheap rail hub. Florence 2–3 nights, Ferrari/Lambo/Ducati, Cremona, Ravenna. Grandma Oct 1–14, Grey turns 12 on Oct 12.',
+    dates: 'Oct 2–4', nights: 2,
+    note: 'Pasta class, Quadrilatero food crawl, porticoes, Palazzo Poggi oddities, tortellini + tagliatelle feast.',
   },
   {
-    n: 5, key: 'dolomites', name: 'Dolomites', sub: 'Bolzano base · long weekend', color: '#1B6B8A', page: '/bolzano',
-    lat: 46.4983, lng: 11.3548, // Bolzano — the right base in late Oct (Cortina shuts by ~Oct 18)
-    dates: 'Oct 19 – 22', nights: 3,
-    note: 'Base in Bolzano (not Cortina): Ötzi the Iceman, Earth Pyramids, frescoed castles, last Seceda/Braies days.',
-  },
-  {
-    n: 6, key: 'venice', name: 'Venice / Lido', sub: 'Family · 2 weeks', color: '#1B6B8A', page: '/venice',
+    n: 7, key: 'venice', name: 'Venice / Lido', sub: 'MuMu · lagoon', color: '#1B6B8A', page: '/venice',
     lat: 45.4283, lng: 12.3686,
-    dates: 'Oct 22 – Nov 5', nights: 14,
-    note: 'Based on the Lido to see family. Murano glassblowing, St Mark’s mosaics, Doge’s armoury, Burano.',
+    dates: 'Oct 4–9', nights: 5,
+    note: 'Aunt Muriel (MuMu) visit; Grand Canal, Doge’s Palace, Murano glass, San Michele, Libreria Acqua Alta, lagoon time.',
   },
   {
-    n: 7, key: 'croatia', name: 'Croatia', sub: 'Split · Kotor · Dubrovnik', color: '#7A4FB5', page: '/croatia',
-    lat: 43.5081, lng: 16.4402,
-    dates: 'Nov 5 – 12', nights: 7,
-    note: 'No Nov ferry from Venice — enter via Ancona→Split. Klis fortress, Dubrovnik walls, Kotor (Montenegro).',
+    n: 8, key: 'dolomites', name: 'Dolomites', sub: 'Anniversary + Grey’s 12th', color: '#4C6B82', page: '/dolomites',
+    lat: 46.5477, lng: 11.6706, // Val Gardena — car from Bolzano
+    dates: 'Oct 9–14', nights: 5,
+    note: 'Anniversary (Oct 9) + Grey turns 12 (Oct 12). Seceda, Alpe di Siusi, Val Gardena villages, scenic drives, Ötzi backup. The one car leg.',
   },
   {
-    n: 8, key: 'rome-out', name: 'Rome', sub: 'Departure', color: '#C4531A', page: '/rome',
-    lat: 41.835, lng: 12.72, // nudged SE of the arrival pin so both Rome stops show
-    dates: 'Nov 12 – 20', nights: 8,
-    note: 'Fly Dubrovnik→Rome. The real Rome deep-dive, then fly home Nov 20.',
+    n: 9, key: 'malpensa', name: 'Malpensa', sub: 'Departure', color: '#8C7B6B', page: '/trains',
+    lat: 45.6306, lng: 8.7281,
+    dates: 'Oct 14–15', nights: 1,
+    note: 'Airport hotel, repack, relaxed final meal. MXP → BWI 4:20pm Thu. Stress-free departure.',
   },
 ]
 
-// Florence gets its own dot (2–3 nights off the Bologna hub) but isn't a separate leg.
-export const SIDE = [
-  { key: 'florence', name: 'Florence', sub: '2–3 nights from Bologna', lat: 43.7696, lng: 11.2558, color: '#D4920A' },
-]
+// No separate side-dots in the locked plan (Florence is a full stop now).
+export const SIDE = []
 
-// Route segments in travel order. mode: 'rail' (train/road) or 'sea' (ferry/flight over water).
+// Route segments in travel order. mode: 'rail' (train/road) or 'sea' (ferry). No sea legs this year.
 export const LEGS = [
-  { from: 'rome-in', to: 'naples', mode: 'rail', label: 'Frecciarossa · ~1h10' },
-  { from: 'naples', to: 'sicily', mode: 'sea', label: 'Overnight ferry to Palermo' },
-  { from: 'sicily', to: 'bologna', mode: 'rail', label: 'Messina ferry + long train day' },
-  { from: 'bologna', to: 'dolomites', mode: 'rail', label: 'Train to Bolzano · ~2h30' },
-  { from: 'dolomites', to: 'venice', mode: 'rail', label: 'Train · ~2h45' },
-  { from: 'venice', to: 'croatia', mode: 'sea', label: 'Train to Ancona → overnight ferry to Split (no Nov Venice ferry)' },
-  { from: 'croatia', to: 'rome-out', mode: 'sea', label: 'Fly Dubrovnik → Rome (or ferry + train)' },
+  { from: 'milan', to: 'como', mode: 'rail', label: 'Milano Centrale → Como S. Giovanni · ~40 min' },
+  { from: 'como', to: 'cinqueterre', mode: 'rail', label: 'Como → Milan → Levanto/La Spezia · ~3h' },
+  { from: 'cinqueterre', to: 'florence', mode: 'rail', label: 'La Spezia → Firenze S.M.N. · ~2h30' },
+  { from: 'florence', to: 'rome', mode: 'rail', label: 'Frecciarossa · ~1h35' },
+  { from: 'rome', to: 'bologna', mode: 'rail', label: 'Frecciarossa · ~2h05' },
+  { from: 'bologna', to: 'venice', mode: 'rail', label: 'Frecciarossa → Venezia S. Lucia · ~1h30, vaporetto to Lido' },
+  { from: 'venice', to: 'dolomites', mode: 'rail', label: 'Train Venezia → Bolzano · ~3h15, collect rental car' },
+  { from: 'dolomites', to: 'malpensa', mode: 'rail', label: 'Return car Bolzano; train → Milano/Malpensa · ~4h' },
 ]
 
 export const TOTAL_NIGHTS = STOPS.reduce((s, x) => s + x.nights, 0)

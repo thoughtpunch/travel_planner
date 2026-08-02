@@ -761,6 +761,14 @@
   .a-lido    { --accent: var(--base-lido); }
   .a-naples  { --accent: var(--base-naples); }
   .a-tuscany { --accent: var(--sage); }
+  /* locked-plan city accents */
+  .a-milan    { --accent: #55606E; }
+  .a-como     { --accent: #2C7A8C; }
+  .a-cinque   { --accent: #C85A2B; }
+  .a-florence { --accent: #9C6B2E; }
+  .a-venice   { --accent: var(--adriatic); }
+  .a-dolomites{ --accent: #4C6B82; }
+  .a-alpine   { --accent: #4C6B82; }
 
   /* ── REGION HEADER (lighter than base-header) ── */
   .region-head {

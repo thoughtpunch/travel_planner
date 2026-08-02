@@ -9,19 +9,20 @@ export default function App() {
       {/* MASTHEAD */}
       <header className="masthead">
         <div className="masthead-inner">
-          <div className="draft-badge">Draft v2 · The Big Loop</div>
-          <div className="trip-label">Family Expedition · Sept 6 – Nov 20, 2026</div>
-          <h1 className="trip-title">Italy <em>—</em> One Big Loop,<br />Trains &amp; Ferries</h1>
+          <div className="draft-badge">Locked · flights booked</div>
+          <div className="trip-label">Barrett Family Italy · Sep 11 – Oct 15, 2026</div>
+          <h1 className="trip-title">Italy <em>—</em> Milan back to Milan,<br />by rail</h1>
           <p className="trip-tagline">
-            Rome to Rome, counter-clockwise: down to Naples and Sicily, up the spine to the
-            Bologna hub and the Dolomites, two weeks with family on the Lido, then across the
-            Adriatic to Croatia and home. {TOTAL_NIGHTS} nights, no backtracking, no mid-trip flights.
+            A rail-first family loop: land in Milan, ease down through the lakes and the
+            Ligurian coast to the two long work bases — Florence and Rome — then swing back up
+            through Bologna, Venice and the Dolomites and out of Malpensa. {TOTAL_NIGHTS} nights,
+            no car except the Dolomites, food and family over checklist tourism.
           </p>
           <nav className="topnav">
-            <a href="/activities">Activities by kid</a>
-            <a href="/adventures">Boy adventures</a>
-            <a href="/worldschooling">Worldschool families</a>
             <a href="/plan.html">The full plan</a>
+            <a href="/trains">Trains &amp; costs</a>
+            <a href="/housing">Stays</a>
+            <a href="/celebrations">Celebrations</a>
           </nav>
         </div>
       </header>
@@ -32,8 +33,8 @@ export default function App() {
           <div className="section-label">— The Route</div>
           <h2 className="section-title">The loop, <em>on a real map</em></h2>
           <p className="section-intro">
-            Cities placed at their true coordinates. <span className="k-rail">— rail</span> legs are solid;
-            <span className="k-sea"> ·· ferry</span> legs (Naples→Sicily, Venice→Croatia, Croatia→Rome) are dashed.
+            Cities placed at their true coordinates. Every leg is a <span className="k-rail">— train</span>
+            {' '}(or ferry + funicular); the only wheels of our own are the Dolomites rental car.
             Click a pin for dates and notes.
           </p>
         </div>
@@ -41,7 +42,7 @@ export default function App() {
           <TripMap />
         </div>
         <div className="wrap">
-          <p className="map-caption">8 stops · {TOTAL_NIGHTS} nights · 2 ferries · start + end Rome</p>
+          <p className="map-caption">9 stops · {TOTAL_NIGHTS} nights · all rail · Milan → Rome → Milan</p>
         </div>
       </section>
 
@@ -65,7 +66,7 @@ export default function App() {
                     <p className="itin-note">{s.note} <a className="itin-more" href={s.page}>Top 10 &amp; things to do →</a></p>
                     {leg && (
                       <div className="itin-leg">
-                        {leg.mode === 'sea' ? '⛴' : '🚆'} {leg.label}
+                        🚆 {leg.label}
                         <span className="itin-arrow"> ↓</span>
                       </div>
                     )}
@@ -76,21 +77,22 @@ export default function App() {
           </ol>
 
           <div className="callout">
-            <span className="callout-title">Two things to confirm</span>
-            <strong>Rhys's 18th (Sept 18) is in Naples</strong> — locked: an 18th in the birthplace
-            of pizza, since the Rome opener is a short landing. And the only long transit days are
-            <strong> Sicily→Bologna</strong> and <strong>Croatia→Rome</strong> — unavoidable with
-            Sicily south and Croatia northeast, but one travel day each.
+            <span className="callout-title">Three dates that anchor everything</span>
+            <strong>Rhys turns 18 on Sep 18</strong> — the first day in Florence, with a splurge pasta
+            dinner. <strong>The anniversary lands Oct 9</strong>, arrival day in the Dolomites, and
+            <strong> Grey turns 12 on Oct 12</strong> up in Val Gardena. See the
+            {' '}<a className="itin-more" href="/celebrations">celebration plans →</a>
           </div>
         </div>
       </section>
 
       <footer className="foot">
         <div className="wrap">
-          <p>Draft v2 · the big loop · Italy 2026 — replaces the earlier four-base plan.</p>
+          <p>Locked plan · Italy 2026 — flights booked, Milan back to Milan.</p>
           <p className="foot-links">
-            <a href="/activities">Activities</a> · <a href="/adventures">Adventures</a> ·
-            <a href="/worldschooling"> Worldschool</a> · <a href="/plan.html"> The full plan</a>
+            <a href="/plan.html">Full plan</a> · <a href="/trains">Trains</a> ·
+            <a href="/housing"> Stays</a> · <a href="/celebrations"> Celebrations</a> ·
+            <a href="/budget"> Budget</a>
           </p>
         </div>
       </footer>

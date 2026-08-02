@@ -135,14 +135,14 @@
   };
 
   var rhys = {
-    hero: { place: "Naples (Maschio Angioino) — Rhys's 18th", url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Napoli_-_Maschio_Angioino_-_202209302342_3.jpg/3840px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg', credit: 'Richard Nevell', license: 'CC BY-SA 4.0', pageLink: 'https://en.wikipedia.org/wiki/Castel_Nuovo' },
+    hero: bologna.items[5], // Ponte Vecchio, Florence — Rhys's 18th
     items: [
-      naples.items[7], // Neapolitan pizza
-      naples.hero,     // Pompeii & Vesuvius
-      { place: 'Amalfi Coast', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Amalfi_Coast_%28Italy%2C_October_2020%29_-_75_%2850558355441%29.jpg/3840px-Amalfi_Coast_%28Italy%2C_October_2020%29_-_75_%2850558355441%29.jpg', credit: 'Bruno Rijsman', license: 'CC BY-SA 2.0', pageLink: 'https://en.wikipedia.org/wiki/Amalfi_Coast' },
-      bologna.items[9], // Museo del Violino Cremona
-      bologna.items[0], // Museo Ferrari
-      rome.items[9]     // Appian Way
+      bologna.hero,     // Florence Duomo (the 18th)
+      bologna.items[6], // David
+      rome.hero,        // Colosseum
+      bolzano.hero,     // Seceda (Dolomites)
+      venice.hero,      // Venice
+      housing.items[5]  // Lucca
     ]
   };
   var jude = {
@@ -155,7 +155,7 @@
       { place: 'Maserati', url: 'https://upload.wikimedia.org/wikipedia/commons/f/f5/Maserati_Mod%C3%A8ne_0002.JPG', credit: 'Arnaud 25', license: 'CC BY-SA 3.0', pageLink: 'https://en.wikipedia.org/wiki/Maserati' },
       { place: 'Enzo Ferrari Museum, Modena', url: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Museo_Casa_Enzo_Ferrari_Entrance.jpg', credit: 'Alien life form', license: 'CC BY-SA 3.0', pageLink: 'https://en.wikipedia.org/wiki/Museo_Casa_Enzo_Ferrari' },
       { place: 'Tourmaline mineral', url: 'https://upload.wikimedia.org/wikipedia/commons/0/00/Tourmaline-121240.jpg', credit: 'Robert M. Lavinsky', license: 'CC BY-SA 3.0', pageLink: 'https://en.wikipedia.org/wiki/Tourmaline' },
-      naples.items[0] // Vesuvius crater
+      bolzano.items[9] // Tre Cime di Lavaredo (Dolomites)
     ]
   };
   var grey = {
@@ -177,8 +177,8 @@
       { place: 'Frasassi Caves', url: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Genga04.jpg', credit: 'Kessiye', license: 'CC BY 2.0', pageLink: 'https://en.wikipedia.org/wiki/Frasassi_Caves' },
       { place: 'Torrechiara Castle (armor)', url: 'https://upload.wikimedia.org/wikipedia/commons/d/dc/Castello_di_Torrechiara.JPG', credit: 'Davide Bolsi', license: 'CC BY 3.0', pageLink: 'https://en.wikipedia.org/wiki/Torrechiara_Castle' },
       venice.items[2], // Murano glass
-      naples.items[7], // pizza
-      naples.hero      // Pompeii & Vesuvius
+      naples.items[7], // pizza (Rome pizza class)
+      bolzano.hero     // Seceda, Dolomites
     ]
   };
 
@@ -221,16 +221,71 @@
     ]
   };
 
+  // ── LOCKED-PLAN CITIES (2026: Milan → Rome → Milan) ──
+  var milan = {
+    hero: { place: 'Duomo di Milano', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Milan_Cathedral_from_Piazza_del_Duomo.jpg/3840px-Milan_Cathedral_from_Piazza_del_Duomo.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Milan_Cathedral' },
+    items: [
+      { place: 'Galleria Vittorio Emanuele II', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Galleria_Milano_%28179532365%29.jpeg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Galleria_Vittorio_Emanuele_II' },
+      { place: 'The Last Supper — Leonardo da Vinci', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/3840px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg', credit: 'Leonardo da Vinci', license: 'Public domain', pageLink: 'https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo)' },
+      { place: 'San Bernardino alle Ossa (bone chapel)', url: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Veduta_della_chiesa_di_San_Bernardino_alle_Ossa%2C_Milano._A_destra_la_facciata_di_Santo_Stefano.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/San_Bernardino_alle_Ossa' },
+      { place: 'Sforza Castle', url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/20110725_Castello_Sforzesco_Milan_5557.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Sforzesco_Castle' },
+      { place: 'Cotoletta alla milanese', url: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Cotoletta_alla_milanese_in_milano.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Cotoletta' }
+    ]
+  };
+  var como = {
+    hero: { place: 'Como and its lake', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Como_and_its_lake.jpg/3840px-Como_and_its_lake.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Lake_Como' },
+    items: [
+      { place: 'Bellagio', url: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Vista_sul_Bellagio_%26_Lago_di_Como_4.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Bellagio,_Lombardy' },
+      { place: 'Varenna (from the ferry)', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Varenna_and_mountain_from_ferry.jpg/3840px-Varenna_and_mountain_from_ferry.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Varenna' },
+      { place: 'Como–Brunate funicular', url: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/Funicolare_Como_Brunate_-_Veicolo_in_direzione_Como.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Como%E2%80%93Brunate_funicular' },
+      { place: 'View from Brunate', url: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Panorama_dalla_Lucciola.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Brunate' },
+      { place: 'Orrido di Bellano gorge', url: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Orrido_di_Bellano5.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://it.wikipedia.org/wiki/Orrido_di_Bellano' },
+      { place: 'Sentiero del Viandante, Lake Como', url: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Sentiero_del_Viandante_DSC_6340_%2814020554463%29.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Lake_Como' }
+    ]
+  };
+  var cinqueterre = {
+    hero: { place: 'Cinque Terre coast', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Cinque_Terre_%28Italy%2C_October_2020%29_-_24_%2850543603956%29.jpg/3840px-Cinque_Terre_%28Italy%2C_October_2020%29_-_24_%2850543603956%29.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Cinque_Terre' },
+    items: [
+      { place: 'Manarola', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg/3840px-Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Manarola' },
+      { place: 'Vernazza', url: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Vernazza_and_the_sea%2C_Cinque_Terre%2C_Italy.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Vernazza' },
+      { place: 'Monterosso al Mare', url: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Monterosso_al_Mare-panorama-paese.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Monterosso_al_Mare' },
+      { place: 'Riomaggiore', url: 'https://upload.wikimedia.org/wikipedia/commons/7/76/Riomaggiore_From_Ferry_Cinque_Terre_Italy_Sep23_A7C_07414.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Riomaggiore' },
+      { place: 'Levanto (our belt base)', url: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Levanto-pjt.jpg', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Levanto,_Liguria' },
+      { place: 'Ligurian pesto', url: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/BasilPesto.JPG', credit: 'Wikimedia Commons', license: 'CC BY-SA', pageLink: 'https://en.wikipedia.org/wiki/Pesto' }
+    ]
+  };
+  // Florence + Dolomites reuse already-verified shots from the older sets
+  var florence = {
+    hero: bologna.hero, // Florence Duomo
+    items: [
+      bologna.items[5], // Ponte Vecchio
+      bologna.items[6], // David
+      bologna.items[7], // Stibbert Museum
+      worldschooling.items[1], // Piazzale Michelangelo
+      housing.items[5], // Lucca
+      worldschooling.hero // Val d'Orcia (Tuscan day-trip)
+    ]
+  };
+  var dolomites = {
+    hero: bolzano.hero,
+    items: bolzano.items.slice()
+  };
+
   var T = {
     rome: rome, naples: naples, sicily: sicily, bologna: bologna,
-    bolzano: bolzano, venice: venice, croatia: croatia, housing: housing,
+    bolzano: bolzano, dolomites: dolomites, venice: venice, croatia: croatia, housing: housing,
+    milan: milan, como: como, cinqueterre: cinqueterre, florence: florence,
     rhys: rhys, jude: jude, grey: grey, keir: keir,
     activities: activities, adventures: adventures, worldschooling: worldschooling
   };
 
-  // Composed pages (reuse verified shots)
-  T.home = { hero: bolzano.hero, items: [rome.hero, naples.hero, sicily.hero, bologna.hero, venice.hero, croatia.hero, housing.hero] };
-  T.plan = { hero: rome.hero, items: [naples.hero, sicily.hero, bologna.hero, bolzano.hero, venice.hero, croatia.hero, housing.hero] };
+  // Celebrations + trains pages (reuse verified shots)
+  T.celebrations = { hero: dolomites.hero, items: [bologna.items[5], bologna.hero, bolzano.items[8], bolzano.items[4], grey.items ? grey.items[0] : rome.hero, bolzano.items[0]] };
+  T.trains = { hero: cinqueterre.hero, items: [milan.hero, como.hero, florence.hero, rome.hero, venice.hero, dolomites.hero] };
+
+  // Composed pages (reuse verified shots) — locked Milan→Rome→Milan route
+  T.home = { hero: dolomites.hero, items: [milan.hero, como.hero, cinqueterre.hero, florence.hero, rome.hero, bologna.items[3], venice.hero] };
+  T.plan = { hero: rome.hero, items: [milan.hero, como.hero, cinqueterre.hero, florence.hero, venice.hero, dolomites.hero, housing.hero] };
   T.budget = {
     hero: bologna.items[2], // Piazza Maggiore — living like locals
     items: [naples.items[7], housing.items[6], housing.items[7], housing.items[8], housing.items[9], housing.items[10], housing.items[5], croatia.items[2]]
