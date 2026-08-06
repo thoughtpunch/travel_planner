@@ -2,7 +2,7 @@
 
 **Priority order, not calendar order.** It's Aug 6, 2026 — the trip is ~5 weeks out (depart BWI Thu Sep 10, land Milan Fri Sep 11). Flights are **already booked & paid: $5,346** (Icelandair both ways via Keflavík, ref AMBVO4). So this is a "book first → book next → book as you go" list, sorted by what disappears soonest if you wait.
 
-> **Do this first, before anything below:** the flight fare is **Economy Light with 0 checked bags** — buy checked baggage for the six of you via Icelandair *Manage Booking* now (fees are lowest pre-trip, highest at the airport). This is the one flight-related to-do left.
+> **Flights need nothing further** — Economy Light means 1 carry-on each and no checked bags, and we're traveling carry-on only by design. No baggage to buy. The only flight-adjacent task is *packing* one bag each for both Dolomites cold and coast/city warm.
 
 The three things that actually have deadlines: **lodging** (thin whole-place inventory), the **three Frecciarossa fast legs** (dynamic-priced), and the **Dolomites rental car**. Everything else can wait — and a lot of it *should* wait (see the bottom).
 

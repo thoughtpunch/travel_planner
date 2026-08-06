@@ -34,7 +34,7 @@ A 34-night family rail loop through Italy — **Milan back to Milan**, September
 - **Out:** BWI 23:20 Thu Sep 10 → KEF → **Milan Malpensa (MXP) 21:55 (9:55pm) Fri Sep 11, Terminal 1.** (You fly overnight; you *depart* Sep 10, you *land* Sep 11.)
 - **Home:** MXP 16:20 Thu Oct 15 → KEF → BWI 22:15 (same day).
 - **$5,346 total, already paid.** Flights sit **outside** the in-country budget — never fold them in.
-- ⚠️ **Fare is Economy Light — 0 checked bags per passenger.** Six people, 34 nights: budget to add checked baggage (Icelandair add-on, not in the ground budget). Do it now — bag fees jump at the airport.
+- **Fare is Economy Light — 1 carry-on each, 0 checked bags.** By design: we travel **carry-on only** the whole trip (no baggage add-ons to buy). The real challenge is packing one bag each for Dolomites cold *and* coast/city warm.
 
 ## The route — 9 stops, all by train (carless except the Dolomites)
 

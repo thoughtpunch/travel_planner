@@ -2,7 +2,7 @@
 
 A **34-night** family loop through Italy — Milan back to Milan, all by rail except one leg. Six of us: Dan (working evenings from two long-stay bases) + Kei, and the four boys (Rhys, Jude, Grey, Keir).
 
-**Status: LOCKED.** Flights are booked and paid ($5,346 — Icelandair both ways via Keflavík, ref AMBVO4: depart BWI 23:20 Thu Sep 10, land Milan MXP 9:55pm Fri Sep 11; home from MXP 16:20 Thu Oct 15). Fare is Economy Light — 0 checked bags, so baggage still needs adding. The 9-stop shape, the dates, and the carless-except-Dolomites rail plan are all fixed. What remains is booking lodging and the trains — see the checklist.
+**Status: LOCKED.** Flights are booked and paid ($5,346 — Icelandair both ways via Keflavík, ref AMBVO4: depart BWI 23:20 Thu Sep 10, land Milan MXP 9:55pm Fri Sep 11; home from MXP 16:20 Thu Oct 15). Fare is Economy Light — 1 carry-on each, no checked bags (traveling carry-on only by design). The 9-stop shape, the dates, and the carless-except-Dolomites rail plan are all fixed. What remains is booking lodging and the trains — see the checklist.
 
 ## The shape
 

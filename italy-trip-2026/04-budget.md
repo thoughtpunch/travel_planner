@@ -17,7 +17,7 @@ A bottom-up model of every dollar spent **inside Italy** across the locked 9-leg
 > **Flights are BOOKED & PAID at $5,346 — and sit OUTSIDE this number.**
 > The round-trip air (Icelandair both ways via Keflavík, ref AMBVO4 — BWI→KEF→MXP out, MXP→KEF→BWI home) is already booked and paid at **$5,346**. It is *not* in any line on this page. Everything here is money spent **after you land**. Never fold the flights into the ground budget.
 >
-> ⚠️ One thing the flight fare does *not* include: **checked bags.** It's Economy Light — 0 checked bags per passenger. Adding baggage for six people is a real pre-trip cost (Icelandair add-on), separate from both the flight price above and the in-country buckets below.
+> The fare is Economy Light (1 carry-on each, 0 checked bags) — **by design, we travel carry-on only**, so there are no baggage add-ons to buy. Nothing extra to budget here.
 
 "Average" assumes whole-place lodging on weekly rates, cooking 4–5 nights a week, and leaning on Italy's under-18-free museum access. These are estimates, not quotes.
 
