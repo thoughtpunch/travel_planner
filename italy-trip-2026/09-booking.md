@@ -1,125 +1,124 @@
 # 09 — Booking Checklist
 
-A month-by-month list of what to lock in. Roughly sorted by urgency within each month.
+**Priority order, not calendar order.** It's Aug 6, 2026 — the trip is ~5 weeks out (depart BWI Thu Sep 10, land Milan Fri Sep 11). Flights are **already booked & paid: $5,346** (Icelandair both ways via Keflavík, ref AMBVO4). So this is a "book first → book next → book as you go" list, sorted by what disappears soonest if you wait.
 
-## June 2026 — the big move
+> **Do this first, before anything below:** the flight fare is **Economy Light with 0 checked bags** — buy checked baggage for the six of you via Icelandair *Manage Booking* now (fees are lowest pre-trip, highest at the airport). This is the one flight-related to-do left.
 
-| Task | Why now | Approx cost |
-|---|---|---|
-| **Book Air Canada flights (6 ppl)** | Fares are at $845 — moves with demand | $5,070 |
-| **Open Wise account if not already** | Need it for EUR loading | — |
-| **Apply for Kei's Chase Sapphire Preferred** | SUB spend window catches trip | — |
-| **Travel insurance — medical only** | Lock GeoBlue or SafetyWing | $400–500 |
-| **Rome Airbnb (Garbatella)** | Hardest 6-person inventory; book first | $700–800 deposit |
-| **Bologna Airbnb (family apartment)** | Inside the porticoes, 21 nights | $1,000 deposit |
-| **Bologna grandma's space** (or hotel) | Pin down before her flight | $400 deposit |
-| **Lido di Venezia Airbnb** | Limited 3BR-for-6 inventory | $900 deposit |
-| **Naples Airbnb (Centro Storico)** | Inventory still solid in June | $600 deposit |
-| **Frecciarossa Rome → Bologna (Sept 24)** | Bookable now at 120-day Super Economy fares | ~$200 |
-| **First Wise USD → EUR transfer** | $2,000 chunk at a good rate | — |
+The three things that actually have deadlines: **lodging** (thin whole-place inventory), the **three Frecciarossa fast legs** (dynamic-priced), and the **Dolomites rental car**. Everything else can wait — and a lot of it *should* wait (see the bottom).
 
-**June total outflow: ~$8,500–9,500**
+---
 
-## July 2026 — mid-trip prep
+## 1. LODGING FIRST — the bottleneck
 
-| Task | Why now | Approx cost |
-|---|---|---|
-| **Mom's flight BUF/ROC → FCO** | Lock dates once she confirms Oct 1–14 | $1,000–1,200 (she may pay) |
-| **Mom's FCO → Bologna Frecciarossa (Oct 1)** | Books 120 days ahead, opens early June | $80 |
-| **Mom's Bologna → FCO Frecciarossa (Oct 14)** | Opens mid June | $80 |
-| **Bologna → Venice Frecciarossa (Oct 15)** | Opens ~June 17 | $180 |
-| **Venice → Naples Frecciarossa (Nov 5)** | Opens ~July 8 | $250 |
-| **Naples → Rome Frecciarossa (Nov 19)** | Opens late July | $100 |
-| **Vatican Museums early-entry tickets (Sept ~10–12)** | Opens ~60 days ahead | $100 |
-| **Cappella Sansevero ticket (Naples)** | Bookable far ahead | $80 |
-| **Ferrari Museum Modena tickets** | Walk-up but better booked | $160 |
-| **Doge's Palace tickets** | Pre-book the combo with St Mark's | $180 |
-| **Armando al Pantheon reservation for Rhys's Sept 18** | Book 4–6 weeks ahead | — |
-| **Dolomites mountain lodge** | Late October inventory closing | $400–500 |
-| **Second Wise USD → EUR transfer** | $2,000 | — |
-| **Some Airbnb balance payments hitting** | Variable by host policy | $1,000–1,500 |
+Whole-place, sleeps-6, **3-bedroom-plus** apartments (never a clutch of hotel rooms). Five weeks out, this is the thin part of the market — book it before anything else. The **/housing** page has prefilled Booking.com + Airbnb search links per leg; start there.
 
-**July total outflow: ~$3,500–4,500**
+Book in this internal order:
 
-## August 2026 — final tickets and currency
+### (a) The two work bases — do these today
+The 7-night legs that unlock the weekly rate and anchor Dan's evening work.
 
-| Task | Why now | Approx cost |
-|---|---|---|
-| **Colosseum + Roman Forum + Palatine combo (Sept ~9)** | Opens 30 days ahead | $110 |
-| **Catacombs tour (Rome)** | Limited slots, 2 weeks ahead | $60 |
-| **Mom's flight booked** if not yet | — | $1,000–1,200 |
-| **Remaining Airbnb balance payments** | Standard Airbnb 50% / 50% timing | $1,500–2,500 |
-| **Order any required Schengen-related items** if applicable | — | — |
-| **Third Wise USD → EUR transfer** | $2,000 | — |
-| **Confirm worldschool curriculum / books to bring** | — | — |
-| **Travel-router (optional)** | Useful for Dan's calls | $150 |
-| **Italian SIM plan research** | Pick Iliad, TIM, or Vodafone | — (buy on arrival) |
-| **International driving permit** for Dan + Kei | $20/each at AAA | $40 |
+| Leg | Dates 2026 | Nts | Area | Why first |
+|---|---|---|---|---|
+| **Florence** | Sep 18–25 | 7 | **Oltrarno** (belt over center) | Work base; weekly rate; Rhys's 18th is night one |
+| **Rome** | Sep 25–Oct 2 | 7 | **Garbatella / Ostiense** | Work base; weekly rate; on the metro/rail line |
 
-**August total outflow: ~$3,500–4,500**
+### (b) Val Gardena chalet — October alpine inventory closes fast
+| Leg | Dates 2026 | Nts | Area | Why now |
+|---|---|---|---|---|
+| **Dolomites (Val Gardena)** | Oct 9–14 | 5 | Ortisei / Selva | The one deliberate splurge; the only leg with a car. October chalet stock thins early — grab it right after the bases |
 
-## September (before departure, Sept 1–5)
+### (c) Venice / Lido — limited 3BR near MuMu
+| Leg | Dates 2026 | Nts | Area | Why now |
+|---|---|---|---|---|
+| **Venice / Lido** | Oct 4–9 | 5 | Lido di Venezia | Core purpose (MuMu / Aunt Muriel). Whole-place 3BR near her is scarce — don't leave it late |
 
-| Task | Why |
-|---|---|
-| **Confirm all reservations** | Forward emails to a single trip folder |
-| **Print PDF backups** of major bookings | In case phone dies |
-| **Refill prescriptions** for 90-day supply | Pharmacy in Italy is easy but English varies |
-| **Buy any specific medications** that may not be available abroad | — |
-| **Cash buffer** | Pull a few hundred euros at home bank for arrival airport |
-| **Set up account alerts** on credit cards for foreign transactions | — |
-| **Tell Chase + Wise about travel** | Modern cards don't need this, but worth a notification |
-| **Set up automatic bill-pay** for US bills while you're gone | — |
-| **Mail forwarding / hold** | USPS hold or trusted person |
-| **Pet care, house sitting, mail** | Lock arrangements |
+### (d) The short legs — book once the big rocks are set
+| Leg | Dates 2026 | Nts | Area |
+|---|---|---|---|
+| **Lake Como** | Sep 13–16 | 3 | Como town (walk to funicular + ferry) |
+| **Cinque Terre** | Sep 16–18 | 2 | Levanto (on the coastal line) |
+| **Milan** | Sep 11–13 | 2 | Milano Centrale area |
 
-## In-trip booking (as you go)
+### (e) The bookends — easiest, do last
+| Leg | Dates 2026 | Nts | Notes |
+|---|---|---|---|
+| **Bologna** | Oct 2–4 | 2 | Central / Bolognina, food-weekend base |
+| **Malpensa** | Oct 14–15 | 1 | MXP **airport hotel — book 2 rooms**, just a repack-and-fly night |
 
-These don't need to lock in advance:
+> Every base must be **on the line** — walkable to a station, ferry, funicular, or metro. We're carless the whole trip except the Dolomites.
 
-- **Pasta-making class for Grey's birthday Oct 12** — book during week 1 of Bologna
-- **Pizza-making class in Naples** — book in week 1 of Naples
-- **Damanhur Temples of Humankind tour** — email them 3 weeks before from Bologna
-- **Specific dinner reservations** — most need 1–2 weeks ahead, none more
-- **Murano glassblowing demos** — walk-up
-- **Padua Orto Botanico** — walk-up
-- **Day trip train tickets for shorter routes** — buy 1–3 days ahead at Trenitalia.com or station kiosks
+---
 
-## What NOT to book ahead (intentionally)
+## 2. THE THREE FRECCIAROSSA FAST LEGS — book right after lodging
 
-These are tempting but should stay flexible:
+These are **dynamic-priced like flights** — the fare only goes up from here. Lock them the moment lodging is settled.
 
-- **Restaurant reservations more than 2 weeks out** (except Rhys's birthday) — you don't know how the kids will feel that day
-- **Daily museum tickets** beyond the 3–4 must-books — you can always buy day-of
+| Leg | Date 2026 | Time | Est. all-6 |
+|---|---|---|---|
+| **Florence → Rome** | Fri Sep 25 | ~1h35 | €100–170 |
+| **Rome → Bologna** | Fri Oct 2 | ~2h05–2h15 | €120–190 |
+| **Bologna → Venice** (S. Lucia) | Sun Oct 4 | ~1h30 | €90–150 |
+
+**How to book the six of us:** the Le Frecce family discount needs at least one **under-15** per booking (Grey is 11→12, Keir is 9), giving under-15s free + 20% off the adults. A family booking maxes at 5, so **split into two bookings, each carrying one little one** — e.g. {Dan · Kei · Grey} and {Rhys · Jude · Keir}.
+
+**The regional legs are flat-fare — buy them anytime** (even day-of): Milan→Como (Regionale), Como→Levanto, Levanto/La Spezia→Florence, plus the Venice→Bolzano and Bolzano→Malpensa return-day hops. No rush, no savings from booking early.
+
+---
+
+## 3. DOLOMITES RENTAL CAR — reserve now
+
+One car for the whole trip, **pickup in Bolzano ~Oct 9**, drop back in Bolzano Oct 14. October mountain-town fleets are small — reserve now (free-cancel rates exist, so there's no downside to locking it early). Dan + Kei each want an **International Driving Permit** ($20 at AAA) — grab those while you're at it.
+
+---
+
+## 4. THE LAST SUPPER (Milan) — book immediately or skip
+
+Da Vinci's *Cenacolo* sells out **weeks** ahead and we have only **2 nights in Milan at the very start** (Sep 11–13). There's no second window. Either book it right now or accept it's a skip — no middle ground.
+
+---
+
+## 5. CELEBRATION DINNERS + TIMED ENTRIES — ~2–4 weeks out
+
+Close enough now to start, but these don't need to jump the lodging/train queue.
+
+**The three milestones:**
+- **Rhys turns 18 · Sep 18 · Florence** — splurge pasta dinner, arrival evening. Reserve one of: **La Giostra / Osteria delle Tre Panche / Il Santo Bevitore**. His first legal Chianti. Book ~2–4 weeks out.
+- **Anniversary · Oct 9 · Val Gardena** — gourmet Ladin dinner for Dan & Kei (boys do pizza-and-movie at the chalet). Target **Anna Stuben** (Michelin) or Alpenroyal Gourmet — **confirm the restaurant's October opening dates first**, then reserve.
+- **Grey turns 12 · Oct 12 · Dolomites** — Seceda cable car + rifugio lunch. **Check Seceda / Alpe di Siusi lift operating dates** (summer lifts can close ~mid-Oct); Ötzi museum in Bolzano + Renon earth pyramids are the all-weather backup.
+
+**Timed museum/site entries (book the slot ~2–3 weeks ahead):**
+- **Uffizi**, timed around Sep 18–25 (Florence week)
+- **Vatican Museums**, during the Rome week (Sep 25–Oct 2)
+- **Colosseum + Forum + Palatine** combo, Rome week — releases ~30 days out
+- **Doge's Palace** (combine with St Mark's), Venice/Lido week (Oct 4–9)
+
+> EU under-18s are free at Italian state museums — Grey, Keir, and Rhys (until Sep 18) get in free. Buy the timed slot, not full-price tickets, for the kids.
+
+---
+
+## 6. BOOK AS YOU GO — don't lock ahead
+
+These are cheaper, more flexible, or simply don't sell out. Book them in-country, a few days to two weeks ahead:
+
+- **Pasta / pizza-making class** — Bologna (Oct 2–4) or Florence week; book during week 1 of that leg
+- **Murano glass demos** — walk-up
+- **Most dinners** — 1–2 weeks ahead is plenty (only Rhys's Sep 18 is worth booking earlier)
+- **Regional train tickets** for short hops and day trips (Lucca/Pisa, Bellagio–Varenna ferry, etc.) — buy 1–3 days ahead at station kiosks or Trenitalia.com
+- **Day-of museum entries** beyond the timed must-books above
+- **Cinque Terre Card, Como ferries, Brunate funicular, vaporetti** — buy on the spot
+
+---
+
+## What NOT to book ahead (on purpose)
+
+Beyond the 3–4 genuine must-books (lodging, the 3 fast trains, the car, and the Last Supper if you want it), keep the trip loose. With four boys, the day's plan bends to moods and weather.
+
+- **Restaurant reservations more than ~2 weeks out** (except Rhys's 18th) — you won't know how the kids feel that night
+- **Daily museum tickets** past the handful of timed entries — day-of walk-up almost always works
 - **Aperitivo / nightlife** — purely walk-up
-- **Workshops you might bail on** — book in country once confirmed
+- **Workshops or tours you might bail on** — book in-country once it's actually confirmed
+- **The flat-fare regional trains** — locking them early buys you nothing and costs you flexibility
 
-## Master booking timeline visualized
+---
 
-```
-JUN                JUL                AUG                SEP 1–5         SEP 6+ (trip)
-│                  │                  │                  │              │
-├─ Flights ($5K)   ├─ Mom flight      ├─ Colosseum       ├─ Confirm all  ├─ Live
-├─ 4 Airbnbs       ├─ More trains     ├─ Catacombs       ├─ Cash buffer  │  the
-├─ Insurance       ├─ Vatican         ├─ Last balances   ├─ Pet/mail     │  trip
-├─ Wise setup      ├─ Cappella S.     ├─ Wise top-up #3  │              │
-├─ First train     ├─ Wise top-up #2  │                  │              │
-└─ Wise top-up #1  └─ Lodge in Alps   │                  │              │
-```
-
-## Decision points the family still needs to make
-
-Before locking June bookings:
-
-| # | Question | Default if no decision |
-|---|---|---|
-| 1 | Lock Scenario C (Rome → Bologna → Lido → Naples)? | Locked |
-| 2 | Garbatella for Rome, or somewhere else? | Garbatella |
-| 3 | Confirm grandma Oct 1–14 in Bologna | Confirm with her |
-| 4 | Grandma — separate apartment vs hotel | Separate apartment |
-| 5 | Add the Dolomites weekend? | Yes |
-| 6 | Add the Damanhur weekend? | Yes if tour can be booked |
-| 7 | Orvieto side trip from Rome? | Optional, decide in Rome |
-| 8 | Amalfi overnight (vs day trip) from Naples? | Decide in Naples |
-
-These should be discussed in the next family conversation. Items 1, 2, and 3 unblock all the June bookings.
+*Cross-links: **/housing** (per-leg Booking + Airbnb search links) · **/trains** (all 8 rail legs) · **/celebrations** (the three milestones) · **/budget** (per-day costs). Those HTML pages are the current source of truth.*

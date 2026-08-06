@@ -1,91 +1,118 @@
 # 01 — Trip Summary
 
+## How to use this doc set
+
+This is the executive summary — the one-page picture of the locked trip. The numbered docs that follow drill into the pieces (trains, housing, celebrations, budget, per-stop detail). When a number here and a number in a detail doc disagree, the detail doc and the live site win — this page is the map, not the territory. The deployed HTML pages (`/plan`, `/trains`, `/housing`, `/celebrations`, `/budget`, plus one page per stop) are current and authoritative; keep this doc aligned to them.
+
 ## The trip in one paragraph
 
-A 75-day family trip through four Italian cities — Rome, Bologna, Lido di Venezia, and Naples — between September 6 and November 19, 2026. Round-trip flights into Rome. Dan continues working remote 4–11pm local Italian time, five days a week. Worldschool for the four boys. Two birthdays land mid-trip. Dan's mom joins for two weeks in Bologna.
+A 34-night family rail loop through Italy — **Milan back to Milan**, September 11 to October 15, 2026 — for a family of six. Nine stops, all reached by train; the only car is one rental picked up in the Dolomites. Dan keeps working remote 4–11pm local Italian time, five days a week, from two long "work bases": **Florence (7 nights)** and **Rome (7 nights)**. Worldschool for the four boys in the mornings. Flights are already booked and paid ($5,346) and sit outside the in-country budget. Three milestones land mid-trip: Rhys turns 18, the anniversary, and Grey turns 12.
 
 ## Family
 
 | Person | Role | Notes |
 |---|---|---|
-| Dan | Father | Works remote 4–11pm local Italian time (calls, not deep focus). Owner of his company. |
-| Kei | Mother | Loves botany, Voynich Manuscript / Escher aesthetics, plant lore |
-| Rhys | Son | **Turns 18 on Sept 18** in Rome — legal adult in Europe |
-| (16-year-old son) | Son | Car enthusiast — Ferrari, Lamborghini, Ducati on his hit list |
-| Grey | Son | **Turns 12 on Oct 12** in Bologna |
-| (9-year-old son) | Son | Pace-setter — one big activity per day is enough |
-| **Grandma** | Dan's mother | Joins Oct 1–14 in Bologna. Mobility limit ~1/4 mile before resting. |
+| Dan | Father | Works remote 4–11pm local Italian time (calls, not deep focus). Owner of his company. Decent wifi is non-negotiable. |
+| Kei | Mother | — |
+| Rhys | Son | **Turns 18 on Sept 18** — first day in Florence. Legal adult in Europe. |
+| Jude | Son (16) | Eats like an adult. |
+| Grey | Son | **Turns 12 on Oct 12** in the Dolomites. Under 15 → train discount. |
+| Keir | Son (9) | Pace-setter — one big activity per day is enough. Under 15 → train discount. |
 
 ## Dates
 
-| | Date | Day count |
+| | Date / time (local) | Flight |
 |---|---|---|
-| Depart SJO | Sept 6, 2026 | Day 0 |
-| Arrive FCO | Sept 6 | Day 1 |
-| Return FCO → SJO | Nov 20, 2026 | Day 75 |
+| Depart BWI | **Thu Sept 10, 2026 · 23:20** | Icelandair FI640 → Keflavík (KEF) |
+| Land Milan (MXP) | **9:55pm (21:55) Fri Sept 11** · Terminal 1 | Icelandair FI592 (KEF → MXP) |
+| Fly home MXP → BWI | **Thu Oct 15, 2026 · dep 16:20** | Icelandair FI591 → KEF, FI641 → BWI (arr 22:15) |
+| **Total** | | **34 nights** |
 
-## Flights — Air Canada round trip
+## Flights — booked & paid
 
-- SJO → FCO outbound Sept 6 (Sun), 19h 10m total
-- FCO → SJO return Nov 20 (Fri), 17h 00m total
-- $845/person × 6 = **$5,070**
+- **Booking ref:** Icelandair **AMBVO4** (both directions Icelandair, via Keflavík).
+- **Out:** BWI 23:20 Thu Sep 10 → KEF → **Milan Malpensa (MXP) 21:55 (9:55pm) Fri Sep 11, Terminal 1.** (You fly overnight; you *depart* Sep 10, you *land* Sep 11.)
+- **Home:** MXP 16:20 Thu Oct 15 → KEF → BWI 22:15 (same day).
+- **$5,346 total, already paid.** Flights sit **outside** the in-country budget — never fold them in.
+- ⚠️ **Fare is Economy Light — 0 checked bags per passenger.** Six people, 34 nights: budget to add checked baggage (Icelandair add-on, not in the ground budget). Do it now — bag fees jump at the airport.
 
-## Budget — target $35,000 all-in
+## The route — 9 stops, all by train (carless except the Dolomites)
 
-| Category | Amount |
+| # | Stop | Base area | Dates 2026 | Nts | Notes |
+|---|------|-----------|-----------|-----|-------|
+| 1 | Milan | Milano Centrale | Sep 11–13 | 2 | Arrival, land MXP 9:55pm Fri |
+| 2 | Lake Como | Como town | Sep 13–16 | 3 | Bellagio–Varenna ferry, Brunate funicular |
+| 3 | Cinque Terre | Levanto | Sep 16–18 | 2 | Coastal train + boat, focaccia + pesto |
+| 4 | **Florence** | Oltrarno | Sep 18–25 | 7 | **WORK BASE.** Rhys turns 18 (Sep 18) |
+| 5 | **Rome** | Garbatella/Ostiense | Sep 25–Oct 2 | 7 | **WORK BASE.** Colosseum, Vatican, pizza class |
+| 6 | Bologna | Central/Bolognina | Oct 2–4 | 2 | Food weekend — pasta, porticoes |
+| 7 | Venice / Lido | Lido di Venezia | Oct 4–9 | 5 | MuMu (Aunt Muriel) visit — core purpose |
+| 8 | Dolomites (Val Gardena) | Ortisei/Selva | Oct 9–14 | 5 | **THE car leg.** Anniversary + Grey turns 12 |
+| 9 | Malpensa | MXP airport hotel | Oct 14–15 | 1 | Repack; fly home Thu Oct 15 |
+
+```
+BWI ──✈── Milan ─[Regionale]─ Lake Como ─[via Milan]─ Cinque Terre
+                                                            │
+                                                    [~2h30]
+                                                            ▼
+                        Florence ─[Frecciarossa 1h35]─ Rome
+    (WORK BASE, 7n)                                (WORK BASE, 7n)
+                                                            │
+                                              [Frecciarossa 2h]
+                                                            ▼
+              Bologna ─[Frecciarossa 1h30]─ Venice/Lido ─[via Verona]─ Dolomites
+                                                                    (rental car)
+                                                                          │
+                                                          [return car, Bolzano→Milan]
+                                                                          ▼
+                                                                Malpensa ──✈── BWI
+```
+
+Eight rail legs carry the loop. Three are dynamic-priced Frecciarossa fast legs (Florence→Rome, Rome→Bologna, Bologna→Venice) — book those early. The family discount on Le Frecce/Intercity/Regionale (group of 2–5 with an under-15: under-15s free, adults 20% off) means splitting the six into two bookings, each carrying one little one.
+
+## Budget — in-country ground cost only (flights separate)
+
+Headline: **~$20K average** (band ~$16K low / $20K avg / $25K high; honest all-in $18–26K). About $605/day for the family, ~$101/person/day.
+
+| Bucket (avg) | Amount |
 |---|---|
-| Flights (family of 6) | $5,070 |
-| Accommodation (4 Airbnbs + grandma's place) | $8,000–10,000 |
-| Groceries (75 days × ~$115/day) | $9,300 |
-| Dining out (3–4×/week) | $5,000–6,000 |
-| Trains + ferries + local transit | $2,500–3,000 |
-| Museums + activities + workshops | $2,000 |
-| Grandma visit adder | $1,500–2,500 |
-| Insurance (medical only, CSP covers trip-side) | $500 |
-| Misc + buffer | $1,500 |
-| **Total** | **~$34,000–35,500** |
+| Lodging (34 nights) | $9,200 |
+| Food | $5,200 |
+| Activities & entry | $1,300 |
+| Local transit | $850 |
+| Intercity trains (8 legs) | $1,750 |
+| Dolomites rental car | $650 |
+| Misc / contingency | $1,600 |
+| **Total** | **~$20,000** |
 
-## The route — 4 bases, all by train
+Flights ($5,346, paid) are **not** in this table. EU under-18s are free at Italian state museums — a real saver (Grey, Keir, and Rhys until Sep 18).
 
-```
-SJO ────────── FCO/Rome ─[Frecciarossa 2h45]─ Bologna
-                                                   │
-                                       [Frecciarossa 2h] 
-                                                   ▼
-                  Naples ─[Frecciarossa 5h via Roma]─ Venice/Lido
-                    │
-              [Frecciarossa 70m]
-                    ▼
-              Rome (1 night) ── FCO ────────── SJO
-```
+## Housing strategy
+
+- Whole-place, sleeps-6, **3-bedroom-plus** apartments — never a clutch of hotel rooms.
+- **Weekly rate** kicks in at 7 nights → the Florence and Rome bases unlock it; the Lido and Val Gardena (5n each) get most of the way.
+- **"Belt over center"** — bigger, quieter, cheaper one stop out but still on the line: Oltrarno not the Duomo, Garbatella not the centro, the Lido not San Marco.
+- **On the line, or don't book it** — every base walkable to a station, ferry, funicular, or metro (the trip is carless except the Dolomites).
+- The **Val Gardena chalet** is the one deliberate splurge — and the only leg with a car.
+- Total lodging lands **€8–11K** across the 34 nights.
+
+## Celebrations — 3 milestones
+
+- **Rhys turns 18 · Sep 18 · Florence** — arrival-evening splurge pasta dinner, first legal Chianti.
+- **Anniversary · Oct 9 · Val Gardena** — boys have pizza-and-movie night at the chalet; Dan & Kei to a gourmet Ladin dinner (confirm October opening dates).
+- **Grey turns 12 · Oct 12 · Dolomites** — Seceda cable car + ridge, rifugio lunch, toboggan + pizza night (confirm mid-October lift dates; Ötzi museum is the all-weather backup).
 
 ## Hard constraints
 
 | Constraint | Implication |
 |---|---|
-| Dan works 4–11pm Italian local time M–F | Mostly calls. Decent wifi non-negotiable. Mornings + early afternoons = family time. |
-| Worldschool | Mornings = study time for boys while Dan sleeps |
-| Grandma 1/4-mile mobility | She joins in Bologna only (flat, porticoes, cafes everywhere) |
-| 4 boys, 2 birthdays mid-trip | Sept 18 in Rome (Rhys 18), Oct 12 in Bologna (Grey 12) |
-| Family of 6 | Apartments need 3+ bedrooms / 5+ beds / 2+ baths |
-| Round-trip into Rome | Must end in or near Rome for Nov 20 departure |
+| Dan works 4–11pm Italian time M–F | Mostly calls. Decent wifi non-negotiable. Mornings + early afternoons = family time. |
+| Worldschool | Mornings = study time for the boys. |
+| Carless except the Dolomites | Every base must be walkable to rail/ferry/metro; one rental car, picked up in Bolzano. |
+| Two work bases | Florence (7n) and Rome (7n) — the long stops where Dan works evenings. |
+| Family of 6 | Apartments need 3+ bedrooms, whole-place, sleeps 6. |
+| Milan back to Milan | Loop begins and ends at MXP; last night at a Malpensa airport hotel. |
 
-## Soft preferences
+## Timing reality
 
-- **Living style**: Cheap, authentic, working-class neighborhoods over tourist centers. Exception: medieval/cobblestone old town vibe (Bologna center, Naples Centro Storico) is fine.
-- **Pace**: One big activity per day max for the youngest. Older boys get unstructured time.
-- **Food**: Family loves Neapolitan pizza, gelato, hands-on cooking experiences.
-- **Vibe**: Boys → swords/armor/castles/cars/weird stuff. Parents → labyrinths, alchemy, intentional communities, MC Escher/Voynich aesthetics, hip neighborhoods, live music.
-
-## What's explicitly out of scope
-
-- **Croatia** — adds a flight, an apartment, complexity. Saved for a future trip.
-- **Prague / Central Europe side trip** — same reason.
-- **South of Naples** (Sicily, Puglia) — too far for a day trip, would need its own base.
-- **Hard-to-book experiences** — Lamborghini factory tour, monastery manuscript libraries, Last Supper Milan. Replace with walk-up alternatives.
-
-## Decision posture
-
-- Cities and dates: tentatively locked (Scenario C).
-- Neighborhood within each city: drafted, family alignment needed (especially Rome — Garbatella vs central).
-- Specific Airbnb / restaurant / day-trip-on-which-day: to be filled in after family alignment.
+Today is **Aug 6, 2026** — the trip is about five weeks out. Booking order is urgent, not leisurely: **lock lodging now**, then the **three Frecciarossa fast legs**, then the **Dolomites rental car**.

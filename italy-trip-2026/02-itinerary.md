@@ -1,66 +1,77 @@
 # 02 — Itinerary
 
-## The 75 days at a glance
+Milan back to Milan, a rail-first loop. **Sep 11 – Oct 15, 2026 · 34 nights · 9 stops.**
+Carless the entire trip **except the Dolomites** (one rental car out of Bolzano).
 
-| Phase | Dates | Nights | Base | Headline |
-|---|---|---|---|---|
-| 1 | Sept 6 – Sept 24 | 18 | Rome | Arrival, vacation, Rhys's 18th birthday |
-| **Transit** | Sept 24 | — | Train | Frecciarossa 2h 45m |
-| 2 | Sept 24 – Oct 15 | 21 | Bologna | Motor Valley, Grey's 12th, **grandma joins Oct 1–14** |
-| **Transit** | Oct 15 | — | Train | Frecciarossa 2h |
-| 3 | Oct 15 – Nov 5 | 21 | Lido di Venezia | Glassblowing, Dolomites weekend, Halloween |
-| **Transit** | Nov 5 | — | Train | Frecciarossa ~5h via Rome |
-| 4 | Nov 5 – Nov 19 | 14 | Naples | Pizza pilgrimage, Pompeii, Amalfi |
-| **Transit** | Nov 19 | — | Train | Frecciarossa 70m |
-| Buffer | Nov 19 | 1 | Rome | Sleep near FCO |
-| Departure | Nov 20 | — | Fly | FCO → SJO via Air Canada |
+See also the live site: [/plan](public/plan.html) · [/trains](public/trains.html) · [/celebrations](public/celebrations.html) · [/housing](public/housing.html) · [/budget](public/budget.html).
+
+## The 34 nights at a glance
+
+| # | Stop | Base area | Dates 2026 | Nts | Headline |
+|---|------|-----------|-----------|-----|----------|
+| 1 | Milan | Milano Centrale | Sep 11–13 | 2 | Land MXP 9:55pm Fri. Duomo rooftop, The Last Supper, Navigli, San Bernardino alle Ossa |
+| 2 | Lake Como | Como town | Sep 13–16 | 3 | Bellagio–Varenna ferry day, Brunate funicular, lakefront |
+| 3 | Cinque Terre | Levanto | Sep 16–18 | 2 | Manarola, Vernazza, Monterosso; coastal train + boat; focaccia + pesto |
+| 4 | **Florence** | Oltrarno | Sep 18–25 | 7 | **WORK BASE.** Rhys turns 18 (Sep 18) + splurge pasta dinner. Duomo climb, Stibbert armor, Lucca/Pisa day |
+| 5 | **Rome** | Garbatella/Ostiense | Sep 25–Oct 2 | 7 | **WORK BASE.** Colosseum + Forum, Vatican, pizza class, Baths of Caracalla, Appian Way, San Clemente |
+| 6 | Bologna | Central/Bolognina | Oct 2–4 | 2 | Food weekend — pasta class, Quadrilatero crawl, porticoes, Palazzo Poggi |
+| 7 | Venice / Lido | Lido di Venezia | Oct 4–9 | 5 | **MuMu (Aunt Muriel) visit — core purpose.** Grand Canal, Doge's Palace, Murano glass, San Michele |
+| 8 | Dolomites (Val Gardena) | Ortisei/Selva | Oct 9–14 | 5 | **THE car leg.** Anniversary (Oct 9) + Grey turns 12 (Oct 12). Seceda, Alpe di Siusi |
+| 9 | Malpensa | MXP airport hotel | Oct 14–15 | 1 | Repack, relaxed last meal; fly home Thu Oct 15 |
 
 ## Week-by-week shape
 
 ```
-Week 1  ──── Rome ─── Arrival, jet lag, decompress
-Week 2  ──── Rome ─── Core sights + weird Lazio + Rhys's 18th
-Week 3  ──── Rome → Bologna (Sept 24, mid-week move)
-Week 4  ──── Bologna ─── Motor Valley + Florence + the city itself
-Week 5  ──── Bologna ─── Grandma arrives ~Oct 1
-Week 6  ──── Bologna ─── Grandma here, Grey's 12th on Oct 12
-Week 7  ──── Bologna → Lido (Oct 15)
-Week 8  ──── Lido ─── Venice rhythm, Murano, Padua
-Week 9  ──── Lido ─── Dolomites weekend, Halloween
-Week 10 ──── Lido → Naples (Nov 5)
-Week 11 ──── Naples ─── Pompeii, pizza, Amalfi
-Week 12 ──── Naples → Rome (Nov 19) → SJO (Nov 20)
+Week 1  ──── Milan (arrive Fri Sep 11) → Como (Sun Sep 13)
+Week 1–2 ─── Como → Cinque Terre (Wed Sep 16) → Florence (Fri Sep 18)
+Week 2–3 ─── Florence WORK BASE — Rhys's 18th, Duomo, day trips
+Week 4  ──── Florence → Rome (Fri Sep 25)
+Week 4–5 ─── Rome WORK BASE — Colosseum, Vatican, Appian Way
+Week 5  ──── Rome → Bologna (Fri Oct 2) — food weekend
+Week 6  ──── Bologna → Venice/Lido (Sun Oct 4) — MuMu visit
+Week 6–7 ─── Lido → Dolomites (Fri Oct 9) — car leg, anniversary, Grey's 12th
+Week 7  ──── Dolomites → Malpensa (Wed Oct 14) → fly home (Thu Oct 15)
 ```
+
+## The travel legs (rail order)
+
+1. Milan → Como — Regionale ~40min–1h (Sun Sep 13)
+2. Como → Cinque Terre / Levanto — ~3–4h via Milan (Wed Sep 16)
+3. Cinque Terre (La Spezia) → Florence — ~2h30 (Fri Sep 18)
+4. **Florence → Rome — Frecciarossa/Italo ~1h35 (Fri Sep 25)**
+5. **Rome → Bologna — Frecciarossa/Italo ~2h05–2h15 (Fri Oct 2)**
+6. **Bologna → Venice (S. Lucia + vaporetto to Lido) — Frecciarossa ~1h30 (Sun Oct 4)**
+7. Venice → Dolomites — train to Bolzano ~3h15 via Verona, collect rental car (Fri Oct 9)
+8. Dolomites → Malpensa — return car in Bolzano; Bolzano→Verona→Milano Centrale + Malpensa Express (Wed Oct 14)
+
+The **three Frecciarossa fast legs (4, 5, 6)** are dynamic-priced like flights — book early. See [/trains](public/trains.html) for the family-discount split (two bookings of three, each carrying an under-15).
 
 ## Why this shape
 
-- **Rome first** — flights land there. Decompress from travel in the most "vacation" mode.
-- **Bologna middle** — central enough that day trips reach Florence, Modena, Parma, Mantua, Ravenna, Turin in under 2 hours. Best base for grandma's mobility (porticoes + cafes everywhere).
-- **Lido third** — north Italy peaks in October colors. Dolomites are accessible. Halloween in Italy is a thing now.
-- **Naples last** — saves the best food for last; weather still mild in November. End strong.
+- **Milan first** — the flights land there. Icelandair touches down at MXP at 9:55pm Fri Sep 11, so the first two nights are a soft landing in Milan before the loop starts moving.
+- **Florence + Rome are the two 7-night work bases.** These are the only stops long enough to unlock a weekly lodging rate, and they're where Dan settles into his work rhythm (evenings at the desk, see below). Everything before them is a moving vacation front; everything after is the northern loop home.
+- **The northern loop back through Bologna → Venice → Dolomites.** After Rome, the trip climbs back north on the same rail spine — a food weekend in Bologna, then the Lido for the MuMu visit, then up into the mountains for the finale — landing back at Milan/Malpensa for the flight out. No backtracking, no wasted legs.
+- **Carless except the Dolomites.** Every base is deliberately walkable to a station, ferry, funicular, or metro, so the family moves on rails the whole trip. The one exception is the Dolomites, where a single rental car is picked up in Bolzano and returned there — the mountains are the only leg that genuinely needs a car.
 
-## Birthday plans
+## Celebrations (3 milestones)
 
-### Rhys's 18th — Thursday, Sept 18 (Rome)
+See [/celebrations](public/celebrations.html) for the full write-up.
 
-He's legal everywhere in Europe. Suggested rhythm: day at his own pace exploring, family dinner at **Armando al Pantheon** (book ahead), first legal aperitivo at Freni e Frizioni in Trastevere, late walk through illuminated Rome.
+### Rhys turns 18 — Fri, Sep 18 (Florence)
 
-### Grey's 12th — Sunday, Oct 12 (Bologna)
+Falls on the arrival evening in Florence, our first work base. Splurge pasta dinner + his first legal Chianti. Options: **Ristorante La Giostra**, **Osteria delle Tre Panche**, or **Il Santo Bevitore** (book ahead).
 
-Pasta-making class in the morning — Grey makes his own tortellini. Lunch eating what he made. Afternoon gelato crawl (his pick). Family birthday dinner at **Trattoria Anna Maria**. Grandma is present for this one.
+### Anniversary — Fri, Oct 9 (Val Gardena, Dolomites)
 
-## Grandma's two weeks — Oct 1 to Oct 14
+Arrival day in the mountains. The boys have a pizza-and-movie night at the chalet (Rhys, now 18, holds the fort) while Dan & Kei slip out for a gourmet Ladin dinner: **Anna Stuben** (Michelin, Gardena Grödnerhof) or **Alpenroyal Gourmet**. *Confirm October opening dates.*
 
-- Routes through FCO airport (one transatlantic connection, then sits on Frecciarossa for 3.5hr to Bologna).
-- Stays in Bologna only — never moves bases with the family.
-- Either has her own small apartment near the family's, or a central hotel.
-- Day trips she can do with the family: Florence, Modena, Parma (all flat city centers).
-- Day trips the family does without her: Labirinto della Masone (lots of walking), Siena (lots of standing), Damanhur weekend (long drive).
-- Departs Tue Oct 14 — family moves to Lido the next day.
+### Grey turns 12 — Mon, Oct 12 (Dolomites)
+
+Seceda cable car + ridge walk, rifugio lunch, toboggan run, then pizza night. *Confirm Seceda / Alpe di Siusi lift dates — summer lifts close ~mid-Oct.* All-weather backup: the **Ötzi museum** in Bolzano + the **Renon earth pyramids**.
 
 ## Worldschool rhythm (default daily shape)
 
-Dan works 4–11pm Italian local time, M–F. Mornings and early afternoons are wide open.
+Dan works **4–11pm Italian local time, M–F**. Mornings and early afternoons are wide open. This rhythm applies mainly at the **two work bases — Florence (Sep 18–25) and Rome (Sep 25–Oct 2)** — where the family is settled in one apartment for a full week. The shorter stops (Milan, Como, Cinque Terre, Bologna, Lido, Dolomites) are lighter on work and run closer to full vacation days, especially the weekend moves.
 
 ```
 07:30–09:30  Breakfast at the apartment, slow start
@@ -72,23 +83,4 @@ Dan works 4–11pm Italian local time, M–F. Mornings and early afternoons are 
 23:00–00:00  Dan done — late family time, bed
 ```
 
-Day trips on weekdays need to wrap by ~3:30pm so Dan can be at his desk by 4. Weekends are wide open. Italian dinner culture (8–10pm) actually fits well — family can do early dinner together (6:30) or late dinner with Dan after his shift (post-11pm).
-
-Adjust on weekends, day trips, and Dan's vacation weeks (Sept 6–20).
-
-## Two vacation weeks for Dan
-
-- **Sept 6 – Sept 20** (Rome): fully off work. Full presence with family.
-- **One more week TBD** — possibly end of trip (Naples week 2 or Rome buffer night).
-
-## Optional add-ons being considered
-
-| Add-on | Where | Cost | Worth it? |
-|---|---|---|---|
-| Dolomites weekend (car + lodge) | From Lido | ~$800 | Earth Pyramids, Lake Resia, Tre Cime |
-| Damanhur + Turin weekend | From Bologna | ~$500 | Intentional community + Egyptian Museum |
-| Cinque Terre or Amalfi overnight | From Bologna / Naples | ~$500 | Skip the brutal day trip |
-| Orvieto 3-night side trip | From Rome | ~$400 | Medieval cliff city, splits up Rome stay |
-| Pasta + pizza making classes | Bologna + Naples | ~$300 | Worldschool hands-on |
-
-Total add-on budget: **~$2,500–3,000** of the $5K cushion in the $35K target.
+Weekday day trips (e.g. Lucca/Pisa from Florence) need to wrap by ~3:30pm so Dan can be at his desk by 4. Weekends are wide open — which is why the intercity moves land on Fridays and Sundays. Italian dinner culture (8–10pm) fits well: the family can do an early dinner together (~6:30) or a late one with Dan after his shift.

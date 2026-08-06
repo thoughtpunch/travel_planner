@@ -1,175 +1,102 @@
-# 06 — Bologna (Base 2)
+# 06 — Bologna (Stop 6)
 
 ## At a glance
 
 | | |
 |---|---|
-| **Dates** | Sept 24 – Oct 15, 2026 |
-| **Nights** | 21 |
-| **Mode** | Work mode (Dan 4–11pm local); grandma joins Oct 1–14 |
-| **Headline** | Motor Valley, Grey's 12th birthday, food capital, day-trip launchpad |
-| **Budget** | $2,500–3,400 family apt + $700–1,100 grandma's space |
-| **In** | Sept 24 via Frecciarossa from Rome |
-| **Out** | Oct 15 via Frecciarossa to Lido/Venice |
+| **Dates** | Oct 2–4, 2026 |
+| **Nights** | 2 |
+| **Mode** | Food weekend — eat your way through, mornings-and-lunch town |
+| **Headline** | Pasta class, Quadrilatero food crawl, the porticoes, a tortellini + tagliatelle feast |
+| **Budget** | Convenience over savings — 2 nights, whole-place for six near Centrale |
+| **In** | Fri Oct 2 via Frecciarossa/Italo from Rome (~2h05–2h15) |
+| **Out** | Sun Oct 4 via Frecciarossa to Venice (S. Lucia → vaporetto to Lido, ~1h30) |
 
-## Why Bologna as base 2
+## Why Bologna, and why only two nights
 
-Bologna is the secret weapon of Italian trip-planning. Reasons:
+Bologna is the deliberate short stop between the Rome work base and the Venice/Lido leg — a two-night hinge whose one job is to eat. "La Grassa," the Fat One, is where tortellini and tagliatelle al ragù were invented, roofed by ~40 km of UNESCO porticoes so it can rain and you never get wet.
 
-- **Central**: Florence 35m, Modena 30m, Parma 55m, Ravenna 1h, Mantua 1h 30m, Venice 1h 30m, Milan 1h, even Turin 2h 45m
-- **Underrated as a destination**: actual Italian city without the tourist tax
-- **30–40% cheaper** than Rome or Venice equivalents
-- **38km of porticoes** — covered, flat, cafe-lined walkways through the whole historic center. Rain doesn't stop the trip.
-- **Food capital of Italy** — Emilian cuisine is the canon of Italian food (ragù, tortellini, mortadella, parmigiano, lambrusco)
-- **Walkable medieval core** matches Dan's "cobblestone old town" preference exactly
-- **Grandma's mobility cap (~1/4 mile) works here** in a way it wouldn't in Rome
+- **It's on the line** — Rome → Bologna → Venice are all fast Frecciarossa legs; Bologna sits right on the spine, no detour.
+- **Food capital of Italy** — Emilian cuisine is the canon (ragù, tortellini, mortadella, parmigiano, lambrusco). Two days is enough to hit the meals that matter.
+- **Walkable medieval core** under continuous porticoes — flat, covered, cafe-lined, weatherproof.
+- **A weekend, not a base** — this is meals-first, checklist-second. Pick the pasta class, the market crawl, one tower, one great osteria dinner, and walk it off under the arcades.
+- **Dan's on calls 4–11pm local**, so this is a mornings-and-lunch town — which is exactly when Bologna eats best.
 
-## Neighborhood options
+## Neighborhood — where to stay
 
-The historic center inside the porticoes is small and walkable end-to-end. Best is centro proper or a few blocks out.
+Two nights, so **convenience over savings**: book a whole-place, sleeps-six apartment an easy walk from Bologna Centrale so the Rome-in and Venice-out train days are painless. Central or Bolognina both work.
 
-### 1. Centro Storico (inside the porticoes) — recommended
+### 1. Central (inside/near the porticoes) — recommended
 
 | | |
 |---|---|
-| **Bounded by** | The original ring road following the second walls — roughly Piazza Maggiore at the heart |
-| **Cost** | $120–180/night for 3BR |
-| **Walkable to** | Two Towers, Quadrilatero market, Archiginnasio, Piazza Maggiore, San Petronio — all <600m radius |
-| **Grandma fit** | Perfect — porticoes everywhere, cafes every 30 feet |
-| **Trade-off** | Old buildings — sometimes 4th floor walk-up, sometimes no AC. Filter carefully. |
+| **Bounded by** | The historic core around Piazza Maggiore, inside the portico ring |
+| **Walkable to** | Two Towers, Quadrilatero market, Archiginnasio, San Petronio — all <600m |
+| **Why** | You're in the middle of the food and the porticoes; roll out of bed into lunch |
+| **Trade-off** | Old buildings — some 4th-floor walk-ups, some no AC. Filter carefully. |
 
-### 2. San Vitale / Santo Stefano — quieter centro
-
-| | |
-|---|---|
-| **Vibe** | Eastern quadrant of centro, still inside porticoes, less tourist foot-traffic |
-| **Anchor** | Basilica di Santo Stefano (7-church complex), Università quartiere nearby |
-| **Cost** | $110–160/night |
-| **Why** | Same walkability, slightly cheaper, more residential |
-
-### 3. Bolognina — north of the train station
+### 2. Bolognina — north of the station
 
 | | |
 |---|---|
-| **Vibe** | Working-class, immigrant-mixed, gritty + authentic, like Pigneto/Rome |
-| **Cost** | Cheapest of the options — $80–120/night |
-| **Trade-off** | 10–15 min walk or short bus to centro; no porticoes around you |
-| **Grandma fit** | Less ideal — she'd need transit to reach the cafes she'd actually want to sit at |
+| **Vibe** | Working-class, mixed, authentic; just across the tracks from Centrale |
+| **Why** | Closest to the train — 10 min walk to centro, painless with luggage on arrival/departure days |
+| **Trade-off** | Fewer porticoes around you; walk or short bus to the market lanes |
 
-### 4. Pratello — hip neighborhood
+**Recommendation: whole-place for six, 3+ bedrooms, Oct 2–4, central or Bolognina — whichever books cleanest near Centrale.** Two nights won't unlock a weekly rate, so optimize for a short walk to the station and to the Quadrilatero, not for the lowest nightly.
 
-| | |
-|---|---|
-| **Vibe** | Bologna's nightlife + alternative scene + leftist working-class history |
-| **Cost** | $100–150/night |
-| **Why** | Live music, cool bars, restaurants. Just west of centro. |
+## What to do — the shortlist (food first)
 
-**Recommendation: Centro Storico (San Vitale / Santo Stefano quadrant) for the family.** Look for a 3-bedroom inside the porticoes between Piazza Maggiore and Piazza Verdi. Get grandma her own studio or 1BR within 200m of the family apartment.
+1. **Hands-on fresh-pasta class** — learn to hand-roll the sfoglia and fold tortellini and tagliatelle, a station for every kid. Try La Vecchia Scuola Bolognese or a home class through Cesarine. Sells out — book the moment you land.
+2. **Quadrilatero market food crawl** — graze the medieval market grid off Piazza Maggiore: cured meats and tortelloni at Tamburini, a stand-up lunch in the Mercato di Mezzo, a glass at Osteria del Sole. The meal you'll talk about later.
+3. **The Two Towers — climb Asinelli** — 498 wooden steps up the leaning tower for the best view over the red rooftops. Small timed slots — book online ahead.
+4. **The porticoes** — a UNESCO World Heritage site; the longest, Portico di San Luca, climbs 666 arches to a hilltop basilica. Walk it or ride the little San Luca Express up and stroll down.
+5. **The feast — ragù, tortellini in brodo, mortadella** — the holy trinity done right: tagliatelle al ragù (never "spaghetti bolognese," which doesn't exist here), tortellini in brodo, real mortadella. Book one good osteria for the birthday-worthy dinner of the weekend.
+6. **Palazzo Poggi** — the university's wunderkammer: 18th-century anatomical wax models, obstetric teaching figures, ship models and natural-history oddities in a frescoed palace. Pure Escher/Voynich energy.
+7. **Archiginnasio + Anatomical Theatre** — the old university hall crusted with carved student coats-of-arms, hiding a 1637 wooden dissection theatre watched over by skinned wooden figures. Deeply on-brand.
+8. **Gelato + Santo Stefano's "seven churches"** — a top cone, then lose yourselves in the maze of seven interlinked churches and courtyards. Quiet, strange, free.
 
-## What's in Bologna itself
+## Offbeat & hidden gems
 
-### Bologna's own sights
-- **Two Towers (Asinelli + Garisenda)** — climb Asinelli for city views
-- **Piazza Maggiore + Basilica di San Petronio** — Italy's 6th-largest church, free, raw and underfinished
-- **Archiginnasio + Anatomy Theater** — 1637 wooden dissection theater, deeply Voynich. €3 entry, 30 min visit.
-- **Quadrilatero market** — dense food market, walk every morning
-- **University of Bologna** (oldest in the world, 1088) — buildings scattered through centro
-- **MAMbo** modern art museum — good for teens
+- **La Finestrella di Via Piella** — a shuttered window opening onto a hidden canal, Bologna's "Little Venice." Push the shutter and the street becomes Venice. (All ages · free · Via Piella 16)
+- **The whispering telephone** — under the Voltone del Podestà, two people at opposite diagonal corners whisper into the stone and hear each other across the noisy square. (All ages · free · Piazza Maggiore)
+- **Neptune's not-a-finger** — from the exact spot by Sala Borsa, the bronze Neptune's thumb turns into something ruder. A 450-year-old visual dirty joke. (Teens + adults · free · Piazza del Nettuno)
+- **The three arrows of Corte Isolani** — three ancient wooden arrows lodged in a medieval portico ceiling, with a grisly legend. (All ages · free · Strada Maggiore 19)
+- **Cassini's sundial in San Petronio** — a 67m brass meridian across the floor; a pinhole 27m up drops a disc of sunlight at solar noon. The half-bare-brick façade has a jealous-Pope legend attached. (All ages · free · Piazza Maggiore)
+- **The tortellino & Venus's navel** — legend says the pasta ring was modelled on Venus's navel spied through a keyhole. Order tortellini in brodo, know the story, settle the family debate after the pasta class.
 
-### Voynich / Escher / weird-medieval (mostly day trips)
-- **Labirinto della Masone** (Fontanellato, 1h) — world's largest bamboo labyrinth
-- **Palazzo del Te / Sala dei Giganti** (Mantua, 1h 30m) — illusionist room where painted architecture collapses on you
-- **Siena Cathedral + Piccolomini Library** (1h 30m) — inlaid marble floor uncovered Aug–Oct + illuminated manuscripts
-- **Ravenna Byzantine mosaics** (1h) — sacred geometry, computational ceilings
-- **San Galgano roofless abbey + sword in the stone** (2h 30m to Tuscany)
-- **Damanhur + Turin** (2h 45m, recommend as weekend trip)
-
-### For the boys
-- **Ferrari Museum Modena** (30m by train) — 16yo will lose his mind
-- **Ducati Museum** (Bologna outskirts, bus 30m)
-- **Lamborghini Museum** (Sant'Agata, 1h by train+bus) — walk-up since we cut the factory tour
-- **Pagani Museum** (San Cesario, 30m)
-- **Florence: Stibbert Museum** (35m train) — 19th-c eccentric's arms + armor collection (samurai, European). Better than Uffizi for the boys.
-- **San Marino** (1h 30m) — independent micro-state with 3 medieval fortresses on cliffs
-
-## Day trips from Bologna
-
-| Destination | Transit | Time | Highlight |
-|---|---|---|---|
-| **Florence** | Frecciarossa | 35m | Stibbert + Museo Galileo + Laurentian Library + Duomo |
-| **Modena** | Regional train | 30m | Ferrari Museum + balsamic + flat walkable old town |
-| **Parma** | Frecciarossa | 55m | Cured ham + Parmesan factory tours + Labirinto della Masone nearby |
-| **Ravenna** | Train | 1h | Byzantine mosaics |
-| **Mantua** | Train | 1h 30m | Palazzo del Te (Sala dei Giganti) + Palazzo Ducale |
-| **San Marino** | Train + bus | 1h 30m | Medieval micro-state, three fortresses |
-| **Siena** | Train + bus | 1h 30m | Marble cathedral floor, Piccolomini Library |
-| **Turin + Damanhur** | Frecciarossa | 2h 45m | **Recommend as 2-night weekend trip** |
-| **Cinque Terre** | Train | 2h 30m | Full day or overnight — too rushed as day trip |
-| **Lake Como** | Train via Milan | 3h | Skip — better from a future trip |
-
-## Grandma's two weeks — Oct 1 to Oct 14
-
-She arrives Wed Oct 1 via FCO + Frecciarossa direct to Bologna Centrale (3h 30m train, we meet her).
-
-### Things within her 1/4-mile radius
-- Piazza Maggiore + San Petronio
-- Quadrilatero market + Tamburini + Salumeria Simoni
-- Archiginnasio Anatomy Theater
-- Two Towers viewing area
-- Mercato delle Erbe (covered food hall, sit-down lunch)
-- Café Terzi, Le Stanze for coffee
-- Osteria del Sole (oldest osteria in Italy, 1465 — bring your own food)
-
-### Day trips she can join
-- **Florence** (35m, flat central) — Piazza della Signoria + Duomo exterior
-- **Modena** (30m) — flat, small old town
-- **Parma** (55m) — flat, very small center
-
-### Day trips without her (she chills in cafes)
-- Labirinto della Masone (lots of walking)
-- Siena (lots of standing)
-- Damanhur weekend (long drive)
-- Motor Valley deep dive day
-- San Marino (hilly)
-
-## Grey's 12th birthday — Sunday, Oct 12
-
-| Time | Plan |
-|---|---|
-| Morning | **Pasta-making class** — La Vecchia Scuola Bolognese or Bologna Cooking School. 2–3 hours seated. Grey makes his own tortellini. Grandma watches/samples. |
-| Lunch | Eat what Grey made |
-| Afternoon | Gelato crawl — Cremeria Funivia, Gelateria Galliera 49, Sorbetteria Castiglione |
-| Dinner | Birthday dinner at **Trattoria Anna Maria** (handmade pasta, classic Bolognese). Book a week ahead. |
-
-## Restaurant shortlist
+## The meals — restaurant shortlist
 
 | Where | Type | Notes |
 |---|---|---|
-| **Trattoria Anna Maria** | Classic Bolognese | **Grey's birthday dinner.** Hand-rolled pasta in the window. |
-| **Osteria del Sole** | Bring-your-own-food wine bar | Oldest osteria in Italy, 1465. Buy food at the market, eat here, they pour wine. |
-| **Trattoria di Via Serra** | Modern Emilian | A bit out of centro, but real classic + creative menu |
+| **Osteria del Sole** | Bring-your-own-food wine bar | Oldest osteria in Bologna, 1465. Buy food at the market, eat here, they pour the wine. |
+| **Trattoria Anna Maria** | Classic Bolognese | Hand-rolled pasta in the window — a strong pick for the one proper sit-down dinner. |
+| **Trattoria di Via Serra** | Modern Emilian | A bit out of centro, but real classic + creative. Book ahead. |
 | **All'Osteria Bottega** | Fine-dining Emilian | Special occasion. Book ahead. |
-| **Sfoglia Rina** | Fresh pasta + market | Buy pasta to cook at home or eat there |
-| **Tamburini deli** | Salumi counter | Stand and eat mortadella + parmesan |
-| **Osteria dell'Orsa** | Tagliatelle + cheap | Student favorite, no reservations |
-| **Cremeria Funivia** | Gelato | Their pistachio is legendary |
-| **Sorbetteria Castiglione** | Gelato | Best fruit sorbets |
-| **Camera a Sud** | Aperitivo | Spritz + buffet at sundown |
+| **Sfoglia Rina** | Fresh pasta | Buy pasta to cook at the apartment or eat there. |
+| **Tamburini deli** | Salumi counter | Stand and eat mortadella + parmesan in the Quadrilatero. |
+| **Osteria dell'Orsa** | Tagliatelle + cheap | Student favorite, no reservations. |
+| **Cremeria Funivia** | Gelato | Their pistachio is legendary. |
+| **Sorbetteria Castiglione** | Gelato | Best fruit sorbets. |
 
-## What to book ahead for Bologna
+## Optional, if a morning opens up
 
-1. **Family Airbnb (3+ BR inside porticoes)** — June
-2. **Grandma's separate space** (studio nearby OR Hotel Corona d'Oro / Art Hotel Commercianti) — June/July once dates confirm
-3. **Frecciarossa Rome → Bologna Sept 24** — bookable now
-4. **Frecciarossa Bologna → Venice Oct 15** — opens June 17
-5. **Mom's FCO ↔ Bologna trains** — June
-6. **Ferrari Museum Modena tickets** — book online whenever
-7. **Pasta-making class for Oct 12** — book 2 weeks ahead, lots of options
-8. **Trattoria Anna Maria for Oct 12** — call 2–3 weeks ahead
+- **A Parmigiano + balsamic morning toward Modena** — half an hour by train: watch Parmigiano-Reggiano made at dawn, taste barrel-aged balsamic, see Massimo Bottura's home city. The grown-up food pilgrimage of the region.
+- **Grand Tour Italia food park** (the old FICO, edge of town) — pizza and gelato made in front of you. Re-check opening days.
+- **Motor Valley — for Jude** — Ducati is in-city; Ferrari and Lamborghini sit toward Modena. Honest heads-up: two nights is tight to add a factory day, so treat it as a maybe or catch it another leg.
 
-## What's hard about Bologna
+## What to book ahead
 
-- **September/October weather** swings — bring layers, rain jacket. Porticoes save you.
-- **Old buildings**: stairs, no elevators in many. Filter Airbnb for elevator (amenity 47) if mobility matters.
-- **Limited big-name landmarks** — visitors expecting "must-see sights" will be underwhelmed. Bologna's gift is daily life, not the highlight reel.
-- **University crowds** when school's in session (Oct onward) — busy bars at night
+1. **Whole-place apartment (3+ BR) near Centrale, Oct 2–4** — book now; it's ~5 weeks out.
+2. **Frecciarossa/Italo Rome → Bologna, Fri Oct 2** — dynamic-priced, book early. Use the family discount (split the six into two bookings, each carrying an under-15).
+3. **Frecciarossa Bologna → Venice (S. Lucia), Sun Oct 4** — same, book early.
+4. **Fresh-pasta class** — small and sells out; reserve as soon as dates are firm.
+5. **Asinelli Tower timed slot** — book online.
+6. **One proper osteria dinner** — call a week or two ahead.
+
+## What's tricky about Bologna
+
+- **Only two nights** — resist the day-trip temptation. This is a food weekend; pick meals over a checklist.
+- **Sept/Oct weather swings** — bring layers and a rain jacket. The porticoes save you.
+- **Old buildings** — stairs, few elevators. Filter the apartment for what you need.
+- **University term crowds** — busy bars at night once school's back (Oct onward). Fine for a family two-night stay.

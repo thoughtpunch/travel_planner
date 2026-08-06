@@ -1,178 +1,75 @@
 # 04 — Budget
 
-## Target: $35,000 all-in
+## Headline: ~$20K in-country average
 
-Family of 6, 75 days, includes flights, accommodation, food, transit, activities, and grandma's two-week visit.
+A bottom-up model of every dollar spent **inside Italy** across the locked 9-leg loop — lodging, food, activities, local transit, the 8 intercity trains, the Dolomites rental car, and a contingency. Family of 6 (2 adults + 4 boys, two of them teenagers who eat like adults), **34 nights, Sep 11–Oct 15, 2026**.
 
-## Top-level breakdown
-
-| Category | Low | Mid | High |
-|---|---|---|---|
-| Flights (Air Canada × 6) | $5,070 | $5,070 | $5,070 |
-| Accommodation | $7,500 | $9,000 | $10,500 |
-| Groceries | $8,400 | $9,300 | $10,500 |
-| Dining out | $4,500 | $5,500 | $7,000 |
-| Trains + transit | $2,200 | $2,700 | $3,200 |
-| Activities + entries | $1,500 | $2,000 | $2,500 |
-| Grandma adder | $1,200 | $1,800 | $2,500 |
-| Insurance (medical only) | $400 | $500 | $700 |
-| Misc + buffer | $1,000 | $1,500 | $2,000 |
-| **TOTAL** | **$31,770** | **$37,370** | **$44,000** |
-
-**Working budget: ~$35,000 (between low and mid columns).**
-
-## Accommodation — by base
-
-| Base | Nights | Target $/night | Total |
-|---|---|---|---|
-| Rome (Garbatella or similar) | 18 | $150–200 | $2,700–3,600 |
-| Bologna (family apt) | 21 | $120–160 | $2,500–3,400 |
-| Bologna (grandma's space) | 14 | $50–80 | $700–1,100 |
-| Lido di Venezia | 21 | $130–170 | $2,700–3,600 |
-| Naples | 14 | $100–140 | $1,400–2,000 |
-| Rome buffer (Nov 19) | 1 | $200 | $200 |
-| **Total** | | | **$10,200–13,900** |
-
-**Reality check from Airbnb scouting:** Central Rome 3BR for 6 people runs $5,700–9,000 (way over $1,500 estimate). Moving Rome to Garbatella likely brings it back to $3,000–4,500. Bologna and Naples should hit estimates. Lido is the wildcard — limited 6-person inventory in October.
-
-## Groceries — €115/day × 75 days
-
-| Phase | Days | Daily | Total |
-|---|---|---|---|
-| Rome | 18 | €120 | €2,160 |
-| Bologna (with grandma 14 days) | 21 | €130 | €2,730 |
-| Lido di Venezia | 21 | €115 | €2,415 |
-| Naples | 14 | €100 | €1,400 |
-| **Total** | **75** | | **€8,705 (~$9,300)** |
-
-Shop at: Conad / Carrefour / Coop (Italy), with market days at Quadrilatero (Bologna), Rialto (Venice), Pazar / Pignasecca (Naples).
-
-## Dining out — 3-4 dinners per week
-
-Plan ~30 dinners across the trip at ~€140 avg for the family of 6 (without grandma; ~€170 with). Plus weekend lunches and gelato runs.
-
-| Type | Count | Avg cost | Subtotal |
-|---|---|---|---|
-| Trattoria dinners (3/wk × 11 wks) | 33 | €140 | €4,620 |
-| Pizza nights | 8 | €100 | €800 |
-| Special / birthday dinners | 4 | €280 | €1,120 |
-| Lunches out (markets, panini) | 20 | €40 | €800 |
-| Gelato + cafe stops | many | — | €400 |
-| **Total** | | | **~€7,740 (~$8,300)** |
-
-If we cook more (4-5 nights/week instead of 3), saves $1,500–2,000.
-
-## Trains + transit
-
-| Item | Cost |
-|---|---|
-| Rome → Bologna Frecciarossa (6 ppl, early-bird) | $200 |
-| Bologna → Lido Frecciarossa + Vaporetto | $230 |
-| Lido → Naples Frecciarossa | $450 |
-| Naples → Rome Frecciarossa | $100 |
-| Mom: FCO → Bologna round trip | $160 |
-| Day trip trains (10–15 trips at $80–120 avg) | $1,000–1,500 |
-| Vaporetto passes in Venice (7-day, partial) | $200 |
-| Bus / metro / local transit | $200 |
-| **Total** | **~$2,500–2,900** |
-
-## Activities + museum entries
-
-| Site | Cost (6 ppl) |
-|---|---|
-| Colosseum + Forum + Palatine combo | $110 |
-| Vatican Museums + Sistine | $100 |
-| Capuchin Crypt | $60 |
-| Castel Sant'Angelo | $90 |
-| Ferrari Museum Modena | $160 |
-| Stibbert Museum Florence | $60 |
-| Museo Galileo Florence | $80 |
-| Labirinto della Masone | $120 |
-| Doge's Palace + St Mark's | $180 |
-| Murano glassblowing demos | $30 |
-| Padua Orto Botanico | $30 |
-| Pompeii + Herculaneum | $130 |
-| Cappella Sansevero | $80 |
-| Napoli Sotterranea | $80 |
-| Pasta-making class (Bologna) | $300 |
-| Pizza-making class (Naples) | $250 |
-| **Total** | **~$1,860** |
-
-Plus inevitable extras (random churches, monasteries, exhibits): budget **$2,000 total**.
-
-## Grandma adder
-
-| Item | Cost |
-|---|---|
-| Her round-trip flight BUF/ROC → FCO | $1,000–1,200 (she may pay) |
-| FCO ↔ Bologna train | $160 |
-| Her 14 nights in Bologna (separate space) | $700–1,100 |
-| Extra meals out (family + grandma) | $400–600 |
-| **Total** | **$2,260–3,060 if Dan pays everything, $1,260–2,060 if she pays flight** |
-
-## Insurance strategy
-
-**Chase Sapphire Preferred (book flights with it) covers:**
-- Trip cancellation/interruption up to $10K/person
-- Trip delay $500/ticket after 12hr
-- Baggage delay $100/day
-- Primary rental car CDW
-
-**Skip standalone trip insurance. Buy medical-only:**
-- GeoBlue Voyager or SafetyWing or IMG Patriot
-- Family of 6, 11 weeks: **~$400–500**
-
-## Cash flow — month by month
-
-| Month | Outflow | Running |
+| Case | In-country total | Read as |
 |---|---|---|
-| **June 2026** | $8,500 (flights, 4 Airbnb deposits, insurance, first train ticket) | $8,500 |
-| **July 2026** | $3,500 (grandma flight, other Airbnb deposits, mid-trip train tickets, attraction tickets) | $12,000 |
-| **August 2026** | $3,500 (Airbnb balances, final attraction tickets, currency loading) | $15,500 |
-| **September** (in-country) | $6,500 | $22,000 |
-| **October** (in-country) | $7,000 | $29,000 |
-| **November** (in-country) | $5,000 | $34,000 |
-| **Buffer** | $1,000 | **$35,000** |
+| Low | **$16K** | Levers pulled, lean weeks |
+| **Average** | **$20K** | The realistic plan |
+| High | **$25K** | Peak prices, splurges in |
 
-No single month exceeds $8.5K. June is the heaviest because flights + deposits hit together.
+- **~$605/day** for the family, in-country
+- **~$101/person/day**
+- Honest all-in band: **$18–26K** ground cost in Italy
 
-## Payment routing
+> **Flights are BOOKED & PAID at $5,346 — and sit OUTSIDE this number.**
+> The round-trip air (Icelandair both ways via Keflavík, ref AMBVO4 — BWI→KEF→MXP out, MXP→KEF→BWI home) is already booked and paid at **$5,346**. It is *not* in any line on this page. Everything here is money spent **after you land**. Never fold the flights into the ground budget.
+>
+> ⚠️ One thing the flight fare does *not* include: **checked bags.** It's Economy Light — 0 checked bags per passenger. Adding baggage for six people is a real pre-trip cost (Icelandair add-on), separate from both the flight price above and the in-country buckets below.
 
-**Use Chase Sapphire Preferred for:**
-- Flights (2× travel points, trip protection)
-- Airbnbs (2× travel, AirCover-compatible)
-- Restaurants (**3× dining** — the best multiplier)
-- Trains, museums, day trips (1× plus trip insurance)
-- Anything that benefits from a chargeback safety net
+"Average" assumes whole-place lodging on weekly rates, cooking 4–5 nights a week, and leaning on Italy's under-18-free museum access. These are estimates, not quotes.
 
-**Use Wise debit / EUR balance for:**
-- Groceries (lower transaction cost, no points lost)
-- ATM cash withdrawals
-- Anything that wants a SEPA wire (some off-platform hosts)
+## The seven buckets
 
-**Wise EUR hedging:** Move $2K USD→EUR in June, again in July, again in August. Aim for ~$6,000–8,000 sitting in Wise EUR by Sept 6. Locks in exchange rate over time vs betting on one moment.
+Everything on the ground, grouped, each with a low / average / high band. Lodging comes straight off the housing model; the rest is built from family-of-6 day rates and the specifics of this itinerary.
 
-**Expected points haul from CSP across this trip: ~38,000–40,000 Ultimate Rewards.** Worth $480 cashback / $770 through Chase Travel / $800–1,200 in transfer partner redemptions.
+| Bucket | Low | Avg | High | What's in it |
+|---|---|---|---|---|
+| Lodging | $7,500 | **$9,200** | $10,800 | Whole-place sleeps-6 apartments; weekly rate on Florence + Rome; the Val Gardena chalet splurge |
+| Food | $4,300 | **$5,200** | $6,300 | Groceries + dining. Cook / eat in 4–5 nights a week; 3 splurge dinners for the celebrations |
+| Activities & entry | $900 | **$1,300** | $1,800 | Classes, workshops, boats, cable cars. EU under-18s free at Italian state museums |
+| Local transit | $650 | **$850** | $1,100 | Venice vaporetti, Como & CT ferries, Brunate funicular, Cinque Terre Card, Rome Metro B |
+| Intercity trains (8 legs) | $1,300 | **$1,750** | $2,200 | The 8 rail moves for the family — detail on the Trains page |
+| Dolomites rental car | $550 | **$650** | $750 | Car + fuel + tolls, ~5 days from Bolzano — the only driving leg |
+| Misc / contingency | $1,200 | **$1,600** | $2,300 | SIMs, laundry, gifts/souvenirs, medical/pharmacy, the inevitable unplanned |
+| **In-country total · 34 nts** | **≈ $16,400** | **≈ $20,550** | **≈ $25,250** | |
+| Per day | $482 | $605 | $743 | |
+| Per person, per day | $80 | $101 | $124 | |
 
-**Bonus move:** Refer Kei for her own Chase Sapphire Preferred. ~$750–900 in sign-up bonus value if she's eligible (under 5/24, no recent Chase cards). Apply now so card arrives before September spending starts.
+Lodging and food together are **~70%** of the ground cost — which is exactly why the whole-place-with-a-kitchen strategy is the whole ballgame. Trains are the biggest lumpy line after that; the Dolomites car is small because it's one 5-day leg.
 
-## Levers if we go over $35K
+## Money-saving levers
 
-| Cut | Saves |
-|---|---|
-| Cook 5 nights/week instead of 3 | $1,500–2,000 |
-| Drop the Dolomites weekend | $800 |
-| Drop the Damanhur weekend | $500 |
-| Drop the Orvieto side trip | $400 |
-| Choose Naples Quartieri Spagnoli over Chiaia | $400 |
-| Skip 2–3 paid museums | $400 |
+Ranked by dollars saved. None of these cut anything you'd actually miss — they're the difference between the high case and the low.
 
-## Levers if we have room to spare
+| Lever | How | Saves |
+|---|---|---|
+| **Weekly-rate lodging** | Book **Florence and Rome** (7 nights each) whole-place to trigger the weekly discount — 10–20% off nightly — with a kitchen everywhere | $1,000–1,800 |
+| **Cook 4–5 nights/week** | Every home dinner for 6 beats a trattoria by ~$100. Shop Lidl / Eurospin / Conad and the markets (Mercato Centrale, Testaccio, the Bologna Quadrilatero, Rialto) | $1,200–1,800 |
+| **EU under-18s free at state sites** | Grey (12), Keir (9) and Rhys (until Sep 18) enter the Colosseum, Uffizi, Doge's Palace, Accademia and every Italian state site free. Rhys pays adult after his birthday | $500–800 |
+| **Regionale + family rail discount** | Cheap Regionale for short hops; Frecce early-bird for the long legs; stack Trenitalia's Bimbi Gratis (under-15s free with adults — covers Grey and Keir) | $400–700 |
+| **Passes, not singles** | 7-day ACTV vaporetto pass on the Lido, Cinque Terre Card, Como/Brunate day tickets. Buy the pass the moment you'll ride more than twice | $200–400 |
 
-| Add | Costs |
-|---|---|
-| Premium Rome apartment (Prati luxury) | +$3,000 |
-| Amalfi 3-night side trip with a hotel on the coast | +$800 |
-| Hire a private guide for Pompeii | +$200 |
-| Opera at La Fenice in Venice | +$200 |
-| Truffle hunting day in Umbria | +$500 |
+Pull the top four and you're at the low case: weekly rates + cook 4–5 nights + under-18-free + smart trains is the difference between the **$25K high** and the **~$16–18K low** — with nothing cut from the trip.
+
+## Where to splurge
+
+Cooking most nights buys a handful of dinners worth blowing out. These are already inside the food and lodging bands — this is just where they land.
+
+| Splurge | When / where | Why |
+|---|---|---|
+| **Rhys turns 18** | Sep 18 · Florence | First night in the work base — a proper Tuscan pasta blowout (La Giostra / Tre Panche / Il Santo Bevitore), his first legal Chianti. Also his last day of free state-museum entry, so time the Uffizi around it |
+| **Anniversary** | Oct 9 · Val Gardena | A gourmet Ladin dinner (Anna Stuben, Michelin, or Alpenroyal) to open the splurge leg — the boys hold the fort with pizza-and-movie night at the chalet |
+| **Grey turns 12** | Oct 12 · Dolomites | Seceda cable car + ridge, rifugio lunch, toboggan and a birthday pizza night in the mountains |
+| **The Val Gardena chalet** | Oct 9–14 | The one deliberately-spent-up-on stay — the only leg with a car, and the priciest region. A kitchen keeps the rest of the leg tight |
+
+## Next moves (~5 weeks out — Aug 2026)
+
+1. **Lock Florence + Rome lodging first** to bank the weekly rate — the single biggest ground-cost lever. Whole-place with a verified-wifi desk for Dan's 4–11pm work window.
+2. **Book the 8 rail legs early** — the three Frecciarossa fast legs (Florence→Rome, Rome→Bologna, Bologna→Venice) are dynamic-priced like flights. Split the six into two family bookings so Bimbi Gratis covers Grey and Keir.
+3. **Then the Dolomites rental car** (Bolzano pickup Oct 9).
+4. Treat **$18–26K as the in-country target** — flights ($5,346) are already paid and don't count against it. Aim for the ~$20K average; the painless levers pull it toward $16–18K.
+
+See also: [Housing](public/housing.html) · [Trains](public/trains.html) · [Celebrations](public/celebrations.html) · live [Budget page](public/budget.html).

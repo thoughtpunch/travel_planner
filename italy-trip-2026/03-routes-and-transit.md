@@ -2,155 +2,68 @@
 
 ## The big picture
 
-Italy is shaped like a boot — we move down the leg, with one detour northeast to Venice. Four bases connected by **four train rides**, no flights mid-trip. Italian high-speed rail (Frecciarossa, Italo) makes this the cheapest, fastest, and most comfortable option for a family of 6.
+The whole trip is a **rail-first loop that starts and ends in Milan** — 34 nights, nine stops, and we are **carless the entire time except the Dolomites** (one rental car picked up in Bolzano). No internal flights, no ferries between regions this year. Italian rail — high-speed Frecciarossa/Italo where it pays off, flat-fare Regionale everywhere else — does all the heavy lifting for a family of six.
 
 ```
-                  Dolomites
-                     △
-                     │ (weekend detour
-                     │  from Lido)
-                     │
-  Bologna ─────── Lido di Venezia
-     │                  │
-     │                  │
-     │                  │
-  Florence (day trip)   │
-     │                  │
-     ▼                  │
-   Rome ◀───────────────┘
-     │
-     │ (the long leg)
-     ▼
-   Naples
-     │
-     ▼ (Amalfi day trips)
-   Capri / Pompeii / Atrani
+  Milan ──► Como ──► Cinque Terre ──► Florence ──► Rome
+   ▲                                                 │
+   │                                                 ▼
+ Malpensa ◄── Dolomites ◄── Venice/Lido ◄──────── Bologna
+ (fly home)   (the car leg)
 ```
 
-## The four inter-base transits
+See the live **[/trains](public/trains.html)** page for the same legs with links to buy.
 
-### Transit 1 — Rome → Bologna (Sept 24)
+## Two kinds of train, two kinds of ticket
 
-| Option | Time | Cost (6 ppl, Super Economy) | Verdict |
-|---|---|---|---|
-| **Frecciarossa direct** | 2h 45m | $200–250 | **Best.** Hourly departures, smooth |
-| Italo direct | 2h 35m | $180–230 | Equally good, slightly cheaper |
-| Drive (rental car) | 4h 30m + traffic | $300+ fuel/tolls + rental | Worse on every dimension |
-| Regional train | 6h+ with transfers | $150 | Way too slow |
+Get this and everything else is easy — Italy runs two different products with different buying rules.
 
-**Recommendation: Frecciarossa.** Book at 120-day window for Super Economy fares (€19–29/person). Walk-up is €70+. Suitcases stay with you on the train — no checked bag drama.
+- **Le Frecce / Italo — high-speed.** Fast, reserved, seat-assigned (Frecciarossa is Trenitalia; Italo is the private competitor on the same routes). Price is **dynamic, like flights**: a Florence→Rome seat is ~€19 a month out and ~€55 the day of. **Book these early** — the cheap "Super Economy" fare sells in tiers and is gone once the train fills. We use high-speed for **Florence→Rome, Rome→Bologna, Bologna→Venice**.
+- **Regionale — the local network.** Flat price, never sells out, no reservation, no assigned seat. Buy it five minutes or five weeks ahead — same fare. This is how we ride Milan→Como, the Cinque Terre coast line, and the short northern hops. One rule: paper tickets must be **validated/self-checked-in** before boarding (app tickets auto-activate).
 
-### Transit 2 — Bologna → Venice/Lido (Oct 15)
+## The family discount — "Offerta Famiglia"
 
-| Option | Time | Cost (6 ppl) | Verdict |
-|---|---|---|---|
-| **Frecciarossa to Venezia S. Lucia + Vaporetto to Lido** | 2h + 25m | $180–230 + €60 vaporetto | **Best.** |
-| Italo to Venezia Mestre + bus/taxi | 2h 15m + 30m | $160 + €40 | Slightly cheaper, more transfers |
-| Drive | 3h | $250+ rental, parking nightmare in Venice | Don't drive in Venice |
+On Le Frecce and Intercity, a group of **2–5 that includes at least one child under 15** travels as a family: the **under-15s ride FREE and the adults get 20% off**. **Grey (11, turns 12 on Oct 12) and Keir (9)** are both under 15.
 
-**Recommendation: Frecciarossa to S. Lucia, then Vaporetto Line 1 or 2 directly to Lido (12 min).** This is the most magical arrival of the trip — train slides into Venice over the lagoon causeway, you walk out the door into water taxis.
+Because a family booking maxes at **5 people**, we **split the six into two bookings, each carrying one of the little ones** — e.g. {Dan · Kei · Grey} and {Rhys · Jude · Keir} — so both bookings unlock the discount. Rhys (18) and Jude (16) pay adult fares. Italo has the same mechanic ("Italo Famiglia"). Set the passenger ages when booking and it applies automatically.
 
-**Luggage warning:** Lido is bike-and-foot only. From the vaporetto stop on Lido, taxi or hired van to apartment. Pre-arrange this with the host.
+## The 8 rail legs, in travel order
 
-### Transit 3 — Lido → Naples (Nov 5)
+Relocations are mostly Fri/Sat/Sun (the first week is PTO, so midweek moves are fine there). Dan works 4–11pm, so we travel mornings/early afternoon. "Family of 6" fares assume advance/off-peak booking with the Famiglia discount applied on the high-speed legs.
 
-| Option | Time | Cost (6 ppl) | Verdict |
-|---|---|---|---|
-| **Frecciarossa Venezia → Roma → Napoli** | 5h 10m (1 quick change in Rome) | $400–500 | **Best.** Same-station Frecciarossa connection in Roma Termini, ~30 min layover. |
-| Frecciarossa direct Venezia → Napoli | 5h 20m, no change | $450–550 | Slightly more expensive, no change but fewer departures |
-| Fly Venice (VCE) → Naples (NAP) | 1h 30m flight + 4h transfer overhead | $400–600 + $50 luggage fees | Faster on paper but airport drama with 6 ppl |
-| Drive | 8h+ | $400+ + tolls | Hard pass |
+| # | Leg · date | Line & operator | Time | Family of 6 | Book |
+|---|---|---|---|---|---|
+| 1 | **Milan → Como** · Sun Sep 13 | Regionale · Milano Centrale → Como S. Giovanni | ~40 min–1h | €27–32 | Walk-up / app · flat fare |
+| 2 | **Como → Cinque Terre** · Wed Sep 16 (PTO) | Regionale Como → Milano, then IC/Regionale → Levanto/La Spezia | ~3–4h | €120–170 | 1 change in Milan |
+| 3 | **Cinque Terre → Florence** · Fri Sep 18 (PTO) | Regionale Veloce / Intercity · La Spezia Centrale → Firenze S.M.N. (often via Pisa) | ~2h 30 | €90–150 | Flat/reserved regional |
+| 4 | **Florence → Rome** · Fri Sep 25 | **Frecciarossa / Italo** · Firenze S.M.N. → Roma Termini (direct) | ~1h 35 | €100–170 | **Book early — dynamic** |
+| 5 | **Rome → Bologna** · Fri Oct 2 | **Frecciarossa / Italo** · Roma Termini → Bologna Centrale (direct) | ~2h 05–2h 15 | €120–190 | **Book early — dynamic** |
+| 6 | **Bologna → Venice** · Sun Oct 4 | **Frecciarossa** → Venezia S. Lucia (or Regionale Veloce ~2h flat), then vaporetto to the Lido | ~1h 30–2h | €90–150 | **Book early — dynamic** |
+| 7 | **Venice → Dolomites** · Fri Oct 9 | Venezia S. Lucia → Verona P.N. → Bolzano (change at Verona; RV/EuroCity). **Collect rental car in Bolzano.** | ~3h 15 | €150–220 | Then car |
+| 8 | **Dolomites → Malpensa** · Wed Oct 14 | **Return car in Bolzano**; Bolzano → Verona → Milano Centrale, then Malpensa Express / hotel shuttle | ~4h | €180–290 | Trenitalia + Malpensa Express |
 
-**Recommendation: Frecciarossa direct if available, otherwise via Rome.** The direct train is ideal — just pack a long-lunch picnic and ride. Italo also runs some of this corridor.
+**Legs 4, 5, 6 are the three dynamic-priced fast legs — book them the moment fares open (~4 months out).** That is where the real money is saved. Everything else is flat-fare Regionale you can buy same-week without penalty.
 
-### Transit 4 — Naples → Rome (Nov 19)
+## The one car leg — Dolomites (Oct 9–14)
 
-| Option | Time | Cost (6 ppl) | Verdict |
-|---|---|---|---|
-| **Frecciarossa Napoli Centrale → Roma Termini** | 70 min | $80–120 | **Best.** Departs constantly, fast, easy |
-| Italo same route | 70 min | $80–110 | Equivalent |
-| Drive | 2h 30m | $200+ | Why would you |
+The only driving of the whole trip. **Pick up the rental in Bolzano** after the train from Venice, **return it in Bolzano** before the Milan/Malpensa leg. Reserve a **6-seater/SUV or small van early** — small-city depots run out. Watch for **ZTL** limited-traffic zones in the old centers and buy an **autostrada** Telepass or pay tolls as you go. This car covers Val Gardena (Ortisei/Selva), the passes, and Alpe di Siusi. Rough cost **~$650** for 5 days (see [/budget](public/budget.html)).
 
-**Recommendation: Frecciarossa.** Sleep in Rome that night near FCO, fly home Nov 20 at 1:15pm.
+## Local transit inside each stop
 
-## Grandma's routing (Oct 1 and Oct 14)
+- **Lake Como (Sep 13–16):** the lake is the highway. A **central-lake ferry day pass** (Como–Bellagio–Varenna–Menaggio) covers the Bellagio/Varenna day; single hops otherwise. Pair with the **Como–Brunate funicular** (~€6 return). — Navigazione Lago di Como.
+- **Cinque Terre (Sep 16–18):** the **Cinque Terre Card (Treno)** — unlimited local trains Levanto↔La Spezia through all five villages, plus trail access and buses, ~€19.50/day adult (kid discounts). Village-hopping train every ~20 min. Coastal boats run village to village as a scenic alternative.
+- **Rome (Sep 25–Oct 2):** Metro A/B/C, trams, buses. **ATAC weekly pass ~€24/person**; walking is the main mode for the centro. "Uber" routes to licensed taxi.
+- **Venice / Lido (Oct 4–9):** ACTV **vaporetti** are the water buses — from the Lido base we ride daily, so a **multi-day ACTV pass** (2/3/7-day) beats €9.50 singles fast and covers Murano/Burano/Torcello. Lido itself is flat, bike-and-foot; arrange a taxi/van for the bags from the vaporetto stop to the apartment.
+- **Airport ends (Malpensa):** arrival late Fri Sep 11 (land 9:55pm) — take the **Malpensa Express** train to Milano Centrale/Cadorna (~50 min, €13pp) or, easier at that hour with six and bags, a **pre-booked 6-seat van** (~€100–120). Departure — sleep at a **Malpensa airport hotel** Oct 14 with shuttle so the Oct 15 flight home is a stress-free roll to the terminal.
 
-### Outbound: Buffalo/Rochester → Bologna
+## Rough total
 
-| Leg | Mode | Time | Cost |
-|---|---|---|---|
-| BUF or ROC → JFK | Domestic flight | 1.5h + transfer | $200–400 |
-| JFK → FCO | Transatlantic | 8.5h | $800–1,000 |
-| FCO airport station → Bologna Centrale | **Frecciarossa direct** | 3h 30m | $80 |
-| Bologna Centrale → apartment | Taxi | 10 min | $15 |
+- **Eight rail legs: ~€900–1,450 (~$1,000–1,600)** for all six, with the Famiglia discount and advance high-speed fares.
+- **All local transit in: ~$1,400–2,200** once you add vaporetti, the Cinque Terre Card, Como ferries, the Brunate funicular, Rome Metro, and the Malpensa transfers.
+- Dolomites rental car ~$650 sits separately (see [/budget](public/budget.html)).
 
-**Total**: ~16 hours door-to-door. One transatlantic connection (JFK). The Frecciarossa is the gentlest part — she sits the whole time and we meet her at the platform.
+## Book in this order
 
-**Why not fly direct to Bologna BLQ?** Connecting through Frankfurt/Munich/Amsterdam adds 2–3 more transfers. The single Frecciarossa from FCO is easier on her body even though longer.
-
-### Return: Bologna → Buffalo/Rochester
-
-Reverse of outbound. We escort her to Bologna Centrale and onto the FCO-bound Frecciarossa. From there she navigates one transatlantic.
-
-## Inside each base — local transit
-
-### Rome
-- Metro A, B, C, regional trains, trams, buses
-- ATAC weekly pass: ~€24/person
-- Walking is the main mode for sightseeing
-- Uber works but is expensive (no Italian Uber Black tier in Rome; "Uber" routes to licensed taxi)
-
-### Bologna
-- Walkable city center — most of what we want is inside the porticoes
-- TPER buses for outer areas
-- Bike rental for older boys
-- Regional trains for day trips (Modena, Parma, Florence, Ravenna)
-
-### Lido di Venezia
-- **Bikes are the main transport on Lido** — rent for the duration
-- Vaporetto Line 1 or 2 to Venice (12 min)
-- 7-day vaporetto pass: €65/person — math vs single tickets (€9.50 each) depends on how often we cross
-- Walkable Lido itself; the island is flat
-
-### Naples
-- Walkable Centro Storico and Spaccanapoli
-- Metro Line 1 (the famous art metro stations) for further moves
-- **Circumvesuviana** train to Pompeii and Sorrento (cheap, slow, slightly chaotic)
-- Ferry to Capri / Procida / Ischia from Molo Beverello
-- Avoid driving in Naples
-
-## Optional: Dolomites weekend from Lido
-
-**Rent a car for 3 days from Venice Mestre (NOT Venice itself — no cars on the islands).**
-
-| Leg | Mode | Time |
-|---|---|---|
-| Lido → Mestre car rental | Vaporetto + train | 1h |
-| Mestre → Cortina d'Ampezzo / Val Gardena | Drive | 2.5h |
-| Around Dolomites | Drive | Variable |
-| Back to Mestre → Lido | Reverse | 3.5h |
-
-**Cost**: ~$200 rental (3 days, family-size car) + $80 fuel + tolls + $400 for 2 nights in a mountain lodge + meals.
-
-**Use Chase Sapphire Preferred for rental** — primary CDW coverage, decline the rental agency's insurance.
-
-## Optional: Damanhur weekend from Bologna
-
-Damanhur is near Turin in Piedmont. Two ways:
-
-| Option | Time | Cost | Verdict |
-|---|---|---|---|
-| Frecciarossa Bologna → Torino + local bus to Damanhur | 2h 45m + 1h | $250 for 6 round-trip | **Best.** Sit on train, take in views |
-| Drive | 4h each way | $250 rental + tolls + fuel | Only if combining with other Piedmont stops |
-
-Stay 1–2 nights near Turin to see Damanhur Temples (tour book required, 3 weeks ahead) + Egyptian Museum + esoteric Turin walking.
-
-## A note on driving
-
-**We default to not renting a car.** Italian trains are excellent, parking in old cities is brutal, ZTLs (limited-traffic zones) ticket tourists relentlessly, and tolls add up. We rent a car only when:
-
-1. **Day trip to Bomarzo + Civita di Bagnoregio** from Rome (1 day, ~$60 rental)
-2. **Dolomites weekend** from Lido (3 days, ~$200 rental)
-3. **Maybe Damanhur weekend** from Bologna (if we go)
-
-Everything else moves on trains.
+1. **The three Frecciarossa legs** (Florence→Rome, Rome→Bologna, Bologna→Venice) the day fares open — passenger ages set so Famiglia applies. Biggest single saving.
+2. **The Dolomites rental car** (Bolzano pickup/return, 6-seater, Oct 9–14) and the **Malpensa arrival van** — small-city depots and late-night transfers sell out.
+3. **The Regionale legs** (Milan→Como, Como→Cinque Terre, Cinque Terre→Florence, Venice→Bolzano) same-week, no rush — flat fares. Buy the Cinque Terre Card, Como ferry pass, and Venice vaporetto card on arrival.
