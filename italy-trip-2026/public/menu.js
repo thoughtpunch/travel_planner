@@ -38,6 +38,7 @@
     {
       title: 'Planning',
       links: [
+        { label: '★ Considerations · reshape?', href: '/considerations' },
         { label: 'Trains · lines + costs', href: '/trains' },
         { label: 'Stays · belt strategy', href: '/housing' },
         { label: 'Budget · per city, per day', href: '/budget' },
