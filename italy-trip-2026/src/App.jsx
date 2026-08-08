@@ -13,9 +13,9 @@ export default function App() {
           <div className="trip-label">Barrett Family Italy · Sep 11 – Oct 15, 2026</div>
           <h1 className="trip-title">Italy <em>—</em> Milan back to Milan,<br />by rail</h1>
           <p className="trip-tagline">
-            A rail-first family loop: land in Milan, ease down through the lakes and the
-            Ligurian coast to the two long work bases — Florence and Rome — then swing back up
-            through Bologna, Venice and the Dolomites and out of Malpensa. {TOTAL_NIGHTS} nights,
+            A rail-first family loop: land in Milan, swing west to Turin and the
+            Ligurian coast, then down to the two long work bases — Florence and Rome — before
+            curving back up through Venice and the Dolomites and out of Malpensa. {TOTAL_NIGHTS} nights,
             no car except the Dolomites, food and family over checklist tourism.
           </p>
           <nav className="topnav">

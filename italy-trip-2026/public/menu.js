@@ -7,22 +7,21 @@
       links: [
         { label: 'Home · the map', href: '/' },
         { label: '1 · Milan', href: '/milan' },
-        { label: '2 · Lake Como', href: '/como' },
-        { label: '3 · Cinque Terre', href: '/cinqueterre' },
+        { label: '2 · Turin', href: '/turin' },
+        { label: '3 · Cinque Terre (coast)', href: '/cinqueterre' },
         { label: '4 · Florence', href: '/florence' },
         { label: '5 · Rome', href: '/rome' },
-        { label: '6 · Bologna', href: '/bologna' },
-        { label: '7 · Venice / Lido', href: '/venice' },
-        { label: '8 · Dolomites', href: '/dolomites' },
-        { label: '9 · Malpensa (depart)', href: '/trains' },
+        { label: '6 · Venice / Lido', href: '/venice' },
+        { label: '7 · Dolomites', href: '/dolomites' },
+        { label: '8 · Malpensa (depart)', href: '/trains' },
       ],
     },
     {
       title: 'Milestones',
       links: [
         { label: 'All three celebrations', href: '/celebrations' },
-        { label: 'Rhys turns 18 · Florence', href: '/celebrations#rhys' },
-        { label: 'Anniversary · Dolomites', href: '/celebrations#anniversary' },
+        { label: 'Rhys turns 18 · the coast', href: '/celebrations#rhys' },
+        { label: 'Anniversary · Venice', href: '/celebrations#anniversary' },
         { label: "Grey turns 12 · Dolomites", href: '/celebrations#grey' },
       ],
     },
@@ -48,6 +47,7 @@
     {
       title: 'More',
       links: [
+        { label: 'Bologna · day-trip from Florence', href: '/bologna' },
         { label: 'Activities hub', href: '/activities' },
         { label: 'Boy adventures', href: '/adventures' },
         { label: 'Worldschooling families', href: '/worldschooling' },

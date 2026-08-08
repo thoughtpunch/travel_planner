@@ -50,7 +50,7 @@ export default function TripMap() {
         </Polyline>
       ))}
 
-      {/* Florence side-dot (part of the Bologna hub) */}
+      {/* Optional side-dots (none in the locked 8-stop plan) */}
       {SIDE.map((s) => (
         <CircleMarker
           key={s.key}
