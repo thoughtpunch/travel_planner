@@ -22,8 +22,8 @@ window.TRIP_COSTS = {
     { id:'fl-ice',      cat:'Flights', label:'Icelandair BWI⇄Milan · ref AMBVO4', usd:5346,    status:'booked' },
     { id:'fl-avianca',  cat:'Flights', label:'Avianca SJO⇄IAD positioning · ref AABDA8', usd:1870.74, status:'booked' },
 
-    { id:'lo-milan',    cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:null,  status:'booked', note:'enter the amount you paid' },
-    { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:null,  status:'booked', note:'free cancel · enter amount' },
+    { id:'lo-milan',    cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:465.60, status:'booked' },
+    { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:415.71, status:'booked', note:'free cancellation' },
     { id:'lo-coast',    cat:'Lodging', label:'Ligurian coast — Chiavari · Sep 15–19 (4n)', usd:1080, status:'estimate' }, // ~€1000
     { id:'lo-florence', cat:'Lodging', label:'Florence · Sep 19–26 (7n)',            usd:1700,  status:'estimate' },
     { id:'lo-rome',     cat:'Lodging', label:'Rome · Sep 26–Oct 3 (7n)',             usd:1600,  status:'estimate' },
