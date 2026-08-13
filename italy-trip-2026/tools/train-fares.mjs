@@ -49,12 +49,13 @@
 // ---------------------------------------------------------------------------
 const ADULTS_DEFAULT = 6;
 const LEGS = [
-  { from: 'Milano Centrale',    to: 'Chiavari',          date: '2026-09-13' }, // EDIT ME
-  { from: 'Chiavari',           to: 'Torino Porta Nuova', date: '2026-09-17' }, // EDIT ME
+  { from: 'Milano Centrale',    to: 'Torino Porta Nuova', date: '2026-09-13' },
+  { from: 'Torino Porta Nuova', to: 'Chiavari',           date: '2026-09-15' },
   // NOTE: use "Firenze S. M. Novella" — the API's lookup can't parse "S.M.N."
-  { from: 'Torino Porta Nuova', to: 'Firenze S. M. Novella', date: '2026-09-19' }, // EDIT ME
-  { from: 'Firenze S. M. Novella', to: 'Roma Termini',    date: '2026-09-26' }, // EDIT ME
-  { from: 'Roma Termini',       to: 'Venezia S. Lucia',   date: '2026-10-03' }, // EDIT ME
+  { from: 'Chiavari',           to: 'Firenze S. M. Novella', date: '2026-09-19' },
+  { from: 'Firenze S. M. Novella', to: 'Roma Termini',    date: '2026-09-26' },
+  { from: 'Roma Termini',       to: 'Venezia S. Lucia',   date: '2026-10-03' },
+  { from: 'Venezia S. Lucia',   to: 'Bolzano',            date: '2026-10-10' },
 ];
 
 // ---------------------------------------------------------------------------
