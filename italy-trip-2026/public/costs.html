@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Running Total — Live Cost Tracker — Italy 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kids.css">
+<style>
+  /* ── scoped to the cost tracker; everything else is kids.css ── */
+  .ct-hero-total{ display:flex; flex-wrap:wrap; gap:28px 44px; align-items:flex-end; margin-top:8px }
+  .ct-figure{ line-height:1 }
+  .ct-figure .ct-num{ font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(40px,8vw,76px); color:var(--ink) }
+  .ct-figure .ct-lab{ font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--stone); margin-top:6px }
+  .ct-figure.is-over .ct-num{ color:var(--vesuvio) }
+  .ct-figure.is-under .ct-num{ color:var(--sage) }
+
+  .ct-bar-wrap{ margin:26px 0 4px }
+  .ct-bar{ position:relative; height:26px; border:2px solid var(--ink); border-radius:14px; background:#fff; overflow:hidden }
+  .ct-bar-fill{ position:absolute; inset:0 auto 0 0; width:0; background:var(--ochre); transition:width .18s ease, background .18s ease }
+  .ct-bar-fill.warn{ background:var(--terra) }
+  .ct-bar-fill.over{ background:var(--vesuvio) }
+  .ct-bar-cap{ display:flex; justify-content:space-between; font-family:'DM Mono',monospace; font-size:12px; color:var(--stone); margin-top:8px }
+
+  .ct-budget-input{ font-family:'DM Mono',monospace; font-size:15px; width:120px; padding:6px 8px; border:2px solid var(--ink); border-radius:8px; background:#fff; color:var(--ink) }
+  .ct-amt-input{ font-family:'DM Mono',monospace; font-size:14px; width:96px; padding:5px 7px; border:1px solid var(--stone); border-radius:7px; background:#fff; color:var(--ink); text-align:right }
+  .ct-amt-input:focus,.ct-budget-input:focus{ outline:none; border-color:var(--terra) }
+
+  .ct-tag{ font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.5px; text-transform:uppercase; padding:2px 7px; border-radius:10px; white-space:nowrap }
+  .ct-tag.booked{ background:rgba(107,142,90,0.16); color:#4f6b3f }
+  .ct-tag.estimate{ background:rgba(140,123,107,0.16); color:var(--stone) }
+
+  table.ct-table td.ct-amt{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums }
+  .ct-catrow td{ font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--terra); padding-top:18px }
+  .ct-subtotal td{ font-weight:700; border-top:1px solid rgba(26,21,16,0.15) }
+
+  .ct-slider{ margin:22px 0 }
+  .ct-slider-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px }
+  .ct-slider-head .ct-s-lab{ font-weight:500 }
+  .ct-slider-head .ct-s-val{ font-family:'DM Mono',monospace; font-size:15px; color:var(--terra); font-weight:500; white-space:nowrap }
+  .ct-slider-head .ct-s-sub{ font-family:'DM Mono',monospace; font-size:12px; color:var(--stone) }
+  input[type=range].ct-range{ -webkit-appearance:none; appearance:none; width:100%; height:6px; border-radius:3px; background:linear-gradient(var(--stone),var(--stone)) no-repeat; background-size:0% 100%; background-color:rgba(140,123,107,0.28); margin-top:12px; cursor:pointer }
+  input[type=range].ct-range::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; width:22px; height:22px; border-radius:50%; background:var(--terra); border:3px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.25) }
+  input[type=range].ct-range::-moz-range-thumb{ width:20px; height:20px; border:3px solid #fff; border-radius:50%; background:var(--terra) }
+  .ct-actions{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:6px }
+  .ct-btn{ font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.5px; text-transform:uppercase; padding:9px 16px; border:2px solid var(--ink); border-radius:9px; background:#fff; color:var(--ink); cursor:pointer }
+  .ct-btn:hover{ background:var(--ink); color:#fff }
+  .ct-saved{ font-family:'DM Mono',monospace; font-size:11px; color:var(--sage); opacity:0; transition:opacity .3s }
+  .ct-saved.show{ opacity:1 }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="kid-eyebrow">Strategy · Live tracker</div>
+    <h1 class="kid-name">Running total <em>— are we in budget?</em></h1>
+    <div class="stop-hero-meta">
+      <span>34 nights · family of 6</span>
+      <span>Booked + estimated, all in USD</span>
+      <span>Edits save in your browser</span>
+    </div>
+    <p class="trip-tagline" style="margin-top:16px">Every committed cost plus a live model of the day-to-day. Type your real booked amounts into the ledger, drag the sliders to see how eating in vs. out (and activities, transit, extras) moves the total — the number and the budget bar update instantly, and your inputs stick on this device. Flights, the two booked Airbnbs, and the real train pull are in here; the rest are estimates you can overwrite as you book.</p>
+  </div>
+</header>
+
+<nav class="toc kidnav">
+  <ul>
+    <li><a class="back-link" href="/">← Map</a></li>
+    <li><a href="/costs" class="current">Running total</a></li>
+    <li><a href="/budget">Budget model</a></li>
+    <li><a href="/housing">Housing</a></li>
+    <li><a href="/trains">Trains</a></li>
+    <li><a href="/plan">Full plan</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ── THE HEADLINE NUMBER + BUDGET BAR ── -->
+<section style="border-top:none;padding-top:44px">
+  <div class="section-label">— The headline</div>
+  <h2 class="section-title">Where we <em>stand</em></h2>
+
+  <div class="ct-hero-total">
+    <div class="ct-figure" id="fig-projected"><div class="ct-num" id="num-projected">—</div><div class="ct-lab">Projected all-in total</div></div>
+    <div class="ct-figure"><div class="ct-num" id="num-booked" style="font-size:clamp(28px,5vw,44px);color:var(--stone)">—</div><div class="ct-lab">Committed so far (booked)</div></div>
+    <div class="ct-figure" id="fig-remaining"><div class="ct-num" id="num-remaining" style="font-size:clamp(28px,5vw,44px)">—</div><div class="ct-lab" id="lab-remaining">Left in budget</div></div>
+  </div>
+
+  <div class="ct-bar-wrap">
+    <div class="ct-bar"><div class="ct-bar-fill" id="bar-fill"></div></div>
+    <div class="ct-bar-cap">
+      <span id="bar-pct">—</span>
+      <span>Budget: $<input class="ct-budget-input" id="budget-input" type="number" step="500" inputmode="numeric"> </span>
+    </div>
+  </div>
+
+  <div class="ct-actions">
+    <button class="ct-btn" id="btn-reset">Reset to defaults</button>
+    <span class="ct-saved" id="saved-note">saved ✓</span>
+    <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--stone)">Per day: <strong id="per-day">—</strong> · per person/day: <strong id="per-person">—</strong></span>
+  </div>
+</section>
+
+<!-- ── THE LEDGER (fixed / booked) ── -->
+<section class="base-section" style="border-top:2px solid var(--ink)">
+  <div class="section-label">— The ledger</div>
+  <h2 class="section-title">Committed &amp; <em>planned</em></h2>
+  <p class="section-intro">Flights and the two booked Airbnbs are real. The rest of the lodging, the trains and the car are <span class="ct-tag estimate">estimate</span> placeholders — overwrite any amount and it saves. Set a booked Airbnb's amount to fill in the blanks.</p>
+  <div style="overflow-x:auto">
+    <table class="ct-table">
+      <thead><tr><th>Line item</th><th></th><th class="num">Amount (USD)</th></tr></thead>
+      <tbody id="ledger-body"><!-- rendered --></tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--stone);margin-top:12px" id="ledger-note"></p>
+</section>
+
+<!-- ── THE DAILY MODEL (sliders) ── -->
+<section class="base-section" style="border-top:2px solid var(--ink)">
+  <div class="section-label">— The daily model</div>
+  <h2 class="section-title">Drag to <em>see the swing</em></h2>
+  <p class="section-intro">The day-to-day spend across all 34 days. Eating in is the biggest lever — a restaurant dinner for six runs ~$130, a cooked one ~$40. Everything here rolls straight into the total above.</p>
+  <div id="sliders"><!-- rendered --></div>
+  <div class="callout callout-good" style="margin-top:24px">
+    <span class="callout-title">Variable ground spend, at these settings</span>
+    <span id="variable-summary">—</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <h2>How this works</h2>
+    <p style="color:rgba(245,240,232,0.8);max-width:640px;margin-bottom:14px">Defaults live in <code style="color:var(--ochre)">costs-data.js</code>; your edits (booked amounts, sliders, budget) save to this browser only. Nothing is uploaded. To make a number the permanent default for everyone, change it in the data file and redeploy. The deeper low/avg/high model is on <a href="/budget" style="color:var(--ochre)">Budget</a>; the real train fares are on <a href="/trains" style="color:var(--ochre)">Trains</a>.</p>
+    <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--stone);text-transform:uppercase">Strategy · Italy 2026 · <a href="/" style="color:var(--ochre)">back to the map →</a></p>
+  </div>
+</footer>
+
+<script src="/costs-data.js"></script>
+<script>
+(function(){
+  var KEY = 'tripCostsV1';
+  var D = window.TRIP_COSTS;
+  var fmt = function(n){ return '$' + Math.round(n).toLocaleString('en-US'); };
+
+  // ── state: defaults merged with saved overrides ──
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ saved = {}; }
+  var state = {
+    budget:    saved.budget    != null ? saved.budget    : D.budgetUSD,
+    overrides: saved.overrides || {},                 // { itemId: usdNumber }
+    sliders:   {},
+  };
+  Object.keys(D.sliders).forEach(function(k){
+    state.sliders[k] = (saved.sliders && saved.sliders[k] != null) ? saved.sliders[k] : D.sliders[k].value;
+  });
+
+  function persist(){
+    localStorage.setItem(KEY, JSON.stringify({ budget:state.budget, overrides:state.overrides, sliders:state.sliders }));
+    var s = document.getElementById('saved-note'); s.classList.add('show'); setTimeout(function(){ s.classList.remove('show'); }, 900);
+  }
+  function amountOf(item){
+    if (state.overrides[item.id] != null) return state.overrides[item.id];
+    return item.usd; // may be null (booked, unentered)
+  }
+
+  // ── render the ledger ──
+  function renderLedger(){
+    var body = document.getElementById('ledger-body');
+    body.innerHTML = '';
+    var cats = [], byCat = {};
+    D.fixed.forEach(function(it){ if(!byCat[it.cat]){ byCat[it.cat]=[]; cats.push(it.cat); } byCat[it.cat].push(it); });
+    cats.forEach(function(cat){
+      var cr = document.createElement('tr'); cr.className='ct-catrow';
+      cr.innerHTML = '<td colspan="3">'+cat+'</td>'; body.appendChild(cr);
+      byCat[cat].forEach(function(it){
+        var val = amountOf(it);
+        var tr = document.createElement('tr');
+        var tag = '<span class="ct-tag '+it.status+'">'+it.status+'</span>';
+        var note = it.note ? ' <span style="color:var(--stone);font-size:12px">· '+it.note+'</span>' : '';
+        tr.innerHTML =
+          '<td>'+it.label+note+'</td>'+
+          '<td>'+tag+'</td>'+
+          '<td class="ct-amt"><input class="ct-amt-input" type="number" inputmode="numeric" data-id="'+it.id+'" placeholder="—" value="'+(val!=null?val:'')+'"></td>';
+        body.appendChild(tr);
+      });
+    });
+    body.querySelectorAll('input.ct-amt-input').forEach(function(inp){
+      inp.addEventListener('input', function(){
+        var v = inp.value === '' ? null : parseFloat(inp.value);
+        if (v == null || isNaN(v)) delete state.overrides[inp.dataset.id];
+        else state.overrides[inp.dataset.id] = v;
+        recompute(); persist();
+      });
+    });
+  }
+
+  // ── render the sliders ──
+  function renderSliders(){
+    var wrap = document.getElementById('sliders');
+    wrap.innerHTML = '';
+    Object.keys(D.sliders).forEach(function(k){
+      var s = D.sliders[k];
+      var div = document.createElement('div'); div.className='ct-slider';
+      div.innerHTML =
+        '<div class="ct-slider-head"><span class="ct-s-lab">'+s.label+'</span>'+
+        '<span><span class="ct-s-val" id="sv-'+k+'"></span> <span class="ct-s-sub" id="ss-'+k+'"></span></span></div>'+
+        '<input class="ct-range" type="range" id="sl-'+k+'" min="'+s.min+'" max="'+s.max+'" step="'+s.step+'" value="'+state.sliders[k]+'">';
+      wrap.appendChild(div);
+      var inp = div.querySelector('#sl-'+k);
+      inp.addEventListener('input', function(){ state.sliders[k]=parseFloat(inp.value); recompute(); persist(); });
+    });
+  }
+
+  // ── the math ──
+  function variableGround(){
+    var days = D.days, weeks = days/7;
+    var out = state.sliders.dinnersOutPerWeek;
+    var dinners = weeks * ( out*D.dinnerModel.restaurantDinner6 + (7-out)*D.dinnerModel.cookedDinner6 );
+    var foodBase   = days * state.sliders.dailyFoodBase;
+    var activities = days * state.sliders.activitiesPerDay;
+    var transit    = days * state.sliders.transitPerDay;
+    var misc       = days * state.sliders.miscPerDay;
+    return { dinners:dinners, foodBase:foodBase, activities:activities, transit:transit, misc:misc,
+             total: dinners+foodBase+activities+transit+misc };
+  }
+  function fixedTotals(){
+    var booked=0, all=0;
+    D.fixed.forEach(function(it){
+      var v = amountOf(it); if (v==null) return;
+      all += v; if (it.status==='booked') booked += v;
+    });
+    return { booked:booked, all:all };
+  }
+
+  function recompute(){
+    var vg = variableGround();
+    var fx = fixedTotals();
+    var projected = fx.all + vg.total;
+    var remaining = state.budget - projected;
+
+    document.getElementById('num-projected').textContent = fmt(projected);
+    document.getElementById('num-booked').textContent    = fmt(fx.booked);
+    document.getElementById('num-remaining').textContent = (remaining<0? '−'+fmt(-remaining) : fmt(remaining));
+    document.getElementById('lab-remaining').textContent = remaining<0 ? 'Over budget' : 'Left in budget';
+    document.getElementById('fig-remaining').className = 'ct-figure ' + (remaining<0?'is-over':'is-under');
+
+    var pct = state.budget>0 ? projected/state.budget : 0;
+    var fill = document.getElementById('bar-fill');
+    fill.style.width = Math.min(pct,1)*100 + '%';
+    fill.className = 'ct-bar-fill' + (pct>1?' over':(pct>0.85?' warn':''));
+    document.getElementById('bar-pct').textContent = Math.round(pct*100) + '% of budget' + (pct>1?' — OVER':'');
+
+    document.getElementById('per-day').textContent    = fmt(projected/D.days);
+    document.getElementById('per-person').textContent = fmt(projected/D.days/D.people);
+
+    document.getElementById('variable-summary').innerHTML =
+      'Food ' + fmt(vg.dinners+vg.foodBase) + ' · activities ' + fmt(vg.activities) +
+      ' · transit ' + fmt(vg.transit) + ' · misc ' + fmt(vg.misc) +
+      ' = <strong>' + fmt(vg.total) + '</strong> over ' + D.days + ' days.';
+
+    // ledger note: any booked-but-unentered?
+    var missing = D.fixed.filter(function(it){ return it.status==='booked' && amountOf(it)==null; });
+    document.getElementById('ledger-note').innerHTML = missing.length
+      ? '⚠︎ ' + missing.length + ' booked stay' + (missing.length>1?'s':'') + ' still need an amount — type it above to fold it into the total.'
+      : 'All booked line items have amounts. Lodging estimates update the total the moment you overwrite them.';
+  }
+
+  // ── wire budget input + reset ──
+  var bi = document.getElementById('budget-input');
+  bi.value = state.budget;
+  bi.addEventListener('input', function(){ state.budget = parseFloat(bi.value)||0; recompute(); persist(); });
+
+  document.getElementById('btn-reset').addEventListener('click', function(){
+    localStorage.removeItem(KEY);
+    state.budget = D.budgetUSD; state.overrides = {};
+    Object.keys(D.sliders).forEach(function(k){ state.sliders[k]=D.sliders[k].value; });
+    bi.value = state.budget;
+    renderLedger(); renderSliders(); syncSliderLabels(); recompute();
+  });
+
+  function syncSliderLabels(){
+    Object.keys(D.sliders).forEach(function(k){
+      var s=D.sliders[k], v=state.sliders[k];
+      var valEl=document.getElementById('sv-'+k), subEl=document.getElementById('ss-'+k), inp=document.getElementById('sl-'+k);
+      if(inp) inp.value=v;
+      if(valEl){
+        if(k==='dinnersOutPerWeek'){ valEl.textContent = v + ' out'; subEl.textContent = '· ' + (7-v) + ' cooked'; }
+        else { valEl.textContent = '$'+v; subEl.textContent = s.unit; }
+      }
+      // fill the range track
+      if(inp){ var pct=(v-s.min)/(s.max-s.min)*100; inp.style.backgroundSize = pct+'% 100%'; }
+    });
+  }
+  // keep slider labels live on drag
+  document.addEventListener('input', function(e){ if(e.target && e.target.classList && e.target.classList.contains('ct-range')) syncSliderLabels(); });
+
+  // ── init ──
+  renderLedger(); renderSliders(); syncSliderLabels(); recompute();
+})();
+</script>
+<script src="/menu.js" defer></script>
+</body>
+</html>

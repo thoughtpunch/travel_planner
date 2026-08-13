@@ -41,6 +41,7 @@
         { label: 'Trains · lines + costs', href: '/trains' },
         { label: 'Stays · belt strategy', href: '/housing' },
         { label: 'Budget · per city, per day', href: '/budget' },
+        { label: '＄ Running total · live tracker', href: '/costs' },
         { label: 'The full plan', href: '/plan' },
       ],
     },
