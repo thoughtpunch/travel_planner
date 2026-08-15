@@ -183,8 +183,9 @@
         var tr = document.createElement('tr');
         var tag = '<span class="ct-tag '+it.status+'">'+it.status+'</span>';
         var note = it.note ? ' <span style="color:var(--stone);font-size:12px">· '+it.note+'</span>' : '';
+        var labelHtml = it.url ? '<a href="'+it.url+'" target="_blank" rel="noopener">'+it.label+'</a>' : it.label;
         tr.innerHTML =
-          '<td>'+it.label+note+'</td>'+
+          '<td>'+labelHtml+note+'</td>'+
           '<td>'+tag+'</td>'+
           '<td class="ct-amt"><input class="ct-amt-input" type="number" inputmode="numeric" data-id="'+it.id+'" placeholder="—" value="'+(val!=null?val:'')+'"></td>';
         body.appendChild(tr);

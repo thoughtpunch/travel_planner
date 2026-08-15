@@ -22,10 +22,10 @@ window.TRIP_COSTS = {
     { id:'fl-ice',      cat:'Flights', label:'Icelandair BWI⇄Milan · ref AMBVO4', usd:5346,    status:'booked' },
     { id:'fl-avianca',  cat:'Flights', label:'Avianca SJO⇄IAD positioning · ref AABDA8', usd:1870.74, status:'booked' },
 
-    { id:'lo-milan',    cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:465.60, status:'booked' },
-    { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:415.71, status:'booked', note:'free cancellation' },
-    { id:'lo-coast',    cat:'Lodging', label:'Ligurian coast — Chiavari · Sep 15–19 (4n)', usd:547.06, status:'booked', note:'€506.54 · Vista sul Carruggio' }, // €506.54
-    { id:'lo-florence', cat:'Lodging', label:'Florence · Sep 19–26 (7n, +Grandma)',  usd:1937.57, status:'booked', note:'San Frediano Airbnb' },
+    { id:'lo-milan',    cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:465.60, status:'booked', url:'https://www.airbnb.com/rooms/1452221020381596173' },
+    { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:415.71, status:'booked', note:'free cancellation', url:'https://www.airbnb.com/rooms/1040377631489080309' },
+    { id:'lo-coast',    cat:'Lodging', label:'Ligurian coast — Chiavari · Sep 15–19 (4n)', usd:547.06, status:'booked', note:'€506.54 · Vista sul Carruggio', url:'https://www.booking.com/hotel/it/vista-sul-carruggio-centro-storico-di-chiavari.en-us.html' }, // €506.54
+    { id:'lo-florence', cat:'Lodging', label:'Florence · Sep 19–26 (7n, +Grandma)',  usd:1937.57, status:'booked', note:'San Frediano Airbnb', url:'https://www.airbnb.com/rooms/1376653584481814317' },
     { id:'lo-rome',     cat:'Lodging', label:'Rome · Sep 26–Oct 3 (7n)',             usd:1600,  status:'estimate' },
     { id:'lo-venice',   cat:'Lodging', label:'Venice / Lido · Oct 3–10 (7n)',        usd:1800,  status:'estimate' },
     { id:'lo-dolomites',cat:'Lodging', label:'Dolomites / Val Gardena chalet · Oct 10–14 (4n)', usd:1400, status:'estimate' }, // ~€1300
