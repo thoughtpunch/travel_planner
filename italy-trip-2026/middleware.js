@@ -1,7 +1,9 @@
 // Simple HTTP Basic Auth gate for the whole site (Vercel Edge Middleware).
 // Runs at the edge before any static file is served. Creds are shared/simple —
 // this is light gating over HTTPS, not high security.
-export const config = { matcher: '/:path*' };
+// Gate everything EXCEPT the /api functions (those are same-origin data
+// endpoints, guarded by their own shared secret) and static assets.
+export const config = { matcher: ['/((?!api/).*)'] };
 
 const USER = 'barrett';
 const PASS = 'italytrip';

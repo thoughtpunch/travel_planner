@@ -63,6 +63,16 @@
   .c-links a:hover{border-color:var(--terra);background:var(--terra);color:#fff}
   .reach-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.3px;text-transform:uppercase;color:var(--stone);border:1px solid var(--line);border-radius:20px;padding:1px 7px;margin-top:5px}
   .adv-empty{padding:50px;text-align:center;color:var(--stone);font-family:'DM Mono',monospace;font-size:13px}
+  .adv-sync{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3px;color:var(--stone);white-space:nowrap}
+  .adv-sync.ok{color:#2C7A7B}.adv-sync.warn{color:#B7791F}
+  .c-plan{white-space:nowrap;min-width:150px}
+  .adv-status{font-family:'DM Mono',monospace;font-size:11px;padding:4px 6px;border:1px solid var(--rule);border-radius:4px;background:#fff;color:var(--ink);cursor:pointer}
+  .adv-note{display:block;margin-top:5px;width:140px;font-family:'DM Sans',sans-serif;font-size:11px;padding:3px 6px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+  .adv-note:focus,.adv-status:focus{outline:none;border-color:var(--terra)}
+  table.adv tbody tr[data-status="booked"]{background:rgba(44,122,123,.08)}
+  table.adv tbody tr[data-status="want"]{background:rgba(212,146,10,.08)}
+  table.adv tbody tr[data-status="skip"]{opacity:.5}
+  .adv-chip.on[data-kind="plan"]{background:#2C7A7B;border-color:#2C7A7B}
   @media(max-width:640px){
     .adv-head{padding:28px 18px 12px}.adv-controls{padding:12px 16px}
     .c-region,.c-get{display:none}
@@ -84,6 +94,7 @@
       <button id="advStar" class="adv-star-toggle" type="button">★ Must-do only</button>
       <button id="advReset" class="adv-reset" type="button">Reset</button>
       <span id="advCount" class="adv-count"></span>
+      <span id="advSync" class="adv-sync"></span>
     </div>
     <div id="advFilters" class="adv-filters"></div>
   </div>
@@ -130,8 +141,38 @@ document.addEventListener('DOMContentLoaded', function () {
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
   function mapsUrl(it){ return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(it.n + ' ' + it.city + ' Italy'); }
 
+  // ── stable id per activity (must match the sheet seed) + lookup ──
+  function slug(it){ return it.leg + '-' + String(it.n).toLowerCase().normalize('NFKD')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60); }
+  var ID2IT = {};
+  DATA.forEach(function (it){ it._id = slug(it); ID2IT[it._id] = it; });
+
+  // ── save-back (Google Sheet via /api) + local fallback ──
+  var SAVE = { secret: 'italy2026-adv-sync-7Qx', save: '/api/save', list: '/api/list' };
+  var PLAN_KEY = 'advPlanV1';
+  var plan = {};
+  try { plan = JSON.parse(localStorage.getItem(PLAN_KEY)) || {}; } catch (e) { plan = {}; }
+  var syncEl = document.getElementById('advSync');
+  function setSync(t, cls){ if (syncEl){ syncEl.textContent = t; syncEl.className = 'adv-sync' + (cls ? ' ' + cls : ''); } }
+  var STLBL = { '':'—', want:'Want', booked:'Booked', skip:'Skip' };
+  var saveTimers = {};
+  function pushSave(id){
+    var it = ID2IT[id]; if (!it) return;
+    var p = plan[id] || { status:'', notes:'' };
+    localStorage.setItem(PLAN_KEY, JSON.stringify(plan));
+    clearTimeout(saveTimers[id]);
+    saveTimers[id] = setTimeout(function (){
+      setSync('☁ Saving…', '');
+      fetch(SAVE.save, { method:'POST', headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify({ secret:SAVE.secret, id:id, title:it.n, leg:it.leg, city:it.city, status:p.status, notes:p.notes }) })
+        .then(function (r){ return r.json(); })
+        .then(function (j){ setSync(j && j.ok ? '☁ Synced to Sheet' : '⌂ Saved on device (sheet: ' + ((j && j.reason) || 'error') + ')', j && j.ok ? 'ok' : 'warn'); })
+        .catch(function (){ setSync('⌂ Saved on device (offline)', 'warn'); });
+    }, 450);
+  }
+
   // ── filter state ──
-  var state = { legs:{}, kids:{}, cats:{}, reach:{}, q:'', star:false, sort:{ col:'leg', dir:1 } };
+  var state = { legs:{}, kids:{}, cats:{}, reach:{}, plan:{}, q:'', star:false, sort:{ col:'leg', dir:1 } };
 
   // seed from URL (?kid=jude&leg=5)
   var params = new URLSearchParams(location.search);
@@ -140,8 +181,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── build filter chips ──
   var filtersEl = document.getElementById('advFilters');
+  function bagOf(kind){ return kind === 'kid' ? state.kids : kind === 'leg' ? state.legs : kind === 'cat' ? state.cats : kind === 'plan' ? state.plan : state.reach; }
   function chip(kind, id, label, col) {
-    var on = state[kind === 'kid' ? 'kids' : kind === 'leg' ? 'legs' : kind === 'cat' ? 'cats' : 'reach'][id];
+    var on = bagOf(kind)[id];
     var extra = (kind === 'kid') ? ' data-kind="kid" style="' + (on ? '--kidcol:' + col : '') + '"' : '';
     return '<button type="button" class="adv-chip' + (on ? ' on' : '') + '"' + extra +
       ' data-kind="' + kind + '" data-id="' + esc(id) + '">' + esc(label) + '</button>';
@@ -155,6 +197,9 @@ document.addEventListener('DOMContentLoaded', function () {
       KIDS.map(function (k) { return chip('kid', k.id, k.label, k.col); }).join('') + '</div>';
     h += '<div class="adv-fgroup"><span class="adv-fglabel">Reach</span>' +
       Object.keys(REACH).map(function (r) { return chip('reach', r, REACH[r]); }).join('') + '</div>';
+    h += '<div class="adv-fgroup"><span class="adv-fglabel">Plan</span>' +
+      [['want','Want'],['booked','Booked'],['skip','Skip'],['none','Unplanned']]
+        .map(function (p) { return chip('plan', p[0], p[1]); }).join('') + '</div>';
     h += '<div class="adv-fgroup"><span class="adv-fglabel">Type</span>' +
       Object.keys(CATS).filter(function (c) { return usedCats[c]; })
         .map(function (c) { return chip('cat', c, CATS[c][0] + ' ' + CATS[c][1]); }).join('') + '</div>';
@@ -163,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── header ──
   var COLS = [
+    { key:'plan', label:'Your plan', nosort:true },
     { key:'leg', label:'Leg' }, { key:'city', label:'City' }, { key:'rg', label:'Region' },
     { key:'n', label:'Title' }, { key:'b', label:'Description' }, { key:'w', label:'Ideal for', nosort:true },
     { key:'g', label:'How to get there' }, { key:'k', label:'Cost' }, { key:'links', label:'Links', nosort:true }
@@ -185,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (anyOn(state.cats) && !state.cats[it.c]) return false;
     if (anyOn(state.reach) && !state.reach[it.r]) return false;
+    if (anyOn(state.plan)) { var st = (plan[it._id] && plan[it._id].status) || 'none'; if (st === '') st = 'none'; if (!state.plan[st]) return false; }
     if (state.star && !it.s) return false;
     if (state.q) {
       var hay = (it.n + ' ' + it.b + ' ' + it.city + ' ' + it.rg + ' ' + (it.g || '')).toLowerCase();
@@ -217,7 +264,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var links = '';
       if (it.l) links += '<a href="' + esc(it.l) + '" target="_blank" rel="noopener">Site ↗</a>';
       links += '<a href="' + mapsUrl(it) + '" target="_blank" rel="noopener">Map ↗</a>';
-      return '<tr>' +
+      var p = plan[it._id] || { status:'', notes:'' };
+      var sel = '<select class="adv-status" data-id="' + esc(it._id) + '">' +
+        ['','want','booked','skip'].map(function (o){ return '<option value="' + o + '"' + (p.status === o ? ' selected' : '') + '>' + STLBL[o] + '</option>'; }).join('') + '</select>';
+      var note = '<input class="adv-note" data-id="' + esc(it._id) + '" placeholder="notes…" value="' + esc(p.notes || '') + '">';
+      return '<tr data-id="' + esc(it._id) + '" data-status="' + esc(p.status || '') + '">' +
+        '<td class="c-plan">' + sel + note + '</td>' +
         '<td class="c-leg">' + it.leg + '<small>' + esc(lg.dates || '') + '</small></td>' +
         '<td class="c-city">' + esc(it.city) + '</td>' +
         '<td class="c-region">' + esc(it.rg) + '</td>' +
@@ -235,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
   filtersEl.addEventListener('click', function (e) {
     var b = e.target.closest('.adv-chip'); if (!b) return;
     var kind = b.getAttribute('data-kind'), id = b.getAttribute('data-id');
-    var bag = kind === 'kid' ? state.kids : kind === 'leg' ? state.legs : kind === 'cat' ? state.cats : state.reach;
+    var bag = bagOf(kind);
     bag[id] = !bag[id];
     buildFilters(); render();
   });
@@ -244,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
     state.star = !state.star; this.classList.toggle('on', state.star); render();
   });
   document.getElementById('advReset').addEventListener('click', function () {
-    state = { legs:{}, kids:{}, cats:{}, reach:{}, q:'', star:false, sort:{ col:'leg', dir:1 } };
+    state = { legs:{}, kids:{}, cats:{}, reach:{}, plan:{}, q:'', star:false, sort:{ col:'leg', dir:1 } };
     document.getElementById('advSearch').value = '';
     document.getElementById('advStar').classList.remove('on');
     buildFilters(); buildHead(); render();
@@ -256,7 +308,40 @@ document.addEventListener('DOMContentLoaded', function () {
     buildHead(); render();
   });
 
+  // ── plan controls: status select + notes, saved to sheet (+ local) ──
+  var bodyEl = document.getElementById('advBody');
+  bodyEl.addEventListener('change', function (e) {
+    var s = e.target.closest('.adv-status'); if (!s) return;
+    var id = s.getAttribute('data-id');
+    plan[id] = plan[id] || { status:'', notes:'' }; plan[id].status = s.value;
+    var tr = s.closest('tr'); if (tr) tr.setAttribute('data-status', s.value);
+    pushSave(id);
+    if (anyOn(state.plan)) render();
+  });
+  bodyEl.addEventListener('input', function (e) {
+    var n = e.target.closest('.adv-note'); if (!n) return;
+    var id = n.getAttribute('data-id');
+    plan[id] = plan[id] || { status:'', notes:'' }; plan[id].notes = n.value;
+    pushSave(id);
+  });
+
   buildFilters(); buildHead(); render();
+
+  // ── hydrate saved plan from the Sheet (falls back to local) ──
+  setSync('☁ …', '');
+  fetch(SAVE.list, { headers:{ 'Accept':'application/json' } })
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (j && j.ok) {
+        (j.items || []).forEach(function (x) { plan[x.id] = { status:x.status || '', notes:x.notes || '' }; });
+        localStorage.setItem(PLAN_KEY, JSON.stringify(plan));
+        setSync('☁ Synced to Sheet', 'ok');
+        render();
+      } else {
+        setSync(j && j.reason === 'not_configured' ? '⌂ Saved on this device (Sheet not connected yet)' : '⌂ Saved on this device', 'warn');
+      }
+    })
+    .catch(function () { setSync('⌂ Saved on this device', 'warn'); });
 });
 </script>
 </body>
