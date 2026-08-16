@@ -1,139 +1,151 @@
 /* ============================================================================
- * adventures-data.js — the per-city "stuff the kids will actually love" list
+ * adventures-data.js — the single source of truth for the /adventures table
  * ----------------------------------------------------------------------------
- * Rendered by adventures.js into a card grid on each city page, keyed by the
- * page pathname (milan, turin, cinqueterre, florence, rome, venice, dolomites).
- * Full 150-place master list lives in /adventures.csv; this is the route-
- * relevant subset (In base / Day trip / On the way) surfaced on-site.
+ * One flat list of every activity/adventure across the trip, rendered by
+ * adventures.html into a sortable, filterable reference table.
  *
- * Item shape:
- *   n  name
- *   c  category slug (drives the emoji/color) — see CATS in adventures.js
- *   w  who it's for: array of rhys|jude|grey|keir|all
- *   s  star = unusually high boy-adventure potential
- *   r  reach: 'base' | 'day' | 'way'   (In base / Day trip / On the way here)
- *   b  one-line blurb
- *   l  booking/info link (optional)
- *   img freely-licensed photo URL (optional; Wikimedia Commons). If it fails to
- *       load, adventures.js swaps in an emoji tile — never a broken image.
+ * Item fields:
+ *   leg   trip leg number (1–7)
+ *   city  town (defaults handled per-leg; override when a day-trip is elsewhere)
+ *   rg    region
+ *   n     title
+ *   b     description (one line)
+ *   w     ideal for: array of rhys|jude|grey|keir|all
+ *   g     how to get there (carless unless noted)
+ *   k     rough cost (family of 6 unless "pp")
+ *   c     category slug (for the filter + emoji)
+ *   r     reachability: base | way | day | far
+ *   s     ★ high-adventure
+ *   l     website (optional)
+ *   img   photo (optional; Wikimedia)
+ *
+ * Leg key: 1 Milan · 2 Turin · 3 Ligurian coast (Chiavari) · 4 Florence ·
+ *          5 Rome · 6 Venice/Lido · 7 Dolomites
  * ==========================================================================*/
-window.TRIP_ADVENTURES = {
+window.TRIP_LEGS = [
+  { leg:1, city:'Milan',        rg:'Lombardy',              dates:'Sep 11–13' },
+  { leg:2, city:'Turin',        rg:'Piedmont',              dates:'Sep 13–15' },
+  { leg:3, city:'Ligurian coast', rg:'Liguria',            dates:'Sep 15–19' },
+  { leg:4, city:'Florence',     rg:'Tuscany',               dates:'Sep 19–26' },
+  { leg:5, city:'Rome',         rg:'Lazio',                 dates:'Sep 26–Oct 3' },
+  { leg:6, city:'Venice / Lido',rg:'Veneto',                dates:'Oct 3–10' },
+  { leg:7, city:'Dolomites',    rg:'Trentino–Alto Adige',   dates:'Oct 10–14' },
+];
 
-  milan: [
-    { n:"Leonardo Science Museum + the Toti submarine", c:"machines", w:["all","keir"], s:true, r:"base", b:"Italy's biggest science museum — Leonardo's machines built full-size, and a whole submarine you walk through.", l:"https://www.museoscienza.org/en", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Nave_sottomarino_-_Museo_scienza_tecnologia_Milano_09676.jpg?width=800" },
-    { n:"Museo di Storia Naturale — mineral & gem hall", c:"rock", w:["jude"], r:"base", b:"Meteorites, crystals and cut stones in one of Europe's oldest natural-history museums.", l:"https://www.comune.milano.it", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Veduta_del_Museo_civico_di_storia_naturale_di_Milano.jpg?width=800" },
-    { n:"Museum of Senses", c:"weird", w:["all"], r:"base", b:"Hands-on illusions and sensory tricks — pure play." },
-    { n:"Duomo → La Scala kids' treasure hunt", c:"hunt", w:["grey","keir"], r:"base", b:"A scavenger hunt through the centre with clues and a prize." },
-    { n:"Cremona — violin-making workshop", c:"craft", w:["jude"], r:"day", b:"Watch a luthier build a violin by hand in the world capital of violins." },
-    { n:"Bernina Railway from Tirano", c:"transport", w:["jude","all"], s:true, r:"day", b:"Spiral tunnels, viaducts and glaciers on a UNESCO mountain railway into Switzerland." },
-    { n:"Rocca di Angera — Lake Maggiore", c:"castle", w:["keir"], r:"day", b:"A huge fortress above the lake, reached by train and boat." },
-    { n:"Orrido di Nesso — Lake Como", c:"water", w:["all"], r:"day", b:"A gorge and waterfalls carved through the rock beneath the village." },
-  ],
+window.TRIP_ADVENTURES = [
 
-  turin: [
-    { n:"Novara — climb inside the San Gaudenzio dome", c:"detour", w:["all"], s:true, r:"way", b:"On the way from Milan: climb inside a 121m dome on masonry walkways. Escher-grade. Open Sundays, age 6+.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Novara_Basilica_di_San_Gaudenzio_Esterno_Cupola_1.jpg?width=800" },
-    { n:"Mole Antonelliana — glass lift + Cinema Museum", c:"whoa", w:["keir","all"], s:true, r:"base", b:"A glass elevator shoots up the hollow tower; the museum below is optical illusions and movie sets.", l:"https://www.museocinema.it/en", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Mole_Antonelliana_Torino.JPG?width=800" },
-    { n:"Museo Egizio", c:"whoa", w:["keir"], r:"base", b:"The oldest Egyptian museum in the world — mummies and sarcophagi. Under-18 free.", l:"https://museoegizio.it/en/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Statua_Sekhmet_Museo_Egizio_Torino_Maggio_2025.jpg?width=800" },
-    { n:"Torino Sotterranea — underground Turin", c:"underground", w:["all"], s:true, r:"base", b:"Guided walk through siege tunnels, cellars and WWII air-raid shelters.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Pietro_Micca_death_place.jpg?width=800" },
-    { n:"Museo Lombroso — criminal anthropology", c:"weird", w:["rhys"], r:"base", b:"A genuinely macabre collection — teen-plus." },
-    { n:"Museum of Illusions", c:"weird", w:["all"], r:"base", b:"Rooms of hands-on optical illusions." },
-    { n:"Museo Regionale di Scienze Naturali", c:"rock", w:["jude"], r:"base", b:"Geology and mineralogy halls." },
-    { n:"Superga rack railway", c:"transport", w:["keir"], r:"base", b:"A historic rack tram grinds up to the hilltop basilica." },
-    { n:"Chocolate-making experience", c:"food", w:["grey"], r:"base", b:"Turin is Italy's chocolate capital — make your own." },
-    { n:"Damanhur — Temples of Humankind", c:"underground", w:["all"], s:true, r:"day", b:"A hand-dug underground esoteric cathedral of sacred geometry. Best as a Mon day-trip: train to Ivrea + taxi; pre-book the English tour.", l:"https://damanhur.travel/tour/classicvisit-visit-english/" },
-    { n:"Sacra di San Michele", c:"castle", w:["all"], r:"day", b:"A dramatic mountaintop abbey (the Name of the Rose one). Train to Sant'Ambrogio + shuttle." },
-    { n:"Grotta di Bossea", c:"caves", w:["jude"], r:"day", b:"An Alpine karst show-cave for the rockhound." },
-    { n:"Truffle hunt with dogs — Langhe", c:"food", w:["all"], r:"day", b:"Hunt truffles with trained dogs — and September/October is white-truffle season." },
-  ],
+  // ── LEG 1 · MILAN ─────────────────────────────────────────────────────────
+  { leg:1, city:'Milan', rg:'Lombardy', n:"Leonardo Science Museum + the Toti submarine", b:"Italy's biggest science museum — Leonardo's machines full-size, and a whole submarine you walk through.", w:["all","keir"], g:"In Milan — ~30 min by metro from the flat", k:"Under-18 free · adults ~€10", c:"machines", r:"base", s:true, l:"https://www.museoscienza.org/en", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Nave_sottomarino_-_Museo_scienza_tecnologia_Milano_09676.jpg?width=800" },
+  { leg:1, city:'Milan', rg:'Lombardy', n:"Museo di Storia Naturale — mineral & gem hall", b:"Meteorites, crystals and cut stones in one of Europe's oldest natural-history museums.", w:["jude"], g:"In Milan — metro to Porta Venezia, ~30 min", k:"Under-18 free · adults ~€5", c:"rock", r:"base", l:"https://www.comune.milano.it", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Veduta_del_Museo_civico_di_storia_naturale_di_Milano.jpg?width=800" },
+  { leg:1, city:'Milan', rg:'Lombardy', n:"Museum of Senses", b:"Hands-on illusions and sensory tricks — pure play.", w:["all"], g:"In Milan — central", k:"~€16pp", c:"weird", r:"base" },
+  { leg:1, city:'Milan', rg:'Lombardy', n:"Duomo → La Scala kids' treasure hunt", b:"A scavenger hunt through the centre with clues and a prize.", w:["grey","keir"], g:"In Milan — starts at the Duomo", k:"~€25pp", c:"hunt", r:"base" },
+  { leg:1, city:'Cremona', rg:'Lombardy', n:"Cremona — violin-making workshop", b:"Watch a luthier build a violin by hand in the world capital of violins.", w:["jude"], g:"Day-trip — train ~1h from Milan", k:"varies", c:"craft", r:"day" },
+  { leg:1, city:'Tirano', rg:'Lombardy', n:"Bernina Railway from Tirano", b:"Spiral tunnels, viaducts and glaciers on a UNESCO mountain railway into Switzerland.", w:["jude","all"], g:"Day-trip — train ~2h30 to Tirano, then the Bernina", k:"~€60pp round-ish", c:"transport", r:"day", s:true },
+  { leg:1, city:'Lake Maggiore', rg:'Lombardy', n:"Rocca di Angera — Lake Maggiore", b:"A huge fortress above the lake, reached by train and boat.", w:["keir"], g:"Day-trip — train ~1h + ferry", k:"~€11pp", c:"castle", r:"day" },
+  { leg:1, city:'Lake Como', rg:'Lombardy', n:"Orrido di Nesso — Lake Como", b:"A gorge and waterfalls carved through the rock beneath the village.", w:["all"], g:"Day-trip — train to Como + bus/boat", k:"Free / low", c:"water", r:"day" },
 
-  cinqueterre: [
-    { n:"Genoa — walk through a real submarine", c:"detour", w:["all"], s:true, r:"way", b:"On the way from Turin (you change trains in Genoa anyway): walk bow-to-stern through the S-518 Nazario Sauro at the maritime museum.", l:"https://en.galatamuseodelmare.it/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Nazario_Sauro_(S_518).jpg?width=800" },
-    { n:"Genoa — the Sacro Catino 'Holy Grail'", c:"detour", w:["all"], s:true, r:"way", b:"A green-glass dish the Genoese swore for centuries was the actual Holy Grail, in the cathedral crypt." },
-    { n:"Make pesto by hand — Levanto/Genoa", c:"food", w:["grey"], r:"base", b:"Grind real Ligurian pesto with a marble mortar and wooden pestle." },
-    { n:"Portovenere & the Byron Grotto", c:"water", w:["all"], s:true, r:"base", b:"A dramatic sea cave and painted harbour at the edge of the gulf — reached by boat.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Portovenere_harbour_and_Doria_Castle,_Liguria,_Italy,_April_2026.jpg?width=800" },
-    { n:"Cinque Terre sea-kayak — caves & cliffs", c:"thrill", w:["rhys"], r:"base", b:"Kayak the cliffs and sea caves between the villages. Teen adventure." },
-    { n:"Monterosso beach + the coastal ferry", c:"water", w:["keir"], r:"base", b:"The one real Cinque Terre beach — swim, then hop a boat past the cliffs.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Monterosso_al_Mare-panorama-Fegina1.jpg?width=800" },
-    { n:"Genova Righi Adventure Park", c:"thrill", w:["rhys"], r:"day", b:"A ropes course strung among Genoa's old hilltop fortifications." },
-    { n:"Genova Aquarium", c:"water", w:["keir"], r:"day", b:"Italy's biggest aquarium — sharks, dolphins, a rainforest biosphere." },
-    { n:"Antro del Corchia — Apuan Alps cave", c:"caves", w:["jude"], s:true, r:"day", b:"A huge karst cave system inside the marble mountains. Rockhound heaven." },
-    { n:"Grotte di Equi", c:"caves", w:["jude"], r:"day", b:"Caves right in the Apuan Alps." },
-  ],
+  // ── LEG 2 · TURIN ─────────────────────────────────────────────────────────
+  { leg:2, city:'Novara', rg:'Piedmont', n:"Novara — climb inside the San Gaudenzio dome", b:"Climb inside a 121m dome on masonry walkways. Escher-grade. Open Sundays, age 6+.", w:["all"], g:"On the Milan→Turin train day — 10-min walk from Novara station", k:"~€12pp", c:"detour", r:"way", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Novara_Basilica_di_San_Gaudenzio_Esterno_Cupola_1.jpg?width=800" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Mole Antonelliana — glass lift + Cinema Museum", b:"A glass elevator shoots up the hollow tower; the museum below is optical illusions and movie sets.", w:["keir","all"], g:"In Turin — ~8-min walk from the flat", k:"~€15pp (lift+museum)", c:"whoa", r:"base", s:true, l:"https://www.museocinema.it/en", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Mole_Antonelliana_Torino.JPG?width=800" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Museo Egizio", b:"The oldest Egyptian museum in the world — mummies and sarcophagi.", w:["keir"], g:"In Turin — ~10-min walk", k:"Under-18 free · adults ~€18", c:"whoa", r:"base", l:"https://museoegizio.it/en/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Statua_Sekhmet_Museo_Egizio_Torino_Maggio_2025.jpg?width=800" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Torino Sotterranea — underground Turin", b:"Guided walk through siege tunnels, cellars and WWII air-raid shelters.", w:["all"], g:"In Turin — guided, central meeting point", k:"~€15pp", c:"underground", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Pietro_Micca_death_place.jpg?width=800" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Museo Lombroso — criminal anthropology", b:"A genuinely macabre collection — teen-plus.", w:["rhys"], g:"In Turin — central", k:"~€8pp", c:"weird", r:"base" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Museum of Illusions", b:"Rooms of hands-on optical illusions.", w:["all"], g:"In Turin — central", k:"~€12pp", c:"weird", r:"base" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Museo Regionale di Scienze Naturali", b:"Geology and mineralogy halls.", w:["jude"], g:"In Turin — central", k:"~€10pp", c:"rock", r:"base" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Superga rack railway", b:"A historic rack tram grinds up to the hilltop basilica.", w:["keir"], g:"In Turin — tram 15 to Sassi, then the rack railway", k:"~€9pp return", c:"transport", r:"base" },
+  { leg:2, city:'Turin', rg:'Piedmont', n:"Chocolate-making experience", b:"Turin is Italy's chocolate capital — make your own.", w:["grey"], g:"In Turin — central", k:"varies", c:"food", r:"base" },
+  { leg:2, city:'Vidracco (Ivrea)', rg:'Piedmont', n:"Damanhur — Temples of Humankind", b:"A hand-dug underground esoteric cathedral of sacred geometry.", w:["all"], g:"Best as Mon Sep 14 day-trip — train Turin→Ivrea (~1h) + taxi (~€30); pre-book English tour", k:"€78pp (Classic Visit)", c:"underground", r:"day", s:true, l:"https://damanhur.travel/tour/classicvisit-visit-english/" },
+  { leg:2, city:"Sant'Ambrogio", rg:'Piedmont', n:"Sacra di San Michele", b:"A dramatic mountaintop abbey (the Name of the Rose one).", w:["all"], g:"Day-trip — train to Sant'Ambrogio + shuttle up", k:"~€8pp", c:"castle", r:"day" },
+  { leg:2, city:'Frabosa (Cuneo)', rg:'Piedmont', n:"Grotta di Bossea", b:"An Alpine karst show-cave for the rockhound.", w:["jude"], g:"Day-trip — needs bus/car from Mondovì; long", k:"~€12pp", c:"caves", r:"day" },
+  { leg:2, city:'Langhe / Alba', rg:'Piedmont', n:"Truffle hunt with dogs — Langhe", b:"Hunt truffles with trained dogs — Sept/Oct is white-truffle season.", w:["all"], g:"Day-trip — train to Alba, operator pickup", k:"~€40–60pp", c:"food", r:"day" },
+  { leg:2, city:'Bard', rg:'Aosta Valley', n:"Forte di Bard", b:"An enormous fortress stacked up a mountain, with lifts up the rock face.", w:["all","keir"], g:"Far — train + bus ~2h; better on its own trip", k:"~€12pp per museum", c:"castle", r:"far", s:true },
 
-  florence: [
-    { n:"Carrara — 4×4 marble quarry tour", c:"detour", w:["jude"], s:true, r:"way", b:"On the Chiavari→Florence day: ride a Land Rover into the working white-marble quarries. The operator can hold your bags.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Carrara_marble_quarry_face.jpg?width=800" },
-    { n:"Pietrasanta — the marble-carving town", c:"craft", w:["jude"], r:"way", b:"Sculptors' studios, bronze foundries, the free Museo dei Bozzetti — raw stone in the morning, finished art in the afternoon.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_Duomo_(Pietrasanta).jpg?width=800" },
-    { n:"Pisa — leaning tower + the death fresco", c:"detour", w:["all"], r:"way", b:"You change trains at Pisa anyway: climb the tower (age 8+) and see the macabre Triumph of Death fresco." },
-    { n:"Scuola del Cuoio — the leather school", c:"craft", w:["jude"], s:true, r:"base", b:"Jude's leatherworking: a working leather school inside Santa Croce runs hands-on craft sessions.", l:"https://www.scuoladelcuoio.com/en/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Scuola_del_cuoio_Firenze.jpg?width=800" },
-    { n:"La Specola — minerals + anatomical waxes", c:"rock", w:["jude"], s:true, r:"base", b:"The reopened Medici mineral hall plus the famous anatomical wax models. A 10-minute walk from your door.", l:"https://www.sma.unifi.it/vp-245-la-specola.html", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Universit%C3%A0_di_Firenze_Museo_Zoologico_%22La_Specola%22_(89368).jpg?width=800" },
-    { n:"Le Arti Orafe — set your own gemstone", c:"craft", w:["jude"], r:"base", b:"Set a real gemstone onto a silver ring and take it home.", l:"https://artiorafe.it/en/craft-experience/" },
-    { n:"Museo Galileo", c:"machines", w:["all"], r:"base", b:"Old scientific instruments, globes and telescopes — on-brand weird-science." },
-    { n:"Palazzo Vecchio — secret passages", c:"secret", w:["all"], s:true, r:"base", b:"A guide unlocks hidden doors, stairs and roof spaces inside the old palace.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo_vecchio_Florence.jpg?width=800" },
-    { n:"Brunelleschi's dome climb", c:"whoa", w:["all"], r:"base", b:"Climb up between the double shells of the great Duomo dome.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Cupola_di_santa_maria_del_fiore_dal_campanile_di_giotto,_01.JPG?width=800" },
-    { n:"Florentine paper-marbling workshop", c:"craft", w:["grey"], r:"base", b:"Swirl and make your own marbled paper by hand." },
-    { n:"Fresh pasta + gelato class", c:"food", w:["grey"], r:"base", b:"Roll Tuscan pasta, then churn gelato to finish.", l:"https://www.florencetown.com/" },
-    { n:"Uffizi family treasure hunt", c:"hunt", w:["grey"], r:"base", b:"A kid-focused hunt that turns the Uffizi into a game." },
-    { n:"Scarperia — knife & blade making", c:"craft", w:["jude"], r:"day", b:"A historic blade town with hands-on cutlery workshops. One of Jude's 'workshops'." },
-    { n:"Volterra — carve alabaster", c:"craft", w:["jude"], r:"day", b:"Carve alabaster stone in the ancient Etruscan workshop town." },
-    { n:"Labirinto della Masone — bamboo maze", c:"maze", w:["all"], s:true, r:"day", b:"The largest bamboo labyrinth in the world, near Parma.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Il_Labirinto_della_Masone_visto_dallalto,_Labirinto_della_Masone,_Fontanellato_(PR),_Italia,_2019_foto_G.Ferretti.jpg?width=800" },
-    { n:"Bologna — hands-on pasta class", c:"food", w:["grey"], r:"day", b:"Make tagliatelle and tortellini by hand in Italy's food capital." },
-    { n:"Modena — traditional balsamic acetaia", c:"food", w:["grey"], r:"day", b:"See real balsamic age in barrels, then taste the syrupy DOP stuff." },
-    { n:"Motor Valley — Ferrari · Lamborghini · Ducati", c:"machines", w:["jude"], s:true, r:"day", b:"Supercar museums and live factory lines, all within an hour of Bologna." },
-  ],
+  // ── LEG 3 · LIGURIAN COAST (Chiavari) ─────────────────────────────────────
+  { leg:3, city:'Genoa', rg:'Liguria', n:"Genoa — walk through a real submarine", b:"Walk bow-to-stern through the S-518 Nazario Sauro at the maritime museum.", w:["all"], g:"On the Turin→Chiavari train day — you change in Genoa anyway; 10-min walk from Piazza Principe", k:"~€90–105 (combo ticket)", c:"detour", r:"way", s:true, l:"https://en.galatamuseodelmare.it/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Nazario_Sauro_(S_518).jpg?width=800" },
+  { leg:3, city:'Genoa', rg:'Liguria', n:"Genoa — the Sacro Catino 'Holy Grail'", b:"A green-glass dish the Genoese swore for centuries was the actual Holy Grail, in the cathedral crypt.", w:["all"], g:"On the Turin→Chiavari day — central Genoa (open Tue, midday-closes)", k:"~€40 (treasury)", c:"detour", r:"way", s:true },
+  { leg:3, city:'Levanto / Genoa', rg:'Liguria', n:"Make pesto by hand", b:"Grind real Ligurian pesto with a marble mortar and wooden pestle.", w:["grey"], g:"In the area — class in Levanto or Genoa", k:"varies", c:"food", r:"base" },
+  { leg:3, city:'Portovenere', rg:'Liguria', n:"Portovenere & the Byron Grotto", b:"A dramatic sea cave and painted harbour at the edge of the gulf.", w:["all"], g:"Train to La Spezia + boat/bus to Portovenere", k:"Ferry ~€15pp", c:"water", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Portovenere_harbour_and_Doria_Castle,_Liguria,_Italy,_April_2026.jpg?width=800" },
+  { leg:3, city:'Cinque Terre', rg:'Liguria', n:"Cinque Terre sea-kayak — caves & cliffs", b:"Kayak the cliffs and sea caves between the villages. Teen adventure.", w:["rhys"], g:"Train to Monterosso/Riomaggiore + operator", k:"~€40–60pp", c:"thrill", r:"base" },
+  { leg:3, city:'Monterosso', rg:'Liguria', n:"Monterosso beach + the coastal ferry", b:"The one real Cinque Terre beach — swim, then hop a boat past the cliffs.", w:["keir"], g:"Train ~50 min from Chiavari; ferry between villages", k:"Ferry ~€20pp day", c:"water", r:"base", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Monterosso_al_Mare-panorama-Fegina1.jpg?width=800" },
+  { leg:3, city:'Genoa', rg:'Liguria', n:"Genova Righi Adventure Park", b:"A ropes course strung among Genoa's old hilltop fortifications.", w:["rhys"], g:"Day-trip — train to Genoa + Zecca–Righi funicular", k:"~€20–30pp", c:"thrill", r:"day" },
+  { leg:3, city:'Genoa', rg:'Liguria', n:"Genova Aquarium", b:"Italy's biggest aquarium — sharks, dolphins, a rainforest biosphere.", w:["keir"], g:"Day-trip — train to Genoa, Porto Antico", k:"~€27pp", c:"water", r:"day" },
+  { leg:3, city:'Apuan Alps', rg:'Tuscany', n:"Antro del Corchia — Apuan Alps cave", b:"A huge karst cave system inside the marble mountains. Rockhound heaven.", w:["jude"], g:"Day-trip — train toward Carrara + bus/taxi up; long", k:"~€12pp", c:"caves", r:"day", s:true },
+  { leg:3, city:'Equi Terme', rg:'Tuscany', n:"Grotte di Equi", b:"Caves right in the Apuan Alps.", w:["jude"], g:"Day-trip — regional train to Equi Terme", k:"~€10pp", c:"caves", r:"day" },
 
-  rome: [
-    { n:"Orvieto — the double-helix well + caves", c:"detour", w:["all"], s:true, r:"way", b:"On the Florence→Rome day: the Pozzo di San Patrizio is two spiral staircases that never meet, right at the funicular top — plus Etruscan cave-tunnels.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Pozzo_di_San_Patrizio,_Orvieto.jpg?width=800" },
-    { n:"Colosseum Underground", c:"secret", w:["all"], s:true, r:"base", b:"Down into the hypogeum — the tunnels and lifts beneath the arena floor.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Hypogeum_1_(15005526662).jpg?width=800" },
-    { n:"Basilica di San Clemente — 3 layers down", c:"underground", w:["all"], r:"base", b:"Descend through a church, an older church, and a pagan temple with a running stream." },
-    { n:"The Catacombs", c:"underground", w:["all"], r:"base", b:"Kilometres of early-Christian burial tunnels under the city." },
-    { n:"Capuchin Crypt — the bone chapel", c:"weird", w:["all"], s:true, r:"base", b:"Rooms decorated entirely with the bones of 3,700 monks.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Capuchin_Crypt_-_DPLA_-_103cc5af0b9e4d62334af9db890b7c8b.jpg?width=800" },
-    { n:"Museum of the Holy Souls in Purgatory", c:"weird", w:["rhys"], r:"base", b:"A tiny, genuinely bizarre museum of scorch-marks 'left by souls'." },
-    { n:"Palazzo Spada — the forced-perspective trick", c:"maze", w:["all"], r:"base", b:"Borromini's optical-illusion colonnade that looks four times its real length." },
-    { n:"Quartiere Coppedè", c:"architecture", w:["all"], r:"base", b:"A fairy-tale quarter of monsters, spiders and dreamlike facades — free to wander.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Palace_in_quartiere_copped%C3%A8.jpg?width=800" },
-    { n:"Castel Sant'Angelo", c:"castle", w:["all"], r:"base", b:"Fortress ramps and corridors, and the pope's secret escape passage.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/RomaCastelSantAngelo.jpg?width=800" },
-    { n:"Centrale Montemartini", c:"machines", w:["jude"], r:"base", b:"Ancient Roman statues posed among the giant machines of a 1912 power station." },
-    { n:"Gladiator school — Scuola Gladiatori", c:"thrill", w:["keir"], s:true, r:"base", b:"Tunic on, wooden sword, real moves, a mini-tournament and a certificate. Age 6+.", l:"https://www.gruppostoricoromano.it/?lang=en" },
-    { n:"Pizza + gelato class for kids", c:"food", w:["grey"], r:"base", b:"Roll dough, top a pizza in a real oven, then churn gelato.", l:"https://www.inromecooking.com/tour/kids-and-family-classes/pizza-making-and-gelato-class-for-kids/" },
-    { n:"Roman Forum family treasure hunt", c:"hunt", w:["grey"], r:"base", b:"A story-driven hunt that brings the ruins alive for kids." },
-    { n:"Bomarzo — the Park of the Monsters", c:"architecture", w:["all"], s:true, r:"day", b:"Giant grotesque stone monsters scattered through a Renaissance garden — an outdoor fantasy level.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Monster_in_Parco_dei_Mostri_(Bomarzo).jpg?width=800" },
-    { n:"Civita di Bagnoregio — the 'dying city'", c:"architecture", w:["all"], r:"day", b:"A cliff-top town reached only by a long footbridge." },
-    { n:"Falconer for a Day — La Selvotta", c:"animals", w:["keir"], s:true, r:"day", b:"A bird of prey flies free and lands back on your glove. Under 20km from Rome." },
-    { n:"Pitigliano + the Vie Cave", c:"rock", w:["jude"], r:"day", b:"A town carved from volcanic tufa, ringed by Etruscan roads cut as deep trenches through the rock." },
-  ],
+  // ── LEG 4 · FLORENCE ──────────────────────────────────────────────────────
+  { leg:4, city:'Carrara', rg:'Tuscany', n:"Carrara — 4×4 marble quarry tour", b:"Ride a Land Rover into the working white-marble quarries. The operator can hold your bags.", w:["jude"], g:"On the Chiavari→Florence train day — meet 7-min walk from Carrara-Avenza station", k:"~€30pp (kids less)", c:"detour", r:"way", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Carrara_marble_quarry_face.jpg?width=800" },
+  { leg:4, city:'Pietrasanta', rg:'Tuscany', n:"Pietrasanta — the marble-carving town", b:"Sculptors' studios, bronze foundries, the free Museo dei Bozzetti.", w:["jude"], g:"On the Chiavari→Florence day — historic centre across from the station", k:"Free (museum)", c:"craft", r:"way", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_Duomo_(Pietrasanta).jpg?width=800" },
+  { leg:4, city:'Pisa', rg:'Tuscany', n:"Pisa — leaning tower + the death fresco", b:"Climb the tower (age 8+) and see the macabre Triumph of Death fresco.", w:["all"], g:"On the Chiavari→Florence day — you change at Pisa; bag storage at the station", k:"Tower ~€20pp", c:"detour", r:"way" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Scuola del Cuoio — the leather school", b:"Jude's leatherworking: a working leather school inside Santa Croce runs hands-on craft sessions.", w:["jude"], g:"In Florence — walk / short bus from San Frediano", k:"Class varies", c:"craft", r:"base", s:true, l:"https://www.scuoladelcuoio.com/en/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Scuola_del_cuoio_Firenze.jpg?width=800" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"La Specola — minerals + anatomical waxes", b:"The reopened Medici mineral hall plus the famous anatomical wax models.", w:["jude"], g:"In Florence — ~10-min walk from your door", k:"~€10pp · under-18 €5", c:"rock", r:"base", s:true, l:"https://www.sma.unifi.it/vp-245-la-specola.html", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Universit%C3%A0_di_Firenze_Museo_Zoologico_%22La_Specola%22_(89368).jpg?width=800" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Le Arti Orafe — set your own gemstone", b:"Set a real gemstone onto a silver ring and take it home.", w:["jude"], g:"In Florence — Oltrarno, walkable", k:"Class ~€90pp", c:"craft", r:"base", l:"https://artiorafe.it/en/craft-experience/" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Museo Galileo", b:"Old scientific instruments, globes and telescopes — on-brand weird-science.", w:["all"], g:"In Florence — by the Uffizi, walkable", k:"~€10pp", c:"machines", r:"base" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Palazzo Vecchio — secret passages", b:"A guide unlocks hidden doors, stairs and roof spaces inside the old palace.", w:["all"], g:"In Florence — Piazza della Signoria, walkable", k:"~€20pp tour", c:"secret", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo_vecchio_Florence.jpg?width=800" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Brunelleschi's dome climb", b:"Climb up between the double shells of the great Duomo dome.", w:["all"], g:"In Florence — walkable; book a timed slot", k:"~€30pp (Brunelleschi pass)", c:"whoa", r:"base", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Cupola_di_santa_maria_del_fiore_dal_campanile_di_giotto,_01.JPG?width=800" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Florentine paper-marbling workshop", b:"Swirl and make your own marbled paper by hand.", w:["grey"], g:"In Florence — central studios", k:"varies", c:"craft", r:"base" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Fresh pasta + gelato class", b:"Roll Tuscan pasta, then churn gelato to finish.", w:["grey"], g:"In Florence — central", k:"~€70pp", c:"food", r:"base", l:"https://www.florencetown.com/" },
+  { leg:4, city:'Florence', rg:'Tuscany', n:"Uffizi family treasure hunt", b:"A kid-focused hunt that turns the Uffizi into a game.", w:["grey"], g:"In Florence — the Uffizi", k:"tour + entry", c:"hunt", r:"base" },
+  { leg:4, city:'Scarperia', rg:'Tuscany', n:"Scarperia — knife & blade making", b:"A historic blade town with hands-on cutlery workshops.", w:["jude"], g:"Day-trip — bus ~1h from Florence", k:"varies", c:"craft", r:"day" },
+  { leg:4, city:'Volterra', rg:'Tuscany', n:"Volterra — carve alabaster", b:"Carve alabaster stone in the ancient Etruscan workshop town.", w:["jude"], g:"Day-trip — train + bus ~2h; long", k:"Workshop varies", c:"craft", r:"day" },
+  { leg:4, city:'Fontanellato', rg:'Emilia-Romagna', n:"Labirinto della Masone — bamboo maze", b:"The largest bamboo labyrinth in the world.", w:["all"], g:"Day-trip — train to Parma + local; ~2h", k:"~€18pp", c:"maze", r:"day", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Il_Labirinto_della_Masone_visto_dallalto,_Labirinto_della_Masone,_Fontanellato_(PR),_Italia,_2019_foto_G.Ferretti.jpg?width=800" },
+  { leg:4, city:'Bologna', rg:'Emilia-Romagna', n:"Bologna — hands-on pasta class", b:"Make tagliatelle and tortellini by hand in Italy's food capital.", w:["grey"], g:"Day-trip — 37-min train from Florence", k:"~€60pp", c:"food", r:"day" },
+  { leg:4, city:'Modena', rg:'Emilia-Romagna', n:"Modena — traditional balsamic acetaia", b:"See real balsamic age in barrels, then taste the syrupy DOP stuff.", w:["grey"], g:"Day-trip — train ~1h; book ahead", k:"Free–low (individuals)", c:"food", r:"day" },
+  { leg:4, city:'Maranello / Modena', rg:'Emilia-Romagna', n:"Motor Valley — Ferrari · Lamborghini · Ducati", b:"Supercar museums and live factory lines, all within an hour of Bologna.", w:["jude"], g:"Day-trip — train to Bologna/Modena + Modenatur transfer", k:"~€12–32pp/site", c:"machines", r:"day", s:true },
+  { leg:4, city:'Elba', rg:'Tuscany', n:"Elba — Rio Marina mining park & minerals", b:"Red iron-rich Martian landscape, old mines, and mineral-collecting — Jude's dream island.", w:["jude"], g:"Far — train to Piombino + ferry; an overnight, not a day-trip", k:"~€10–20pp", c:"rock", r:"far", s:true },
 
-  venice: [
-    { n:"Murano — watch glassblowing, make a bead", c:"craft", w:["keir"], s:true, r:"base", b:"A maestro turns molten glass into a horse in two minutes; then you make your own bead.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Murano_furnace_and_pipe.jpg?width=800" },
-    { n:"Doge's Palace — Secret Itineraries", c:"secret", w:["all"], s:true, r:"base", b:"Behind locked doors: the offices, interrogation rooms and prison passages of the old republic.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Doge%27s_Palace_Venice_sea_facade.jpg?width=800" },
-    { n:"The Doge's Palace armoury", c:"whoa", w:["keir"], r:"base", b:"Suits of armour, swords and crossbows — the sword-and-armour fix. Under-18 free." },
-    { n:"The Venetian Arsenal", c:"whoa", w:["all"], r:"base", b:"The enormous medieval shipyard that once built a galley a day.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Arsenale_di_Venezia_gate.jpg?width=800" },
-    { n:"Borges Labyrinth — San Giorgio Maggiore", c:"maze", w:["all"], r:"base", b:"A hedge maze based on the Borges story, on its own island." },
-    { n:"Scala Contarini del Bovolo", c:"architecture", w:["all"], r:"base", b:"An external spiral tower-staircase that looks almost impossible." },
-    { n:"Learn to row Venetian-style", c:"water", w:["rhys"], r:"base", b:"A standing-up rowing lesson in a traditional boat." },
-    { n:"Kayak the lagoon & hidden canals", c:"thrill", w:["rhys"], r:"base", b:"Paddle the quiet back-canals and out into the lagoon." },
-    { n:"Carnival mask-making workshop", c:"craft", w:["grey"], r:"base", b:"Make and paint your own Venetian mask." },
-    { n:"Venetian cicchetti cooking class", c:"food", w:["grey"], r:"base", b:"Make the city's own bar snacks in a local's home.", l:"https://cesarine.com/en" },
-    { n:"Hidden-city treasure hunt", c:"hunt", w:["all"], r:"base", b:"Secret symbols, alleys and clues across Venice." },
-    { n:"Lido beach + vaporetto rides", c:"water", w:["keir"], r:"base", b:"A real beach island to run on — and the water-buses are half the fun. (MuMu's island.)" },
-    { n:"Villa Pisani labyrinth — Stra", c:"maze", w:["all"], s:true, r:"day", b:"A famous historic hedge maze with a tower at the centre.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Labirinto_villa_Pisani_1.JPG?width=800" },
-    { n:"San Pelagio — Minotaur & mirror mazes", c:"maze", w:["all"], r:"day", b:"Two very different mazes at a castle near Padua." },
-    { n:"Museo del Precinema — magic lanterns", c:"weird", w:["all"], r:"day", b:"Magic lanterns and proto-cinema devices in Padua." },
-    { n:"Grotte di Oliero — by boat", c:"caves", w:["jude"], r:"day", b:"Cave springs you enter by boat. Rockhound + water." },
-    { n:"Museo Nicolis — cars & machines", c:"machines", w:["jude"], r:"day", b:"Cars, motorcycles and machines near Verona." },
-  ],
+  // ── LEG 5 · ROME ──────────────────────────────────────────────────────────
+  { leg:5, city:'Orvieto', rg:'Umbria', n:"Orvieto — the double-helix well + caves", b:"The Pozzo di San Patrizio is two spiral staircases that never meet — plus Etruscan cave-tunnels.", w:["all"], g:"On the Florence→Rome train day — well is at the funicular top; station bag storage", k:"Well ~€6pp · caves ~€6pp", c:"detour", r:"way", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Pozzo_di_San_Patrizio,_Orvieto.jpg?width=800" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Colosseum Underground", b:"Down into the hypogeum — the tunnels and lifts beneath the arena floor.", w:["all"], g:"In Rome — Metro B Colosseo; book the special access", k:"~€24pp (special ticket)", c:"secret", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Hypogeum_1_(15005526662).jpg?width=800" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Basilica di San Clemente — 3 layers down", b:"Descend through a church, an older church, and a pagan temple with a running stream.", w:["all"], g:"In Rome — near the Colosseum", k:"~€10pp", c:"underground", r:"base" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"The Catacombs", b:"Kilometres of early-Christian burial tunnels under the city.", w:["all"], g:"In Rome — Via Appia (bus 118) or S. Agnese", k:"~€10pp", c:"underground", r:"base" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Capuchin Crypt — the bone chapel", b:"Rooms decorated entirely with the bones of 3,700 monks.", w:["all"], g:"In Rome — Via Veneto, Metro A Barberini", k:"~€8.50pp", c:"weird", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Capuchin_Crypt_-_DPLA_-_103cc5af0b9e4d62334af9db890b7c8b.jpg?width=800" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Museum of the Holy Souls in Purgatory", b:"A tiny, genuinely bizarre museum of scorch-marks 'left by souls'.", w:["rhys"], g:"In Rome — by Castel Sant'Angelo", k:"Free", c:"weird", r:"base" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Palazzo Spada — the forced-perspective trick", b:"Borromini's optical-illusion colonnade that looks four times its real length.", w:["all"], g:"In Rome — Campo de' Fiori area", k:"~€5pp", c:"maze", r:"base" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Quartiere Coppedè", b:"A fairy-tale quarter of monsters, spiders and dreamlike facades — free to wander.", w:["all"], g:"In Rome — tram/bus to Piazza Buenos Aires", k:"Free", c:"architecture", r:"base", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Palace_in_quartiere_copped%C3%A8.jpg?width=800" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Castel Sant'Angelo", b:"Fortress ramps and corridors, and the pope's secret escape passage.", w:["all"], g:"In Rome — walkable from the Vatican", k:"~€16pp · under-18 free", c:"castle", r:"base", img:"https://commons.wikimedia.org/wiki/Special:FilePath/RomaCastelSantAngelo.jpg?width=800" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Centrale Montemartini", b:"Ancient Roman statues posed among the giant machines of a 1912 power station.", w:["jude"], g:"In Rome — Metro B Garbatella", k:"~€10pp", c:"machines", r:"base" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Gladiator school — Scuola Gladiatori", b:"Tunic on, wooden sword, real moves, a mini-tournament and a certificate. Age 6+.", w:["keir"], g:"In Rome — Via Appia Antica (bus 118)", k:"~€130 for a couple hrs (group)", c:"thrill", r:"base", s:true, l:"https://www.gruppostoricoromano.it/?lang=en" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Pizza + gelato class for kids", b:"Roll dough, top a pizza in a real oven, then churn gelato.", w:["grey"], g:"In Rome — near Piazza Navona", k:"family quote", c:"food", r:"base", l:"https://www.inromecooking.com/tour/kids-and-family-classes/pizza-making-and-gelato-class-for-kids/" },
+  { leg:5, city:'Rome', rg:'Lazio', n:"Roman Forum family treasure hunt", b:"A story-driven hunt that brings the ruins alive for kids.", w:["grey"], g:"In Rome — the Forum", k:"tour + entry", c:"hunt", r:"base" },
+  { leg:5, city:'Bomarzo', rg:'Lazio', n:"Bomarzo — the Park of the Monsters", b:"Giant grotesque stone monsters scattered through a Renaissance garden.", w:["all"], g:"Day-trip — train to Orte/Viterbo + bus; ~1h30", k:"~€13pp", c:"architecture", r:"day", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Monster_in_Parco_dei_Mostri_(Bomarzo).jpg?width=800" },
+  { leg:5, city:'Bagnoregio', rg:'Lazio', n:"Civita di Bagnoregio — the 'dying city'", b:"A cliff-top town reached only by a long footbridge.", w:["all"], g:"Day-trip — train to Orvieto + bus", k:"~€5pp footbridge", c:"architecture", r:"day" },
+  { leg:5, city:'Formello', rg:'Lazio', n:"Falconer for a Day — La Selvotta", b:"A bird of prey flies free and lands back on your glove. Under 20km from Rome.", w:["keir"], g:"Day-trip — needs a taxi/transfer (~20km NW)", k:"~€60–90pp", c:"animals", r:"day", s:true },
+  { leg:5, city:'Pitigliano', rg:'Tuscany', n:"Pitigliano + the Vie Cave", b:"A town carved from volcanic tufa, ringed by Etruscan roads cut as deep trenches through the rock.", w:["jude"], g:"Far — train + bus ~2h30; better as its own outing", k:"Free (town)", c:"rock", r:"far" },
+  { leg:5, city:'Genga', rg:'Marche', n:"Frasassi Caves — the Ancona Abyss", b:"A limestone chamber big enough to hold Milan Cathedral. Marquee cave for the rockhound.", w:["jude"], g:"Far — train to Genga ~3h+; better on its own trip", k:"~€18pp", c:"caves", r:"far", s:true },
 
-  dolomites: [
-    { n:"Seceda — the knife-edge ridge", c:"mountain", w:["all"], s:true, r:"base", b:"A cable car to the tilted Odle ridgeline at 2,500m. Open into November — golden larches in October.", l:"https://www.seceda.it/en/summer", img:"https://commons.wikimedia.org/wiki/Special:FilePath/The_Dolomites_from_Seceda.jpg?width=800" },
-    { n:"Alpe di Siusi — Europe's biggest meadow", c:"mountain", w:["all"], s:true, r:"base", b:"Gentle meadow walks to huts with playgrounds and animals under the Sciliar. Birthday-day base.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Gr%C3%B6dner_Dolomiten_Seiser-Alm_Hi_res.jpg?width=800" },
-    { n:"Hike & Cheese Workshop", c:"food", w:["grey"], s:true, r:"base", b:"Make fresh cheese by hand with a farmer (in English) — Grey's Oct 12 birthday centrepiece. Confirm the date; season ends mid-Oct." },
-    { n:"Gostner Schwaige — alpine dairy hut", c:"food", w:["all"], r:"base", b:"A working hut making its own cheese, butter and ricotta — a special mountain lunch." },
-    { n:"Sassolungo — the 'coffin lift'", c:"thrill", w:["rhys"], s:true, r:"base", b:"Tiny open two-person cabins float you to a high saddle. Closes Oct 11 — ride it your first day.", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Langkofel_group_from_the_Sella_pass_2016.jpg?width=800" },
-    { n:"Col Raiser + Puez-Odle walks", c:"mountain", w:["all"], r:"base", b:"A quieter gondola into the nature park, under the Odle spires." },
-    { n:"Bletterbach — the fossil canyon", c:"rock", w:["jude"], s:true, r:"day", b:"Walk into an 8km gorge slicing through 40 million years of rock — ammonites, reptile tracks. Jude's best day.", l:"https://www.bletterbach.info/en/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Bletterbach_HDR.jpg?width=800" },
-    { n:"Val di Fassa / Predazzo — geology trails", c:"rock", w:["jude"], r:"day", b:"Volcanic and sedimentary Dolomite geology with a mineral museum, close to Val Gardena." },
-    { n:"Lagazuoi — WWI tunnels in the mountain", c:"thrill", w:["rhys"], s:true, r:"day", b:"Hike through war tunnels cut straight into the Dolomite rock." },
-    { n:"Via ferrata — Averau / Gran Cir", c:"thrill", w:["rhys"], r:"day", b:"An approachable first via ferrata for the teens, with a guide (weather permitting)." },
-    { n:"Törggelen — the autumn farm dinner", c:"food", w:["all"], r:"day", b:"October-only: roast chestnuts, new wine and strudel at a farm tavern in the Eisacktal." },
-    { n:"Roter Hahn farm — bread & strudel baking", c:"food", w:["grey"], r:"day", b:"A hands-on farm baking session, arranged directly — apple-harvest season." },
-    { n:"Museum Gherdëina — Ortisei", c:"rock", w:["jude"], r:"base", b:"Local Dolomite fossils and minerals — a good rainy-day fix." },
-  ],
+  // ── LEG 6 · VENICE / LIDO ─────────────────────────────────────────────────
+  { leg:6, city:'Murano', rg:'Veneto', n:"Murano — watch glassblowing, make a bead", b:"A maestro turns molten glass into a horse in two minutes; then you make your own bead.", w:["keir"], g:"In Venice — vaporetto to Murano; bead class age 10+ (email re Keir)", k:"~€30–60pp", c:"craft", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Murano_furnace_and_pipe.jpg?width=800" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Doge's Palace — Secret Itineraries", b:"Behind locked doors: the offices, interrogation rooms and prison passages of the old republic.", w:["all"], g:"In Venice — vaporetto to San Marco; book the tour", k:"~€32pp tour", c:"secret", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Doge%27s_Palace_Venice_sea_facade.jpg?width=800" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"The Doge's Palace armoury", b:"Suits of armour, swords and crossbows — the sword-and-armour fix.", w:["keir"], g:"In Venice — inside the Doge's Palace; under-18 free", k:"Palace ~€30 (kids free)", c:"whoa", r:"base" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"The Venetian Arsenal", b:"The enormous medieval shipyard that once built a galley a day.", w:["all"], g:"In Venice — Castello district, walkable", k:"Varies (grounds/museum)", c:"whoa", r:"base", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Arsenale_di_Venezia_gate.jpg?width=800" },
+  { leg:6, city:'San Giorgio', rg:'Veneto', n:"Borges Labyrinth — San Giorgio Maggiore", b:"A hedge maze based on the Borges story, on its own island.", w:["all"], g:"In Venice — vaporetto to San Giorgio; book ahead", k:"~€10pp", c:"maze", r:"base" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Scala Contarini del Bovolo", b:"An external spiral tower-staircase that looks almost impossible.", w:["all"], g:"In Venice — near San Marco, walkable", k:"~€8pp", c:"architecture", r:"base" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Learn to row Venetian-style", b:"A standing-up rowing lesson in a traditional boat.", w:["rhys"], g:"In Venice — operator meeting point", k:"~€40–80pp", c:"water", r:"base" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Kayak the lagoon & hidden canals", b:"Paddle the quiet back-canals and out into the lagoon.", w:["rhys"], g:"In Venice — operator meeting point", k:"~€60pp", c:"thrill", r:"base" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Carnival mask-making workshop", b:"Make and paint your own Venetian mask.", w:["grey"], g:"In Venice — central studios", k:"~€40pp", c:"craft", r:"base" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Venetian cicchetti cooking class", b:"Make the city's own bar snacks in a local's home.", w:["grey"], g:"In Venice — Dorsoduro (Cesarine host home)", k:"~€131 / €66 kids", c:"food", r:"base", l:"https://cesarine.com/en" },
+  { leg:6, city:'Venice', rg:'Veneto', n:"Hidden-city treasure hunt", b:"Secret symbols, alleys and clues across Venice.", w:["all"], g:"In Venice — self-guided from a start point", k:"~€25pp", c:"hunt", r:"base" },
+  { leg:6, city:'Lido', rg:'Veneto', n:"Lido beach + vaporetto rides", b:"A real beach island to run on — and the water-buses are half the fun. (MuMu's island.)", w:["keir"], g:"In Venice — you're based on the Lido", k:"Vaporetto pass", c:"water", r:"base" },
+  { leg:6, city:'Stra', rg:'Veneto', n:"Villa Pisani labyrinth — Stra", b:"A famous historic hedge maze with a tower at the centre.", w:["all"], g:"Day-trip — train/bus toward Padua, ~45 min", k:"~€10pp", c:"maze", r:"day", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Labirinto_villa_Pisani_1.JPG?width=800" },
+  { leg:6, city:'Padua', rg:'Veneto', n:"San Pelagio — Minotaur & mirror mazes", b:"Two very different mazes at a castle near Padua.", w:["all"], g:"Day-trip — train to Padua + local", k:"~€12pp", c:"maze", r:"day" },
+  { leg:6, city:'Padua', rg:'Veneto', n:"Museo del Precinema — magic lanterns", b:"Magic lanterns and proto-cinema devices in Padua.", w:["all"], g:"Day-trip — 30-min train to Padua", k:"~€10pp", c:"weird", r:"day" },
+  { leg:6, city:'Valstagna', rg:'Veneto', n:"Grotte di Oliero — by boat", b:"Cave springs you enter by boat. Rockhound + water.", w:["jude"], g:"Day-trip — train + bus ~1h30", k:"~€10pp", c:"caves", r:"day" },
+  { leg:6, city:'Verona', rg:'Veneto', n:"Museo Nicolis — cars & machines", b:"Cars, motorcycles and machines near Verona.", w:["jude"], g:"Day-trip — train to Verona + local", k:"~€12pp", c:"machines", r:"day" },
+  { leg:6, city:'Trieste', rg:'Friuli', n:"Grotta Gigante — the giant cavern", b:"A karst cavern big enough to hold a cathedral.", w:["jude"], g:"Far — train to Trieste ~2h + bus; better as its own trip", k:"~€13pp", c:"caves", r:"far", s:true },
 
-};
+  // ── LEG 7 · DOLOMITES (car) ───────────────────────────────────────────────
+  { leg:7, city:'Val Gardena', rg:'Trentino–Alto Adige', n:"Seceda — the knife-edge ridge", b:"A cable car to the tilted Odle ridgeline at 2,500m. Golden larches in October.", w:["all"], g:"Gondola from Ortisei — on your doorstep", k:"~€44pp return", c:"mountain", r:"base", s:true, l:"https://www.seceda.it/en/summer", img:"https://commons.wikimedia.org/wiki/Special:FilePath/The_Dolomites_from_Seceda.jpg?width=800" },
+  { leg:7, city:'Alpe di Siusi', rg:'Trentino–Alto Adige', n:"Alpe di Siusi — Europe's biggest meadow", b:"Gentle meadow walks to huts with playgrounds and animals under the Sciliar.", w:["all"], g:"Gondola from Ortisei (car road closed 9–5)", k:"~€25–30pp return", c:"mountain", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Gr%C3%B6dner_Dolomiten_Seiser-Alm_Hi_res.jpg?width=800" },
+  { leg:7, city:'Alpe di Siusi', rg:'Trentino–Alto Adige', n:"Hike & Cheese Workshop", b:"Make fresh cheese by hand with a farmer (in English). Grey's Oct 12 birthday centrepiece.", w:["grey"], g:"Guided — private transfer + cable car included", k:"~€600–900 (private day)", c:"food", r:"base", s:true },
+  { leg:7, city:'Alpe di Siusi', rg:'Trentino–Alto Adige', n:"Gostner Schwaige — alpine dairy hut", b:"A working hut making its own cheese, butter and ricotta — a special mountain lunch.", w:["all"], g:"Gondola to Compatsch + hut bus/walk (drive by car after 5pm)", k:"~€20–30pp lunch", c:"food", r:"base" },
+  { leg:7, city:'Passo Sella', rg:'Trentino–Alto Adige', n:"Sassolungo — the 'coffin lift'", b:"Tiny open two-person cabins float you to a high saddle. Closes Oct 11 — ride it your first day.", w:["rhys"], g:"Drive ~25–30 min to Passo Sella", k:"~€20pp return", c:"thrill", r:"base", s:true, img:"https://commons.wikimedia.org/wiki/Special:FilePath/Langkofel_group_from_the_Sella_pass_2016.jpg?width=800" },
+  { leg:7, city:'Santa Cristina', rg:'Trentino–Alto Adige', n:"Col Raiser + Puez-Odle walks", b:"A quieter gondola into the nature park, under the Odle spires.", w:["all"], g:"Gondola from Santa Cristina — ~10 min drive", k:"~€25pp return", c:"mountain", r:"base" },
+  { leg:7, city:'Aldino', rg:'Trentino–Alto Adige', n:"Bletterbach — the fossil canyon", b:"Walk into an 8km gorge slicing through 40 million years of rock — ammonites, reptile tracks.", w:["jude"], g:"Drive ~1h–1h15 (great use of the car)", k:"~€8–10pp", c:"rock", r:"day", s:true, l:"https://www.bletterbach.info/en/", img:"https://commons.wikimedia.org/wiki/Special:FilePath/Bletterbach_HDR.jpg?width=800" },
+  { leg:7, city:'Predazzo', rg:'Trentino–Alto Adige', n:"Val di Fassa / Predazzo — geology trails", b:"Volcanic and sedimentary Dolomite geology with a mineral museum.", w:["jude"], g:"Drive ~45 min", k:"~€8pp museum", c:"rock", r:"day" },
+  { leg:7, city:'Lagazuoi', rg:'Trentino–Alto Adige', n:"Lagazuoi — WWI tunnels in the mountain", b:"Hike through war tunnels cut straight into the Dolomite rock.", w:["rhys"], g:"Drive ~1h to Passo Falzarego + cable car", k:"Cable car ~€20pp", c:"thrill", r:"day", s:true },
+  { leg:7, city:'Passo Gardena', rg:'Trentino–Alto Adige', n:"Via ferrata — Averau / Gran Cir", b:"An approachable first via ferrata for the teens, with a guide (weather permitting).", w:["rhys"], g:"Drive + guided; weather-dependent mid-Oct", k:"~€300–450 guided", c:"thrill", r:"day" },
+  { leg:7, city:'Eisacktal', rg:'Trentino–Alto Adige', n:"Törggelen — the autumn farm dinner", b:"October-only: roast chestnuts, new wine and strudel at a farm tavern.", w:["all"], g:"Drive ~30–50 min to the Eisacktal", k:"~€25–35pp", c:"food", r:"day" },
+  { leg:7, city:'Kastelruth', rg:'Trentino–Alto Adige', n:"Roter Hahn farm — bread & strudel baking", b:"A hands-on farm baking session, arranged directly — apple-harvest season.", w:["grey"], g:"Drive ~15–25 min; email a farm ahead", k:"~€30–60pp", c:"food", r:"day" },
+  { leg:7, city:'Ortisei', rg:'Trentino–Alto Adige', n:"Museum Gherdëina — Ortisei", b:"Local Dolomite fossils and minerals — a good rainy-day fix.", w:["jude"], g:"In Ortisei — walkable", k:"~€6pp", c:"rock", r:"base" },
+
+];

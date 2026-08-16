@@ -26,12 +26,13 @@
       ],
     },
     {
-      title: 'Activities by kid',
+      title: 'Adventures & activities',
       links: [
-        { label: 'Rhys · 18', href: '/rhys' },
-        { label: 'Jude · 16', href: '/jude' },
-        { label: 'Grey · 12', href: '/grey' },
-        { label: 'Keir · 9', href: '/keir' },
+        { label: '★ All adventures · table', href: '/adventures' },
+        { label: 'Rhys · 18', href: '/adventures?kid=rhys' },
+        { label: 'Jude · 16', href: '/adventures?kid=jude' },
+        { label: 'Grey · 12', href: '/adventures?kid=grey' },
+        { label: 'Keir · 9', href: '/adventures?kid=keir' },
       ],
     },
     {
@@ -49,8 +50,6 @@
       title: 'More',
       links: [
         { label: 'Bologna · day-trip from Florence', href: '/bologna' },
-        { label: 'Activities hub', href: '/activities' },
-        { label: 'Boy adventures', href: '/adventures' },
         { label: 'Worldschooling families', href: '/worldschooling' },
       ],
     },
