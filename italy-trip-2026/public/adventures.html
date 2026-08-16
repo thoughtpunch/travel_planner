@@ -51,7 +51,8 @@
   .c-leg small{display:block;color:var(--stone);font-size:10px;letter-spacing:.3px;margin-top:2px}
   .c-city{font-weight:500;white-space:nowrap}
   .c-region{color:var(--stone);font-size:12px;white-space:nowrap}
-  .c-title{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;line-height:1.2;min-width:180px}
+  .c-title{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;line-height:1.2;min-width:210px}
+  .adv-thumb-img{width:100%;max-width:230px;height:92px;object-fit:cover;border-radius:4px;display:block;margin-bottom:8px;background:#e9e2d6}
   .c-title .em{font-size:14px;margin-right:4px}
   .c-title .star{color:var(--ochre);font-size:12px}
   .c-desc{color:var(--ink);opacity:.85;line-height:1.4;min-width:230px;max-width:340px}
@@ -273,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<td class="c-leg">' + it.leg + '<small>' + esc(lg.dates || '') + '</small></td>' +
         '<td class="c-city">' + esc(it.city) + '</td>' +
         '<td class="c-region">' + esc(it.rg) + '</td>' +
-        '<td class="c-title"><span class="em">' + cat[0] + '</span>' + esc(it.n) + (it.s ? ' <span class="star">★</span>' : '') + '</td>' +
+        '<td class="c-title">' + (it.img ? '<img class="adv-thumb-img" loading="lazy" decoding="async" alt="" src="' + esc(it.img) + '" onerror="this.style.display=\'none\'">' : '') + '<span class="em">' + cat[0] + '</span>' + esc(it.n) + (it.s ? ' <span class="star">★</span>' : '') + '</td>' +
         '<td class="c-desc">' + esc(it.b) + '</td>' +
         '<td class="c-for">' + kids + '</td>' +
         '<td class="c-get">' + esc(it.g || '') + '<span class="reach-badge">' + esc(REACH[it.r] || '') + '</span></td>' +

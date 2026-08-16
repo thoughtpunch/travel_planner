@@ -144,7 +144,14 @@ for (const it of accepted){
   }
 }
 
-// ── sort: leg, then reach (way,base,day,far), then title ──
+// ── city-level fallback image so EVERY row has a picture ──
+let CITY_IMG = {};
+try { CITY_IMG = JSON.parse(fs.readFileSync(EXT + 'city-images.json', 'utf8')); } catch (e) { console.log('(no city-images.json yet)'); }
+for (const it of accepted) {
+  if (!it.img) it.img = CITY_IMG[it.city] || CITY_IMG[legCity[it.leg]] || '';
+}
+
+// ── sort: leg, then reach (way,base,far), then title ──
 const RO = { way:0, base:1, day:2, far:3 };
 accepted.sort((a,b)=> a.leg-b.leg || (RO[a.r]-RO[b.r]) || a.n.localeCompare(b.n));
 
@@ -179,9 +186,9 @@ fs.writeFileSync(OUT + 'adventures-data.js', header);
 function q(s){ s=String(s==null?'':s); return '"'+s.replace(/"/g,'""')+'"'; }
 function maps(it){ return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(it.n+' '+it.city+' Italy'); }
 const REACHL = { base:'In town', way:'On the way', day:'Day-trip', far:'Far · own trip' };
-const rows = [['Leg','City','Region','Title','Description','Ideal for','How to get there','Cost','Category','Reach','Adventure','Website','Google Maps']];
+const rows = [['Leg','City','Region','Title','Description','Ideal for','How to get there','Cost','Category','Reach','Adventure','Website','Google Maps','Photo']];
 for (const it of accepted){
-  rows.push([it.leg, it.city, it.rg, it.n, it.b, it.w.join(' · '), it.g, it.k||'', it.c, REACHL[it.r]||it.r, it.s?'★':'', it.l||'', maps(it)]);
+  rows.push([it.leg, it.city, it.rg, it.n, it.b, it.w.join(' · '), it.g, it.k||'', it.c, REACHL[it.r]||it.r, it.s?'★':'', it.l||'', maps(it), it.img||'']);
 }
 fs.writeFileSync(OUT + 'adventures.csv', rows.map(r=>r.map(q).join(',')).join('\n')+'\n');
 
