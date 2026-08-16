@@ -17,6 +17,14 @@
       ],
     },
     {
+      title: 'The US bookend',
+      links: [
+        { label: '✈ The sandwich · two tickets', href: '/usa' },
+        { label: 'King George, VA · Katelin’s', href: '/kinggeorge' },
+        { label: 'Bostic, NC · Carrie’s', href: '/bostic' },
+      ],
+    },
+    {
       title: 'Milestones',
       links: [
         { label: 'All three celebrations', href: '/celebrations' },

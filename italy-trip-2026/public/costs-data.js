@@ -20,7 +20,7 @@ window.TRIP_COSTS = {
   // usd:null = booked but amount not entered yet (shows an input, excluded til set).
   fixed: [
     { id:'fl-ice',      cat:'Flights', label:'Icelandair BWI⇄Milan · ref AMBVO4', usd:5346,    status:'booked' },
-    { id:'fl-avianca',  cat:'Flights', label:'Avianca SJO⇄IAD positioning · ref AABDA8', usd:1870.74, status:'booked' },
+    { id:'fl-avianca',  cat:'Flights', label:'Avianca SJO⇄IAD positioning · Sep 9–Nov 17 · ref AABDA8', usd:1870.74, status:'booked', url:'https://gestiona.avianca.com/en/customize-your-trip?pnr=AABDA8&lastname=BARRETT' },
 
     { id:'lo-milan',    cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:465.60, status:'booked', url:'https://www.airbnb.com/rooms/1452221020381596173' },
     { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:415.71, status:'booked', note:'free cancellation', url:'https://www.airbnb.com/rooms/1040377631489080309' },
