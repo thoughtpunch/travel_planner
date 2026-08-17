@@ -57,7 +57,7 @@ for (const it of curated){ it.n=dec(it.n); it.b=dec(it.b); it.g=dec(it.g||''); i
 const combined = [...curated, ...ext];
 
 // ── dedup: same leg + >=2 shared significant title tokens ──
-const STOP = new Set(['with','your','into','from','over','near','plus','tour','trip','walk','best','little','they','them','this','that','then','make','made','onto','the','and','for']);
+const STOP = new Set(['with','your','into','from','over','near','plus','tour','trip','walk','best','little','they','them','this','that','then','make','made','onto','the','and','for','bike','park','bikepark']);
 function toks(n){
   return new Set(dec(n).toLowerCase().replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(t => t.length>=4 && !STOP.has(t)));
 }
