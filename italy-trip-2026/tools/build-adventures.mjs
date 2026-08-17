@@ -16,7 +16,8 @@ const FILES = [
   ['cinqueterre.json', 3, 'Liguria'], ['florence.json', 4, 'Tuscany'],
   ['rome.json', 5, 'Lazio'], ['venice.json', 6, 'Veneto'],
   ['dolomites.json', 7, 'Trentino–Alto Adige'], ['bologna.json', 4, 'Emilia-Romagna'],
-  ['romevenice.json', 6, 'Emilia-Romagna'], ['celebrations.json', 4, 'Italy'],
+  ['romevenice.json', 6, 'Emilia-Romagna'], ['biking.json', 3, 'Liguria'],
+  ['celebrations.json', 4, 'Italy'],
 ];
 
 function dec(s){ return String(s==null?'':s)
