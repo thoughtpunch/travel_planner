@@ -26,7 +26,7 @@ window.TRIP_COSTS = {
     { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:415.71, status:'booked', note:'free cancellation', url:'https://www.airbnb.com/rooms/1040377631489080309' },
     { id:'lo-coast',    cat:'Lodging', label:'Ligurian coast — Chiavari · Sep 15–19 (4n)', usd:547.06, status:'booked', note:'€506.54 · Vista sul Carruggio', url:'https://www.booking.com/hotel/it/vista-sul-carruggio-centro-storico-di-chiavari.en-us.html' }, // €506.54
     { id:'lo-florence', cat:'Lodging', label:'Florence · Sep 19–26 (7n, +Grandma)',  usd:1937.57, status:'booked', note:'San Frediano Airbnb', url:'https://www.airbnb.com/rooms/1376653584481814317' },
-    { id:'lo-rome',     cat:'Lodging', label:'Rome · Sep 26–Oct 3 (7n)',             usd:1600,  status:'estimate' },
+    { id:'lo-rome',     cat:'Lodging', label:'Rome · Aventino/Testaccio · Sep 26–Oct 3 (7n)', usd:2200, status:'estimate' }, // ~€2,040 · quiet 3–4BR w/ work room
     { id:'lo-venice',   cat:'Lodging', label:'Venice / Lido · Oct 3–10 (7n)',        usd:1800,  status:'estimate' },
     { id:'lo-dolomites',cat:'Lodging', label:'Dolomites / Val Gardena chalet · Oct 10–14 (4n)', usd:1400, status:'estimate' }, // ~€1300
     { id:'lo-malpensa', cat:'Lodging', label:'Malpensa airport hotel · Oct 14–15 (1n)', usd:170, status:'estimate' },
