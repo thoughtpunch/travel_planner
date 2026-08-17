@@ -37,6 +37,7 @@
       title: 'Adventures & activities',
       links: [
         { label: '★ All adventures · table', href: '/adventures' },
+        { label: '🚵 Bike parks · N. Italy', href: '/bikeparks' },
         { label: 'Rhys · 18', href: '/adventures?kid=rhys' },
         { label: 'Jude · 16', href: '/adventures?kid=jude' },
         { label: 'Grey · 12', href: '/adventures?kid=grey' },
