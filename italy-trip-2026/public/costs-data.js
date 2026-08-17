@@ -19,20 +19,18 @@ window.TRIP_COSTS = {
   // status: 'booked' = paid/reserved, real number.  'estimate' = placeholder.
   // usd:null = booked but amount not entered yet (shows an input, excluded til set).
   fixed: [
-    { id:'fl-ice',      cat:'Flights', label:'Icelandair BWI⇄Milan · ref AMBVO4', usd:5346,    status:'booked' },
-    { id:'fl-avianca',  cat:'Flights', label:'Avianca SJO⇄IAD positioning · Sep 9–Nov 17 · ref AABDA8', usd:1870.74, status:'booked', url:'https://gestiona.avianca.com/en/customize-your-trip?pnr=AABDA8&lastname=BARRETT' },
-
-    { id:'lo-milan',    cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:465.60, status:'booked', url:'https://www.airbnb.com/rooms/1452221020381596173' },
-    { id:'lo-turin',    cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15',    usd:415.71, status:'booked', note:'free cancellation', url:'https://www.airbnb.com/rooms/1040377631489080309' },
-    { id:'lo-coast',    cat:'Lodging', label:'Ligurian coast — Chiavari · Sep 15–19 (4n)', usd:547.06, status:'booked', note:'€506.54 · Vista sul Carruggio', url:'https://www.booking.com/hotel/it/vista-sul-carruggio-centro-storico-di-chiavari.en-us.html' }, // €506.54
-    { id:'lo-florence', cat:'Lodging', label:'Florence · Sep 19–26 (7n, +Grandma)',  usd:1937.57, status:'booked', note:'San Frediano Airbnb', url:'https://www.airbnb.com/rooms/1376653584481814317' },
-    { id:'lo-rome',     cat:'Lodging', label:'Rome · Sep 26–Oct 3 (7n)', usd:1977, status:'booked', note:'Airbnb 28235127', url:'https://www.airbnb.com/rooms/28235127' },
-    { id:'lo-venice',   cat:'Lodging', label:'Venice / Lido · Oct 3–10 (7n)',        usd:1800,  status:'estimate' },
-    { id:'lo-dolomites',cat:'Lodging', label:'Dolomites / Val Gardena chalet · Oct 10–14 (4n)', usd:1400, status:'estimate' }, // ~€1300
+    { id:'fl-ice', cat:'Flights', label:'Icelandair BWI⇄Milan · ref AMBVO4', usd:5346, status:'booked' },
+    { id:'fl-avianca', cat:'Flights', label:'Avianca SJO⇄IAD positioning · Sep 9–Nov 17 · ref AABDA8', usd:1870.74, status:'booked', url:'https://gestiona.avianca.com/en/customize-your-trip?pnr=AABDA8&lastname=BARRETT' },
+    { id:'lo-milan', cat:'Lodging', label:'Milan — San Siro Airbnb · Sep 11–13', usd:465.6, status:'booked', url:'https://www.airbnb.com/rooms/1452221020381596173' },
+    { id:'lo-turin', cat:'Lodging', label:'Turin — Centro Airbnb · Sep 13–15', usd:415.71, status:'booked', note:'free cancellation', url:'https://www.airbnb.com/rooms/1040377631489080309' },
+    { id:'lo-coast', cat:'Lodging', label:'Ligurian coast — Chiavari · Sep 15–19 (4n)', usd:547.06, status:'booked', note:'€506.54 · Vista sul Carruggio', url:'https://www.booking.com/hotel/it/vista-sul-carruggio-centro-storico-di-chiavari.en-us.html' },
+    { id:'lo-florence', cat:'Lodging', label:'Florence · Sep 19–26 (7n, +Grandma)', usd:1937.57, status:'booked', note:'San Frediano Airbnb', url:'https://www.airbnb.com/rooms/1376653584481814317' },
+    { id:'lo-rome', cat:'Lodging', label:'Rome · Sep 26–Oct 3 (7n)', usd:1977, status:'booked', note:'Airbnb 28235127', url:'https://www.airbnb.com/rooms/28235127' },
+    { id:'lo-venice', cat:'Lodging', label:'Venice / Lido · Oct 3–10 (7n)', usd:1800, status:'estimate' },
+    { id:'lo-dolomites', cat:'Lodging', label:'Dolomites / Val Gardena chalet · Oct 10–14 (4n)', usd:1400, status:'estimate' },
     { id:'lo-malpensa', cat:'Lodging', label:'Malpensa airport hotel · Oct 14–15 (1n)', usd:170, status:'estimate' },
-
-    { id:'tr-intercity',cat:'Trains',  label:'6 intercity rail legs · all 6 (Aug-2026 pull)', usd:771, status:'estimate' }, // €714
-    { id:'tr-car',      cat:'Trains',  label:'Dolomites rental car + fuel/tolls · ~5d', usd:650, status:'estimate' },
+    { id:'tr-intercity', cat:'Trains', label:'6 intercity rail legs · all 6 (Aug-2026 pull)', usd:771, status:'estimate' },
+    { id:'tr-car', cat:'Trains', label:'Dolomites rental car + fuel/tolls · ~5d', usd:650, status:'estimate' },
   ],
 
   // ── The daily model (sliders) ────────────────────────────────────────────
