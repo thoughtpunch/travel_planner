@@ -1,0 +1,130 @@
+# Canonical facts · 21 Aug 2026
+
+**The HTML pages in `public/` are the source of truth.** The numbered markdown docs
+(`01-` … `09-`) drifted badly and are being rebuilt from the site. When this file and a
+page disagree, the page wins.
+
+> **UPDATE — the car is now actually BOOKED, and the dates moved.** The reservation is
+> **Budget, confirmation 02391839US2**, and the drop is **Thu Oct 15 at 12:00**, not Wed
+> Oct 14 — **5 rental days, not 4.** The CAR section below has been rewritten to the real
+> booking; the `public/` pages already carry it. Anything anywhere still saying "drop Oct 14"
+> or "4 rental days" is stale.
+
+## Trip shape (from `public/plan.html`)
+
+Milan → Turin → Cinque Terre (Chiavari) → Florence → Rome → Venice/Lido → Dolomites → Malpensa.
+**8 stops, 34 nights, Sep 11 – Oct 15 2026.** Family of six.
+
+| # | Stop | Dates 2026 | Nts |
+|---|------|-----------|-----|
+| 1 | Milan | Sep 11–13 | 2 |
+| 2 | **Turin** | Sep 13–… | — |
+| 3 | Cinque Terre (**Chiavari** base) | … | — |
+| 4 | Florence (work base) | … | — |
+| 5 | Rome (work base) | … Oct 3 | — |
+| 6 | **Venice / Lido** | **Oct 3–10** | **7** |
+| 7 | **Dolomites (Val Gardena / Ortisei)** | **Oct 10–14** | **4** |
+| 8 | Near Malpensa — **location TBD** (airport hotel, or a lake town within ~1h) | Oct 14–15 | 1 |
+
+Stop 8 is **being reconsidered**: we now hold the car overnight, so the last night can be an
+MXP airport hotel *or* somewhere on Lake Maggiore / Lake Orta within about an hour of the
+airport. Don't hard-code an airport hotel until it's decided.
+
+Read the exact dates for stops 1–5 out of `public/plan.html` — do not invent them.
+
+### Stops that NO LONGER EXIST
+- **Lake Como** — cut. Replaced by **Turin**. Never was visited.
+- **Bologna** — no longer an overnight stop. It is a **day trip from the Florence base**
+  (Firenze S.M.N. → Bologna Centrale ~37 min Frecciarossa). See `public/bologna.html`.
+
+### Celebrations (from `public/celebrations.html`)
+- **Rhys turns 18 · Sep 18 · Ligurian coast** (not Florence) — seafood dinner over the Med.
+- **Anniversary · Oct 9 · VENICE** — canalside dinner for two; boys have pizza night at the
+  Lido place. (NOT in the Dolomites.)
+- **Grey turns 12 · Oct 12 · Dolomites** — Seceda cable car → rifugio lunch → Kaiserschmarrn
+  or strudel with a candle → pizza dinner in Ortisei.
+
+## THE CAR — BOOKED ✓ (supersedes every page)
+
+The old plan was: train Venice → Bolzano, collect a car in Bolzano, return it in Bolzano,
+then train Bolzano → Verona → Milano Centrale → Malpensa Express. **All three parts are dead.**
+
+**The actual reservation:**
+
+| | |
+|---|---|
+| **Supplier** | **Budget** — **confirmation 02391839US2** · **+1 866-671-7282** |
+| **Vehicle** | "**Standard-Size Van**" class — **Peugeot 5008 or similar · 7 seats · 4 bags · automatic** |
+| **Included** | Unlimited mileage · collision damage waiver · theft protection · **free cancellation** |
+| **Pick up** | **Sat Oct 10, 12:00** — Marco Polo Airport (VCE), Multipiano P1 terzo piano, Venice 30100 |
+| **Drop off** | **Thu Oct 15, 12:00** — Malpensa Airport (MXP), Terminal 1, Milan 21010 |
+| **Duration** | **5 rental days**, one-way |
+| **Price** | **$717** all-in, incl. the one-way fee and taxes. Logged in `public/costs.csv` as **booked** — verify against the actual Budget charge. Fuel + autostrada tolls are separate, **~$185**. |
+
+**The shape this creates — the subtle part:**
+- **Wed Oct 14 is a driving/sightseeing day, not a transfer sprint.** We drive Ortisei → the
+  Malpensa area (~370 km, ~4h30, motorway throughout, lunch stop at **Sirmione on Lake Garda**),
+  and we **sleep near the airport that night with the car**.
+- **Thu Oct 15 morning still has a car.** The drop is at **noon**, four hours before the 16:20
+  flight — so Thursday morning is usable time (Volandia at the airport, or a run out to a lake).
+- **The last night (Oct 14–15) is one night near Malpensa, location TBD** — an airport hotel,
+  or a lake town (Maggiore / Orta) within ~1h of MXP. Because we hold the car, both work.
+
+**The rest of the rationale, unchanged:**
+- Pickup at VCE *replaces* the €152–180 Venezia S. Lucia → Bolzano rail leg entirely — a direct
+  Alilaguna boat runs from the Lido to the airport, so no train, no bags through S. Lucia.
+- The one-way drop at MXP *replaces* the €180–290 Bolzano → Milan → Malpensa Express rail leg.
+- **Why a 7-seater:** six people need six belts, and Europe has no 6-seat class — the jump is
+  5 → 7. With six aboard you fold one third-row seat for luggage. NOT a 9-seat van.
+- **Why not Bolzano:** its depot had two 7+ seat offers total, both 9-seat vans at ~€1,150.
+  Verona and VCE have deep inventory. Bolzano is a stockout risk.
+- Net saving vs. the old train-in/train-out plan: roughly **€700**.
+
+**Still outstanding, and unfixable abroad: the two International Driving Permits** (Dan and
+Kei, ~$20 each at AAA). Italy requires an IDP alongside a US licence and the desk can refuse
+the car without one. The car is booked; the permits are not.
+
+## Lift dates — CONFIRMED 21 Aug 2026 (previously flagged "check this")
+
+Several pages warn that Val Gardena's lifts "typically close mid-October." **That is wrong
+for 2026** — it confuses the *Gardena Card* (which does end 11 Oct) with the lifts themselves.
+
+| Lift | 2026 season | Source |
+|---|---|---|
+| Ortisei–Furnes–Seceda (both stages) | **22 May – 2 Nov** | seceda.it |
+| Mont Sëuc (Ortisei → Alpe di Siusi) | to **2 Nov** | montseuc.it |
+| Alpe di Siusi cableway (from Siusi) | to **1 Nov** | seiser-alm.it |
+| Fermeda chairlift (ridge-top) | closes **20 Sep** — unavailable to us | seceda.it |
+| Kronplatz Bike Park | to **8 Nov** | kronplatz.com |
+
+**Oct 12 (Grey's birthday) is comfortably inside every one of these.** The "confirm the lift
+dates" warnings on `/dolomites` and `/celebrations` can be closed out as resolved.
+
+## Alpe di Siusi road rule — NEW
+
+The road from Siusi up to Compatsch is **closed to private cars 09:00–17:00** (year-round while
+the cableway runs). By day you go up on the Mont Sëuc cableway from Ortisei. **But it reopens
+to cars after 17:00** — which makes a sunset dinner up at Compatsch (~1,850 m) possible on the
+car leg. Sunset mid-October is ~18:30.
+
+## The four-night squeeze
+
+4 nights = **only three full days: Oct 11, 12, 13.** Oct 10 is a travel afternoon, Oct 14 is the
+drive to Malpensa. Oct 12 is locked to Grey's birthday. So Kronplatz (Keir) and Jude's
+rocks/minerals day take Oct 11 and Oct 13 — and **Alpe di Siusi has no slot left.** It is either
+cut, or squeezed into the Oct 10 arrival afternoon if the drive goes quickly.
+
+## Dan's work rhythm
+Works **16:00–23:00 Italian time, Mon–Fri**. On the Dolomites leg that means:
+- **Sat Oct 10, Sun Oct 11** — free.
+- **Mon Oct 12** — must be blocked for Grey's birthday.
+- **Tue Oct 13** — the only normal work evening; keep that day's plan close to base.
+- **Wed Oct 14 and Thu Oct 15** — both need PTO (driving through the window, then flying).
+  The 14th is the drive down to the Malpensa area; the 15th is car back at 12:00, fly 16:20.
+
+## Repo hazards
+- `tools/build-adventures.mjs` reads from a scratchpad path belonging to a **dead session**
+  (`7707d7f7-…`) that no longer exists. **The pipeline cannot be re-run.**
+  `public/adventures-data.js` is now hand-edit-only. Do not attempt `node build-adventures.mjs`.
+- Do not edit `public/adventures-data.js`, `public/bikeparks-data.js`, or `public/costs-data.js`
+  as part of the doc rebuild.

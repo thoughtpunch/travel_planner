@@ -9,5 +9,6 @@
 "lo-venice","Lodging","Venice / Lido · Oct 3–10 (7n)","1800","estimate","",""
 "lo-dolomites","Lodging","Dolomites / Val Gardena chalet · Oct 10–14 (4n)","1400","estimate","",""
 "lo-malpensa","Lodging","Malpensa airport hotel · Oct 14–15 (1n)","170","estimate","",""
-"tr-intercity","Trains","6 intercity rail legs · all 6 (Aug-2026 pull)","771","estimate","",""
-"tr-car","Trains","Dolomites rental car + fuel/tolls · ~5d","650","estimate","",""
+"tr-intercity","Trains","5 intercity rail legs · all 6 (Aug-2026 pull)","606","estimate","was 6 legs/$771 — the Venice→Bolzano leg is replaced by the car",""
+"tr-car","Trains","Rental car · Budget · ref 02391839US2 · VCE Oct 10 12:00 → MXP Oct 15 12:00 (5d)","717","booked","Peugeot 5008 or similar · 7 seats · automatic · unlimited mileage · CDW + theft · free cancellation · Budget +1 866-671-7282 · verify amount against the Budget charge",""
+"tr-carfuel","Trains","Rental car — fuel + autostrada tolls (5 days incl. the MXP run)","185","estimate","~€170; A22/A4 tolls ~€35–45 on the Malpensa leg",""
