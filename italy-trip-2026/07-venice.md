@@ -11,7 +11,7 @@
 | **Headline** | **Aunt Muriel ("MuMu") visit — the core purpose.** Plus **our anniversary on Oct 9** — a canalside dinner for two |
 | **Budget** | 7 nights **unlocks the weekly rate** — €230–330/night band, roughly **€1,610 / €1,960 / €2,310** low/avg/high |
 | **In** | Sat Oct 3 — Roma Termini → Venezia S. Lucia, **direct Frecciarossa (~4h)**, then vaporetto to the Lido |
-| **Out** | Sat Oct 10 — **Alilaguna boat from the Lido straight to Venice Marco Polo (VCE)** and pick up the rental car there |
+| **Out** | Sat Oct 10 — **Alilaguna boat from the Lido straight to Venice Marco Polo (VCE)** and collect the **booked** rental car there at **12:00** (Budget ref **02391839US2**) |
 
 ## Why this stop exists — MuMu
 
@@ -111,17 +111,19 @@ Whole-place for six, **Oct 3–10**, **Lido di Venezia near MuMu**. Filter for 2
 
 - **In (Sat Oct 3):** Roma Termini → Venezia S. Lucia, **direct Frecciarossa, ~4h04** — 05:30 → 09:34 or 06:30 → 10:34, **€221.40** for all six (€36.90 pp). The €176.40 IC+Reg option is a 6h18 slog with a change and isn't worth it. Then a vaporetto out to the Lido — pre-arrange a water taxi or plan the luggage haul on the Lido side.
 - **Out (Sat Oct 10) — this changed:** **no train to Bolzano.** We take the **Alilaguna boat direct from the Lido to Venice Marco Polo airport (VCE)** and **collect the rental car at the airport** — no train, no hauling six people's bags through S. Lucia. That kills the old €152–180 Venezia S. Lucia → Bolzano rail leg outright.
-  - **Vehicle: a 7-seater** (Peugeot 5008 / Škoda Kodiaq / VW Touran / SEAT Tarraco class) — six people need six belts and Europe has no 6-seat class, so the jump is 5 → 7. With six aboard you fold one third-row seat down for luggage. Not a 9-seat van.
-  - **4 rental days, Oct 10 → Oct 14**, one-way, **dropped at Milan Malpensa** at the end of the Dolomites leg.
+  - **The car is BOOKED ✓** — **Budget, confirmation 02391839US2**, Budget **+1 866-671-7282**.
+  - **Pick up Sat Oct 10 at 12:00**, Marco Polo Airport, **Multipiano P1, terzo piano**, Venice 30100. Check the Alilaguna schedule against that noon slot — it's the one hard time on the day.
+  - **Vehicle:** "Standard-Size Van" class — **Peugeot 5008 or similar, 7 seats, 4 bags, automatic.** Six people need six belts and Europe has no 6-seat class, so the jump is 5 → 7. With six aboard you fold one third-row seat down for luggage. Not a 9-seat van. Includes unlimited mileage, CDW, theft protection and **free cancellation**.
+  - **5 rental days, Oct 10 → Oct 15**, one-way, **dropped at Milan Malpensa Terminal 1 at 12:00 on Thu Oct 15** — flight day, not the end of the Dolomites leg. We drive down on Wed Oct 14 and keep the car overnight near the airport.
   - **Why VCE and not Bolzano:** Bolzano's depot had two 7+ seat offers total, both 9-seat vans at ~€1,150 — a stockout risk. VCE and Verona have deep inventory.
-  - **Live quote:** ~$717 for 5 days (Kayak/Budget, VCE→MXP) incl. one-way fee and taxes; re-priced at 4 days it lands around **$640**. The headline "$74/day" is a base rate — roughly $350 of the total is fixed one-way fee + taxes, so cutting a day saves ~$74, not 20%. Net saving against the old train-in/train-out plan: roughly **€700**.
+  - **Price: $717** all-in incl. the one-way fee and taxes (booked; verify against the actual Budget charge). Fuel and autostrada tolls are a separate **~$185**. Net saving against the old train-in/train-out plan: roughly **€700**.
 
 ## What to book ahead
 
 1. **Lido whole-home, Oct 3–10** — book now; 6-person inventory on the Lido is limited and the trip is ~3 weeks out. Confirm the weekly rate applies.
 2. **The anniversary dinner (Fri Oct 9)** — a canalside table for two, Cannaregio or Dorsoduro. Small rooms, they sell out.
 3. **Frecciarossa Rome → Venice (Sat Oct 3)** — dynamic-priced fast leg; book early with Famiglia ages set.
-4. **The rental car, VCE pickup Sat Oct 10 → MXP drop Wed Oct 14** — 7-seater, one-way. Book it before the 7-seat inventory thins.
+4. ~~The rental car~~ **BOOKED ✓** — Budget ref **02391839US2**, VCE pickup **Sat Oct 10 12:00** → MXP T1 drop **Thu Oct 15 12:00**, 5 days, 7-seat automatic, $717, free cancellation. Nothing left to book; just have the **two IDPs** in hand for the desk (Dan + Kei, AAA, still outstanding), and check the Alilaguna timing lands you at the counter by noon.
 5. **St Mark's Basilica** timed slot + **Doge's Palace** (Secret Itineraries).
 6. **Murano glassblowing class** (by age group) and **Scala Contarini del Bovolo** timed slot.
 7. **Multi-day vaporetto pass** — you're commuting from the Lido all week.
@@ -137,4 +139,4 @@ Whole-place for six, **Oct 3–10**, **Lido di Venezia near MuMu**. Filter for 2
 
 ## Live site
 
-Cross-links to the deployed pages: `/venice` (this stop), `/plan`, `/trains`, `/housing`, `/celebrations`, `/budget`. Previous stop: `/rome`. Next stop: `/dolomites` (Val Gardena / Ortisei, **Oct 10–14, 4 nights**, reached by the car we pick up at Marco Polo).
+Cross-links to the deployed pages: `/venice` (this stop), `/plan`, `/trains`, `/housing`, `/celebrations`, `/budget`. Previous stop: `/rome`. Next stop: `/dolomites` (Val Gardena / Ortisei, **Oct 10–14, 4 nights**, reached by the car we pick up at Marco Polo — and which stays with us until noon on flight day, Thu Oct 15).

@@ -86,17 +86,25 @@ Relocations are mostly Sat/Sun (the first week is PTO, so midweek moves are fine
 
 Bologna is **no longer an overnight stop**. From the Florence base, **Firenze S.M.N. → Bologna Centrale is ~37 min by Frecciarossa** (~€30–50pp walk-up, cheaper booked ahead — or take Regionale if the Freccia fare spikes that day). Go for the day — tortellini, tagliatelle, mortadella, the porticoes — and be home for Dan's 4pm work window. Jude's **Motor Valley** (Lamborghini / Ferrari / Ducati) is an optional add-on from Bologna. See [/bologna](public/bologna.html).
 
-## The one car leg — Dolomites, Oct 10–14
+## The one car leg — Dolomites + the run home, Oct 10–15 · BOOKED ✓
 
-**Decision of 21 Aug 2026. This supersedes what `/trains`, `/plan` and `/dolomites` still say about Bolzano.**
+**Budget · confirmation 02391839US2 · +1 866-671-7282.** The old plan — train Venice → Verona → Bolzano, collect a car in Bolzano, return it in Bolzano, then train Bolzano → Verona → Milano Centrale and take the Malpensa Express out to the airport — is **dead in all three parts.**
 
-The old plan was: train Venice → Verona → Bolzano, collect a car in Bolzano, return it in Bolzano, then train Bolzano → Verona → Milano Centrale and take the Malpensa Express out to the airport. **All three parts are dead.**
+**One car, picked up at one airport and dropped at another:**
 
-**The new plan is one car, picked up at one airport and dropped at another:**
+| | |
+|---|---|
+| **Pick up** | **Sat Oct 10, 12:00** — Marco Polo Airport (VCE), Multipiano P1 terzo piano, Venice 30100 |
+| **Drop off** | **Thu Oct 15, 12:00** — Malpensa Airport (MXP), Terminal 1, Milan 21010 |
+| **Duration** | **5 rental days**, one-way |
+| **Vehicle** | "Standard-Size Van" class — **Peugeot 5008 or similar · 7 seats · 4 bags · automatic** |
+| **Included** | Unlimited mileage · CDW · theft protection · **free cancellation** |
+| **Price** | **$717** all-in (one-way fee + taxes included), **plus ~$185** fuel and autostrada tolls |
 
-- **Pick up — Sat Oct 10, Venice Marco Polo (VCE).** A direct **Alilaguna** boat runs from the Lido to the airport, so there is no train and no hauling six people's bags across to S. Lucia. This **replaces the €152–180 Venezia S. Lucia → Bolzano rail leg entirely.**
-- **Drop off — Wed Oct 14, Milan Malpensa (MXP).** One-way. This **replaces the €180–290 Bolzano → Verona → Milan → Malpensa Express rail leg**, and delivers us straight to the airport-hotel night before the Thu Oct 15 flight.
-- **4 rental days**, Oct 10 → Oct 14.
+- Getting to the car: a direct **Alilaguna** boat runs from the Lido to VCE, so there is no train and no hauling six people's bags across to S. Lucia. This **replaces the €152–180 Venezia S. Lucia → Bolzano rail leg entirely.**
+- The one-way drop at MXP **replaces the €180–290 Bolzano → Verona → Milan → Malpensa Express rail leg.**
+- **The drop is Thu Oct 15, not Wed Oct 14 — that reshapes the last two days.** We drive Ortisei → the Malpensa area on **Wed Oct 14**, **sleep near the airport that night with the car**, and hand it back at noon on flight day, **four hours before the 16:20 departure**. Oct 14 becomes a driving/sightseeing day rather than a transfer sprint, and **Thursday morning still has a car** — Volandia at the airport, or a run out to Lake Maggiore.
+- **The last night (Oct 14–15) is near Malpensa, location TBD** — an airport hotel, or a lake town on Maggiore / Orta within ~1h. The car makes either workable; it hasn't been decided.
 - **Net saving vs. the old train-in / train-out plan: roughly €700.**
 
 ### Why not Bolzano
@@ -107,22 +115,28 @@ Bolzano's depot had **two 7+ seat offers total, both 9-seat vans at ~€1,150**.
 
 **Six people need six belts, and Europe has no 6-seat class — the jump is 5 → 7.** So the target is a 7-seat crossover/MPV: **Peugeot 5008 / Škoda Kodiaq / VW Touran / SEAT Tarraco** class. With six aboard you **fold one third-row seat down for luggage**, which is exactly enough given we're travelling carry-on only. **Not a 9-seat van** — bigger, dearer, worse on mountain switchbacks and in village parking.
 
-### The drive home: Ortisei → Malpensa
+### The drive home: Ortisei → the Malpensa area (Wed Oct 14)
 
-**~370 km, ~4h30, motorway essentially the whole way** (Val Gardena down to the A22 at Bolzano, south to Verona, then west on the A4). Break it with a **lunch stop at Sirmione on Lake Garda** — it sits right on the route and turns a transit day into a last good afternoon. Wed Oct 14 needs PTO; the drive runs through Dan's work window.
+**~370 km, ~4h30, motorway essentially the whole way** (Val Gardena down to the A22 at Bolzano, south to Verona, then west on the A4). Break it with a **lunch stop at Sirmione on Lake Garda** — it sits right on the route and turns a transit day into a last good afternoon. Wed Oct 14 needs PTO; the drive runs through Dan's work window. **There is no rush at the far end** — the car isn't due back until noon the next day, so the arrival is into wherever we're sleeping, not into a rental return queue.
 
 ### Driving rules to know
 
-- **International Driving Permit (IDP) is required** to drive in Italy on a US licence. Get it from AAA before leaving — it is a paper booklet issued alongside the licence, not a replacement for it, and it cannot be obtained in Italy.
+- 🔴 **International Driving Permit (IDP) is required** to drive in Italy on a US licence — **one each for Dan and Kei, and this is the outstanding car-related to-do.** ~$20 at AAA, over the counter, bring a passport photo and your licence. It is a paper booklet issued alongside the licence, not a replacement for it, and **it cannot be obtained in Italy** — the rental desk can refuse the car without one.
 - **ZTL** — *zona a traffico limitato*. Nearly every Italian old town centre has one, cameras enforce it automatically, and the fine arrives months later via the rental company (plus their admin fee). Do not drive into a historic centre. Park outside and walk.
-- **Autostrada tolls** — take a ticket on entry, pay on exit (card works). Or ask about **Telepass** at the counter. Budget roughly €35–45 in tolls for the Ortisei→MXP run, plus fuel.
+- **Autostrada tolls** — take a ticket on entry, pay on exit (card works). Or ask about **Telepass** at the counter. Budget roughly €35–45 in tolls for the Ortisei→MXP run, plus fuel — **~$185 together**, and separate from the $717 rental.
 - **Alpe di Siusi road rule** — the road from Siusi up to Compatsch is **closed to private cars 09:00–17:00**. By day you go up on the **Mont Sëuc cableway from Ortisei**. It **reopens to cars after 17:00**, which makes a sunset dinner up at Compatsch (~1,850 m) genuinely possible — mid-October sunset is ~18:30.
 
 ### What it costs
 
-A live Kayak/Budget quote for **VCE → MXP** came in at **~$717 for 5 days** including the one-way fee and taxes; re-priced at **4 days it lands around $640**. Note the headline "$74/day" is a base rate — roughly **$350 of the total is fixed one-way fee + taxes**, so cutting a day saves ~$74, not 20%. Add fuel and tolls (~$120–180) and the car leg is **~$760–820 all-in**.
+| Component | Amount | Status |
+|---|---|---|
+| Rental — **5 days, VCE → MXP one-way**, incl. one-way fee and taxes | **$717** | **BOOKED** (Budget ref 02391839US2) |
+| Fuel + autostrada tolls | **~$185** | estimate |
+| **Car leg, all-in** | **~$902** | |
 
-> The `/budget` ledger still carries a **$650 / ~5 days from Bolzano** line for the car. That needs re-basing to the 4-day one-way VCE→MXP number — but the two rail legs it replaces come *out* of the trains line, so the ground total moves down, not up.
+The $717 is the price actually booked, not a quote — it's on the `/costs` ledger as booked, with a note to **verify it against the real Budget charge** when it posts.
+
+> The `/budget` model still carries a **$650 / ~5 days from Bolzano** line for the car. That needs re-basing to **$902** — but the two rail legs the car replaces come *out* of the trains line (−€332–470), so the ground total still moves down, not up.
 
 ## Local transit inside each stop
 
@@ -132,23 +146,23 @@ A live Kayak/Budget quote for **VCE → MXP** came in at **~$717 for 5 days** in
 - **Florence (Sep 19–26)** — a walking city from a central-ish base; the only real transit spend is the **Bologna day trip** (above).
 - **Rome (Sep 26–Oct 3)** — base is **Appio-Tuscolano on Metro A**. Metro A/B/C, trams and buses; walking for the centro. **Colosseo/Fori Imperiali on Line C opened 16 Dec 2025 and San Giovanni is the A↔C interchange**, so the ancient core is ~10 minutes from the base with one change. Watch the clock: **last metro is 23:30 Sun–Thu** (01:30 Fri/Sat), after which the **nMB night bus** covers the Line B corridor.
 - **Venice / Lido (Oct 3–10)** — ACTV **vaporetti** are the water buses. From the Lido base we ride daily, so a **multi-day ACTV pass** (2/3/7-day) beats €9.50 singles fast and covers Murano/Burano/Torcello; under-6s free. The Lido itself is flat, bike-and-foot. On **Oct 10 take the Alilaguna direct to VCE** for the car.
-- **Dolomites (Oct 10–14)** — the car (above), plus lifts: **Ortisei–Furnes–Seceda runs to 2 Nov, Mont Sëuc to 2 Nov, the Alpe di Siusi cableway to 1 Nov, Kronplatz Bike Park to 8 Nov** (2026 dates, confirmed 21 Aug 2026). Only the **Fermeda ridge-top chairlift closes 20 Sep** and is unavailable to us. Grey's Oct 12 birthday is comfortably inside every one of the others — the old "confirm the lifts before Oct 10" warning is resolved; it was confusing the *Gardena Card* (which does end 11 Oct) with the lifts.
-- **Airport ends (Malpensa)** — **arrival Fri Sep 11, landing 21:55.** Either the **Malpensa Express** to Milano Centrale/Cadorna (~50 min, €13pp, runs past midnight) or, easier at that hour with six and bags, a **pre-booked 6-seat van** (~€100–120). Book the van; save the train for daylight. **Departure:** the car drops at MXP on Wed Oct 14, we sleep at a **Malpensa airport hotel** (2 rooms, shuttle), and the 16:20 flight home Thu Oct 15 is a relaxed roll to the terminal.
+- **Dolomites (Oct 10–14) and the last two days** — the car (above), which is ours through to noon on Oct 15, plus lifts: **Ortisei–Furnes–Seceda runs to 2 Nov, Mont Sëuc to 2 Nov, the Alpe di Siusi cableway to 1 Nov, Kronplatz Bike Park to 8 Nov** (2026 dates, confirmed 21 Aug 2026). Only the **Fermeda ridge-top chairlift closes 20 Sep** and is unavailable to us. Grey's Oct 12 birthday is comfortably inside every one of the others — the old "confirm the lifts before Oct 10" warning is resolved; it was confusing the *Gardena Card* (which does end 11 Oct) with the lifts.
+- **Airport ends (Malpensa)** — **arrival Fri Sep 11, landing 21:55.** Either the **Malpensa Express** to Milano Centrale/Cadorna (~50 min, €13pp, runs past midnight) or, easier at that hour with six and bags, a **pre-booked 6-seat van** (~€100–120). Book the van; save the train for daylight. **Departure:** we drive down on Wed Oct 14 and sleep **near Malpensa with the car — location TBD (an airport hotel, or a lake town within ~1h)**, 2 rooms. Thursday morning we still have the car; it goes back at **MXP Terminal 1 at 12:00**, and the 16:20 flight home is a relaxed roll to the terminal. No shuttle dependency, no dawn scramble.
 
 ## Rough total
 
 - **5 rail legs: ~€561** for all six at the cheapest advance fares pulled Aug 2026 — **~€606** taking the direct Frecciarossa to Venice. (Walk-up would be multiples of this; the Frecce legs are where the swing is.)
 - **Bologna day trip: ~€120–250** for six, less if booked ahead with Famiglia.
-- **The car leg: ~$760–820** — ~$640 rental (4 days, one-way VCE→MXP, incl. fees and taxes) plus fuel and tolls.
+- **The car leg: ~$902** — **$717 rental, booked** (5 days, one-way VCE→MXP, incl. fees and taxes) plus **~$185** fuel and tolls.
 - **Local transit: ~$650–1,100** across the trip — vaporetti, the Cinque Terre Card, coast Regionali, Genoa, Rome Metro — per the [/budget](public/budget.html) bands.
 - **Malpensa arrival van: ~€100–120**, one-off.
 
-Rail plus local transit lands around **$1,400–2,000** all-in, with the car leg's **~$800** sitting beside it — and roughly **€700 less** than the old Bolzano train-in/train-out shape.
+Rail plus local transit lands around **$1,400–2,000** all-in, with the car leg's **~$900** sitting beside it — and roughly **€700 less** than the old Bolzano train-in/train-out shape.
 
 ## Book in this order
 
 1. **The dynamic Frecciarossa legs — Milan→Turin, Florence→Rome, Rome→Venice —** the day fares open (~4 months out), with passenger ages set so Famiglia applies. Biggest single saving on the whole transit budget.
-2. **The car: a 7-seater, VCE pickup Sat Oct 10, MXP drop Wed Oct 14, one-way.** Book at a major-airport counter, confirm it's a 7-seat class and not a 9-seat van, and confirm the one-way fee is in the quoted total. **Get the IDP from AAA at the same time.**
+2. ~~The car~~ **BOOKED ✓** — Budget, ref **02391839US2**, 7-seat automatic (Peugeot 5008 or similar), **VCE Sat Oct 10 12:00 → MXP Thu Oct 15 12:00**, 5 days, $717, free cancellation, Budget **+1 866-671-7282**. In its place, the remaining car task: 🔴 **two IDPs from AAA** (Dan + Kei, ~$20 each) — the one item that cannot be fixed once abroad.
 3. **The Malpensa arrival van** for the 21:55 landing on Fri Sep 11 — late-night 6-seat transfers sell out.
 4. **The Regionale legs** — Turin→Chiavari (via Genoa) and Chiavari→Florence — same-week, no rush, flat fares. Same for the **Bologna day trip** unless the Freccia fare is worth locking.
 5. **On arrival, in each place:** the Cinque Terre Card at any coast station, and a multi-day ACTV vaporetto pass on the Lido.

@@ -2,9 +2,10 @@
 
 > Rebuilt 21 Aug 2026 from `public/budget.html`, `public/costs.html` / `costs-data.js`,
 > `public/trains.html` and `public/housing.html`. The HTML pages are the source of truth.
-> The one exception is the **car**, which follows the 21 Aug 2026 decision in
-> `DECISIONS-2026-08-21.md` — the site has not caught up to it yet. Every place the pages
-> disagree with each other is flagged inline rather than quietly resolved.
+> The **car is now booked** — Budget ref **02391839US2**, **$717** for **5 days**,
+> VCE Oct 10 12:00 → MXP Oct 15 12:00 — and this doc carries that real number, not the old
+> 4-day estimate. Every place the pages disagree with each other is flagged inline rather
+> than quietly resolved.
 
 ## Headline: ~$20K in-country average
 
@@ -19,7 +20,7 @@ teenagers who eat like adults), **34 nights, Sep 11 – Oct 15, 2026**.
 | **Average** | **$20K** | The realistic plan |
 | High | **$25K** | Peak prices, splurges in |
 
-- **~$593/day** for the family, in-country
+- **~$594/day** for the family, in-country
 - **~$99/person/day**
 - Honest all-in band: **$18–26K** ground cost in Italy
 
@@ -48,7 +49,7 @@ Eight stops, 34 nights, dates straight off `public/plan.html`:
 | 5 | Rome · work base | Sep 26–Oct 3 | 7 |
 | 6 | **Venice / Lido** | **Oct 3–10** | **7** |
 | 7 | **Dolomites (Val Gardena)** | **Oct 10–14** | **4** |
-| 8 | Malpensa · departure | Oct 14–15 | 1 |
+| 8 | Near Malpensa · departure — **location TBD** (airport hotel, or a lake town within ~1h) | Oct 14–15 | 1 |
 
 **Lake Como is cut** — Turin replaced it, and no Como/Brunate cost belongs anywhere in this
 model. **Bologna is not an overnight** — it is a **day trip from the Florence base**
@@ -63,16 +64,16 @@ specifics of this itinerary.
 
 | Bucket | Low | Avg | High | What's in it |
 |---|---|---|---|---|
-| Lodging | $7,500 | **$9,200** | $10,800 | Whole-place sleeps-6 apartments; weekly rate on the three 7-night bases (Florence, Rome, Venice/Lido); the Val Gardena chalet splurge; Malpensa airport hotel (2 rooms, 1 nt) |
+| Lodging | $7,500 | **$9,200** | $10,800 | Whole-place sleeps-6 apartments; weekly rate on the three 7-night bases (Florence, Rome, Venice/Lido); the Val Gardena chalet splurge; the last night near Malpensa, location TBD (2 rooms, 1 nt) |
 | Food | $4,300 | **$5,200** | $6,300 | Groceries + dining. Cook / eat in 4–5 nights a week; 3 splurge dinners for the celebrations |
 | Activities & entry | $900 | **$1,300** | $1,800 | Classes, workshops, boats, cable cars (Seceda, Mont Sëuc), Kronplatz bike park. Under-18s free at Italian state museums |
 | Local transit | $650 | **$850** | $1,100 | Venice vaporetti (7-day ACTV from the Lido), Cinque Terre Card + coast regionali, Genoa transit, Rome Metro B, the **Alilaguna boat Lido → Marco Polo** on Oct 10 |
 | Intercity rail — **5 legs** + Bologna day trip | $850 | **$1,150** | $1,550 | The 5 rail moves that survive the car decision, plus the Bologna food day-trip from Florence — detail on the Trains page |
-| Dolomites rental car — **4 days, VCE → MXP one-way** | $760 | **$850** | $950 | 7-seater picked up at Venice Marco Polo Oct 10, dropped one-way at Malpensa Oct 14: ~$640 all-in incl. the one-way fee and taxes, plus ~€170 fuel + autostrada tolls |
+| Rental car — **BOOKED, 5 days, VCE → MXP one-way** | $880 | **$902** | $950 | 7-seat automatic picked up at Venice Marco Polo **Oct 10 12:00**, dropped one-way at Malpensa T1 **Oct 15 12:00**: **$717 booked** incl. the one-way fee and taxes, plus **~$185** fuel + autostrada tolls. Only the fuel/tolls half is still a band |
 | Misc / contingency | $1,200 | **$1,600** | $2,300 | SIMs, laundry, gifts/souvenirs, medical/pharmacy, the inevitable unplanned |
-| **In-country total · 34 nts** | **≈ $16,160** | **≈ $20,150** | **≈ $24,800** | |
-| Per day | $475 | $593 | $729 | |
-| Per person, per day | $79 | $99 | $122 | |
+| **In-country total · 34 nts** | **≈ $16,280** | **≈ $20,200** | **≈ $24,800** | |
+| Per day | $479 | $594 | $729 | |
+| Per person, per day | $80 | $99 | $122 | |
 
 Lodging and food together are **~70%** of the ground cost — which is exactly why the
 whole-place-with-a-kitchen strategy is the whole ballgame. The car is now the third-biggest
@@ -91,7 +92,7 @@ Five of the eight stays are booked with real numbers (from the `/costs` ledger):
 | Rome · Sep 26–Oct 3, 7n | $1,977.00 | booked |
 | Venice / Lido · Oct 3–10, 7n | $1,800 | estimate |
 | Dolomites / Val Gardena · Oct 10–14, 4n | $1,400 | estimate |
-| Malpensa hotel · Oct 14–15, 1n | $170 | estimate |
+| Last night near Malpensa · Oct 14–15, 1n — **location TBD** | $170 | estimate |
 | **Total** | **≈ $8,713** | 61% committed |
 
 That lands **just under the $9,200 average** in the table above and comfortably inside the
@@ -100,27 +101,29 @@ estimates are the ones with room to move: the housing model's own average for **
 is €1,960 ≈ $2,117**, i.e. **~$300 above** the $1,800 placeholder in the ledger. Budget the
 Venice week nearer $2,100 than $1,800.
 
-## The car — what changed on 21 Aug 2026
+## The car — BOOKED ✓
 
-The old shape was: train Venice → Bolzano, rent in Bolzano, return in Bolzano, train Bolzano →
-Verona → Milano Centrale → Malpensa Express. **All three parts are dead.**
+**Budget · confirmation 02391839US2 · +1 866-671-7282.** The old shape — train Venice → Bolzano,
+rent in Bolzano, return in Bolzano, train Bolzano → Verona → Milano Centrale → Malpensa Express —
+is **dead in all three parts.**
 
-| | Old shape | New shape |
+| | Old shape | What's actually booked |
 |---|---|---|
-| Get to the mountains | Rail Venezia S. Lucia → Verona → Bolzano, **€152–180** for six | **Alilaguna boat Lido → Marco Polo**, pick the car up at **VCE**, Sat Oct 10 |
-| The car | Bolzano depot, ~5 days. Real inventory there: **two 7+ seat offers, both 9-seat vans at ~€1,150** | **4 days, Oct 10 → Oct 14, a 7-seater** (Peugeot 5008 / Škoda Kodiaq / VW Touran / SEAT Tarraco class) |
-| Get to the plane | Return car in Bolzano, rail Bolzano → Verona → Milan → Malpensa Express, **€180–290** for six | **Drive Ortisei → MXP, ~370 km, ~4h30**, one-way drop at Malpensa Wed Oct 14 |
+| Get to the mountains | Rail Venezia S. Lucia → Verona → Bolzano, **€152–180** for six | **Alilaguna boat Lido → Marco Polo**, collect the car at **VCE, Sat Oct 10 12:00** (Multipiano P1, terzo piano) |
+| The car | Bolzano depot, ~5 days. Real inventory there: **two 7+ seat offers, both 9-seat vans at ~€1,150** | **5 days, Oct 10 → Oct 15.** "Standard-Size Van" class — **Peugeot 5008 or similar, 7 seats, 4 bags, automatic**; unlimited mileage, CDW, theft protection, free cancellation |
+| Get to the plane | Return car in Bolzano, rail Bolzano → Verona → Milan → Malpensa Express, **€180–290** for six | **Drive Ortisei → the Malpensa area Wed Oct 14, ~370 km, ~4h30**, sleep near MXP with the car, **one-way drop at MXP Terminal 1, Thu Oct 15 12:00** |
 
-**The new car line, built up:**
+**The car line, built up from the real booking:**
 
-| Component | Amount | Note |
+| Component | Amount | Status |
 |---|---|---|
-| 4-day 7-seater, VCE → MXP one-way, all-in | **~$640** | Kayak/Budget quote was ~$717 at 5 days incl. one-way fee + taxes; re-priced at 4 days ≈ $640 |
-| Fuel + autostrada tolls | **~€170 ≈ $184** | ~370 km of motorway plus the mountain driving |
-| **Total** | **~$824** | banded **$760 / $850 / $950** |
+| 5-day 7-seat automatic, VCE → MXP one-way, all-in | **$717** | **BOOKED** — includes the one-way fee and taxes. On the `/costs` ledger as booked, with a note to **verify against the actual Budget charge** |
+| Fuel + autostrada tolls | **~$185** | estimate — ~370 km of motorway plus the mountain driving |
+| **Total** | **~$902** | banded **$880 / $902 / $950** — the rental half is now fixed, so only the fuel/tolls half can move |
 
-The headline "$74/day" is a **base rate** — roughly **$350 of the total is fixed one-way fee
-plus taxes**, so dropping a day saves ~$74, not 20%. Don't model this line as a day rate.
+**Don't model this line as a day rate.** Roughly **$350 of the total is fixed one-way fee plus
+taxes**; the extra fifth day cost far less than a fifth of the total, which is exactly why
+keeping the car through to flight-day noon was worth it.
 
 ### Why the car line goes UP while the plan saves money
 
@@ -130,9 +133,9 @@ This is the reconciliation that matters, and it is easy to get wrong:
   depot that, when actually checked, had **only 9-seat vans at ~€1,150**. Six people need six
   belts and Europe has no 6-seat class — the jump is 5 → 7 — so a "cheap 6-seater in Bolzano"
   was never on the menu. Bolzano was also a stockout risk; VCE and Verona have deep inventory.
-- **What the model gains:** the car line rises **+$200** at the average ($650 → $850).
+- **What the model gains:** the car line rises **+$252** at the average ($650 → $902).
 - **What the model loses:** the two rail legs vanish entirely — **€332–470 ≈ $360–510**.
-- **Net effect on this budget: about −$160 to −$310.** Small, because the old car line was
+- **Net effect on this budget: about −$108 to −$258.** Small, because the old car line was
   understated by roughly the same amount the rail legs saved.
 - **`DECISIONS-2026-08-21.md` books the saving at ~€700.** That figure is measured against
   what Bolzano would *really* have cost — the €1,150 van **plus** both rail legs — not against
@@ -147,6 +150,11 @@ Two knock-on effects worth banking:
 - **The Alpe di Siusi road** (Siusi → Compatsch) is closed to private cars **09:00–17:00** but
   **reopens after 17:00** — with the car on hand, a sunset dinner at Compatsch (~1,850 m,
   sunset ~18:30 in mid-October) is newly possible. Price it into food/activities if you take it.
+- **We keep the car overnight on Oct 14 and hand it back at noon on Oct 15**, so there is **no
+  airport-shuttle line and no separate transfer to buy** on the last day — and **Thursday morning
+  is mobile**, which is a free half-day the old plan didn't have. It also means the last night
+  doesn't have to be an airport hotel: **anywhere within ~1h of MXP (Lake Maggiore, Lake Orta)
+  prices into the same lodging line**, and lake-town rooms often come in under airport rates.
 
 ## The rail, after the car decision
 
@@ -247,29 +255,29 @@ company. **None of these are silently resolved above.**
    Strip the $7,217 of air and the ledger's **ground** figure is **≈ $17,633** — which lands
    between this model's **$16,160 low** and **$20,150 average**, nearer the low. The two are
    compatible; `/costs` is simply running a leaner day-to-day than the model's average.
-3. **`costs-data.js` is stale on both transport lines** (READ-ONLY — flagged, not edited):
+3. **`costs-data.js`: the car line is now correct, the rail line is still stale.**
+   - `tr-car` = **$717, status `booked`** — "Rental car · Budget · ref 02391839US2 · VCE Oct 10
+     12:00 → MXP Oct 15 12:00 (5d)". ✅ Real, from `public/costs.csv` via
+     `tools/build-costs.mjs`. Note the ledger row is the **rental only** — the **~$185** of fuel
+     and tolls is *not* in it, so the ledger understates the car leg by that much.
    - `tr-intercity` = **$771** labelled "**6** intercity rail legs (Aug-2026 pull)". $771 =
      €714 × 1.08, i.e. it still contains the dead **€152 Venice → Bolzano** leg. The 5 legs
-     that remain are **€561 ≈ $606**.
-   - `tr-car` = **$650**, "~**5d**". Should be **~$824** for 4 days VCE → MXP incl. fuel and tolls.
-   - By coincidence the two errors nearly cancel: $771 + $650 = **$1,421** vs. a corrected
-     $606 + $824 = **$1,430**. The ledger's *total* is fine; both of its parts are wrong, so
-     don't trust either line on its own.
+     that remain are **€561 ≈ $606**. Still overstated by ~$165.
+   - Net: $771 + $717 = **$1,488** in the ledger vs. a corrected $606 + $902 = **$1,508**. Close
+     enough at the total; the rail line on its own is still wrong.
 4. **`/costs` misc runs below the model's floor.** The misc slider defaults to $25/day = **$850**
    over 34 days, against a misc/contingency band of **$1,200–2,300** here. The ledger has no
    contingency in it at all. Read the ledger's headline as "if nothing goes wrong."
 5. **`/costs` transit is a blended line.** Its slider is "Local transit **& day-trip trains**"
    ($22/day = $748), so the Bologna day-trip may be double-counted against the intercity-rail
    bucket above, which also names it. Pick one home for it before comparing the two pages.
-6. **The site is only partway through absorbing the car decision.** `trains.html` is half-done
-   and disagrees with itself — see the ⚠︎ under "The rail, after the car decision" above.
-   Untouched so far: `plan.html` (itinerary rows 7–8 still read "Train to Bolzano + rental car"
-   and "Train to Milan / MXP"; its routes cards still describe "Venice → Bolzano → Val Gardena"
-   and "Bolzano → Milan → MXP"), `housing.html` (twice references "the rental car **from
-   Bolzano**"), and `budget.html` itself (car row still says "~5 days from Bolzano", rail row
-   still says "7 legs", and the intro still says "the 7 intercity trains" while the same page
-   correctly says "8-stop loop"). Where a page still routes through Bolzano, this doc wins —
-   that is the one carve-out `DECISIONS-2026-08-21.md` grants over the source-of-truth rule.
+6. **The site has now absorbed the booked car on the pages that matter.** `trains.html`,
+   `plan.html` and `dolomites.html` all carry **Budget ref 02391839US2, VCE Oct 10 12:00 → MXP
+   Oct 15 12:00**, and `costs.csv` / `costs-data.js` carry the **$717 booked**. Still stale:
+   `budget.html` (car row says "~5 days from Bolzano", rail row says "7 legs", intro says "the 7
+   intercity trains"). `housing.html` and several pages still name the last night an **"MXP
+   airport hotel"** — that location is **being reconsidered** now that we hold the car overnight,
+   so read it as "near Malpensa, TBD."
 7. **Venice lodging: $1,800 in the ledger vs. €1,960 ≈ $2,117 in the housing model.** The
    housing page's own average is ~$300 higher than the placeholder. Assume the higher number.
 
@@ -279,19 +287,23 @@ company. **None of these are silently resolved above.**
    are dynamic-priced like flights and the €561 figure is a *cheapest-advance* pull that decays
    daily. Split the six into **two Offerta Famiglia bookings**, each carrying one of Grey or
    Keir, with passenger ages set.
-2. **Book the car: 7-seater, VCE pickup Sat Oct 10, MXP one-way drop Wed Oct 14.** ~$640 all-in
-   was live at Budget via Kayak. Not Bolzano — its depot had two 7+ seat offers total, both
-   9-seat vans at ~€1,150. Confirm the one-way fee is inside the quoted total before booking.
+2. ~~Book the car~~ **DONE ✓ — booked at $717.** Budget, ref **02391839US2**, +1 866-671-7282;
+   7-seat automatic (Peugeot 5008 or similar), **VCE Sat Oct 10 12:00 → MXP Terminal 1 Thu Oct 15
+   12:00**, 5 days, unlimited mileage, CDW + theft, free cancellation. **Verify the $717 against
+   the actual Budget charge** when it posts, and budget **~$185** on top for fuel and tolls.
+   What's left in its place: 🔴 **two International Driving Permits** (Dan + Kei, ~$20 each at
+   AAA) — legally required in Italy on a US licence and impossible to obtain once abroad.
 3. **Book the Alilaguna Lido → Marco Polo boat** for the morning of Oct 10, and check the
    luggage allowance for six people's carry-ons.
 4. **Close out the three open lodging estimates** — Venice/Lido (budget ~$2,100, not $1,800),
-   the Val Gardena chalet, and the Malpensa airport hotel (2 rooms). Alpine inventory for six
-   thins out fast.
+   the Val Gardena chalet, and **the last night near Malpensa (2 rooms, location TBD — airport
+   hotel, or a lake town within ~1h; we have the car, so both are on the table)**. Alpine
+   inventory for six thins out fast.
 5. **Treat $18–26K as the in-country target** — flights ($5,346 Icelandair + $1,870.74 Avianca
    positioning) are already paid and don't count against it. Aim for the ~$20K average; the
    painless levers pull it toward $16–18K.
-6. **Dan's PTO on the car leg:** Wed Oct 14 (driving through the 16:00–23:00 window) and Thu
-   Oct 15 (flying) both need to be taken. Mon Oct 12 is blocked for Grey's birthday. Tue Oct 13
+6. **Dan's PTO on the car leg:** Wed Oct 14 (driving to the Malpensa area through the
+   16:00–23:00 window) and Thu Oct 15 (car back at noon, then flying) both need to be taken. Mon Oct 12 is blocked for Grey's birthday. Tue Oct 13
    is the only normal work evening — keep that day's plan close to base.
 
 See also: [Housing](public/housing.html) · [Trains](public/trains.html) ·

@@ -8,9 +8,9 @@ Flights are **booked & paid**: **$5,346** Icelandair BWI⇄Milan (ref **AMBVO4**
 
 | # | The thing | Why it's here |
 |---|---|---|
-| 1 | **Venice/Lido, Dolomites, Malpensa lodging** | Three legs unbooked, three weeks out, six people |
+| 1 | **Venice/Lido, Dolomites, and the last night near Malpensa** | Three legs unbooked, three weeks out, six people |
 | 2 | **Three Frecciarossa legs** | Dynamic-priced; the fare only climbs from here |
-| 3 | **The rental car (VCE → MXP) + two IDPs** | Decision made 21 Aug; the IDPs can't be fixed in Italy |
+| 3 | 🔴 **The two International Driving Permits** | The car is **booked ✓** — the IDPs are what's left, and they can't be fixed in Italy |
 | 4 | **The Last Supper** | Almost certainly gone — decide today, then stop thinking about it |
 | 5 | **Three celebration dinners + the timed entries** | Sep 18 is 4 weeks out; the Oct ones have slack |
 
@@ -32,17 +32,19 @@ Whole-place, sleeps-six-in-its-bedrooms apartments, never a clutch of hotel room
 | Florence | Sep 19–26 | 7 | San Frediano (Oltrarno) — Via dell'Orto | $1,937.57 |
 | Rome | Sep 26–Oct 3 | 7 | Appio-Tuscolano, Metro A | $1,977.00 |
 
+**And, as of today, the rental car ✓** — **Budget, confirmation 02391839US2** (**+1 866-671-7282**). "Standard-Size Van" class: **Peugeot 5008 or similar, 7 seats, 4 bags, automatic**; unlimited mileage, collision damage waiver, theft protection, **free cancellation**. **Pick up Sat Oct 10 12:00** at Marco Polo Airport (VCE), Multipiano P1 terzo piano, Venice 30100 · **drop Thu Oct 15 12:00** at Malpensa (MXP) Terminal 1, Milan 21010 — **5 rental days**, one-way, **$717**. See §3.
+
 ### Still open — book in this order
 
 **(a) Venice / Lido — Oct 3–10 · 7 nights.** Do this first. It is the longest unbooked stay, the most constrained inventory, and the core purpose of the trip: **MuMu is on the Lido**, and the whole week is built around visiting her. Seven nights **clears the weekly-rate threshold** — Airbnb and Booking both discount 10–20% at 7+, so filter and compare on the *weekly* total, not the nightly headline. Band is €230–330/night → €1,610–2,310; the tracker carries a $1,800 estimate. Fallbacks if the Lido is empty: Cannaregio, then Giudecca, then Mestre as the transit-tax option.
 
 **(b) Dolomites / Val Gardena — Oct 10–14 · 4 nights.** The one deliberate splurge, and the leg with the car — so an off-the-line chalet outside the village center is fine, which widens the search considerably. Ortisei or Selva; **Santa Cristina or lower Selva run cheaper than Ortisei with the same lift access.** Band €250–380/night → €1,000–1,520. Leave Booking's "apartment only" filter *off* so whole chalets surface.
 
-**(c) Malpensa — Oct 14–15 · 1 night.** A **hotel, two rooms**, with a shuttle — not an apartment. It's a repack-and-fly crash pad before the 16:20 Thu Oct 15 departure. Easiest booking on the list; do it last, but do it. ~€200–300 total.
+**(c) The last night, near Malpensa — Oct 14–15 · 1 night · LOCATION TBD.** Two rooms, not an apartment. **Decide where before you search:** now that the car stays with us until noon on Thu Oct 15, this can be an **MXP airport hotel** *or* **a lake town within about an hour of the airport** (Lake Maggiore, Lake Orta). We drive down from Ortisei on Wed Oct 14 and arrive with the car, so a shuttle is no longer a requirement and the airport is no longer the only option. Still the easiest booking on the list — do it last, but do it. ~€200–300 total.
 
 > The **/housing** page has one-tap prefilled Booking + Airbnb searches per leg, already set to the base, the locked dates, 6 guests and whole-place. Check inside each that the bedroom filter actually stuck and that the map pin is next to the station/vaporetto, not a taxi ride out.
 
-**One rule still governs everything:** every base must be walkable to rail, ferry or metro. We are carless the entire loop **except** the Dolomites.
+**One rule still governs everything:** every base must be walkable to rail, ferry or metro. We are carless the entire loop **except the Dolomites and the last two days** — the car is ours from Oct 10 through noon on Oct 15, which is exactly why the final night's location is open.
 
 ---
 
@@ -68,28 +70,31 @@ These are **dynamic-priced like flights**. Three weeks out you are already in th
 
 ---
 
-## 3. THE RENTAL CAR — reserve now, and get the two IDPs
+## 3. THE RENTAL CAR — ✅ BOOKED. What's left is the two IDPs.
 
-**This is the 21 Aug decision, and it supersedes every page that still says "Bolzano."**
+**Nothing to reserve here any more.** This supersedes every page that still says "Bolzano," and every earlier note that said "drop it Wed Oct 14 / 4 days."
 
 | | |
 |---|---|
-| **Pick up** | **Sat Oct 10 · Venice Marco Polo (VCE)** — direct **Alilaguna** boat from the Lido to the airport. No train, no hauling six people's bags through S. Lucia. |
-| **Drop off** | **Wed Oct 14 · Milan Malpensa (MXP)** — one-way. Ortisei → MXP is ~370 km / ~4h30, motorway throughout, with a lunch stop at **Sirmione on Lake Garda**. |
-| **Duration** | **4 rental days**, Oct 10 → Oct 14. |
-| **Vehicle** | **A 7-seater** — Peugeot 5008 / Škoda Kodiaq / VW Touran / SEAT Tarraco class. **Not a 9-seat van.** |
+| **Supplier** | **Budget** — **confirmation 02391839US2** · **+1 866-671-7282** |
+| **Vehicle** | "Standard-Size Van" class — **Peugeot 5008 or similar · 7 seats · 4 bags · automatic** |
+| **Included** | Unlimited mileage · collision damage waiver · theft protection · **free cancellation** |
+| **Pick up** | **Sat Oct 10 · 12:00** — Marco Polo Airport (VCE), **Multipiano P1, terzo piano**, Venice 30100. Direct **Alilaguna** boat from the Lido to the airport; no train, no hauling six people's bags through S. Lucia. |
+| **Drop off** | **Thu Oct 15 · 12:00** — Malpensa Airport (MXP), **Terminal 1**, Milan 21010. One-way. |
+| **Duration** | **5 rental days**, Oct 10 → Oct 15. |
+| **Price** | **$717** all-in incl. the one-way fee and taxes. On the `/costs` ledger as **booked** — verify it against the actual Budget charge. **Fuel + autostrada tolls are separate, ~$185.** |
+
+**Read the drop date carefully — it changes the last two days.** We drive **Ortisei → the Malpensa area on Wed Oct 14** (~370 km / ~4h30, motorway throughout, with a lunch stop at **Sirmione on Lake Garda**), **sleep near the airport that night with the car**, and hand it back at **noon on Thu Oct 15** — four hours before the 16:20 flight. So Oct 14 is a driving-and-sightseeing day, not a transfer sprint, and **Thursday morning still has a car**: Volandia at the airport, or a short run out to a lake, instead of dead terminal hours. It also means the last night's location is genuinely open (see §1c).
 
 **Why a 7-seater and not a van.** Six people need six belts and Europe has no 6-seat class — the jump is 5 → 7. With six aboard you fold one third-row seat down for luggage, which works precisely because we're carry-on only.
 
-**Why not Bolzano.** The Bolzano depot had **two 7+ seat offers total**, both 9-seat vans at ~€1,150. VCE and Verona have deep inventory. Bolzano was a stockout risk on top of being more expensive.
+**Why not Bolzano.** The Bolzano depot had **two 7+ seat offers total**, both 9-seat vans at ~€1,150. VCE and Verona have deep inventory. Bolzano was a stockout risk on top of being more expensive. Net against the old train-in/train-out plan this replaces: **roughly €700 saved.**
 
-**The money.** Live quote pulled on Kayak (Budget, VCE→MXP): **~$717 for 5 days** including the one-way fee and taxes; re-priced at 4 days it lands around **$640**. Careful reading the headline: "$74/day" is a *base* rate — roughly **$350 of the total is fixed one-way fee + taxes**, so cutting a day saves ~$74, not 20%. Net against the old train-in/train-out plan it replaces: **roughly €700 saved.**
+**It's a free-cancellation rate**, so the booking costs nothing to hold. On the road: watch **ZTL** limited-traffic zones in every town center, and plan on **autostrada tolls** (pay as you go is fine).
 
-**Book a free-cancellation rate** so there's no downside to locking it today. Then: watch **ZTL** limited-traffic zones in every town center, and plan on **autostrada tolls** (pay as you go is fine for four days).
+### 🔴 The International Driving Permits — the one car item still outstanding, and the one that can't be fixed later
 
-### 🔴 The International Driving Permits — the one item that can't be fixed later
-
-**Dan and Kei each need an IDP** — ~$20 at AAA, issued over the counter, bring a passport photo and your license. Italy requires it alongside a US license and the rental desk can refuse the car without one. **This is the single most forgettable thing on this page and the only one that is unrecoverable once you've left the country.** Do it this week.
+**Dan and Kei each need an IDP** — ~$20 at AAA, issued over the counter, bring a passport photo and your license. Italy requires it alongside a US license and **the Budget desk at Marco Polo can refuse the car without one** — which would strand a booked, paid, non-negotiable leg of the trip. **This is now the single most forgettable thing on this page and the only one that is unrecoverable once you've left the country.** Do it this week.
 
 ### The other vehicle: the Malpensa arrival transfer
 
@@ -206,9 +211,9 @@ Beyond the must-books above, keep the trip loose. With four boys the day bends t
 ## Two calendar blocks, not bookings
 
 - **Mon Oct 12** — blocked for Grey's birthday, no work window.
-- **Wed Oct 14 and Thu Oct 15** — both need **PTO**. The 14th is a ~4h30 drive straight through Dan's 16:00–23:00 window; the 15th is the flight home.
+- **Wed Oct 14 and Thu Oct 15** — both need **PTO**. The 14th is a ~4h30 drive to the Malpensa area, straight through Dan's 16:00–23:00 window; the 15th is car back at MXP 12:00, then the 16:20 flight home.
 - **Tue Oct 13** is the only normal work evening in the Dolomites — keep that day's plan close to base.
 
 ---
 
-*Cross-links: **/housing** (per-leg searches + the booked stays) · **/trains** (all rail legs with real Aug-2026 fares) · **/celebrations** (the three milestones) · **/cinqueterre#birthday** (Rhys's dinner shortlist with prices and phone numbers) · **/dolomites** · **/costs** (live running total). Those HTML pages are the source of truth; this doc follows them, except the car section, which follows the 21 Aug decision the pages haven't caught up to yet.*
+*Cross-links: **/housing** (per-leg searches + the booked stays) · **/trains** (all rail legs with real Aug-2026 fares, plus the booked car) · **/celebrations** (the three milestones) · **/cinqueterre#birthday** (Rhys's dinner shortlist with prices and phone numbers) · **/dolomites** · **/costs** (live running total, incl. the $717 car line). Those HTML pages are the source of truth and they already carry the booked car; this doc follows them.*

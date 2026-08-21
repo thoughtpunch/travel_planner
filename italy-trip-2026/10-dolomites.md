@@ -9,26 +9,35 @@
 | **Base** | Val Gardena — **Ortisei** (Urtijëi / St. Ulrich), ~1,236 m |
 | **Mode** | The grand finale — **the only leg of the trip with a car** |
 | **Headline** | Seceda's knife-edge ridge, **Grey turns 12 on Oct 12**, Kronplatz bike park for Keir, rocks and fossils for Jude |
-| **Budget** | ~$1,400 chalet (4n, estimate) + ~$650 car incl. fuel and tolls |
-| **In** | **Sat Oct 10** — Alilaguna boat Lido → **Venice Marco Polo (VCE)**, pick up a 7-seater, drive ~3h45 to Ortisei |
-| **Out** | **Wed Oct 14** — drive Ortisei → **Malpensa (MXP)**, ~370 km / ~4h30, lunch at Sirmione on Lake Garda, one-way drop |
-| **Then** | Malpensa airport hotel Oct 14–15; fly home 16:20 Thu Oct 15 |
+| **Budget** | ~$1,400 chalet (4n, estimate) + **$717 car, booked** (5 days) + ~$185 fuel and tolls |
+| **In** | **Sat Oct 10** — Alilaguna boat Lido → **Venice Marco Polo (VCE)**, collect the 7-seater at **12:00**, drive ~3h45 to Ortisei |
+| **Out** | **Wed Oct 14** — drive Ortisei → the **Malpensa area**, ~370 km / ~4h30, lunch at Sirmione on Lake Garda |
+| **Then** | The last night **near Malpensa (location TBD — airport hotel or a lake town within ~1h)**, with the car; **drop the car at MXP Terminal 1, 12:00 Thu Oct 15**; fly home 16:20 |
 
 Four nights in the mountains to close a 34-night trip. Everything before this was rail and cities; this leg is passes, cable cars, a chalet with a driveway, and hearty Tyrolean food in a valley where the road signs are in three languages. It is also the tightest leg on the whole trip — **four nights buys only three full days**, and one of them belongs to Grey.
 
-## The car — decision of 21 Aug 2026
+## The car — BOOKED ✓
 
-This supersedes everything the site said before. The old plan (train Venice → Bolzano, rent in Bolzano, return in Bolzano, train Bolzano → Verona → Milano Centrale → Malpensa Express) is dead in all three of its parts.
+**Budget · confirmation 02391839US2 · +1 866-671-7282.** The old plan (train Venice → Bolzano, rent in Bolzano, return in Bolzano, train Bolzano → Verona → Milano Centrale → Malpensa Express) is dead in all three of its parts — and so is the earlier "4 days, drop it Wed Oct 14" version of this plan.
 
-### Pick up — Sat Oct 10, Venice Marco Polo (VCE)
+**The vehicle:** "Standard-Size Van" class — **Peugeot 5008 or similar, 7 seats, 4 bags, automatic**, with **unlimited mileage, collision damage waiver, theft protection and free cancellation**.
 
-The Lido has a **direct Alilaguna boat to Marco Polo airport**. That is the whole trick: the family and the bags go from the doorstep of the Venice base straight to the rental desk, over water, with no vaporetto-to-Piazzale-Roma shuffle, no hauling six people's luggage through Venezia S. Lucia, and no train at all. Then it's motorway and valley road north-west to Ortisei, **~3h45**.
+### Pick up — Sat Oct 10, 12:00, Venice Marco Polo (VCE)
+
+Marco Polo Airport, **Multipiano P1, terzo piano**, Venice 30100. The Lido has a **direct Alilaguna boat to Marco Polo airport**. That is the whole trick: the family and the bags go from the doorstep of the Venice base straight to the rental desk, over water, with no vaporetto-to-Piazzale-Roma shuffle, no hauling six people's luggage through Venezia S. Lucia, and no train at all. Check the Alilaguna schedule against the **noon** pickup — it's the one fixed time on the day. Then it's motorway and valley road north-west to Ortisei, **~3h45**.
 
 This replaces the €152–180 Venezia S. Lucia → Bolzano rail leg outright.
 
-### Drop off — Wed Oct 14, Milan Malpensa (MXP), one-way
+### Drop off — Thu Oct 15, 12:00, Milan Malpensa (MXP) Terminal 1, one-way
 
-Ortisei → MXP is **~370 km, ~4h30, motorway essentially throughout** (down the Val d'Isarco to the A22, south to Verona, west on the A4). Break it with **lunch at Sirmione on Lake Garda** — the castle on the spit, a plate of lake fish, and the kids out of the car for an hour at roughly the halfway mark. Then drop the car at Malpensa and check into the airport hotel.
+**Note the date: the car goes back on flight day, not on the drive-out day.** Malpensa Airport, Terminal 1, Milan 21010, at **12:00** — four hours before the 16:20 departure.
+
+That splits the run home into two unhurried halves:
+
+- **Wed Oct 14 — the drive.** Ortisei → the Malpensa area is **~370 km, ~4h30, motorway essentially throughout** (down the Val d'Isarco to the A22, south to Verona, west on the A4). Break it with **lunch at Sirmione on Lake Garda** — the castle on the spit, a plate of lake fish, and the kids out of the car for an hour at roughly the halfway mark. This is a **driving and sightseeing day, not a transfer sprint**: there's no return counter waiting at the far end, just wherever we're sleeping. **We keep the car overnight.**
+- **Thu Oct 15 — the morning still has a car.** Real usable time before noon: Volandia (the air museum right at the airport), a last lakeside coffee, a proper breakfast somewhere that isn't a terminal. Then drop at T1 and walk into departures.
+
+**The last night (Oct 14–15) is near Malpensa, location TBD** — an **airport hotel**, or **a lake town on Maggiore or Orta within about an hour of MXP**. Because we hold the car and don't need a shuttle, both are genuinely on the table; it hasn't been decided, so don't plan around either one yet.
 
 This replaces the €180–290 Bolzano → Milan → Malpensa Express rail leg.
 
@@ -44,11 +53,14 @@ Six people need six belts, and **Europe has no 6-seat class** — the jump goes 
 
 | | |
 |---|---|
-| **Rental days** | 4 (Oct 10 → Oct 14) |
-| **Live quote** | Kayak / Budget, VCE → MXP: ~**$717 for 5 days** incl. one-way fee and taxes |
-| **Re-priced at 4 days** | ~**$640** |
-| **The catch on the headline rate** | "$74/day" is a *base* rate. Roughly **$350 of the total is fixed** one-way fee + taxes — so cutting a day saves ~$74, not 20% |
+| **Rental days** | **5** (Oct 10 12:00 → Oct 15 12:00) |
+| **Rental, booked** | **$717** — Budget, VCE → MXP one-way, incl. the one-way fee and taxes. Logged on `/costs` as booked; **verify against the actual Budget charge** when it posts |
+| **Fuel + autostrada tolls** | **~$185**, separate — roughly €35–45 of tolls plus €60–70 of fuel on the Ortisei → MXP run, plus the mountain driving |
+| **Car leg, all-in** | **~$902** |
+| **Don't model it as a day rate** | Roughly **$350 of the total is fixed** one-way fee + taxes. The fifth day cost far less than a fifth of the price — which is why holding the car through to flight-day noon was cheap |
 | **Net vs. the old rail-in/rail-out plan** | **~€700 saved** |
+
+**Still outstanding: the two International Driving Permits** (Dan + Kei, ~$20 each at AAA). The car is booked and paid; the permits are not, and they cannot be obtained abroad.
 
 ## The four-night squeeze
 
@@ -62,7 +74,7 @@ Four nights = **three full days: Sun Oct 11, Mon Oct 12, Tue Oct 13.** Oct 10 is
 | **Sun Oct 11** | Full day | **Kronplatz Bike Park** (Keir) — ~1h30 each way up the Puster valley |
 | **Mon Oct 12** | **Locked** | **Grey turns 12** — Seceda, rifugio lunch, candle, pizza in Ortisei |
 | **Tue Oct 13** | Full day | **Jude's rocks-and-minerals day** — and Dan's only normal work evening, so keep it close to base |
-| **Wed Oct 14** | Travel day | Ortisei → Sirmione lunch → Malpensa, drop the car |
+| **Wed Oct 14** | Travel day | Ortisei → Sirmione lunch → the Malpensa area. Sleep near MXP **with the car** (location TBD); the drop isn't until noon the next day |
 
 **The trade-off: Alpe di Siusi has no slot.** Europe's largest high-alpine meadow — the thing most people come to Val Gardena for — is either cut, or squeezed into the Oct 10 arrival afternoon. There is no fourth full day to give it. Same goes for the marquee scenic drives (Sellaronda, Passo Pordoi), the Lagazuoi WWI tunnels, Lago di Braies, Merano, Reschensee: they're real, they're good, and **they do not fit in three days.** Pick the leg you want and let the rest go.
 
@@ -191,14 +203,14 @@ Budget line: **~$1,400 for the 4 nights** (estimate, on `/costs`).
 
 ## Practical — driving in South Tyrol
 
-- **International Driving Permit is required.** Italy requires an IDP alongside a US licence. Get it from AAA **before leaving the US** — you cannot obtain one abroad, and rental desks and police both ask.
+- 🔴 **International Driving Permit is required — and this is the one car item still outstanding.** Italy requires an IDP alongside a US licence, **one each for Dan and Kei** (~$20 at AAA). Get them **before leaving the US** — you cannot obtain one abroad, and rental desks and police both ask. The Budget desk at Marco Polo can refuse the car without one.
 - **ZTL zones.** Ortisei, Santa Cristina and Selva all have restricted/pedestrianised village centres. Camera-enforced fines arrive by post months later, one per pass. Park where the chalet tells you to and walk in.
 - **Off-street parking at the chalet is essential.** Village street parking in Val Gardena is metered, scarce and awkward with a 7-seater. Treat "private parking included" as a filter, not a bonus.
-- **Autostrada tolls.** The A22 Brennero south and the A4 west to Milan are both tolled — take the ticket, pay at the barrier. Budget roughly €35 in tolls plus €60–70 in fuel for the Ortisei → MXP run; the whole car line including fuel and tolls is carried at **~$650** on `/costs`. Get a card that works in the *Carte* lanes; avoid Telepass-only lanes.
+- **Autostrada tolls.** The A22 Brennero south and the A4 west to Milan are both tolled — take the ticket, pay at the barrier. Budget roughly €35–45 in tolls plus €60–70 in fuel for the Ortisei → MXP run — **~$185 together, and it is *not* inside the $717**; `/costs` carries the rental line only. Get a card that works in the *Carte* lanes; avoid Telepass-only lanes.
 - **Mid-October is shoulder season.** Between the summer and ski seasons, South Tyrol half-closes: hotels, restaurants and mountain huts take their *Ruhetag* / autumn break. **Confirm directly with the chalet that it is open and staffed on our dates** and that someone will be there to hand over keys on a Saturday evening. Same for any rifugio or restaurant you're counting on — call, don't assume the website is current.
 - **Winter tyre rules don't apply yet.** The winter-equipment obligation (winter tyres or chains aboard) on Italian roads including the A22 runs from **15 Nov**. We're a month clear. Take a normal summer/all-season car, but do expect cold mornings, possible early snow on the high passes, and short daylight.
-- **Fuel before Malpensa.** Rental one-ways want the tank as they gave it; fill on the A4 well before the airport, not at the airport.
-- **The drive out is long.** Ortisei → MXP with a Sirmione lunch is a ~6-hour day door to door. Leave the chalet by 09:00 and don't compress it — Oct 14 is a PTO day precisely so it can be unhurried.
+- **Fuel before the drop.** Rental one-ways want the tank as they gave it. Since the drop is at **noon on Thu Oct 15**, fill up on the **Thursday morning** near wherever we slept — not on the Wednesday, and not at the airport.
+- **The drive out is long, but it has all day.** Ortisei → the Malpensa area with a Sirmione lunch is a ~6-hour day door to door. Leave the chalet by 09:00 and don't compress it — Oct 14 is a PTO day precisely so it can be unhurried, and there is no counter closing time to race, only a bed.
 
 ## Dan's work rhythm on this leg
 
@@ -210,23 +222,24 @@ Dan works **16:00–23:00 Italian time, Mon–Fri**.
 | **Sun Oct 11** | Free | Kronplatz's 3h round-trip drive is affordable |
 | **Mon Oct 12** | **Blocked — must be off** | Grey's birthday. Not a partial block; the whole day |
 | **Tue Oct 13** | **Normal work evening — the only one** | Keep the day close to base and be home well before 16:00. Bletterbach in the morning, or Bolzano indoors |
-| **Wed Oct 14** | **PTO** | Driving Ortisei → MXP straight through the work window |
-| **Thu Oct 15** | **PTO** | Flying home (MXP 16:20) |
+| **Wed Oct 14** | **PTO** | Driving Ortisei → the Malpensa area, straight through the work window |
+| **Thu Oct 15** | **PTO** | Car back at MXP T1 12:00, then flying home (MXP 16:20) |
 
 Three PTO/blocked days out of five. Get them on the calendar now — this is the one leg where the work rhythm and the plan actually collide, and the collision is entirely predictable.
 
 ## What to book ahead
 
-1. **The 7-seater, VCE pickup Oct 10 → MXP drop Oct 14.** Book this first and book it now — 7-seat inventory is the scarce thing, not the price. Confirm the one-way fee is included in the quote and that six seatbelts are guaranteed on the class booked, not "or similar."
+1. ~~The 7-seater~~ **BOOKED ✓** — Budget, ref **02391839US2**, +1 866-671-7282. Peugeot 5008 or similar, 7 seats, automatic; **VCE Sat Oct 10 12:00 → MXP T1 Thu Oct 15 12:00**, 5 days, $717, free cancellation.
 2. **The Ortisei chalet, Oct 10–14** — with private parking, and with written confirmation it's open in shoulder season.
-3. **Alilaguna tickets / timing, Lido → Marco Polo, Sat Oct 10 morning** — check the schedule against the rental desk's opening hours.
-4. **Kronplatz Bike Park, Sun Oct 11** — call to confirm the lift is running that day (weekend-only risk) and reserve kid bikes + armour.
-5. **Grey's birthday lunch** — the rifugio, or the Compatsch sunset dinner if you take that option. Tell them it's a 12th birthday and ask about a candle.
-6. **Ötzi (Bolzano)** — timed entry, reserve; the rain plan needs a ticket too.
-7. **Bletterbach** — confirm October hours and whether the gorge walk needs booking.
-8. **Törggelen farm** via Roter Hahn, if you want it.
-9. **Dan's PTO** for Oct 12, 14 and 15.
-10. **The IDP from AAA** — before leaving the US.
+3. **The last night near Malpensa, Oct 14–15 — pick the location first** (airport hotel vs. a Maggiore/Orta lake town within ~1h), then book two rooms. The car makes both viable.
+4. **Alilaguna tickets / timing, Lido → Marco Polo, Sat Oct 10 morning** — the schedule has to land us at the Budget counter by the **12:00** pickup.
+5. **Kronplatz Bike Park, Sun Oct 11** — call to confirm the lift is running that day (weekend-only risk) and reserve kid bikes + armour.
+6. **Grey's birthday lunch** — the rifugio, or the Compatsch sunset dinner if you take that option. Tell them it's a 12th birthday and ask about a candle.
+7. **Ötzi (Bolzano)** — timed entry, reserve; the rain plan needs a ticket too.
+8. **Bletterbach** — confirm October hours and whether the gorge walk needs booking.
+9. **Törggelen farm** via Roter Hahn, if you want it.
+10. **Dan's PTO** for Oct 12, 14 and 15.
+11. 🔴 **Two IDPs from AAA** (Dan + Kei, ~$20 each) — before leaving the US. The car is booked; this is the last thing standing between us and the keys, and it cannot be fixed abroad.
 
 ## What's hard about this leg
 
@@ -239,6 +252,6 @@ Three PTO/blocked days out of five. Get them on the calendar now — this is the
 
 ---
 
-*Live pages: `/dolomites` (Top 10, offbeat finds, Kronplatz, housing links) · `/celebrations` (Grey's 12th) · `/bikeparks` (every park north of Rome vs. our dates) · `/plan` · `/costs`. Previous stop: `/venice` (Oct 3–10). Next: Malpensa, Oct 14–15.*
+*Live pages: `/dolomites` (Top 10, offbeat finds, Kronplatz, housing links) · `/celebrations` (Grey's 12th) · `/bikeparks` (every park north of Rome vs. our dates) · `/plan` · `/costs`. Previous stop: `/venice` (Oct 3–10). Next: the last night near Malpensa, Oct 14–15 (location TBD).*
 
-*Authority for this doc: `DECISIONS-2026-08-21.md` — the car decision, the confirmed 2026 lift dates, the Alpe di Siusi road rule, the four-night squeeze, and Dan's work rhythm all come from there and override any page that still says otherwise.*
+*Authority for this doc: the booked Budget reservation **02391839US2** for the car, and `DECISIONS-2026-08-21.md` for the confirmed 2026 lift dates, the Alpe di Siusi road rule, the four-night squeeze and Dan's work rhythm. The `public/` pages already carry the booked car and are the source of truth.*
