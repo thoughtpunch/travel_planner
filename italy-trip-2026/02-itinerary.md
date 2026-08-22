@@ -21,7 +21,7 @@ booked car.
 | 4 | **Florence** | Oltrarno | Sep 19–26 | 7 | **WORK BASE.** One great art experience, not five galleries. Duomo climb, Stibbert armor, artisan workshops, **Bologna food day-trip** |
 | 5 | **Rome** | Garbatella/Ostiense | Sep 26–Oct 3 | 7 | **WORK BASE.** Colosseum + Forum, Vatican, pizza class, San Clemente underground, gladiator school, Bomarzo/Tarot Garden |
 | 6 | Venice / Lido | Lido di Venezia | **Oct 3–10** | **7** | **MuMu (Aunt Muriel) visit — core purpose.** Murano glass, St Mark's, San Michele, Padua day. **Anniversary (Oct 9)** |
-| 7 | Dolomites (Val Gardena) | Ortisei | **Oct 10–14** | **4** | **THE car leg.** Seceda, Alpe di Siusi, Kronplatz, Ridnaun mine. **Grey turns 12 (Oct 12)** |
+| 7 | Dolomites (Kastelruth) | **Singerhof, St. Valentin** ✓ | **Oct 10–14** | **4** | **THE car leg.** **Kronplatz bike day — CRITICAL, Oct 11.** Alpe di Siusi (8 min), Seceda, Ötzi. **Grey turns 12 (Oct 12)** |
 | 8 | Near Malpensa | **Location TBD** — airport hotel, or a lake town within ~1h | Oct 14–15 | 1 | Drive down Wed Oct 14 and keep the car overnight; repack, relaxed last meal; **drop the car at MXP T1 at 12:00** and fly home Thu Oct 15 |
 
 **Not on this list, and deliberately:** **Lake Como** was cut — Turin took its slot and we never
@@ -39,7 +39,7 @@ Week 3–4 ─── Florence → Rome (Sat Sep 26) — WORK BASE, Colosseum, Va
 Week 5   ─── Rome → Venice/Lido (Sat Oct 3) — MuMu week, Padua day
 Week 6   ─── Lido: anniversary dinner on the canals (Fri Oct 9)
 Week 6–7 ─── Lido → VCE, collect the car → Dolomites (Sat Oct 10) — Grey's 12th (Mon Oct 12)
-Week 7   ─── Ortisei → drive to the Malpensa area (Wed Oct 14), sleep with the car
+Week 7   ─── Kastelruth → drive to the Malpensa area (Wed Oct 14), sleep with the car
              → drop the car at MXP 12:00 → fly home 16:20 (Thu Oct 15)
 ```
 
@@ -53,8 +53,8 @@ all six of us, Famiglia discount applied where it works.
 3. **Chiavari → Florence** — Regionale Veloce / Intercity → Firenze S.M.N., ~2h30 (**Sat Sep 19**) · from €118
 4. **Florence → Rome** — Frecciarossa / Italo, ~1h35 (**Sat Sep 26**) · from €99
 5. **Rome → Venice** — Frecciarossa / Italo, Roma Termini → Venezia S. Lucia direct ~4h, then vaporetto to the Lido (**Sat Oct 3**) · from €176
-6. **Lido → Venice Marco Polo (VCE), collect the car → Val Gardena** (**Sat Oct 10**) — **Alilaguna boat straight from the Lido to the airport.** No train, no hauling six people's bags through S. Lucia. *This replaces the old €152–180 Venezia S. Lucia → Verona → Bolzano rail leg, which is dead.*
-7. **Ortisei → the Malpensa area, by car** (**Wed Oct 14**) — ~370 km, ~4h30, motorway the whole way, **lunch stop at Sirmione on Lake Garda**. A driving/sightseeing day, not a transfer sprint: we keep the car overnight and **drop it one-way at MXP Terminal 1 at 12:00 on Thu Oct 15**, four hours before the flight. *This replaces the old €180–290 Bolzano → Verona → Milano Centrale → Malpensa Express rail leg, also dead.*
+6. **Lido → Venice Marco Polo (VCE), collect the car → Kastelruth** (**Sat Oct 10**) — **Alilaguna boat straight from the Lido to the airport.** No train, no hauling six people's bags through S. Lucia. *This replaces the old €152–180 Venezia S. Lucia → Verona → Bolzano rail leg, which is dead.*
+7. **Kastelruth → the Malpensa area, by car** (**Wed Oct 14**) — ~355 km, ~4h15, motorway the whole way, **lunch stop at Sirmione on Lake Garda**. A driving/sightseeing day, not a transfer sprint: we keep the car overnight and **drop it one-way at MXP Terminal 1 at 12:00 on Thu Oct 15**, four hours before the flight. *This replaces the old €180–290 Bolzano → Verona → Milano Centrale → Malpensa Express rail leg, also dead.*
 
 The **fast dynamic-priced legs (1, 4, 5)** are priced like flights — book the moment fares open,
 ~4 months out. See [/trains](public/trains.html) for the family-discount split: two bookings of
@@ -137,7 +137,7 @@ dry-feet backup.
 
 ### Grey turns 12 — Mon, Oct 12 (Dolomites)
 
-**Ortisei → Seceda cable car** to the knife-edge ridge → walk to a **rifugio for lunch**
+**Drive 25 min to Ortisei → Seceda cable car** to the knife-edge ridge → walk to a **rifugio for lunch**
 (Rifugio Firenze / Baita Sofie — canederli, goulash) → **Kaiserschmarrn or apfelstrudel with a
 candle** → toboggan or alpine coaster on the way down → **pizza dinner in Ortisei** for the boy
 who makes the family's pizza. All-weather backup: the **Ötzi museum** in Bolzano and the **Renon
@@ -164,19 +164,19 @@ VCE, collect the car, drive up), Oct 14 is the drive to Malpensa. Oct 12 is lock
 birthday. That leaves exactly two open days for everything else:
 
 ```
-Sat Oct 10  Alilaguna Lido → VCE, collect the 7-seater, drive to Ortisei.
+Sat Oct 10  Alilaguna Lido → VCE, collect the 7-seater, drive to the Singerhof, Kastelruth.
             Travel afternoon. The ONLY possible slot for Alpe di Siusi —
             and only if the drive goes quickly.
 Sun Oct 11  Open day → Kronplatz Bike Park (Keir) OR Jude's rocks day
 Mon Oct 12  LOCKED — Grey's 12th. Seceda, rifugio lunch, Ortisei pizza night
 Tue Oct 13  Open day → whichever of Kronplatz / Jude's rocks day is left
-Wed Oct 14  Drive Ortisei → Sirmione (lunch on Garda) → the Malpensa area,
+Wed Oct 14  Drive Kastelruth → Sirmione (lunch on Garda) → the Malpensa area,
             ~370 km / 4h30. Sleep near MXP with the car (location TBD).
 Thu Oct 15  Morning still has the car → drop it at MXP T1 12:00 → fly 16:20
 ```
 
 - **Kronplatz Bike Park (Keir)** — 18 trails off the Olang gondola, skills parks, rentals and a
-  bike school on site; open to 8 Nov. It's ~1h30 from Ortisei up the Puster valley, which only
+  bike school on site; open to 8 Nov. It's ~1h20 from the Kastelruth base up the Puster valley, which only
   works *because this is the one leg with a car*. Book kids' bike sizes ahead.
 - **Jude's rocks day** — the **Ridnaun / Monteneve mining museum**, one of the highest mines in
   Europe: helmet and lamp, 200 m into a real ore tunnel, Victorian ore-crushers running. Open to
@@ -185,7 +185,7 @@ Thu Oct 15  Morning still has the car → drop it at MXP T1 12:00 → fly 16:20
 - **Alpe di Siusi has no slot left.** It is either cut or squeezed into the Oct 10 arrival
   afternoon. Note the road rule: the Siusi → Compatsch road is **closed to private cars
   09:00–17:00** year-round while the cableway runs, so by day you go up on the Mont Sëuc cableway
-  from Ortisei. **It reopens to cars after 17:00** — which makes a sunset dinner up at Compatsch
+  from Ortisei — though the Siusi cableway is now 8 min from our door and is the easy answer. **It reopens to cars after 17:00** — which makes a sunset dinner up at Compatsch
   (~1,850 m) possible on the car leg. Mid-October sunset is ~18:30.
 
 **Dan's work window on this leg:** Sat Oct 10 and Sun Oct 11 are free. **Mon Oct 12 must be

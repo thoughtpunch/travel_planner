@@ -1,4 +1,4 @@
-# 10 — Dolomites / Val Gardena (Stop 7 · the car leg)
+# 10 — Dolomites / Kastelruth (Stop 7 · the car leg)
 
 ## At a glance
 
@@ -6,12 +6,12 @@
 |---|---|
 | **Dates** | Oct 10 – Oct 14, 2026 |
 | **Nights** | 4 |
-| **Base** | Val Gardena — **Ortisei** (Urtijëi / St. Ulrich), ~1,236 m |
+| **Base** | **BOOKED ✓ Singerhof, St. Valentin 4, 39040 Castelrotto (Kastelruth) BZ** — the hamlet between Seis am Schlern and Kastelruth, at the foot of the Alpe di Siusi, ~1,100 m. *Not Val Gardena — see "Where we're staying" below.* |
 | **Mode** | The grand finale — **the only leg of the trip with a car** |
-| **Headline** | Seceda's knife-edge ridge, **Grey turns 12 on Oct 12**, Kronplatz bike park for Keir, rocks and fossils for Jude |
-| **Budget** | ~$1,400 chalet (4n, estimate) + **$717 car, booked** (5 days) + ~$185 fuel and tolls |
-| **In** | **Sat Oct 10** — Alilaguna boat Lido → **Venice Marco Polo (VCE)**, collect the 7-seater at **12:00**, drive ~3h45 to Ortisei |
-| **Out** | **Wed Oct 14** — drive Ortisei → the **Malpensa area**, ~370 km / ~4h30, lunch at Sirmione on Lake Garda |
+| **Headline** | **Keir's Kronplatz bike day (CRITICAL, Sun Oct 11)**, **Grey turns 12 on Oct 12**, Alpe di Siusi 8 minutes from the door, Seceda's knife-edge ridge, rocks and fossils for Jude |
+| **Budget** | **$1,004 lodging, booked** (4n — $396 under the $1,400 estimate) + **$717 car, booked** (5 days) + ~$185 fuel and tolls |
+| **In** | **Sat Oct 10** — Alilaguna boat Lido → **Venice Marco Polo (VCE)**, collect the 7-seater at **12:00**, drive ~3h30 to the Singerhof (~355 km, A4/A22, exit Bolzano Nord) |
+| **Out** | **Wed Oct 14** — drive Kastelruth → the **Malpensa area**, ~355 km / ~4h15, lunch at Sirmione on Lake Garda |
 | **Then** | The last night **near Malpensa (location TBD — airport hotel or a lake town within ~1h)**, with the car; **drop the car at MXP Terminal 1, 12:00 Thu Oct 15**; fly home 16:20 |
 
 Four nights in the mountains to close a 34-night trip. Everything before this was rail and cities; this leg is passes, cable cars, a chalet with a driveway, and hearty Tyrolean food in a valley where the road signs are in three languages. It is also the tightest leg on the whole trip — **four nights buys only three full days**, and one of them belongs to Grey.
@@ -34,7 +34,7 @@ This replaces the €152–180 Venezia S. Lucia → Bolzano rail leg outright.
 
 That splits the run home into two unhurried halves:
 
-- **Wed Oct 14 — the drive.** Ortisei → the Malpensa area is **~370 km, ~4h30, motorway essentially throughout** (down the Val d'Isarco to the A22, south to Verona, west on the A4). Break it with **lunch at Sirmione on Lake Garda** — the castle on the spit, a plate of lake fish, and the kids out of the car for an hour at roughly the halfway mark. This is a **driving and sightseeing day, not a transfer sprint**: there's no return counter waiting at the far end, just wherever we're sleeping. **We keep the car overnight.**
+- **Wed Oct 14 — the drive.** Kastelruth → the Malpensa area is **~355 km, ~4h15, motorway essentially throughout** (down the Val d'Isarco to the A22, south to Verona, west on the A4). Break it with **lunch at Sirmione on Lake Garda** — the castle on the spit, a plate of lake fish, and the kids out of the car for an hour at roughly the halfway mark. This is a **driving and sightseeing day, not a transfer sprint**: there's no return counter waiting at the far end, just wherever we're sleeping. **We keep the car overnight.**
 - **Thu Oct 15 — the morning still has a car.** Real usable time before noon: Volandia (the air museum right at the airport), a last lakeside coffee, a proper breakfast somewhere that isn't a terminal. Then drop at T1 and walk into departures.
 
 **The last night (Oct 14–15) is near Malpensa, location TBD** — an **airport hotel**, or **a lake town on Maggiore or Orta within about an hour of MXP**. Because we hold the car and don't need a shuttle, both are genuinely on the table; it hasn't been decided, so don't plan around either one yet.
@@ -55,7 +55,7 @@ Six people need six belts, and **Europe has no 6-seat class** — the jump goes 
 |---|---|
 | **Rental days** | **5** (Oct 10 12:00 → Oct 15 12:00) |
 | **Rental, booked** | **$717** — Budget, VCE → MXP one-way, incl. the one-way fee and taxes. Logged on `/costs` as booked; **verify against the actual Budget charge** when it posts |
-| **Fuel + autostrada tolls** | **~$185**, separate — roughly €35–45 of tolls plus €60–70 of fuel on the Ortisei → MXP run, plus the mountain driving |
+| **Fuel + autostrada tolls** | **~$185**, separate — roughly €35–45 of tolls plus €60–70 of fuel on the Kastelruth → MXP run, plus the mountain driving |
 | **Car leg, all-in** | **~$902** |
 | **Don't model it as a day rate** | Roughly **$350 of the total is fixed** one-way fee + taxes. The fifth day cost far less than a fifth of the price — which is why holding the car through to flight-day noon was cheap |
 | **Net vs. the old rail-in/rail-out plan** | **~€700 saved** |
@@ -71,16 +71,18 @@ Four nights = **three full days: Sun Oct 11, Mon Oct 12, Tue Oct 13.** Oct 10 is
 | Day | Status | What it holds |
 |---|---|---|
 | **Sat Oct 10** | Travel afternoon | Alilaguna → VCE → pick up the car → drive → settle into the chalet. *The only possible slot for Alpe di Siusi, if the drive goes quickly.* |
-| **Sun Oct 11** | Full day | **Kronplatz Bike Park** (Keir) — ~1h30 each way up the Puster valley |
-| **Mon Oct 12** | **Locked** | **Grey turns 12** — Seceda, rifugio lunch, candle, pizza in Ortisei |
-| **Tue Oct 13** | Full day | **Jude's rocks-and-minerals day** — and Dan's only normal work evening, so keep it close to base |
-| **Wed Oct 14** | Travel day | Ortisei → Sirmione lunch → the Malpensa area. Sleep near MXP **with the car** (location TBD); the drop isn't until noon the next day |
+| **Sun Oct 11** | **CRITICAL** | **Kronplatz Bike Park — Keir's bike day.** ~1h20 each way via Waidbruck, the A22 and the Puster valley. Weather backup: Tue Oct 13 |
+| **Mon Oct 12** | **LOCKED** | **Grey turns 12** — drive 25 min to Ortisei, Seceda, rifugio lunch, candle, pizza in Ortisei |
+| **Tue Oct 13** | Full day · **held** | **Jude's rocks-and-minerals day** — but this is also the bike day's weather backup, so it yields to Kronplatz if Sunday is washed out. Dan's only normal work evening, so keep it close to base |
+| **Wed Oct 14** | Travel day | Kastelruth → Bolzano/Ötzi → Sirmione lunch → the Malpensa area. Sleep near MXP **with the car** (location TBD); the drop isn't until noon the next day |
 
-**The trade-off: Alpe di Siusi has no slot.** Europe's largest high-alpine meadow — the thing most people come to Val Gardena for — is either cut, or squeezed into the Oct 10 arrival afternoon. There is no fourth full day to give it. Same goes for the marquee scenic drives (Sellaronda, Passo Pordoi), the Lagazuoi WWI tunnels, Lago di Braies, Merano, Reschensee: they're real, they're good, and **they do not fit in three days.** Pick the leg you want and let the rest go.
+**The Kastelruth base solves the old Alpe di Siusi problem.** The previous version of this doc said the meadow had no slot — that was true from Ortisei, where it meant a 25-minute drive plus the Mont Sëuc cableway and most of a day. From the Singerhof the **Siusi cableway is 8 minutes away**, so Alpe di Siusi becomes a half-day, an arrival afternoon, or an evening drive up after 17:00 when the road reopens. It no longer needs a day of its own.
+
+**What still doesn't fit, and is now formally cut from the plan:** anything over an hour each way. **Lago di Braies** (1h45), **Lagazuoi WWI tunnels** (1h30), **Cinque Torri** (1h35), **Reschensee** (2h15), **Trauttmansdorff/Merano** (1h), **Ridnaun mine** (1h10), **Tre Cime** (2h15). Three full days, one of them critical and one of them Grey's, does not stretch that far. **Kronplatz at ~1h20 is the single deliberate exception — because it is the bike day.** The marquee scenic drives (Sellaronda, Passo Pordoi) sit at ~45 min to the passes and survive, but they want a whole day.
 
 Two ways to buy Alpe di Siusi back:
 
-1. **The Oct 10 arrival afternoon** — if you clear the VCE desk by early afternoon and the drive runs clean, you can ride the **Mont Sëuc cableway** up from Ortisei for a late-day walk on the plateau. Check the last-up and last-down times before committing; in October they're early.
+1. **The Oct 10 arrival afternoon** — if you clear the VCE desk by early afternoon and the drive runs clean, you can ride the **Siusi cableway** up for a late-day walk on the plateau — it's 8 minutes from the door, so this is now an easy win rather than a stretch. Check the last-up and last-down times before committing; in October they're early.
 2. **After 17:00 by car** — see the road rule below. That's the sunset-dinner version, and it doubles as Grey's birthday alternative.
 
 ## Lift dates — CONFIRMED (and the old warning was wrong)
@@ -105,7 +107,7 @@ Two things that genuinely *do* close on our dates, so plan around them rather th
 
 ## The Alpe di Siusi road rule
 
-The road from Siusi up to **Compatsch is closed to private cars 09:00–17:00**, year-round while the cableway runs. By day, you go up on the **Mont Sëuc cableway from Ortisei** — which is the normal, easy, right answer.
+The road from Siusi up to **Compatsch is closed to private cars 09:00–17:00**, year-round while the cableway runs. This stopped being a constraint: the **Siusi cableway is 8 minutes from the Singerhof**, so we ride up, which is the normal, easy, right answer anyway. (The Mont Sëuc cableway from Ortisei is the alternative, 25 min away.)
 
 **But it reopens to cars after 17:00.** On a car leg, that's a real option we wouldn't otherwise have: drive up to Compatsch (~1,850 m) in the late afternoon and eat dinner on the plateau with the Sassolungo going pink. **Mid-October sunset is ~18:30.** Book the table, go up around 17:15, and plan on driving a mountain road down in the dark afterwards — headlights, low gear, no rush.
 
@@ -132,21 +134,24 @@ Fallbacks if the weather turns: **Ötzi the Iceman** in Bolzano (~40 min, book a
 
 ## Keir's day — Kronplatz Bike Park, Sun Oct 11
 
-A lift-served bike park is Keir's must-do, and the timing is a trap: almost every Alpine gravity park shuts before we arrive. **Mottolino (Livigno) closes 27 Sep. Pila closes 13 Sep. Cortina closes 29 Sep.** Our own valley's Dantercepies bike gondola closed 4 Oct.
+**This is the one critical activity of the leg.** It is not a nice-to-have and it is not fitted around the other days — the other days are fitted around it. A lift-served bike park is Keir's must-do, and the timing is a trap: almost every Alpine gravity park shuts before we arrive. **Mottolino (Livigno) closes 27 Sep. Pila closes 13 Sep. Cortina closes 29 Sep.** Our own valley's Dantercepies bike gondola closed 4 Oct.
 
 **Kronplatz runs to 8 November.** It is the one real park still turning on our dates.
 
 | | |
 |---|---|
 | **Where** | Above Brunico / San Vigilio; the Olang gondola |
-| **From Ortisei** | ~**1h30** up the Puster valley — *only possible because this is the car leg* |
+| **From the Singerhof** | ~**1h20** — down to Waidbruck, A22 north past Brixen, out the Puster valley to the Olang gondola. *Only possible because this is the car leg* |
 | **Season** | To **8 Nov** — comfortably open |
 | **Trails** | **18** off the gondola, graded from family flow to real downhill |
 | **Skills park** | Yes — practise areas at the bottom before going up |
 | **Rentals + school** | Both on site, including kids' 20" and 24" bikes |
-| **Backup** | **Dolomiti Paganella** (Andalo, ~2h) — 25 trails, huge skills areas, also open late |
+| **Backup park** | **Dolomiti Paganella** (Andalo, ~2h down the A22) — 25 trails, huge skills areas, open to ~2 Nov |
+| **Backup day** | **Tue Oct 13**, held open for weather. Oct 12 is Grey's and Oct 14 is the drive out, so those two days are the entire universe of options |
 
-**Why Sunday Oct 11 specifically:** late-season parks very often drop to **weekend-only operation** in their final weeks. Sunday hedges that. It also keeps a 3-hour round-trip drive off Dan's only working day. **Call or email ahead** to confirm the lift is turning that day and to reserve kid-sized bikes and armour — do not drive 90 minutes on faith.
+**Why Sunday Oct 11 specifically:** late-season parks very often drop to **weekend-only operation** in their final weeks. Sunday hedges that. It also keeps a ~2h40 round-trip drive off Dan's only working day, and it puts a full rest day between the bike day and Grey's birthday. If Sunday is washed out, roll to **Tue Oct 13**; if both look marginal, go Sunday anyway in light rain — the trails drain and the gondola runs.
+
+**Call or email ahead** to confirm the lift is turning that day and to **reserve kid-sized bikes (20"/24") and armour for Keir and Grey** — autumn rental fleets are thin, and this is the one outstanding to-do on the whole leg. Ask which of the 18 trails suit a 9-year-old. Do not drive 80 minutes on faith.
 
 (The common advice, "do the bike park earlier in the trip," is backwards here. Before this leg we're in Milan, Turin, Chiavari, Florence, Rome and Venice — all carless, none near a park. The Dolomites leg is the only window.)
 
@@ -156,7 +161,7 @@ Jude is the rockhound, and South Tyrol is one of the best places in Europe to be
 
 ### The pick: GEOPARC Bletterbach
 
-**~1h from Ortisei** (Aldino / Aldein), a UNESCO World Heritage geosite and the best single thing on this list for him. A 400-metre-deep gorge cut straight down through the layers — you walk *into* roughly **40 million years of strata**, past fossil beds, with the geology laid out like a textbook someone sliced open. Visitor centre with a fossil and mineral exhibition at the top, then the walk down into the canyon.
+**~1h from the Singerhof** (Aldino / Aldein), a UNESCO World Heritage geosite and the best single thing on this list for him. A 400-metre-deep gorge cut straight down through the layers — you walk *into* roughly **40 million years of strata**, past fossil beds, with the geology laid out like a textbook someone sliced open. Visitor centre with a fossil and mineral exhibition at the top, then the walk down into the canyon.
 
 Practical: the gorge walk is guided/regulated and helmets are issued; it's a real hike, not a stroll — fine for Jude, Rhys and Grey, a stretch for Keir. Check the seasonal closing date and the day's opening hours before driving out, and go in the morning so you're home for Dan's 16:00.
 
@@ -168,11 +173,11 @@ Practical: the gorge walk is guided/regulated and helmets are issued; it's a rea
 
 | Where | Drive | What | Season note |
 |---|---|---|---|
-| **Ridnaun / Monteneve mining museum** | ~1h (Ratschings) | One of Europe's highest mines — silver, lead and zinc until 1985. Helmet and lamp, walk 200 m into a real ore tunnel, watch the giant Victorian ore-crushers run | Open to **Oct 31, Tue–Sun**. The full ride-the-train-900 m-in **Monteneve** tour winds down mid-Oct — book the **Ridnaun** site |
+| **Ridnaun / Monteneve mining museum** — *CUT, over the hour* | ~1h10 (Ratschings) | One of Europe's highest mines — silver, lead and zinc until 1985. Helmet and lamp, walk 200 m into a real ore tunnel, watch the giant Victorian ore-crushers run | Open to **Oct 31, Tue–Sun**. The full ride-the-train-900 m-in **Monteneve** tour winds down mid-Oct — book the **Ridnaun** site |
 | **Earth pyramids of Renon / Ritten** | ~1h (above Bolzano) | Clay hoodoos, each spire capped by a balancing boulder. Renon cable car from Bolzano + the narrow-gauge Renon railway, then a short flat walk | Trails free, open |
 | **Messner Mountain Museum Firmian** | ~40 min (Bolzano) | Messner's spiralling museum in the ruined Sigmundskron castle — towers, staircases, terraces, Tibetan art and summit relics. Escher-grade architecture | Open in October, **closed Thursdays** |
 | **Ötzi the Iceman** | ~40 min (Bolzano) | 5,300-year-old glacier mummy with his own clothes, tools and copper axe | Reserve; the definitive rain plan |
-| **Museum Gherdëina, Ortisei** | walk | Local Dolomite fossils and minerals, plus the woodcarving collection | The zero-effort version, on our doorstep |
+| **Museum Gherdëina, Ortisei** | ~25 min drive | Local Dolomite fossils and minerals, plus the woodcarving collection | The zero-effort version, on our doorstep |
 | **Val di Fassa / Predazzo** | ~45 min | Volcanic-meets-sedimentary Dolomite geology with a mineral museum | Small, cheap |
 
 **Realistic Oct 13:** Bletterbach in the morning and back by mid-afternoon, or — if the weather is bad — Ötzi plus Firmian in Bolzano, which is indoors, closer, and just as good a day.
@@ -184,33 +189,49 @@ Not a plan, a reference — so it's clear what's being given up. Full versions l
 - **Alpe di Siusi / Seiser Alm** — Europe's largest high-alpine meadow. *See the squeeze, above.*
 - **The great scenic drives** — Gardena and Sella passes, the Sellaronda loop, Passo Pordoi. The car makes it possible; the calendar doesn't.
 - **Val Gardena's villages + Ladin woodcarving** — Ortisei, Santa Cristina, Selva. This one is free: it's the walk to dinner.
-- **Lago di Braies / Lago di Carezza** — Braies is a haul and its boats and road access may already be shut; Carezza is a genuinely easy roadside stop.
-- **Cinque Torri WWI open-air museum** (~1h15 toward Cortina) and **Lagazuoi's summit tunnels** — Rhys and Jude's leg of the trip, if it existed.
+- **Lago di Carezza** (~45 min) — a genuinely easy roadside stop, and it stays. **Lago di Braies** (1h45) — CUT.
+- **Cinque Torri WWI open-air museum** (~1h35 toward Cortina) and **Lagazuoi's summit tunnels** (~1h30) — CUT, both over the hour.
 - **Törggelen** — South Tyrol's October-only ritual: walk to a farmhouse inn for cloudy new wine, roast chestnuts, speck, dumplings and doughnuts by a wood stove. The single most in-season thing available to us. Book a farm through the Red Rooster (Roter Hahn) network; kids get grape juice. A strong candidate for the Oct 13 evening if Dan's work night allows an early dinner, or a belated birthday feast.
 - **Hay bath at Fiè / Völs** (~25 min) — get wrapped in warm fermenting mountain hay. Gross-cool for Keir, blissful for the grown-ups.
-- **Trauttmansdorff Gardens + Touriseum**, Merano (~1h) and **the drowned village of Reschensee** (~2h each way) — both are full days. Neither fits.
+- **Trauttmansdorff Gardens + Touriseum**, Merano (~1h) and **the drowned village of Reschensee** (~2h15 each way) — CUT, both full days.
 
 ## Where to stay
 
-Whole-place for six, **Ortisei / Val Gardena, Oct 10–14**. Because this is the car leg, **a chalet slightly outside the village centre is fine — even preferable**, as long as it has its own **off-street parking**.
+**BOOKED ✓ — Singerhof, St. Valentin 4, 39040 Castelrotto (Kastelruth) BZ. Oct 10–14, 4 nights, $1,004.** Booking.com: `https://www.booking.com/hotel/it/singerhof.html`
 
-- **Booking.com** — chalets, aparthotels and mountain hotels around Ortisei and Selva, pre-set to our dates and 6 guests: `https://www.booking.com/searchresults.html?ss=Ortisei&checkin=2026-10-10&checkout=2026-10-14&group_adults=6&group_children=0&no_rooms=1`
-- **Airbnb** — entire homes, 2+ BR, 6 guests: `https://www.airbnb.com/s/Ortisei--Italy/homes?checkin=2026-10-10&checkout=2026-10-14&adults=6&min_bedrooms=2&room_types%5B%5D=Entire%20home%2Fapt`
+**It is not in Val Gardena, and that is the point.** St. Valentin is the hamlet between **Seis am Schlern (Siusi)** and **Kastelruth**, under the Schlern at the foot of the Alpe di Siusi — the one with the much-photographed little chapel alone in a meadow. It sits about 20 minutes down and west of Ortisei, over the Panider Saddle.
 
-Filter for: **private parking space**, real heating (it's near-freezing at night in mid-October at 1,236 m), a washer, wifi good enough for Dan's Tuesday calls, and bedrooms that actually sleep six — the living room is Dan's office 16:00–23:00, so a sofa bed does not count.
+**What the location buys:**
+
+| | From the Singerhof | Was, from Ortisei |
+|---|---|---|
+| Alpe di Siusi cableway (Seis) | **8 min** | ~25 min |
+| Völs hay bath (Heubad) | **10 min** | ~25 min |
+| Kastelruth village | **5 min** | ~20 min |
+| Bolzano — Ötzi, Messner Firmian, Runkelstein | **~30 min** | ~40–45 min |
+| **Kronplatz — the bike day** | **~1h20** | ~1h30 |
+| Ortisei — Seceda, the woodcarvers | ~25 min | walk |
+| Lago di Carezza | ~45 min | ~45 min |
+| Sella/Gardena passes, Sellaronda | ~45–50 min | ~25–30 min |
+
+So: Alpe di Siusi, Bolzano and the hay bath all get materially closer, Kronplatz gets slightly closer, and **Seceda and the Sella passes move ~20 minutes further out**. Given that Alpe di Siusi was the thing the old plan couldn't fit and Ötzi is a fixed stop, that is the right side of the trade.
+
+**It also settles two filters outright:** it is rural, so there is **off-street parking** and the Kastelruth/Ortisei **ZTL** cameras never come into it.
+
+Still worth confirming with the host before arrival: real heating (it's near-freezing at night in mid-October), a washer, wifi good enough for Dan's Tuesday calls, and that all six sleep in actual bedrooms — the living room is Dan's office 16:00–23:00, so a sofa bed does not count.
 
 Budget line: **~$1,400 for the 4 nights** (estimate, on `/costs`).
 
 ## Practical — driving in South Tyrol
 
 - 🔴 **International Driving Permit is required — and this is the one car item still outstanding.** Italy requires an IDP alongside a US licence, **one each for Dan and Kei** (~$20 at AAA). Get them **before leaving the US** — you cannot obtain one abroad, and rental desks and police both ask. The Budget desk at Marco Polo can refuse the car without one.
-- **ZTL zones.** Ortisei, Santa Cristina and Selva all have restricted/pedestrianised village centres. Camera-enforced fines arrive by post months later, one per pass. Park where the chalet tells you to and walk in.
-- **Off-street parking at the chalet is essential.** Village street parking in Val Gardena is metered, scarce and awkward with a 7-seater. Treat "private parking included" as a filter, not a bonus.
-- **Autostrada tolls.** The A22 Brennero south and the A4 west to Milan are both tolled — take the ticket, pay at the barrier. Budget roughly €35–45 in tolls plus €60–70 in fuel for the Ortisei → MXP run — **~$185 together, and it is *not* inside the $717**; `/costs` carries the rental line only. Get a card that works in the *Carte* lanes; avoid Telepass-only lanes.
+- **ZTL zones.** Kastelruth's own centre is restricted, as are Ortisei, Santa Cristina and Selva. Camera-enforced fines arrive by post months later, one per pass. Park where the chalet tells you to and walk in.
+- **Parking is solved** by the Singerhof being rural — but village street parking in Val Gardena and Kastelruth is metered, scarce and awkward with a 7-seater, so park at the property and walk or drive to marked lots.
+- **Autostrada tolls.** The A22 Brennero south and the A4 west to Milan are both tolled — take the ticket, pay at the barrier. Budget roughly €35–45 in tolls plus €60–70 in fuel for the Kastelruth → MXP run — **~$185 together, and it is *not* inside the $717**; `/costs` carries the rental line only. Get a card that works in the *Carte* lanes; avoid Telepass-only lanes.
 - **Mid-October is shoulder season.** Between the summer and ski seasons, South Tyrol half-closes: hotels, restaurants and mountain huts take their *Ruhetag* / autumn break. **Confirm directly with the chalet that it is open and staffed on our dates** and that someone will be there to hand over keys on a Saturday evening. Same for any rifugio or restaurant you're counting on — call, don't assume the website is current.
 - **Winter tyre rules don't apply yet.** The winter-equipment obligation (winter tyres or chains aboard) on Italian roads including the A22 runs from **15 Nov**. We're a month clear. Take a normal summer/all-season car, but do expect cold mornings, possible early snow on the high passes, and short daylight.
 - **Fuel before the drop.** Rental one-ways want the tank as they gave it. Since the drop is at **noon on Thu Oct 15**, fill up on the **Thursday morning** near wherever we slept — not on the Wednesday, and not at the airport.
-- **The drive out is long, but it has all day.** Ortisei → the Malpensa area with a Sirmione lunch is a ~6-hour day door to door. Leave the chalet by 09:00 and don't compress it — Oct 14 is a PTO day precisely so it can be unhurried, and there is no counter closing time to race, only a bed.
+- **The drive out is long, but it has all day.** Kastelruth → the Malpensa area with a Sirmione lunch is a ~6-hour day door to door. Leave the Singerhof by 08:30 and don't compress it — Oct 14 is a PTO day precisely so it can be unhurried, and there is no counter closing time to race, only a bed.
 
 ## Dan's work rhythm on this leg
 

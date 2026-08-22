@@ -4,7 +4,7 @@
 
 Flights are **booked & paid**: **$5,346** Icelandair BWI⇄Milan (ref **AMBVO4**), plus **$1,870.74** Avianca SJO⇄IAD positioning (ref **AABDA8**, Sep 9 – Nov 17). Economy Light means 1 carry-on each and no checked bags — we're carry-on only by design, so there's nothing left to buy. The only flight-adjacent task is *packing* one bag each that covers both Dolomites cold and coast/city warm.
 
-**Five of eight lodging legs are already booked and paid.** That is the single biggest change since the last version of this list. What's actually left:
+**Six of eight lodging legs are already booked and paid.** That is the single biggest change since the last version of this list. What's actually left:
 
 | # | The thing | Why it's here |
 |---|---|---|
@@ -18,7 +18,7 @@ Everything else can wait — and a lot of it *should* wait (see the bottom).
 
 ---
 
-## 1. LODGING — three legs left
+## 1. LODGING — two legs left
 
 Whole-place, sleeps-six-in-its-bedrooms apartments, never a clutch of hotel rooms. A living-room sofa bed doesn't count: that room is Dan's office 16:00–23:00.
 
@@ -38,9 +38,9 @@ Whole-place, sleeps-six-in-its-bedrooms apartments, never a clutch of hotel room
 
 **(a) Venice / Lido — Oct 3–10 · 7 nights.** Do this first. It is the longest unbooked stay, the most constrained inventory, and the core purpose of the trip: **MuMu is on the Lido**, and the whole week is built around visiting her. Seven nights **clears the weekly-rate threshold** — Airbnb and Booking both discount 10–20% at 7+, so filter and compare on the *weekly* total, not the nightly headline. Band is €230–330/night → €1,610–2,310; the tracker carries a $1,800 estimate. Fallbacks if the Lido is empty: Cannaregio, then Giudecca, then Mestre as the transit-tax option.
 
-**(b) Dolomites / Val Gardena — Oct 10–14 · 4 nights.** The one deliberate splurge, and the leg with the car — so an off-the-line chalet outside the village center is fine, which widens the search considerably. Ortisei or Selva; **Santa Cristina or lower Selva run cheaper than Ortisei with the same lift access.** Band €250–380/night → €1,000–1,520. Leave Booking's "apartment only" filter *off* so whole chalets surface.
+**(b) Dolomites — Oct 10–14 · 4 nights. ✓ BOOKED — nothing left to do.** **Singerhof, St. Valentin 4, 39040 Castelrotto (Kastelruth) BZ — $1,004**, `https://www.booking.com/hotel/it/singerhof.html`. Deliberately *not* Val Gardena: St. Valentin sits between Seis am Schlern and Kastelruth, which puts the **Alpe di Siusi cableway 8 minutes from the door** and Bolzano/Ötzi at 30, at the cost of ~20 extra minutes to Seceda and the Sella passes. Rural, so off-street parking is a given and the village ZTLs never apply. Came in **$396 under** the $1,400 estimate.
 
-**(c) The last night, near Malpensa — Oct 14–15 · 1 night · LOCATION TBD.** Two rooms, not an apartment. **Decide where before you search:** now that the car stays with us until noon on Thu Oct 15, this can be an **MXP airport hotel** *or* **a lake town within about an hour of the airport** (Lake Maggiore, Lake Orta). We drive down from Ortisei on Wed Oct 14 and arrive with the car, so a shuttle is no longer a requirement and the airport is no longer the only option. Still the easiest booking on the list — do it last, but do it. ~€200–300 total.
+**(c) The last night, near Malpensa — Oct 14–15 · 1 night · LOCATION TBD.** *(With (b) booked, this and Venice/Lido are the only lodging left.)* Two rooms, not an apartment. **Decide where before you search:** now that the car stays with us until noon on Thu Oct 15, this can be an **MXP airport hotel** *or* **a lake town within about an hour of the airport** (Lake Maggiore, Lake Orta). We drive down from Kastelruth on Wed Oct 14 and arrive with the car, so a shuttle is no longer a requirement and the airport is no longer the only option. Still the easiest booking on the list — do it last, but do it. ~€200–300 total.
 
 > The **/housing** page has one-tap prefilled Booking + Airbnb searches per leg, already set to the base, the locked dates, 6 guests and whole-place. Check inside each that the bedroom filter actually stuck and that the map pin is next to the station/vaporetto, not a taxi ride out.
 
@@ -84,7 +84,7 @@ These are **dynamic-priced like flights**. Three weeks out you are already in th
 | **Duration** | **5 rental days**, Oct 10 → Oct 15. |
 | **Price** | **$717** all-in incl. the one-way fee and taxes. On the `/costs` ledger as **booked** — verify it against the actual Budget charge. **Fuel + autostrada tolls are separate, ~$185.** |
 
-**Read the drop date carefully — it changes the last two days.** We drive **Ortisei → the Malpensa area on Wed Oct 14** (~370 km / ~4h30, motorway throughout, with a lunch stop at **Sirmione on Lake Garda**), **sleep near the airport that night with the car**, and hand it back at **noon on Thu Oct 15** — four hours before the 16:20 flight. So Oct 14 is a driving-and-sightseeing day, not a transfer sprint, and **Thursday morning still has a car**: Volandia at the airport, or a short run out to a lake, instead of dead terminal hours. It also means the last night's location is genuinely open (see §1c).
+**Read the drop date carefully — it changes the last two days.** We drive **Kastelruth → the Malpensa area on Wed Oct 14** (~355 km / ~4h15, motorway throughout, with a lunch stop at **Sirmione on Lake Garda**), **sleep near the airport that night with the car**, and hand it back at **noon on Thu Oct 15** — four hours before the 16:20 flight. So Oct 14 is a driving-and-sightseeing day, not a transfer sprint, and **Thursday morning still has a car**: Volandia at the airport, or a short run out to a lake, instead of dead terminal hours. It also means the last night's location is genuinely open (see §1c).
 
 **Why a 7-seater and not a van.** Six people need six belts and Europe has no 6-seat class — the jump is 5 → 7. With six aboard you fold one third-row seat down for luggage, which works precisely because we're carry-on only.
 
@@ -139,7 +139,7 @@ Two things to hold: early October can bring an evening ***acqua alta*** — watc
 
 ### Grey turns 12 · Mon Oct 12 · Dolomites
 
-The day: **Ortisei → Seceda two-stage cable car** to the knife-edge ridge → walk to a **rifugio for lunch** (Rifugio Firenze / Baita Sofie) → **Kaiserschmarrn or apfelstrudel with a candle** → toboggan or playground on the way down → **pizza dinner in Ortisei**, for the boy who makes the family pizza.
+The day: **drive 25 min to Ortisei → Seceda two-stage cable car** to the knife-edge ridge → walk to a **rifugio for lunch** (Rifugio Firenze / Baita Sofie) → **Kaiserschmarrn or apfelstrudel with a candle** → toboggan or playground on the way down → **pizza dinner in Ortisei**, for the boy who makes the family pizza.
 
 Almost nothing here needs booking ahead — just the rifugio lunch table a few days out and a small cake. **Block Oct 12 on Dan's calendar**: it's a Monday, and it's the one weekday in the Dolomites that has to be free of the 16:00–23:00 work window.
 
@@ -157,7 +157,7 @@ Almost nothing here needs booking ahead — just the rifugio lunch table a few d
 >
 > **Oct 12 sits comfortably inside every one of these.** Plan the birthday on Seceda with confidence. Keep Ötzi in Bolzano and the Renon earth pyramids as the *weather* backup — not the *season* backup, because there isn't a season problem.
 >
-> One genuine constraint that survives: the road from Siusi up to Compatsch is **closed to private cars 09:00–17:00**. By day you go up on the Mont Sëuc cableway from Ortisei. It **reopens to cars after 17:00**, which makes a sunset dinner up at Compatsch (~1,850 m) possible — sunset mid-October is ~18:30.
+> One genuine constraint that survives: the road from Siusi up to Compatsch is **closed to private cars 09:00–17:00**. By day you go up on the cableway — and the Siusi one is 8 minutes from our booked base, so this barely bites. It **reopens to cars after 17:00**, which makes a sunset dinner up at Compatsch (~1,850 m) possible — sunset mid-October is ~18:30.
 
 ### Timed entries — book the slot in the next 1–2 weeks
 
@@ -181,7 +181,7 @@ Almost nothing here needs booking ahead — just the rifugio lunch table a few d
 
 Cheaper, more flexible, or simply doesn't sell out:
 
-- **Kronplatz Bike Park** (Keir's must-do) — the **only** alpine bike park still turning in our window, ~1h30 from Ortisei up the Puster valley, and only reachable because this is the car leg. **Book kids' bike sizes ahead**; aim for **Oct 11 or Oct 13**, since the 12th is Grey's.
+- **Kronplatz Bike Park — CRITICAL, and the one real to-do left on this leg.** Keir's bike day is **locked to Sun Oct 11**, weather backup **Tue Oct 13**; the 12th is Grey's and the 14th is the drive out, so those are the only two candidate days. It is the **only** alpine bike park still turning in our window, ~1h20 from the Kastelruth base up the Puster valley, and only reachable because this is the car leg. **Phone or email to reserve kid-sized bikes (20"/24") and armour for Keir and Grey** — autumn fleets are thin — and ask which of the 18 trails suit a 9-year-old. Backup park: Dolomiti Paganella, ~2h.
 - **The Bologna food day-trip** from Florence — buy the ~37-min Freccia a few days out; add Jude's **Motor Valley** (Lamborghini / Ferrari / Ducati) if the day has room.
 - **Pasta / pizza-making class** — Bologna day-trip or the Florence week; book during week 1 of that leg.
 - **Gladiator school on the Via Appia** (Gruppo Storico Romano) — Rome week, book a few days out.

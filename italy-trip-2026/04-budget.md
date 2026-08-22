@@ -48,7 +48,7 @@ Eight stops, 34 nights, dates straight off `public/plan.html`:
 | 4 | Florence · work base | Sep 19–26 | 7 |
 | 5 | Rome · work base | Sep 26–Oct 3 | 7 |
 | 6 | **Venice / Lido** | **Oct 3–10** | **7** |
-| 7 | **Dolomites (Val Gardena)** | **Oct 10–14** | **4** |
+| 7 | **Dolomites (Kastelruth)** | **Oct 10–14** | **4** |
 | 8 | Near Malpensa · departure — **location TBD** (airport hotel, or a lake town within ~1h) | Oct 14–15 | 1 |
 
 **Lake Como is cut** — Turin replaced it, and no Como/Brunate cost belongs anywhere in this
@@ -64,7 +64,7 @@ specifics of this itinerary.
 
 | Bucket | Low | Avg | High | What's in it |
 |---|---|---|---|---|
-| Lodging | $7,500 | **$9,200** | $10,800 | Whole-place sleeps-6 apartments; weekly rate on the three 7-night bases (Florence, Rome, Venice/Lido); the Val Gardena chalet splurge; the last night near Malpensa, location TBD (2 rooms, 1 nt) |
+| Lodging | $7,500 | **$9,200** | $10,800 | Whole-place sleeps-6 apartments; weekly rate on the three 7-night bases (Florence, Rome, Venice/Lido); the Kastelruth farmhouse ✓ booked at $1,004; the last night near Malpensa, location TBD (2 rooms, 1 nt) |
 | Food | $4,300 | **$5,200** | $6,300 | Groceries + dining. Cook / eat in 4–5 nights a week; 3 splurge dinners for the celebrations |
 | Activities & entry | $900 | **$1,300** | $1,800 | Classes, workshops, boats, cable cars (Seceda, Mont Sëuc), Kronplatz bike park. Under-18s free at Italian state museums |
 | Local transit | $650 | **$850** | $1,100 | Venice vaporetti (7-day ACTV from the Lido), Cinque Terre Card + coast regionali, Genoa transit, Rome Metro B, the **Alilaguna boat Lido → Marco Polo** on Oct 10 |
@@ -91,7 +91,7 @@ Five of the eight stays are booked with real numbers (from the `/costs` ledger):
 | Florence · Sep 19–26, 7n (San Frediano, +Grandma) | $1,937.57 | booked |
 | Rome · Sep 26–Oct 3, 7n | $1,977.00 | booked |
 | Venice / Lido · Oct 3–10, 7n | $1,800 | estimate |
-| Dolomites / Val Gardena · Oct 10–14, 4n | $1,400 | estimate |
+| Dolomites / Singerhof, Kastelruth · Oct 10–14, 4n | **$1,004** | **booked** |
 | Last night near Malpensa · Oct 14–15, 1n — **location TBD** | $170 | estimate |
 | **Total** | **≈ $8,713** | 61% committed |
 
@@ -111,7 +111,7 @@ is **dead in all three parts.**
 |---|---|---|
 | Get to the mountains | Rail Venezia S. Lucia → Verona → Bolzano, **€152–180** for six | **Alilaguna boat Lido → Marco Polo**, collect the car at **VCE, Sat Oct 10 12:00** (Multipiano P1, terzo piano) |
 | The car | Bolzano depot, ~5 days. Real inventory there: **two 7+ seat offers, both 9-seat vans at ~€1,150** | **5 days, Oct 10 → Oct 15.** "Standard-Size Van" class — **Peugeot 5008 or similar, 7 seats, 4 bags, automatic**; unlimited mileage, CDW, theft protection, free cancellation |
-| Get to the plane | Return car in Bolzano, rail Bolzano → Verona → Milan → Malpensa Express, **€180–290** for six | **Drive Ortisei → the Malpensa area Wed Oct 14, ~370 km, ~4h30**, sleep near MXP with the car, **one-way drop at MXP Terminal 1, Thu Oct 15 12:00** |
+| Get to the plane | Return car in Bolzano, rail Bolzano → Verona → Milan → Malpensa Express, **€180–290** for six | **Drive Kastelruth → the Malpensa area Wed Oct 14, ~355 km, ~4h15**, sleep near MXP with the car, **one-way drop at MXP Terminal 1, Thu Oct 15 12:00** |
 
 **The car line, built up from the real booking:**
 
@@ -182,7 +182,7 @@ early, is the whole span between the $850 low and the $1,550 high.
 ⚠︎ **`trains.html` is mid-update and currently self-contradictory.** Its masthead now reads
 "**5 rail legs · 1 car leg**" and "**the 5 rail legs ~€561** (pulled Aug 2026)" — which agrees
 with the figure used here — and its last two table rows have been rewritten to the Alilaguna
-boat / VCE pickup and the Ortisei → MXP drive. But the same page still carries the old section
+boat / VCE pickup and the Kastelruth → MXP drive. But the same page still carries the old section
 heading "**The 7 rail legs**", the old rough-all-in callout ("the six core rail legs …
 **~€714**" plus "the final Dolomites→Malpensa leg … ~€180–290", i.e. **~$1,400–2,200**), the
 old "Collect in **Bolzano** … 6-seater" airport card, and a booking checklist that still says

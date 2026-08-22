@@ -8,7 +8,7 @@ This is the executive summary — the one-page picture of the locked trip. The n
 
 **The deployed HTML pages are the source of truth.** `/plan` is the master; `/trains`, `/housing`, `/budget`, `/celebrations` and the per-stop pages carry the detail. When this doc and a page disagree, the page wins and this doc is wrong — fix it here. The **rental car is now booked** (Budget ref **02391839US2**) and `/trains`, `/plan` and `/dolomites` already carry the real dates; this doc has been synced to them.
 
-The other numbered docs (`02-` … `09-`) have **not** yet been rebuilt and still contain drifted data — Lake Como, an overnight Bologna, the old Venice/Dolomites split. Don't trust them until they've had the same treatment.
+The other numbered docs (`02-` … `09-`) have **not** been fully rebuilt and still contain drifted data — Lake Como, an overnight Bologna, the old Venice/Dolomites split. Don't trust them until they've had the same treatment. Two facts *have* been synced across all of them: the **booked rental car**, and (22 Aug 2026) the **booked Dolomites base — Singerhof, St. Valentin 4, Kastelruth, $1,004** — along with everything that follows from moving off Ortisei, plus **Keir's Kronplatz bike day being marked critical for Sun Oct 11**.
 
 ## The trip in one paragraph
 
@@ -59,7 +59,7 @@ Carless except the Dolomites. Lake Como is **cut** (Turin took its place, and Co
 | 4 | **Florence** | San Frediano (Oltrarno) — Via dell'Orto | Sep 19–26 | 7 | **WORK BASE.** Grandma joins. Duomo climb, Stibbert armor, **Bologna day trip** |
 | 5 | **Rome** | Appio-Tuscolano | Sep 26–Oct 3 | 7 | **WORK BASE.** Colosseum + Forum, Vatican, pizza class, San Clemente |
 | 6 | Venice / Lido | Lido di Venezia | Oct 3–10 | 7 | **MuMu** — the reason for the east side. Murano, San Michele, Padua day. **Anniversary Oct 9** |
-| 7 | Dolomites | Ortisei / Selva, Val Gardena | Oct 10–14 | 4 | **THE car leg.** Seceda, Alpe di Siusi. **Grey turns 12 (Oct 12)** |
+| 7 | Dolomites | **Singerhof, St. Valentin 4, Kastelruth** ✓ booked | Oct 10–14 | 4 | **THE car leg.** Alpe di Siusi (8 min), Seceda, Ötzi. **Keir's Kronplatz bike day — CRITICAL, Oct 11.** **Grey turns 12 (Oct 12)** |
 | 8 | Near Malpensa | **Location TBD** — airport hotel, or a lake town within ~1h (2 rooms) | Oct 14–15 | 1 | Drive down Wed Oct 14 with a Sirmione lunch, keep the car overnight; drop it at MXP T1 at 12:00 and fly home 16:20 Thu Oct 15 |
 
 ```
@@ -79,10 +79,10 @@ BWI ──✈── MILAN ─[Frecciarossa ~1h]─ TURIN
     37 min each way]                              [Alilaguna boat Lido → VCE,
                                                     collect rental car Oct 10]
                                                                     ▼
-                                                        DOLOMITES (Val Gardena)
+                                                        DOLOMITES (Kastelruth)
                                                           Grey turns 12 · Oct 12
                                                                     │
-                                       [Wed Oct 14: drive Ortisei → MXP area, ~370 km
+                                       [Wed Oct 14: drive Kastelruth → MXP area, ~355 km
                                         / ~4h30, lunch at Sirmione · sleep with the car]
                                                                     ▼
                                                 MALPENSA ──✈── BWI
@@ -108,7 +108,7 @@ Cheapest advance fares actually pulled in Aug 2026, family of six: Milan→Turin
 
 - **Getting to it:** a direct Alilaguna boat from the Lido to VCE — no train, no hauling six carry-ons through Venezia S. Lucia. This replaces the €152–180 rail leg to Bolzano entirely.
 - **The one-way drop at MXP** replaces the €180–290 Bolzano → Milan → Malpensa Express rail leg.
-- **The drop is the 15th, not the 14th — this changes the shape of the last two days.** We drive Ortisei → the Malpensa area on **Wed Oct 14** (~370 km, ~4h30, motorway throughout, lunch stop at Sirmione on Lake Garda), **sleep near the airport that night with the car**, and hand it back at **noon on Thu Oct 15**, four hours before the 16:20 flight. So Oct 14 is a driving/sightseeing day rather than a transfer sprint, and **Thursday morning still has a car** — usable time (Volandia at the airport, a lake run) rather than dead airport hours.
+- **The drop is the 15th, not the 14th — this changes the shape of the last two days.** We drive Kastelruth → the Malpensa area on **Wed Oct 14** (~355 km, ~4h15, motorway throughout, lunch stop at Sirmione on Lake Garda), **sleep near the airport that night with the car**, and hand it back at **noon on Thu Oct 15**, four hours before the 16:20 flight. So Oct 14 is a driving/sightseeing day rather than a transfer sprint, and **Thursday morning still has a car** — usable time (Volandia at the airport, a lake run) rather than dead airport hours.
 - **The last night (Oct 14–15) is near Malpensa, location TBD** — airport hotel, or a lake town on Maggiore / Orta within ~1h. Holding the car makes either viable; it's still being decided.
 - **Why a 7-seater:** six people need six belts and Europe has no 6-seat class — the jump is 5 → 7. With six aboard, fold one third-row seat down for luggage. Not a 9-seat van.
 - **Why not Bolzano:** its depot showed two 7+ seat offers total, both 9-seat vans around €1,150. Verona and VCE have deep inventory; Bolzano is a stockout risk.
@@ -144,7 +144,7 @@ Three rules, from `/housing`:
 2. **Belt over center.** The bigger, quieter, cheaper apartment one stop out that's still on the line — Oltrarno not the Duomo scrum, the Lido not San Marco.
 3. **On the line, or don't book it.** Every base walkable to rail, ferry, funicular or metro. Turin by Porta Nuova, not a hill town; Chiavari on the main-line coast, not a Cinque Terre cliff village. The only exception is the Dolomites, where we have the car.
 
-The **weekly rate** kicks in at 7 nights, so **Florence, Rome and Venice/Lido** all clear it; Chiavari (4n) and Val Gardena (4n) get part of the way. On the 2-night legs there's no rate to chase, so optimize for position instead. The **Val Gardena chalet** is the one deliberate splurge. Total lodging lands **€8–11K** across the 34 nights (~$7.6–10.8K).
+The **weekly rate** kicks in at 7 nights, so **Florence, Rome and Venice/Lido** all clear it; Chiavari (4n) and Kastelruth (4n) get part of the way. On the 2-night legs there's no rate to chase, so optimize for position instead. The Dolomites base is the one leg no train reaches — and it came in **$396 under estimate** at $1,004. Total lodging lands **€8–10K** across the 34 nights.
 
 **Booked so far — five of eight:**
 
@@ -156,7 +156,7 @@ The **weekly rate** kicks in at 7 nights, so **Florence, Rome and Venice/Lido** 
 | Florence · San Frediano (sleeps 7) | Sep 19–26 | $1,937.57 |
 | Rome · Appio-Tuscolano | Sep 26–Oct 3 | $1,977.00 |
 | Venice / Lido | Oct 3–10 | **to book** |
-| Val Gardena chalet | Oct 10–14 | **to book** |
+| Singerhof, Kastelruth | Oct 10–14 | **✓ booked — $1,004** |
 | Last night near Malpensa — **location TBD** (2 rooms) | Oct 14–15 | **to book** |
 
 *The last night is deliberately unresolved: with the car in hand until noon on flight day it can be an MXP airport hotel **or** a lake town (Maggiore / Orta) within ~1h of the airport. Decide the location before booking it.*
@@ -167,7 +167,7 @@ The site does not state a converted total for the five booked stays — the runn
 
 - **Rhys turns 18 · Fri Sep 18 · the Ligurian coast.** Our last night on the coast: a seafood dinner right over the Mediterranean, and his first legal drink — a Ligurian white (Vermentino or Pigato) or a seaside spritz. `/cinqueterre#birthday` carries a vetted, priced shortlist for six: Dei Castelli's castle terrace (~€500), La Camogliese's veranda over the rocks, Belforte's cliff-tower table, the Michelin room on the Bay of Silence. All carless from Chiavari. It's also his last day of free state-museum entry, so time the big sites before it.
 - **Anniversary · Fri Oct 9 · Venice.** Near the end of the Venice week. The boys get a pizza-and-movie night at the Lido place (Rhys, newly 18, holds the fort); Dan & Kei take the vaporetto in for a **canalside dinner** and a slow wander over the bridges after dark. Book the canalside table early — they're small and they sell out — and keep a backstreet trattoria in mind in case of an evening *acqua alta*.
-- **Grey turns 12 · Mon Oct 12 · the Dolomites.** Ortisei → **Seceda cable car** to the ridge, walk to a **rifugio for lunch**, **Kaiserschmarrn or apfelstrudel with a candle**, toboggan or playground on the way down, **pizza dinner in Ortisei**. Lift dates are confirmed open (see the car section). Ötzi in Bolzano plus the Renon earth pyramids remain the all-weather backup.
+- **Grey turns 12 · Mon Oct 12 · the Dolomites.** Drive 25 min from the Singerhof to Ortisei → **Seceda cable car** to the ridge, walk to a **rifugio for lunch**, **Kaiserschmarrn or apfelstrudel with a candle**, toboggan or playground on the way down, **pizza dinner in Ortisei**. Lift dates are confirmed open (see the car section). Ötzi in Bolzano plus the Renon earth pyramids remain the all-weather backup.
 
 ## Hard constraints
 
@@ -191,7 +191,7 @@ On Dan's work rhythm, that leg breaks down as: **Sat Oct 10 and Sun Oct 11 free*
 
 Today is **21 Aug 2026** — the trip is about **three weeks out**. The first five stays are booked and paid; the back half of the loop is not. Booking order, most urgent first:
 
-1. **Venice/Lido, the Val Gardena chalet, and the last night near Malpensa** — the three unbooked stays. Alpine inventory for six thins out fast and the Lido is the most expensive per-night band on the trip. Settle *where* the last night is (airport vs. lake) before you search for it.
+1. **Venice/Lido and the last night near Malpensa** — the two unbooked stays. The Dolomites base is now ✓ booked (Singerhof, Kastelruth, $1,004). The Lido is the most expensive per-night band on the trip. Settle *where* the last night is (airport vs. lake) before you search for it.
 2. ~~The 7-seater~~ **DONE ✓ — the car is booked.** Budget, ref **02391839US2**, VCE Oct 10 12:00 → MXP Oct 15 12:00, 5 days, $717, free cancellation. What's left in its place: **the two IDPs from AAA** (Dan + Kei, ~$20 each) — required in Italy on a US licence and impossible to obtain once abroad. Do them this week.
 3. **The three high-speed rail legs** (Milan→Turin, Florence→Rome, Rome→Venice) — advance fares are already well into their tiers at this range, so buy now rather than watch.
 4. **The two celebration dinners that need a reservation** — Rhys's seafood table for six on the coast (Sep 18) and the anniversary canalside table for two in Venice (Oct 9).
