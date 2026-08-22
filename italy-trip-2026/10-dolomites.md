@@ -195,6 +195,34 @@ Not a plan, a reference — so it's clear what's being given up. Full versions l
 - **Hay bath at Fiè / Völs** (~25 min) — get wrapped in warm fermenting mountain hay. Gross-cool for Keir, blissful for the grown-ups.
 - **Trauttmansdorff Gardens + Touriseum**, Merano (~1h) and **the drowned village of Reschensee** (~2h15 each way) — CUT, both full days.
 
+## Ruins, castles and witches — what the Kastelruth base unlocks
+
+Moving off Ortisei put us on the side of the Schlern that is thick with ruined castles, witch trials and mountain folklore. Verified against the operators 2026-08-22. **All of it clears the 1-hour rule.**
+
+| | Drive | Notes |
+|---|---|---|
+| **Hauenstein + Salegg ruins** | ~8 min to the trailhead | 12th-c. castle collapsing into forest at 1,273 m, first recorded **1186**; from **1427** the home of **Oswald von Wolkenstein** — poet, diplomat, one-eyed duellist. Salegg's sparser remains sit 1 km west. The **Oswald von Wolkenstein-Weg** loops both and **starts from the Seiser Alm cableway car park** we're already driving to. 2–3 h round trip. Free, unstaffed, no season. **The best single addition to this leg.** |
+| **Prösels Castle** (Völs) | ~15 min | Courtyard, chapel, knights' hall, armoury. Its lord **Leonhard von Völs presided over the Schlern witch trials** c. 1506 — same story as the folklore up on the mountain. **Open to 31 Oct, every day EXCEPT Saturday.** Tours **11:00 / 12:00 / 14:00 / 15:00**. ⚠️ **English is an AUDIO GUIDE**, live tours are German + Italian. Tickets at the café by the gate 30 min before, no reservation. +39 0471 601062 |
+| **Trostburg** (Waidbruck) | ~20 min | More evocative than Prösels and less visited — original furnishings, houses the **South Tyrolean Castles Museum**. **Guided only**, 40–50 min, **Tue–Sun, closed Monday**, Sep–Oct at **11:00 / 14:00 / 15:00**. ⚠️ Park in Ponte Gardena and walk up the medieval paved lane — **15 min, steeply.** |
+| **Witches' Benches, Bullaccia** | the Siusi cableway + a walk | Genuine mythic site on the Puflatsch/Bullaccia shoulder where the **Schlern witches** were said to gather. Hangs off the lift that's already 8 min away, so it costs **no extra driving**. Free, year-round. |
+| **Sabiona monastery + Chiusa** | ~30 min | A religious fortress on a crag over the medieval town of Chiusa/Klausen; steep walk up through vineyards. Real half-day with the old town. ⚠️ The nuns left in **2021** — verify what's actually open inside. |
+| **Novacella Abbey** (Neustift) | ~45 min | Working Augustinian abbey from 1142: cloister, rococo library, round Romanesque chapel, vineyards. **It sits on the A22 route to Kronplatz** — so it's the **non-riders' half of Keir's Oct 11 bike day**, not a separate excursion. |
+| **Labirinto del Latemar** | ~1h, with Carezza | Natural boulder labyrinth — trails threading between house-sized rocks and stone corridors. Pair with Lago di Carezza. |
+
+**The massage.** **Abinea Dolomiti Romantic SPA is in Castelrotto, ~5 min** — sauna complex, indoor pool, salt grotto, heated rooftop pool, and reportedly open to day guests. ⚠️ **We could not confirm the day-guest policy or current prices — call before counting on it.** Fallback: the Völs hay bath (10 min). Real geothermal water means **QC Terme Dolomiti** at Pozza di Fassa (~€68 day admission) — but that's **~1h–1h15**, i.e. over the rule, so only as a deliberate cold/wet-afternoon choice.
+
+### ⚠️ This is a calendar problem, not a shortlist problem
+
+Three full days. **Oct 11 is the bike day (critical), Oct 12 is Grey's.** So every castle and monastery above is competing for **Tue Oct 13 alone** — which is *also* the bike day's weather backup *and* Dan's only normal working evening. What actually fits:
+
+- **Sat Oct 10 evening** — Hauenstein ruins, or the Abinea spa. Both ~10 min, neither needs a plan.
+- **Sun Oct 11** — Novacella for the non-riders, since it's on the road anyway.
+- **Mon Oct 12** — Grey's. Untouched.
+- **Tue Oct 13** — **pick exactly one**: Prösels, *or* Trostburg, *or* Chiusa + Sabiona. Add the Witches' Benches to any Alpe di Siusi outing at no cost.
+- **Wed Oct 14** — Bolzano + Ötzi on the way out.
+
+Scheduling traps: **Prösels is closed Saturdays** (rules out the arrival day), **Trostburg is closed Mondays** (which is Grey's day anyway), and **both run their last tour at 15:00** — these are early-afternoon commitments, not lazy-morning drifts.
+
 ## Where to stay
 
 **BOOKED ✓ — Singerhof, St. Valentin 4, 39040 Castelrotto (Kastelruth) BZ. Oct 10–14, 4 nights, $1,004.** Booking.com: `https://www.booking.com/hotel/it/singerhof.html`
