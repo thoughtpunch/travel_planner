@@ -36,7 +36,7 @@ Go to **[`DECISIONS-2026-08-21.md`](DECISIONS-2026-08-21.md)** for:
 | 3 | Ligurian Coast (**Chiavari** base) | Sep 15–19 | 4 | Cinque Terre by train, Camogli → San Fruttuoso boat, Genoa. **Rhys turns 18 (Sep 18)** |
 | 4 | Florence | Sep 19–26 | 7 | **Work base.** Duomo climb, Stibbert, artisans, **Bologna food day trip** |
 | 5 | Rome | Sep 26–Oct 3 | 7 | **Work base.** Colosseum, Vatican, pizza class, San Clemente |
-| 6 | Venice / Lido | Oct 3–10 | 7 | **MuMu visit.** Murano, San Michele, Padua day. **Anniversary (Oct 9)** |
+| 6 | Venice / Lido | Oct 3–10 | 7 | **MuMu visit** — base ✓ booked *next door to her*. Murano, San Michele, Padua day. **Anniversary (Oct 9)** |
 | 7 | Dolomites (Val Gardena / Ortisei) | Oct 10–14 | 4 | **The car leg.** Seceda, Ortisei. **Grey turns 12 (Oct 12)** |
 | 8 | **Casorate Sempione** — Osteria della Pista ✓ booked | Oct 14–15 | 1 | Scenic drive down Wed Oct 14 via Garda's west shore, keep the car overnight; repack, last meal; car back at MXP 12:00 and fly home Thu Oct 15 |
 

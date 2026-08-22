@@ -22,7 +22,7 @@ Milan → Turin → Cinque Terre (Chiavari) → Florence → Rome → Venice/Lid
 | 3 | Cinque Terre (**Chiavari** base) | … | — |
 | 4 | Florence (work base) | … | — |
 | 5 | Rome (work base) | … Oct 3 | — |
-| 6 | **Venice / Lido** | **Oct 3–10** | **7** |
+| 6 | **Venice / Lido** — Airbnb ✓ **booked**, next door to MuMu | **Oct 3–10** | **7** |
 | 7 | **Dolomites (Val Gardena / Ortisei)** | **Oct 10–14** | **4** |
 | 8 | **Casorate Sempione** — Osteria della Pista dal 1875 ✓ **booked** | Oct 14–15 | 1 |
 
@@ -34,6 +34,30 @@ six people and six bags into a car-free centre the night before a non-refundable
 flight. **The scenery moved to the drive instead** — see below.
 
 Read the exact dates for stops 1–5 out of `public/plan.html` — do not invent them.
+
+## LODGING IS 100% BOOKED (22 Aug 2026)
+
+**All 8 bases, all 34 nights, $8,929.94.** No bed is outstanding. The final one was
+**Venice/Lido — Airbnb `1151356839669861774`, Oct 3–10, 7n, $2,177, next door to MuMu**
+(vs a $1,800 estimate → $377 over, and worth it: visiting Aunt Muriel is a core purpose
+of the trip, and this puts us on her doorstep rather than a vaporetto ride away).
+
+| Base | Nts | Booked |
+|---|---|---|
+| Milan · San Siro | 2 | $465.60 |
+| Turin · Centro | 2 | $415.71 |
+| Chiavari · Vista sul Carruggio | 4 | $547.06 |
+| Florence · San Frediano (+Grandma) | 7 | $1,937.57 |
+| Rome · Appio-Tuscolano | 7 | $1,977.00 |
+| **Venice / Lido — next to MuMu** | 7 | **$2,177.00** |
+| Dolomites · Singerhof, Kastelruth | 4 | $1,004.00 |
+| Casorate Sempione · Osteria della Pista | 1 | $406.00 |
+| **Total** | **34** | **$8,929.94** ($263/night) |
+
+Consequence: **lodging is no longer a low/avg/high band anywhere.** `/housing` now shows
+actuals, and `/budget`'s lodging row is a fixed $8,930 across all three columns — which
+moved the in-country total to **≈$17.8K / $20.3K / $23.4K** and the honest band to **$18–25K**.
+Confirmation amounts all live in `public/costs.csv`.
 
 ### Stops that NO LONGER EXIST
 - **Lake Como** — cut. Replaced by **Turin**. Never was visited.
