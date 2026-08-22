@@ -24,11 +24,14 @@ Milan → Turin → Cinque Terre (Chiavari) → Florence → Rome → Venice/Lid
 | 5 | Rome (work base) | … Oct 3 | — |
 | 6 | **Venice / Lido** | **Oct 3–10** | **7** |
 | 7 | **Dolomites (Val Gardena / Ortisei)** | **Oct 10–14** | **4** |
-| 8 | Near Malpensa — **location TBD** (airport hotel, or a lake town within ~1h) | Oct 14–15 | 1 |
+| 8 | **Casorate Sempione** — Osteria della Pista dal 1875 ✓ **booked** | Oct 14–15 | 1 |
 
-Stop 8 is **being reconsidered**: we now hold the car overnight, so the last night can be an
-MXP airport hotel *or* somewhere on Lake Maggiore / Lake Orta within about an hour of the
-airport. Don't hard-code an airport hotel until it's decided.
+Stop 8 is **settled**: **Hotel Osteria della Pista dal 1875, Via Verbano 1, 21011 Casorate
+Sempione (VA)** — booked on Booking.com, **9 minutes from MXP**, free airport shuttle,
+restaurant on site, 450 m from Casorate Sempione station. The lake-town options (Orta San
+Giulio, Stresa, Bergamo) were considered and dropped: each meant arriving at dusk and walking
+six people and six bags into a car-free centre the night before a non-refundable transatlantic
+flight. **The scenery moved to the drive instead** — see below.
 
 Read the exact dates for stops 1–5 out of `public/plan.html` — do not invent them.
 
@@ -62,13 +65,17 @@ then train Bolzano → Verona → Milano Centrale → Malpensa Express. **All th
 | **Price** | **$717** all-in, incl. the one-way fee and taxes. Logged in `public/costs.csv` as **booked** — verify against the actual Budget charge. Fuel + autostrada tolls are separate, **~$185**. |
 
 **The shape this creates — the subtle part:**
-- **Wed Oct 14 is a driving/sightseeing day, not a transfer sprint.** We drive Ortisei → the
-  Malpensa area (~370 km, ~4h30, motorway throughout, lunch stop at **Sirmione on Lake Garda**),
-  and we **sleep near the airport that night with the car**.
+- **Wed Oct 14 is a scenic drive, not a transfer sprint and not a sightseeing day.** No museums,
+  no castles, no queues — explicitly **not** Ötzi, MUSE, Sirmione or Bergamo. The route is
+  A22 to **Riva del Garda**, then the cliff-carved **Gardesana Occidentale (SS45bis)** down
+  Garda's west shore, a **long lunch at Gargnano**, then the A4 west. ~5h30 driving, one stop,
+  parked at Casorate Sempione by ~16:30.
+  *Fallback if the Riva–Limone stretch is shut for rockfall (check ANAS): A22 to Verona, A4 west.*
 - **Thu Oct 15 morning still has a car.** The drop is at **noon**, four hours before the 16:20
-  flight — so Thursday morning is usable time (Volandia at the airport, or a run out to a lake).
-- **The last night (Oct 14–15) is one night near Malpensa, location TBD** — an airport hotel,
-  or a lake town (Maggiore / Orta) within ~1h of MXP. Because we hold the car, both work.
+  flight — but the point of the 9-minute hotel is that the morning is unhurried, not that it's
+  usable for another outing.
+- **The last night (Oct 14–15) is booked** — Osteria della Pista dal 1875, Casorate Sempione.
+  Amount not yet entered in the cost ledger.
 
 **The rest of the rationale, unchanged:**
 - Pickup at VCE *replaces* the €152–180 Venezia S. Lucia → Bolzano rail leg entirely — a direct

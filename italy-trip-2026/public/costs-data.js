@@ -28,7 +28,7 @@ window.TRIP_COSTS = {
     { id:'lo-rome', cat:'Lodging', label:'Rome · Sep 26–Oct 3 (7n)', usd:1977, status:'booked', note:'Airbnb 28235127', url:'https://www.airbnb.com/rooms/28235127' },
     { id:'lo-venice', cat:'Lodging', label:'Venice / Lido · Oct 3–10 (7n)', usd:1800, status:'estimate' },
     { id:'lo-dolomites', cat:'Lodging', label:'Dolomites — Singerhof, Kastelruth · Oct 10–14 (4n)', usd:1004, status:'booked', note:'Singerhof, St. Valentin 4, Kastelruth (Castelrotto) BZ · Seiser Alm side of the Schlern · was $1,400 est → $396 under', url:'https://www.booking.com/hotel/it/singerhof.html' },
-    { id:'lo-malpensa', cat:'Lodging', label:'Malpensa airport hotel · Oct 14–15 (1n)', usd:170, status:'estimate' },
+    { id:'lo-malpensa', cat:'Lodging', label:'Osteria della Pista, Casorate Sempione · Oct 14–15 (1n)', usd:null, status:'booked', note:'Booked — amount not yet entered', url:'https://www.booking.com/hotel/it/osteria-della-pista.html' },
     { id:'tr-intercity', cat:'Trains', label:'5 intercity rail legs · all 6 (Aug-2026 pull)', usd:606, status:'estimate', note:'was 6 legs/$771 — the Venice→Bolzano leg is replaced by the car' },
     { id:'tr-car', cat:'Trains', label:'Rental car · Budget · ref 02391839US2 · VCE Oct 10 12:00 → MXP Oct 15 12:00 (5d)', usd:717, status:'booked', note:'Peugeot 5008 or similar · 7 seats · automatic · unlimited mileage · CDW + theft · free cancellation · Budget +1 866-671-7282 · verify amount against the Budget charge' },
     { id:'tr-carfuel', cat:'Trains', label:'Rental car — fuel + autostrada tolls (5 days incl. the MXP run)', usd:185, status:'estimate', note:'~€170; A22/A4 tolls ~€35–45 on the Malpensa leg' },
