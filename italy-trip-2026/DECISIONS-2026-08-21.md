@@ -27,7 +27,7 @@ Milan → Turin → Cinque Terre (Chiavari) → Florence → Rome → Venice/Lid
 | 8 | **Casorate Sempione** — Osteria della Pista dal 1875 ✓ **booked** | Oct 14–15 | 1 |
 
 Stop 8 is **settled**: **Hotel Osteria della Pista dal 1875, Via Verbano 1, 21011 Casorate
-Sempione (VA)** — booked on Booking.com, **9 minutes from MXP**, free airport shuttle,
+Sempione (VA)** — booked on Booking.com, **$406**, **9 minutes from MXP**, free airport shuttle,
 restaurant on site, 450 m from Casorate Sempione station. The lake-town options (Orta San
 Giulio, Stresa, Bergamo) were considered and dropped: each meant arriving at dusk and walking
 six people and six bags into a car-free centre the night before a non-refundable transatlantic
@@ -74,8 +74,8 @@ then train Bolzano → Verona → Milano Centrale → Malpensa Express. **All th
 - **Thu Oct 15 morning still has a car.** The drop is at **noon**, four hours before the 16:20
   flight — but the point of the 9-minute hotel is that the morning is unhurried, not that it's
   usable for another outing.
-- **The last night (Oct 14–15) is booked** — Osteria della Pista dal 1875, Casorate Sempione.
-  Amount not yet entered in the cost ledger.
+- **The last night (Oct 14–15) is booked** — Osteria della Pista dal 1875, Casorate Sempione,
+  **$406** (against a $170 penciled estimate — $236 over).
 
 **The rest of the rationale, unchanged:**
 - Pickup at VCE *replaces* the €152–180 Venezia S. Lucia → Bolzano rail leg entirely — a direct

@@ -40,7 +40,7 @@ Go to **[`DECISIONS-2026-08-21.md`](DECISIONS-2026-08-21.md)** for:
 | 7 | Dolomites (Val Gardena / Ortisei) | Oct 10–14 | 4 | **The car leg.** Seceda, Ortisei. **Grey turns 12 (Oct 12)** |
 | 8 | **Casorate Sempione** — Osteria della Pista ✓ booked | Oct 14–15 | 1 | Scenic drive down Wed Oct 14 via Garda's west shore, keep the car overnight; repack, last meal; car back at MXP 12:00 and fly home Thu Oct 15 |
 
-**On stop 8:** ✓ **booked — Hotel Osteria della Pista dal 1875**, Via Verbano 1, Casorate Sempione (VA), 9 min from MXP, free airport shuttle, restaurant on site. The lake-town alternatives (Orta / Stresa / Bergamo) were dropped deliberately — the last day is a scenic *drive* (Riva del Garda → the Gardesana Occidentale → lunch at Gargnano), and the last *night* is for resting, not for hauling bags into a car-free village at dusk.
+**On stop 8:** ✓ **booked — Hotel Osteria della Pista dal 1875**, Via Verbano 1, Casorate Sempione (VA), $406, 9 min from MXP, free airport shuttle, restaurant on site. The lake-town alternatives (Orta / Stresa / Bergamo) were dropped deliberately — the last day is a scenic *drive* (Riva del Garda → the Gardesana Occidentale → lunch at Gargnano), and the last *night* is for resting, not for hauling bags into a car-free village at dusk.
 
 ### What changed from the old plan
 
