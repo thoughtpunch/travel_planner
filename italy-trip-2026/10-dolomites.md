@@ -223,7 +223,22 @@ Moving off Ortisei put us on the side of the Schlern that is thick with ruined c
 | **Novacella Abbey** (Neustift) | ~45 min | Working Augustinian abbey from 1142: cloister, rococo library, round Romanesque chapel, vineyards. **It sits on the A22 route to Kronplatz** — so it's the **non-riders' half of Keir's Oct 11 bike day**, not a separate excursion. |
 | **Labirinto del Latemar** | ~1h, with Carezza | Natural boulder labyrinth — trails threading between house-sized rocks and stone corridors. Pair with Lago di Carezza. |
 
-**The massage.** **Abinea Dolomiti Romantic SPA is in Castelrotto, ~5 min** — sauna complex, indoor pool, salt grotto, heated rooftop pool, and reportedly open to day guests. ⚠️ **We could not confirm the day-guest policy or current prices — call before counting on it.** Fallback: the Völs hay bath (10 min). Real geothermal water means **QC Terme Dolomiti** at Pozza di Fassa (~€68 day admission) — but that's **~1h–1h15**, i.e. over the rule, so only as a deliberate cold/wet-afternoon choice.
+### The spa — Dan & Kei's own thing. CONFIRMED.
+
+**Abinea Dolomiti Romantic SPA, Castelrotto, ~5 min.** Day guests ARE accepted. Reserve: **+39 0471 707237 / info@abinea.com**.
+
+| | |
+|---|---|
+| **Day Spa entry** | **€65pp Mon–Thu · €80pp Fri–Sun & holidays** — whole pool + sauna area, wellness bag (robe, towels, slippers), cake buffet 14:30–17:00 |
+| **★ The pick** | **Romantic Hay Bath for 2 with partial-body massage — 50 min, €135.** The Fiè hay cure as a couples treatment, five minutes from the house |
+| Other couples | "I Love You" 120 min €180 · "Romantic Package" 120 min €230 · "You and Me" 75 min €250 · Rasul bath for 2 with prosecco 60 min €120 |
+| Solo massages | Full body (activating or relaxing) 50 min **€75** · Deep Relax hot stone **€80** · Head & neck **€80** · mountain-pine / arnica / marmot-ointment 50 min €75 |
+| Kids | Gentle oil massage 25 min €40 |
+| Hours | Dolomiti pool 07:30–20:00 · sauna & relax 12:00–20:00 |
+
+> ⚠️ **Two catches that decide the day.** (1) **Weekdays are €15pp cheaper** — so the arrival Saturday and the bike-day Sunday are the expensive days; **Mon Oct 12 or Tue Oct 13** is the move. (2) **Under-14s are barred from the sauna/relax area and the Vitarium alpinum.** Keir and Grey get only the **08:00–12:00 morning pool at €5**. This is an adults outing (Rhys 18 and Jude 16 can join) and needs somebody minding the younger two.
+
+**Alternatives.** The **Völs hay bath at Hotel Heubad** (10 min) is the historic original — doing it there rather than at Abinea is the more authentic version if that matters more than convenience. Real geothermal water means **QC Terme Dolomiti**, Pozza di Fassa (~€68 day admission) — but that's **~1h–1h15**, over the rule, so only as a deliberate cold/wet-afternoon choice.
 
 ### ⚠️ This is a calendar problem, not a shortlist problem
 
