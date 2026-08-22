@@ -122,7 +122,7 @@ The day writes itself, and it's already the plan on `/celebrations`:
 | Lunch | **Rifugio lunch** — Rifugio Firenze, Baita Sofie, or a malga: canederli, goulash, a sunny terrace |
 | The candle | **Kaiserschmarrn or apfelstrudel with a candle in it.** Grey is the family's pizza-and-dessert maker, so the alpine sweet is his moment, not an afterthought |
 | Down | Toboggan run or a mountain playground on the way back if one's still running |
-| Dinner | **Pizza in Ortisei** — his call. Order a small cake or let him pick the gelato |
+| Dinner | ★ **Gasthof Tschötscherhof, St. Oswald, Kastelruth (~10 min).** See below — book 18:30 |
 
 **Dan blocks the entire day.** Mon Oct 12 is a workday on paper; it is not one in practice.
 
@@ -131,6 +131,20 @@ The day writes itself, and it's already the plan on `/celebrations`:
 If the birthday wants a bigger swing — and if it also solves the Alpe di Siusi problem — use the after-17:00 road rule. Seceda in the morning as above, back down for the afternoon, then **drive up to Compatsch around 17:15 and have the birthday dinner at ~1,850 m as the sun sets at ~18:30**. Kaiserschmarrn with a candle on the largest alpine meadow in Europe is a hard thing to beat, and it's the one dinner on this trip you can only do because you have a car. Reserve ahead — mid-October is shoulder season and mountain restaurants keep short, moody hours.
 
 Fallbacks if the weather turns: **Ötzi the Iceman** in Bolzano (~40 min, book ahead), **Castel Roncolo** with its medieval fresco cycle, or the **Museum Ladin Ćiastel de Tor** in Val Badia (~35 min, closed Mondays — so not on the 12th).
+
+### Grey's birthday dinner — SOLVED, and it needs booking
+
+Grey wants **meaty, cheesy, comforting and large. Explicitly NOT a Michelin tasting menu.** The old "gourmet Ladin dinner at a Val Gardena mountain hotel" plan was exactly wrong for him and has been dropped from the site.
+
+**★ THE PICK — Gasthof Tschötscherhof, St. Oswald, Kastelruth (~10 min).** A **500-year-old family-run farm inn** down a lane, cooking Tyrolean farm food largely from its own land: speck, canederli, roasts, mountain cheese, strudel. Low beams and a wood stove. **Rated 9.1.** It is a listed **Törggelen house**, and Oct 12 falls in the middle of Törggelen season — the autumn feast (young wine, roast chestnuts, speck, dumplings, doughnuts) is the reason to go that week specifically. ~€25–40pp.
+
+> ⚠️ **CONFIRMED open 21 Jun – 2 Nov 2026, daily** — but the **warm kitchen runs only 12:00–14:00 and 18:00–20:30.** That's early by Italian standards. **Book 18:30** and plan the Seceda day to be back down by six.
+
+**If Grey wants fondue/raclette:** **Bistrot B24, Selva (~35 min)** — in-house *fromagerie*, a small private room with a heating element in every table and its own ventilation, doing cheese fondue and classic raclette. It's also a pizzeria, so it covers both his loves at one table. ⚠️ **Evenings only, and the autumn season dates are UNCONFIRMED** — Val Gardena half-shuts between the summer and ski seasons. **Phone +39 0471 774444 / info@bistrot24.eu before planning around it.**
+
+**Pure-pizza fallback, 5 min:** **Pizzeria Bachler** in Kastelruth (wood-fired, mountain-view terrace, best regarded in the village) or **Zur Alten Schmiede** in the centre. No booking needed.
+
+> ⚠️ **Separate risk on the birthday LUNCH:** the lifts are confirmed to 2 Nov, but **mountain huts run their own calendar and many rifugi shut in mid-October** regardless of the lift below them. Ring the specific hut, or fall back on the Compatsch huts, which are easier to reach and close later.
 
 ## Keir's day — Kronplatz Bike Park, Sun Oct 11
 
