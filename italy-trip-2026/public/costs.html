@@ -109,7 +109,7 @@
 <section class="base-section" style="border-top:2px solid var(--ink)">
   <div class="section-label">— The ledger</div>
   <h2 class="section-title">Committed &amp; <em>planned</em></h2>
-  <p class="section-intro">Flights and the two booked Airbnbs are real. The rest of the lodging, the trains and the car are <span class="ct-tag estimate">estimate</span> placeholders — overwrite any amount and it saves. Set a booked Airbnb's amount to fill in the blanks.</p>
+  <p class="section-intro">Almost all of this is now real money: <strong>both flights, all eight stays and the rental car are booked and paid</strong>. Only two lines are still <span class="ct-tag estimate">estimate</span> — the <strong>5 intercity rail legs</strong> and the car's <strong>fuel and autostrada tolls</strong>. Overwrite either amount and it saves.</p>
   <div style="overflow-x:auto">
     <table class="ct-table">
       <thead><tr><th>Line item</th><th></th><th class="num">Amount (USD)</th></tr></thead>
@@ -269,7 +269,7 @@
     var missing = D.fixed.filter(function(it){ return it.status==='booked' && amountOf(it)==null; });
     document.getElementById('ledger-note').innerHTML = missing.length
       ? '⚠︎ ' + missing.length + ' booked stay' + (missing.length>1?'s':'') + ' still need an amount — type it above to fold it into the total.'
-      : 'All booked line items have amounts. Lodging estimates update the total the moment you overwrite them.';
+      : 'All booked line items have amounts. Only the rail legs and the fuel/tolls line are still estimates — overwrite either and the total updates.';
   }
 
   // ── wire budget input + reset ──
