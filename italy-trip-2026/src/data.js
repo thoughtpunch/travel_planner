@@ -44,9 +44,9 @@ export const STOPS = [
   },
   {
     n: 7, key: 'dolomites', name: 'Dolomites', sub: 'Keir’s bike day · Grey’s 12th', color: '#4C6B82', page: '/dolomites',
-    lat: 46.5580, lng: 11.5600, // Singerhof, St. Valentin 4, Kastelruth — booked
+    lat: 46.5825, lng: 11.5661, // Funtnatsch Apartment Schlern, Laion (Lajen) — booked 26 Aug 2026
     dates: 'Oct 10–14', nights: 4,
-    note: 'Base: the Singerhof in St. Valentin, Kastelruth (booked). Keir’s Kronplatz bike day (Oct 11, critical), Grey turns 12 (Oct 12). Alpe di Siusi 8 min away, Seceda, scenic drives, Ötzi backup. The one car leg.',
+    note: 'Base: Funtnatsch Apartment Schlern, Laion (booked — replaced the Singerhof after it cancelled). Grey turns 12 (Oct 12); Keir’s bike ride is the gentle Ortisei railway trail, ~20 min. Ortisei/Seceda ~20 min, Alpe di Siusi cableway ~35, Ötzi ~45. The one car leg.',
   },
   {
     n: 8, key: 'malpensa', name: 'Malpensa', sub: 'Departure', color: '#8C7B6B', page: '/trains',
@@ -66,8 +66,8 @@ export const LEGS = [
   { from: 'cinqueterre', to: 'florence', mode: 'rail', label: 'Chiavari → Firenze S.M.N. · ~2h30' },
   { from: 'florence', to: 'rome', mode: 'rail', label: 'Frecciarossa · ~1h35' },
   { from: 'rome', to: 'venice', mode: 'rail', label: 'Frecciarossa → Venezia S. Lucia · ~4h, vaporetto to Lido' },
-  { from: 'venice', to: 'dolomites', mode: 'rail', label: 'Alilaguna Lido → VCE, collect the 7-seater, drive to Kastelruth · ~355 km, ~3h30' },
-  { from: 'dolomites', to: 'malpensa', mode: 'rail', label: 'Drive Kastelruth → MXP via Sirmione · ~355 km, ~4h15; drop the car noon Oct 15' },
+  { from: 'venice', to: 'dolomites', mode: 'rail', label: 'Alilaguna Lido → VCE, collect the 7-seater, drive to Laion · ~350 km, ~3h30' },
+  { from: 'dolomites', to: 'malpensa', mode: 'rail', label: 'Drive Laion → MXP via Lake Garda\'s west shore · ~360 km, ~4h30; drop the car noon Oct 15' },
 ]
 
 export const TOTAL_NIGHTS = STOPS.reduce((s, x) => s + x.nights, 0)

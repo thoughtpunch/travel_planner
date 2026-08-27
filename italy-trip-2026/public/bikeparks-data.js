@@ -5,12 +5,12 @@
  *      (timing/access/verify) · 'no' = closed by then or not viable carless.
  * Trip legs: Milan Sep11–13 · Turin Sep13–15 · Chiavari Sep15–19 ·
  *   Florence Sep19–26 · Rome Sep26–Oct3 · Venice Oct3–10 · Dolomites Oct10–14 (car)
- * Dolomites base BOOKED: Singerhof, St. Valentin 4, Kastelruth (Castelrotto) BZ.
+ * Dolomites base BOOKED: Funtnatsch Apartment Schlern, 39040 Laion (Lajen) BZ (re-booked 26 Aug 2026).
  *   Drive times below are from THERE, not from Ortisei/Val Gardena.
  * KEIR'S BIKE DAY IS CRITICAL: Kronplatz, Sun Oct 11 (weather backup Tue Oct 13).
  * ==========================================================================*/
 window.BIKE_PARKS = [
-  { n:"Kronplatz Bike Park", loc:"Brunico / San Vigilio", rg:"South Tyrol", rent:"Yes · kids 20/24\"", close:"Nov 8", lifts:"Yes · gondola", kid:"Excellent", leg:"Dolomites (car)", fit:"yes", note:"★ THE BIKE DAY — locked for Sun Oct 11, weather backup Tue Oct 13. Open daily to Nov 8; ~1h20 from the Singerhof in Kastelruth via Waidbruck + A22 + the Puster valley. Skills parks + kids' school. Reserve kid sizes and armour ahead." },
+  { n:"Kronplatz Bike Park", loc:"Brunico / San Vigilio", rg:"South Tyrol", rent:"Yes · kids 20/24\"", close:"Nov 8", lifts:"Yes · gondola", kid:"Excellent", leg:"Dolomites (car)", fit:"yes", note:"FALLBACK, no longer the plan (rescoped 26 Aug 2026 — Keir is 9 and a novice, so the bike day is now the Ortisei railway trail). Still the only lift-served park in Italy open on our dates, to Nov 8, but ~1h25 each way from the Laion base via Ponte Gardena + A22 + the Puster valley. Skills parks + kids' school if we ever want the full version." },
   { n:"Dolomiti Paganella Bike", loc:"Andalo / Molveno / Fai", rg:"Trentino", rent:"Yes · kids", close:"late Oct / Nov (zones vary)", lifts:"Yes", kid:"Excellent", leg:"Dolomites (car)", fit:"yes", note:"25 trails, huge skills areas, academy; ~2h down the A22 from Kastelruth. The backup if Kronplatz somehow shuts — not the first choice, it's twice the drive." },
   { n:"Cimone Bike Park", loc:"Sestola / Montecreto / Fanano", rg:"Emilia-Romagna", rent:"Yes", close:"September (final wknd TBD)", lifts:"Yes · 3 chairs", kid:"Yes · kids lessons", leg:"Florence", fit:"maybe", note:"OPEN during your Florence week; ~2h from Florence (train+bus). Easy trails + lessons. Verify the last Sept weekend." },
   { n:"Il Ciocco Bike Park", loc:"Barga (Lucca)", rg:"Tuscany", rent:"Yes · kids", close:"September (shuttle)", lifts:"No · shuttle van", kid:"Excellent", leg:"Florence", fit:"maybe", note:"Shuttle not lift, but Italy's biggest indoor pump track + family trails + instructors. Train via Lucca→Barga + resort shuttle." },
