@@ -106,3 +106,6 @@ Consequences:
 - **`public/costs.csv` is the exception — it *is* live.** `tools/build-costs.mjs` works: it reads `costs.csv` and rewrites the `fixed:` ledger block in `public/costs-data.js` (leaving the budget, sliders and dinner model alone). Edit the CSV, run `node tools/build-costs.mjs`. The booked rental car (`tr-car`, **$717**, Budget ref 02391839US2) is already in there and the build has already been run — don't re-run it as part of a doc edit.
 
 If the adventures data ever needs a real rebuild, the pipeline has to be re-pointed at a source that still exists first.
+
+## Cost & fare decisions
+The current cost, fare and activity-budget position is in **[DECISIONS-2026-08-30.md](DECISIONS-2026-08-30.md)**. Generated data: `public/costs.csv` → `costs-data.js`, `public/adventure-costs.js`, `public/leg-budgets.js`. Rebuild with `node tools/build-costs.mjs`, `node tools/build-adventure-costs.mjs`, `node tools/build-leg-budgets.mjs`.

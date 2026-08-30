@@ -9,10 +9,19 @@
  * sliders and dinnerModel are left exactly as they are, so live tuning of the
  * model never gets clobbered by a ledger update.
  *
- * CSV columns: id, Category, Item, Amount USD, Status, Note, URL
+ * CSV columns: id, Category, Item, Amount USD, Status, Note, URL,
+ *              Paid USD, Paid Date, Pay Ref, Pay Status
  *   - Amount USD blank  → usd:null  (booked but amount not entered yet)
- *   - Status            → 'booked' | 'estimate'
- *   - Note / URL blank  → key omitted
+ *   - Status            → 'booked' | 'estimate'      (is the COST real yet?)
+ *   - Pay Status        → 'paid' | 'partial' | 'pending' | 'unknown'
+ *                         (has the MONEY actually left the account yet?)
+ *                         Defaults to 'unknown' when the column is absent/blank,
+ *                         which is deliberate: unknown is a to-do, not a zero.
+ *   - Paid USD blank    → paidUsd:0 for pending, null for unknown
+ *   - Note / URL / Paid Date / Pay Ref blank → key omitted
+ *
+ * The four payment columns are OPTIONAL — an older 7-column export still builds,
+ * with every row falling back to 'unknown'.
  */
 import fs from 'fs';
 import path from 'path';
@@ -52,6 +61,14 @@ const col = name => {
 const [iId, iCat, iItem, iUsd, iStatus, iNote, iUrl] =
   ['id', 'category', 'item', 'amount usd', 'status', 'note', 'url'].map(col);
 
+// Payment columns are optional — -1 means "not in this export".
+const optCol = name => header.indexOf(name);
+const [iPaid, iPaidDate, iPayRef, iPayStatus, iDue] =
+  ['paid usd', 'paid date', 'pay ref', 'pay status', 'due date'].map(optCol);
+const cell = (r, i) => (i === -1 ? '' : (r[i] || '').trim());
+
+const PAY_STATES = ['paid', 'partial', 'pending', 'unknown'];
+
 const esc = s => String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
 
 const lines = rows.map((r, n) => {
@@ -69,9 +86,36 @@ const lines = rows.map((r, n) => {
     usd = String(n2);
   }
 
+  // ── payment state ──────────────────────────────────────────────────────
+  const pay = cell(r, iPayStatus) || 'unknown';
+  if (!PAY_STATES.includes(pay))
+    throw new Error(`row ${n + 2} ("${id}"): pay status must be one of ${PAY_STATES.join('|')}, got "${pay}"`);
+
+  const paidRaw = cell(r, iPaid).replace(/[$,]/g, '');
+  let paidUsd;
+  if (paidRaw !== '') {
+    const p = Number(paidRaw);
+    if (!Number.isFinite(p)) throw new Error(`row ${n + 2} ("${id}"): paid "${cell(r, iPaid)}" is not a number`);
+    paidUsd = p;
+  } else if (pay === 'paid') {
+    paidUsd = usd === 'null' ? null : Number(usd);   // paid in full ⇒ paid == amount
+  } else if (pay === 'pending') {
+    paidUsd = 0;                                     // known to be nothing yet
+  } else {
+    paidUsd = null;                                  // unknown ⇒ genuinely unknown, not 0
+  }
+  if (pay === 'partial' && paidUsd == null)
+    throw new Error(`row ${n + 2} ("${id}"): pay status "partial" needs a Paid USD amount`);
+  if (pay === 'paid' && paidUsd != null && usd !== 'null' && Math.abs(paidUsd - Number(usd)) > 1)
+    console.warn(`  ⚠︎ ${id}: marked paid but paid $${paidUsd} ≠ amount $${usd}`);
+
   let s = `    { id:'${esc(id)}', cat:'${esc(r[iCat].trim())}', label:'${esc(r[iItem].trim())}', usd:${usd}, status:'${status}'`;
   if (r[iNote].trim()) s += `, note:'${esc(r[iNote].trim())}'`;
   if (r[iUrl].trim()) s += `, url:'${esc(r[iUrl].trim())}'`;
+  s += `, pay:'${pay}', paidUsd:${paidUsd == null ? 'null' : paidUsd}`;
+  if (cell(r, iPaidDate)) s += `, paidDate:'${esc(cell(r, iPaidDate))}'`;
+  if (cell(r, iPayRef)) s += `, payRef:'${esc(cell(r, iPayRef))}'`;
+  if (cell(r, iDue)) s += `, dueDate:'${esc(cell(r, iDue))}'`;
   return s + ' },';
 });
 
@@ -83,9 +127,36 @@ const out = js.replace(re, (_m, open, close) => open + lines.join('\n') + close)
 
 fs.writeFileSync(JS, out);
 
-const booked = rows.filter(r => r[iStatus].trim() === 'booked')
-  .reduce((s, r) => s + (Number(r[iUsd].replace(/[$,]/g, '')) || 0), 0);
-const total = rows.reduce((s, r) => s + (Number(r[iUsd].replace(/[$,]/g, '')) || 0), 0);
+const amt = r => Number(r[iUsd].replace(/[$,]/g, '')) || 0;
+const booked = rows.filter(r => r[iStatus].trim() === 'booked').reduce((s, r) => s + amt(r), 0);
+const total = rows.reduce((s, r) => s + amt(r), 0);
+
+// ── cash position: what has actually left the account vs what hasn't ──
+const money = { paid: 0, scheduled: 0, unknown: 0 };
+const dues = [];
+for (const r of rows) {
+  const pay = cell(r, iPayStatus) || 'unknown';
+  const a = amt(r);
+  const paidRaw = cell(r, iPaid).replace(/[$,]/g, '');
+  const paid = paidRaw !== '' ? Number(paidRaw) : (pay === 'paid' ? a : 0);
+  if (pay === 'unknown') { money.unknown += a; continue; }
+  money.paid += paid;
+  const owed = a - paid;
+  if (owed > 0.005) {
+    money.scheduled += owed;
+    dues.push({ id: r[iId].trim(), owed, due: cell(r, iDue) });
+  }
+}
+
 console.log(`costs-data.js rebuilt — ${rows.length} rows`);
-console.log(`  booked  $${booked.toFixed(2)}`);
-console.log(`  total   $${total.toFixed(2)}`);
+console.log(`  booked          $${booked.toFixed(2)}`);
+console.log(`  total           $${total.toFixed(2)}`);
+console.log('  ── cash position ──');
+console.log(`  already paid    $${money.paid.toFixed(2)}`);
+console.log(`  still owed      $${money.scheduled.toFixed(2)}`);
+console.log(`  UNKNOWN status  $${money.unknown.toFixed(2)}   <- chase these`);
+if (dues.length) {
+  console.log('  upcoming charges:');
+  dues.sort((a, b) => (a.due || '9999').localeCompare(b.due || '9999'))
+    .forEach(d => console.log(`    ${(d.due || 'no date').padEnd(12)} ${d.id.padEnd(18)} $${d.owed.toFixed(2)}`));
+}
