@@ -14,7 +14,7 @@
     --stone:#8C7B6B; --rule:#C4B9A8; --line:#E4DACB;
   }
   body{background:var(--cream);color:var(--ink);margin:0}
-  .adv-head{padding:40px 32px 18px;max-width:1500px;margin:0 auto}
+  .adv-head{padding:22px 32px 10px;max-width:1500px;margin:0 auto}
   .adv-back{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--terra);text-decoration:none}
   .adv-back:hover{color:var(--ochre)}
   .adv-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:14px 0 8px}
@@ -23,8 +23,8 @@
   .adv-sub a{color:var(--terra)}
 
   /* controls */
-  .adv-controls{position:sticky;top:0;z-index:50;background:var(--warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 32px}
-  .adv-controls-inner{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .adv-controls{position:sticky;top:0;z-index:50;background:var(--warm);border-bottom:1px solid var(--rule);padding:9px 16px}
+  .adv-controls-inner{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
   .adv-searchrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   .adv-search{flex:1;min-width:220px;font-family:'DM Sans',sans-serif;font-size:15px;padding:10px 13px;border:1px solid var(--rule);border-radius:4px;background:#fff;color:var(--ink)}
   .adv-search:focus{outline:none;border-color:var(--terra)}
@@ -32,8 +32,22 @@
   .adv-star-toggle.on{background:var(--ink);color:var(--ochre);border-color:var(--ink)}
   .adv-reset:hover,.adv-star-toggle:hover{border-color:var(--terra)}
   .adv-count{font-family:'DM Mono',monospace;font-size:12px;color:var(--stone);white-space:nowrap}
-  .adv-filters{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
-  .adv-fgroup{display:flex;flex-wrap:wrap;gap:5px;align-items:center;padding:4px 8px 4px 6px;border:1px solid var(--line);border-radius:20px;background:#fff}
+  .adv-filters{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start}
+  /* collapsed filter pills */
+  .fdrop{position:relative}
+  .fdrop>summary{list-style:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;
+    letter-spacing:.5px;padding:7px 12px;border:1px solid var(--rule);border-radius:20px;
+    background:#fff;color:var(--ink);white-space:nowrap;user-select:none;display:flex;
+    align-items:center;gap:6px;min-height:36px}
+  .fdrop>summary::-webkit-details-marker{display:none}
+  .fdrop>summary::after{content:'▾';font-size:9px;opacity:.5}
+  .fdrop[open]>summary{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .fdrop[open]>summary::after{content:'▴'}
+  .fcount{background:var(--terra);color:#fff;border-radius:10px;font-size:9px;
+    padding:1px 6px;min-width:16px;text-align:center}
+  .fpanel{position:absolute;z-index:60;top:calc(100% + 5px);left:0;min-width:210px;max-width:82vw;
+    max-height:52vh;overflow-y:auto;background:#fff;border:1px solid var(--rule);border-radius:9px;
+    padding:9px;display:flex;flex-wrap:wrap;gap:5px;box-shadow:0 8px 22px rgba(0,0,0,.13)}
   .adv-fglabel{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--stone);margin-right:2px}
   .adv-chip{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3px;padding:4px 9px;border-radius:20px;border:1px solid var(--rule);background:#fff;color:var(--ink);cursor:pointer;user-select:none;white-space:nowrap}
   .adv-chip.on{background:var(--terra);border-color:var(--terra);color:#fff}
@@ -93,15 +107,18 @@
   .leg-splab{display:block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1.2px;
     text-transform:uppercase;color:var(--terra);margin-bottom:2px}
   .leg-spcost{display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--stone);margin-top:2px}
-  .adv-hidden{margin-top:9px;font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--stone)}
+  .adv-hidden{font-family:'DM Mono',monospace;font-size:10px;color:var(--stone);opacity:.75}
+  .adv-hidden:empty{display:none}
   .adv-hidden strong{color:var(--terra)}
 
   /* ── Dan's curated keepers ── */
-  .adv-keeps{max-width:1500px;margin:18px auto 0;padding:0 16px}
+  .adv-keeps{max-width:1500px;margin:12px auto 0;padding:0 16px}
+  .adv-keeps .kp-grid{display:none}
+  .adv-keeps .kp-head{margin-bottom:0}
   .kp-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:9px}
-  .kp-title{font-family:'Playfair Display',serif;font-weight:700;font-size:18px}
-  .kp-total{font-family:'DM Mono',monospace;font-size:12px;color:var(--stone)}
-  .kp-total strong{color:var(--ink);font-size:15px}
+  .kp-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ochre)}
+  .kp-total{font-family:'DM Mono',monospace;font-size:11px;color:var(--stone)}
+  .kp-total strong{color:var(--ink);font-size:13px}
   .kp-note{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--stone);opacity:.9}
   .kp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:8px}
   .kp-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);
@@ -115,33 +132,17 @@
     text-transform:uppercase;background:var(--ochre);color:#fff;border-radius:3px;padding:1px 5px;
     vertical-align:middle}
 
-  /* ── trip-wide splurge shortlist ── */
-  .adv-splurge{max-width:1500px;margin:16px auto 0;padding:0 16px}
-  .sp-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:9px}
-  .sp-title{font-family:'Playfair Display',serif;font-weight:700;font-size:17px}
-  .sp-rule{font-family:'DM Mono',monospace;font-size:11px;color:var(--stone)}
-  .sp-rule strong{color:var(--terra)}
-  .sp-tally{font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:20px;
-    background:rgba(44,122,123,.13);color:#22615f}
-  .sp-tally.over{background:rgba(196,83,26,.15);color:var(--terra)}
-  .sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px}
-  .sp-item{background:var(--warm);border:1px solid var(--line);border-radius:7px;padding:9px 11px;
-    border-left:3px solid var(--rule)}
-  .sp-item.on{border-left-color:#2C7A7B;background:rgba(44,122,123,.06)}
-  .sp-where{display:block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1.2px;
-    text-transform:uppercase;color:var(--terra)}
-  .sp-name{display:block;font-size:13px;line-height:1.3;margin:2px 0 3px}
-  .sp-cost{display:block;font-family:'DM Mono',monospace;font-size:11px;color:var(--stone)}
-  .c-six .six-splurge{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;
-    letter-spacing:1px;text-transform:uppercase;background:var(--terra);color:#fff;
-    border-radius:3px;padding:1px 5px;margin-bottom:3px}
+  .leg-now{display:flex;align-items:baseline;flex-wrap:wrap;gap:9px;font-family:'DM Mono',monospace;font-size:11px;color:var(--stone)}
+  .leg-now-city{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink)}
+  .leg-now-c strong{color:#4f6b3f}
+  .adv-legs{max-width:1500px;margin:12px auto 0;padding:0 16px}
 
   /* ── YOUR PICKS bar ── */
-  .adv-picks{display:flex;align-items:baseline;flex-wrap:wrap;gap:9px;margin-top:11px;
-    padding:9px 12px;border:1px solid var(--line);border-left:3px solid var(--terra);
-    border-radius:5px;background:#fff;font-family:'DM Mono',monospace;font-size:11px;color:var(--stone)}
+  .adv-picks{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;
+    font-family:'DM Mono',monospace;font-size:11px;color:var(--stone)}
+  .adv-picks:empty{display:none}
   .adv-picks .pick-lab{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--terra)}
-  .adv-picks .pick-big{font-size:21px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
+  .adv-picks .pick-big{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
   .adv-picks .pick-usd{font-size:11px}
   .adv-picks .pick-part{padding:2px 8px;border-radius:20px;background:var(--cream);white-space:nowrap}
   .adv-picks .pick-booked{background:rgba(44,122,123,.13);color:#22615f}
@@ -153,13 +154,7 @@
     border-radius:4px;background:#fff;color:var(--stone);cursor:pointer}
   .adv-picks .pick-clear:hover{border-color:var(--terra);color:var(--terra)}
 
-  /* ── live roll-up bar ── */
-  .adv-totals{display:flex;align-items:baseline;flex-wrap:wrap;gap:7px;margin-top:10px;
-    font-family:'DM Mono',monospace;font-size:11.5px;color:var(--stone)}
-  .adv-totals .tot-big{font-size:19px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
-  .adv-totals .tot-lab strong{color:var(--ink)}
-  .adv-totals .tot-sep{opacity:.4}
-  .c-six .six-range{display:block;font-size:9.5px;color:var(--stone);opacity:.8}
+    .c-six .six-range{display:block;font-size:9.5px;color:var(--stone);opacity:.8}
 
   /* ══════════════════════════════════════════════════════════════════
    * MOBILE — below 760px the 12-column table stops being a table and
@@ -171,35 +166,76 @@
     .c-region,.c-desc{display:none}
   }
   @media(max-width:760px){
-    .adv-head{padding:24px 16px 10px}
-    .adv-controls{padding:10px 14px}
+    /* The header is branding; on a phone you want the filters, not the title. */
+    .adv-head{padding:12px 14px 6px}
+    .adv-h1{font-size:20px;margin:6px 0 2px}
+    .adv-sub{font-size:11.5px;line-height:1.35}
+    .adv-back{font-size:10px}
+    .adv-controls{padding:7px 12px}
+    .adv-controls-inner{gap:6px}
+    .adv-search{min-width:0;flex:1 1 100%;font-size:16px;padding:8px 11px}  /* 16px stops iOS zoom */
+    .adv-star-toggle,.adv-reset{font-size:10px;padding:7px 9px}
+    .adv-count{font-size:10px}
+    .adv-sync{display:none}
+    .fdrop>summary{font-size:10px;padding:6px 10px;min-height:32px;gap:4px}
+    .fpanel{min-width:190px;max-width:88vw}
+    .adv-keeps,.adv-legs{margin-top:7px}
+    .leg-now-city{font-size:14px}
+    .leg-now{font-size:10px;gap:7px}
     .adv-tablewrap{padding:0 12px 48px;overflow-x:visible}
     table.adv{min-width:0;width:100%;display:block;background:transparent}
     table.adv thead{display:none}
     table.adv tbody{display:block}
+    /* Flex column so we can ORDER the card: title → price → detail → plan.
+       The table's source order puts the notes box first, which is useless here. */
     table.adv tbody tr{
-      display:block;background:var(--warm);border:1px solid var(--line);
+      display:flex;flex-direction:column;background:var(--warm);border:1px solid var(--line);
       border-radius:9px;padding:13px 14px;margin-bottom:11px;
       box-shadow:0 1px 2px rgba(0,0,0,.04)}
     table.adv tbody tr:hover{background:var(--warm)}
     table.adv tbody td{display:block;border:0;padding:0 0 6px}
     table.adv tbody td:last-child{padding-bottom:0}
-    /* hide the noisy columns; keep what you actually decide from */
-    .c-leg,.c-city,.c-region,.c-desc{display:none}
+    table.adv tbody td.c-title{order:1}
+    table.adv tbody td.c-six  {order:2}
+    table.adv tbody td.c-for  {order:3}
+    table.adv tbody td.c-get  {order:4}
+    table.adv tbody td.c-links{order:5}
+    table.adv tbody td.c-plan {order:6}
+    /* Hide the noisy columns. Needs the full selector — `table.adv tbody td`
+       out-specifies a bare `.c-leg`, which is why these were still showing. */
+    table.adv tbody td.c-leg,
+    table.adv tbody td.c-city,
+    table.adv tbody td.c-region,
+    table.adv tbody td.c-desc,
+    table.adv tbody td.c-cost{display:none}
     /* title leads the card */
-    .c-title{font-size:16px;font-weight:500;line-height:1.3;padding-bottom:8px!important}
-    .c-title .adv-thumb-img{width:100%;height:120px;object-fit:cover;border-radius:6px;
-      display:block;margin:0 0 9px}
+    .c-title{font-size:15.5px;font-weight:500;line-height:1.3;padding-bottom:7px!important}
+    /* The thumbnail is the same generic city shot on every card in a leg — it adds
+       ~130px per card and tells you nothing. Gone on phones. */
+    .c-title .adv-thumb-img{display:none}
+    .c-for{padding-bottom:4px!important}
+    .c-get{font-size:12px;padding-bottom:5px!important}
+    .c-plan .adv-note{margin-top:0}
     /* every remaining cell gets its label back */
     table.adv tbody td[data-l]::before{
       content:attr(data-l);display:block;font-family:'DM Mono',monospace;font-size:9px;
       letter-spacing:1px;text-transform:uppercase;color:var(--stone);margin-bottom:2px}
-    .c-six{background:rgba(196,83,26,.05);border-radius:6px;padding:8px 10px!important;margin:2px 0 8px}
-    .c-six .six-eur{display:inline;font-size:17px}
-    .c-six .six-usd{display:inline;margin-left:7px}
-    .c-six .six-range,.c-six .six-note{display:block;max-width:none}
-    .c-plan{display:flex;gap:8px;padding-top:9px!important;border-top:1px solid var(--line)!important;margin-top:4px}
-    .c-plan .adv-status,.c-plan .adv-note{flex:1;min-height:40px;font-size:16px}
+    /* Price on one line. The range and the pricing-basis note are desk research —
+       standing in a street you want the number, not the derivation. */
+    .c-six{background:rgba(196,83,26,.05);border-radius:6px;padding:6px 9px!important;margin:1px 0 6px}
+    .c-six .six-eur{display:inline;font-size:16px}
+    .c-six .six-usd{display:inline;margin-left:6px;font-size:11px}
+    .c-six .six-range,.c-six .six-note{display:none}
+    .c-six .six-splurge{margin:0 6px 0 0}
+    /* The data-l labels earn their keep on Getting-there; elsewhere they are noise. */
+    table.adv tbody td.c-for::before,
+    table.adv tbody td.c-get::before{display:none}
+    .c-links a{padding:5px 9px}
+    /* Notes are a planning-desk tool. In the street you only ever tap Want/Booked,
+       so the note field goes and the status select becomes the whole row. */
+    .c-plan{display:flex;gap:8px;padding-top:7px!important;border-top:1px solid var(--line)!important;margin-top:3px}
+    .c-plan .adv-note{display:none}
+    .c-plan .adv-status{flex:1;min-height:38px;font-size:16px}
     .c-links{display:flex;gap:14px}
     .adv-totals .tot-big{font-size:17px}
     .adv-picks{gap:7px;padding:8px 10px}
@@ -224,8 +260,8 @@
 <header class="adv-head">
   <a class="adv-back" href="/">← Map</a>
   <h1 class="adv-h1">Adventures <em>&amp; activities</em></h1>
-  <p class="adv-sub">Everything worth doing across the trip, in one filterable table — filter by leg, kid, type, <strong>what it costs the six of us</strong>, or how reachable it is. ★ = extra-high adventure. Full raw list: <a href="/adventures.csv" download>adventures.csv</a>.</p>
-  <p class="adv-sub" style="margin-top:8px;font-size:12.5px;opacity:.85"><strong>Total for 6</strong> is the whole family, not per person — priced for 2 adults + Rhys, Jude, Grey and Keir, with under-18s free wherever Italian state museums make them free (Rhys counts as a child until he turns 18 on Sep 18). Dollar figures convert at €1 ≈ $1.16. Ranges mean the price genuinely varies; “—” means we haven’t pinned it down yet.</p>
+  <p class="adv-sub">Filter to the town you're in, then to what you can spend. Prices are the total for all six of us.</p>
+
 </header>
 
 <div class="adv-controls">
@@ -240,14 +276,12 @@
     </div>
     <div id="advHidden" class="adv-hidden"></div>
     <div id="advPicks" class="adv-picks"></div>
-    <div id="advTotals" class="adv-totals"></div>
     <div id="advFilters" class="adv-filters"></div>
   </div>
 </div>
 
 <div id="advLegs" class="adv-legs"></div>
 <div id="advKeeps" class="adv-keeps"></div>
-<div id="advSplurge" class="adv-splurge"></div>
 
 <div class="adv-tablewrap">
   <table class="adv">
@@ -378,23 +412,42 @@ document.addEventListener('DOMContentLoaded', function () {
     return '<button type="button" class="adv-chip' + (on ? ' on' : '') + '"' + extra +
       ' data-kind="' + kind + '" data-id="' + esc(id) + '">' + esc(label) + '</button>';
   }
+  // Each filter group is a COLLAPSED dropdown, not a wall of chips. On a phone the
+  // whole control strip is six pills; open one, tick what you want, close it.
+  // `openGroups` survives the re-render that every chip click triggers.
+  var openGroups = {};
+  function fgroup(kind, label, chipsHtml, activeCount) {
+    var open = openGroups[kind] ? ' open' : '';
+    return '<details class="fdrop" data-kind="' + kind + '"' + open + '>' +
+      '<summary>' + esc(label) +
+        (activeCount ? '<span class="fcount">' + activeCount + '</span>' : '') +
+      '</summary><div class="fpanel">' + chipsHtml + '</div></details>';
+  }
+  function countOn(bag) { return Object.keys(bag).filter(function (k){ return bag[k]; }).length; }
+
   function buildFilters() {
     var usedCats = {}; DATA.forEach(function (d) { usedCats[d.c] = true; });
     var h = '';
-    h += '<div class="adv-fgroup"><span class="adv-fglabel">Leg</span>' +
-      LEGS.map(function (l) { return chip('leg', String(l.leg), l.leg + ' · ' + l.city); }).join('') + '</div>';
-    h += '<div class="adv-fgroup"><span class="adv-fglabel">Kid</span>' +
-      KIDS.map(function (k) { return chip('kid', k.id, k.label, k.col); }).join('') + '</div>';
-    h += '<div class="adv-fgroup"><span class="adv-fglabel">Reach</span>' +
-      Object.keys(REACH).map(function (r) { return chip('reach', r, REACH[r]); }).join('') + '</div>';
-    h += '<div class="adv-fgroup"><span class="adv-fglabel">Cost for 6</span>' +
-      BANDS.map(function (b) { return chip('price', b.id, b.label); }).join('') + '</div>';
-    h += '<div class="adv-fgroup"><span class="adv-fglabel">Plan</span>' +
-      [['want','Want'],['booked','Booked'],['skip','Skip'],['none','Unplanned']]
-        .map(function (p) { return chip('plan', p[0], p[1]); }).join('') + '</div>';
-    h += '<div class="adv-fgroup"><span class="adv-fglabel">Type</span>' +
+    h += fgroup('leg', 'Where',
+      LEGS.map(function (l) { return chip('leg', String(l.leg), l.city); }).join(''),
+      countOn(state.legs));
+    h += fgroup('price', 'Budget',
+      BANDS.map(function (b) { return chip('price', b.id, b.label); }).join(''),
+      countOn(state.price));
+    h += fgroup('kid', 'Who',
+      KIDS.map(function (k) { return chip('kid', k.id, k.label, k.col); }).join(''),
+      countOn(state.kids));
+    h += fgroup('reach', 'How far',
+      Object.keys(REACH).map(function (r) { return chip('reach', r, REACH[r]); }).join(''),
+      countOn(state.reach));
+    h += fgroup('cat', 'Type',
       Object.keys(CATS).filter(function (c) { return usedCats[c]; })
-        .map(function (c) { return chip('cat', c, CATS[c][0] + ' ' + CATS[c][1]); }).join('') + '</div>';
+        .map(function (c) { return chip('cat', c, CATS[c][0] + ' ' + CATS[c][1]); }).join(''),
+      countOn(state.cats));
+    h += fgroup('plan', 'Status',
+      [['want','Want'],['booked','Booked'],['skip','Skip'],['none','Unplanned']]
+        .map(function (p) { return chip('plan', p[0], p[1]); }).join(''),
+      countOn(state.plan));
     filtersEl.innerHTML = h;
   }
 
@@ -491,18 +544,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (c) bucket.eur += c.eur; else unpriced++;
     });
     var total = want.eur + booked.eur, count = want.n + booked.n;
-    if (!count) {
-      el.innerHTML = '<span class="pick-empty">Set any row to <strong>Want</strong> or <strong>Booked</strong> and your running total appears here.</span>';
-      return;
-    }
+    if (!count) { el.innerHTML = ''; return; }
     el.innerHTML =
-      '<span class="pick-lab">Your picks</span>' +
+      '<span class="pick-lab">Picked</span>' +
       '<span class="pick-big">€' + total.toLocaleString('en-US') + '</span>' +
       '<span class="pick-usd">≈ $' + Math.round(usd(total)).toLocaleString('en-US') + '</span>' +
-      '<span class="pick-part pick-booked">' + booked.n + ' booked · €' + booked.eur.toLocaleString('en-US') + '</span>' +
-      '<span class="pick-part pick-want">' + want.n + ' want · €' + want.eur.toLocaleString('en-US') + '</span>' +
-      (unpriced ? '<span class="pick-part">' + unpriced + ' unpriced</span>' : '') +
-      '<button type="button" id="pickClear" class="pick-clear">clear picks</button>';
+      '<span class="pick-part">' + count + ' thing' + (count === 1 ? '' : 's') + '</span>' +
+      '<button type="button" id="pickClear" class="pick-clear">clear</button>';
   }
 
   // ── ONE SPLURGE PER LEG ────────────────────────────────────────────
@@ -520,80 +568,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     return best;
   }
-  function renderLegPanel() {
-    var el = document.getElementById('advLegs');
-    var chosen = Object.keys(state.legs).filter(function (k){ return state.legs[k]; });
-    var legs = chosen.length ? chosen.map(Number) : LEGS.map(function (l){ return l.leg; });
-    var html = legs.map(function (lg) {
-      var meta = legMap[lg] || {};
-      var free = 0, cheap = 0, mid = 0;
-      DATA.forEach(function (it) {
-        if (it.leg !== lg) return;
-        var c = costOf(it); if (!c) return;
-        if (c.eur === 0) free++;
-        else if (c.eur <= CHEAP_EUR) cheap++;
-        else if (c.eur <= SPLURGE_EUR) mid++;
-      });
-      return '<div class="leg-card">' +
-        '<div class="leg-city">' + esc(meta.city || ('Leg ' + lg)) + '</div>' +
-        '<div class="leg-dates">' + esc(meta.dates || '') + '</div>' +
-        '<div class="leg-counts"><strong>' + free + '</strong> free · <strong>' + cheap +
-        '</strong> &lt;$100 · <strong>' + mid + '</strong> $100–500</div>' +
-        '</div>';
-    }).join('');
-    el.innerHTML = html;
-  }
-
-  // ── TRIP-WIDE SPLURGE SHORTLIST — you get 2–3 of these for the WHOLE trip ──
+  // Shows ONLY when you've filtered to one leg — i.e. the town you're standing in.
+  // With no filter it stays empty; a 7-city grid is noise when you're out walking.
+  // One compact line: how much the shortlist commits you to, and whether that
+  // is still inside the 2-3 splurge rule. Reference, not the main event.
   function renderKeeps() {
     var el = document.getElementById('advKeeps');
     var items = DATA.filter(function (it){ return KEEP[it._id]; });
     if (!items.length) { el.innerHTML = ''; return; }
     var total = 0, splurges = 0;
-    var rows = items.map(function (it) {
+    items.forEach(function (it) {
       var c = costOf(it); var e = c ? c.eur : 0;
       total += e; if (e > SPLURGE_EUR) splurges++;
-      var meta = legMap[it.leg] || {};
-      return '<div class="kp-item"><span class="kp-where">' + esc(meta.city || '') + '</span>' +
-        '<span class="kp-name">' + esc(it.n.slice(0, 46)) + '</span>' +
-        '<span class="kp-cost">€' + e + ' · $' + Math.round(usd(e)) +
-        (e > SPLURGE_EUR ? ' <em>splurge</em>' : '') + '</span></div>';
-    }).join('');
-    el.innerHTML =
-      '<div class="kp-head"><span class="kp-title">The shortlist</span>' +
+    });
+    el.innerHTML = '<div class="kp-head">' +
+      '<span class="kp-title">Shortlist</span>' +
       '<span class="kp-total">' + items.length + ' picked · <strong>€' + total.toLocaleString('en-US') +
       '</strong> ≈ $' + Math.round(usd(total)).toLocaleString('en-US') + '</span>' +
-      '<span class="kp-note">' + splurges + ' of them over $500 ' +
-      (splurges <= 3 ? '— within your 2–3 limit' : '— over your 2–3 limit') + '</span></div>' +
-      '<div class="kp-grid">' + rows + '</div>';
+      '<span class="kp-note">' + splurges + ' over $200</span></div>';
   }
 
-  function renderSplurges() {
-    var el = document.getElementById('advSplurge');
-    var picked = [];
+  function renderLegPanel() {
+    var el = document.getElementById('advLegs');
+    var chosen = Object.keys(state.legs).filter(function (k){ return state.legs[k]; });
+    if (chosen.length !== 1) { el.innerHTML = ''; return; }
+    var lg = Number(chosen[0]), meta = legMap[lg] || {};
+    var free = 0, cheap = 0, mid = 0;
     DATA.forEach(function (it) {
-      if (!it.s || KEEP[it._id]) return;
-      var c = costOf(it); if (!c || c.eur <= SPLURGE_EUR) return;
-      var st = plan[it._id] && plan[it._id].status;
-      picked.push({ it:it, eur:c.eur, chosen:(st === 'want' || st === 'booked') });
+      if (it.leg !== lg) return;
+      var c = costOf(it); if (!c) return;
+      if (c.eur === 0) free++;
+      else if (c.eur <= CHEAP_EUR) cheap++;
+      else if (c.eur <= SPLURGE_EUR) mid++;
     });
-    picked.sort(function (a, b){ return a.eur - b.eur; });
-    var taken = picked.filter(function (p){ return p.chosen; });
-    var spend = taken.reduce(function (t, p){ return t + p.eur; }, 0);
-    el.innerHTML =
-      '<div class="sp-head"><span class="sp-title">The splurge list</span>' +
-      '<span class="sp-rule">' + picked.length + ' ★must-dos over ~$200 that did NOT make the shortlist · <strong>reference only</strong></span>' +
-      (taken.length ? '<span class="sp-tally' + (taken.length > 3 ? ' over' : '') + '">' +
-        taken.length + ' chosen · €' + spend.toLocaleString('en-US') + ' ≈ $' +
-        Math.round(usd(spend)).toLocaleString('en-US') +
-        (taken.length > 3 ? ' — that\'s more than 3' : '') + '</span>' : '') + '</div>' +
-      '<div class="sp-grid">' + picked.map(function (p) {
-        var meta = legMap[p.it.leg] || {};
-        return '<div class="sp-item' + (p.chosen ? ' on' : '') + '">' +
-          '<span class="sp-where">' + esc(meta.city || '') + '</span>' +
-          '<span class="sp-name">' + esc(p.it.n.slice(0, 44)) + '</span>' +
-          '<span class="sp-cost">€' + p.eur + ' · $' + Math.round(usd(p.eur)) + '</span></div>';
-      }).join('') + '</div>';
+    el.innerHTML = '<div class="leg-now"><span class="leg-now-city">' + esc(meta.city || ('Leg ' + lg)) +
+      '</span><span class="leg-now-dates">' + esc(meta.dates || '') + '</span>' +
+      '<span class="leg-now-c"><strong>' + free + '</strong> free</span>' +
+      '<span class="leg-now-c"><strong>' + cheap + '</strong> under $100</span>' +
+      '<span class="leg-now-c"><strong>' + mid + '</strong> $100–200</span></div>';
   }
 
   function render() {
@@ -601,32 +613,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var body = document.getElementById('advBody');
     document.getElementById('advCount').textContent = rows.length + ' of ' + DATA.length;
 
-    // ── live roll-up of whatever is currently filtered in ──
-    var sum = 0, priced = 0, free = 0, unp = 0;
-    rows.forEach(function (it) {
-      var c = costOf(it);
-      if (!c) { unp++; return; }
-      priced++; sum += c.eur; if (c.eur === 0) free++;
-    });
-    var avg = priced ? Math.round(sum / priced) : 0;
-    renderPicks(); renderLegPanel(); renderKeeps(); renderSplurges();
+    renderPicks(); renderLegPanel(); renderKeeps();
     var hidden = 0;
     if (state.realistic) DATA.forEach(function (it) {
       var c = costOf(it); if (c && c.eur > SPLURGE_EUR && !KEEP[it._id]) hidden++;
     });
     document.getElementById('advHidden').innerHTML = hidden
-      ? '💸 <strong>' + hidden + '</strong> activities over ~$200 for six are hidden — ' +
-        'perfume and leather workshops, private boats, chef dinners. Everything over $200 that survived ' +
-        'the cull is on the shortlist above. Turn off <em>Realistic budget</em> to see the rest.'
+      ? hidden + ' over ~$200 hidden'
       : '';
-    document.getElementById('advTotals').innerHTML = rows.length
-      ? '<span class="tot-big">€' + sum.toLocaleString('en-US') + '</span>' +
-        '<span class="tot-lab">if you did all ' + priced + ' priced ' + (priced === 1 ? 'thing' : 'things') +
-        ' · ≈ $' + Math.round(usd(sum)).toLocaleString('en-US') + '</span>' +
-        '<span class="tot-sep">·</span><span class="tot-lab">avg <strong>€' + avg + '</strong> each</span>' +
-        (free ? '<span class="tot-sep">·</span><span class="tot-lab"><strong>' + free + '</strong> free</span>' : '') +
-        (unp ? '<span class="tot-sep">·</span><span class="tot-lab">' + unp + ' unpriced</span>' : '')
-      : '';
+
     document.getElementById('advEmpty').style.display = rows.length ? 'none' : 'block';
     body.innerHTML = rows.map(function (it) {
       var lg = legMap[it.leg] || {};
@@ -658,12 +653,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
   }
 
+
   // ── events ──
+  filtersEl.addEventListener('toggle', function (e) {
+    var d = e.target; if (!d.classList || !d.classList.contains('fdrop')) return;
+    openGroups[d.getAttribute('data-kind')] = d.open;
+  }, true);
   filtersEl.addEventListener('click', function (e) {
     var b = e.target.closest('.adv-chip'); if (!b) return;
     var kind = b.getAttribute('data-kind'), id = b.getAttribute('data-id');
     var bag = bagOf(kind);
     bag[id] = !bag[id];
+    openGroups[kind] = true;              // keep the panel you're using open
     buildFilters(); render();
   });
   document.getElementById('advPicks').addEventListener('click', function (e) {
@@ -687,6 +688,7 @@ document.addEventListener('DOMContentLoaded', function () {
     state = { legs:{}, kids:{}, cats:{}, reach:{}, plan:{}, price:{}, q:'', star:false,
               realistic:true, sort:{ col:'leg', dir:1 } };
     document.getElementById('advReal').classList.add('on');
+    openGroups = {};
     document.getElementById('advSearch').value = '';
     document.getElementById('advStar').classList.remove('on');
     buildFilters(); buildHead(); render();
