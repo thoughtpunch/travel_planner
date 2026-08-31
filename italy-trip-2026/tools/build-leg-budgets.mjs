@@ -34,8 +34,8 @@ const DAILY = {
 // INTO this leg, already using the 4+2 family-fare split.
 const LEGS = [
   { leg:1, page:'/milan',       city:'Milan',            dates:'Sep 11–13',    nights:2, people:6,
-    lodgingId:'lo-milan',    getHere:{ eur:52,  note:'Malpensa Express into the city, 6 tickets' },
-    transit:{ lo:20, avg:34, hi:50, note:'ATM day tickets / M5 from San Siro' } },
+    lodgingId:'lo-milan',    getHere:{ eur:52,  note:'Malpensa Express to Cadorna, then M2+M4 to Coni Zugna (or a taxi at 23:00)' },
+    transit:{ lo:16, avg:28, hi:44, note:'ATM singles €2.20, under-14s free. Museum is a 600 m walk, not a metro trip' } },
   { leg:2, page:'/turin',       city:'Turin',            dates:'Sep 13–15',    nights:2, people:6,
     lodgingId:'lo-turin',    getHere:{ eur:71,  note:'Milano P. Garibaldi → Torino P. Nuova, FrecciaDAYS all six' },
     transit:{ lo:12, avg:22, hi:36, note:'Centre is walkable from Via San Massimo' } },

@@ -16,9 +16,9 @@ window.LEG_BUDGETS = [
    {
     "key": "lodging",
     "label": "Lodging",
-    "lo": 401,
-    "avg": 401,
-    "hi": 401,
+    "lo": 522,
+    "avg": 522,
+    "hi": 522,
     "fixed": true,
     "badge": "paid",
     "note": "actual booked amount"
@@ -31,7 +31,7 @@ window.LEG_BUDGETS = [
     "hi": 52,
     "fixed": true,
     "badge": "to book",
-    "note": "Malpensa Express into the city, 6 tickets"
+    "note": "Malpensa Express to Cadorna, then M2+M4 to Coni Zugna (or a taxi at 23:00)"
    },
    {
     "key": "groceries",
@@ -65,10 +65,10 @@ window.LEG_BUDGETS = [
    {
     "key": "transit",
     "label": "Local transport",
-    "lo": 20,
-    "avg": 34,
-    "hi": 50,
-    "note": "ATM day tickets / M5 from San Siro"
+    "lo": 16,
+    "avg": 28,
+    "hi": 44,
+    "note": "ATM singles €2.20, under-14s free. Museum is a 600 m walk, not a metro trip"
    },
    {
     "key": "misc",
@@ -79,19 +79,19 @@ window.LEG_BUDGETS = [
    }
   ],
   "total": {
-   "lo": 786,
-   "avg": 906,
-   "hi": 1109
+   "lo": 903,
+   "avg": 1021,
+   "hi": 1224
   },
   "spend": {
-   "lo": 385,
-   "avg": 505,
-   "hi": 708
+   "lo": 381,
+   "avg": 499,
+   "hi": 702
   },
   "perDay": {
-   "lo": 193,
-   "avg": 253,
-   "hi": 354
+   "lo": 191,
+   "avg": 250,
+   "hi": 351
   },
   "shortlist": []
  },
