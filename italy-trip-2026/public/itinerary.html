@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day by Day — Italy 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kids.css">
+<style>
+  :root{ --ink:#1A1510; --cream:#F5F0E8; --warm:#FDFAF4; --terra:#C4531A; --ochre:#D4920A;
+         --stone:#8C7B6B; --rule:#C4B9A8; --line:#E4DACB; }
+  body{background:var(--cream);color:var(--ink);margin:0}
+  .it-head{padding:26px 20px 12px;max-width:900px;margin:0 auto}
+  .it-back{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--terra)}
+  .it-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(26px,5vw,42px);line-height:1.05;margin:12px 0 6px}
+  .it-h1 em{font-style:italic;color:var(--terra);font-weight:400}
+  .it-sub{font-size:14.5px;color:var(--stone);max-width:640px;line-height:1.5}
+
+  /* sticky filter strip */
+  .it-controls{position:sticky;top:0;z-index:40;background:var(--warm);border-bottom:1px solid var(--rule);
+    padding:9px 20px}
+  .it-controls-in{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .it-chip{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.4px;padding:6px 11px;border-radius:20px;
+    border:1px solid var(--rule);background:#fff;color:var(--ink);cursor:pointer;white-space:nowrap;min-height:32px}
+  .it-chip.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .it-chip.warn.on{background:var(--terra);border-color:var(--terra)}
+  .it-count{font-family:'DM Mono',monospace;font-size:11px;color:var(--stone);margin-left:auto}
+
+  .it-wrap{max-width:900px;margin:0 auto;padding:14px 20px 70px}
+
+  .day{border-top:1px solid var(--rule);padding:15px 0 6px}
+  .day.legstart{border-top:2px solid var(--ink);margin-top:10px}
+  .day-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+  .day-date{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--terra);white-space:nowrap}
+  .day-city{font-family:'Playfair Display',serif;font-weight:700;font-size:17px}
+  .day-note{font-size:12.5px;color:var(--stone);line-height:1.4;margin:3px 0 9px;max-width:640px}
+  .day-empty{font-family:'DM Mono',monospace;font-size:11px;color:var(--stone);opacity:.7;padding:2px 0 6px}
+
+  .item{display:flex;gap:11px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .item:last-child{border-bottom:none}
+  .i-time{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;min-width:52px;flex-shrink:0;
+    color:var(--ink);padding-top:1px}
+  .i-time.none{color:var(--stone);opacity:.45}
+  .i-body{flex:1;min-width:0}
+  .i-what{font-size:14.5px;line-height:1.35;font-weight:500}
+  .i-detail{font-size:12.5px;color:var(--stone);line-height:1.45;margin-top:2px}
+  .i-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1px;
+    text-transform:uppercase;border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+  .t-booked{background:rgba(107,142,90,.18);color:#3f5c30}
+  .t-tobook{background:rgba(196,83,26,.16);color:#a8461a}
+  .t-plan{background:rgba(85,96,110,.13);color:#55606E}
+  .t-free{background:rgba(212,146,10,.18);color:#8a6400}
+  .i-kind{font-size:14px;flex-shrink:0;width:19px;text-align:center;padding-top:2px}
+
+  .day[data-has-tobook="1"] .day-date::after{content:'•';color:var(--terra);margin-left:5px}
+
+  @media(max-width:600px){
+    .it-head{padding:18px 14px 8px}
+    .it-h1{font-size:23px}
+    .it-controls{padding:7px 14px}
+    .it-wrap{padding:10px 14px 50px}
+    .i-time{min-width:46px;font-size:11.5px}
+    .i-what{font-size:14px}
+    .day-city{font-size:15.5px}
+  }
+</style>
+</head>
+<body>
+
+<header class="it-head">
+  <a class="it-back" href="/">← Map</a>
+  <h1 class="it-h1">Day by <em>day</em></h1>
+  <p class="it-sub">Every fixed time on the trip, in order: flights, trains, check-ins, check-outs, timed tickets, deadlines and the things we said we'd actually do. If it isn't here, it isn't happening.</p>
+</header>
+
+<div class="it-controls">
+  <div class="it-controls-in">
+    <button class="it-chip on" data-f="all" type="button">Everything</button>
+    <button class="it-chip warn" data-f="tobook" type="button">⚠ Still to book</button>
+    <button class="it-chip" data-f="travel" type="button">🚄 Travel</button>
+    <button class="it-chip" data-f="stay" type="button">🏠 Check in / out</button>
+    <button class="it-chip" data-f="do" type="button">★ Do</button>
+    <span class="it-count" id="itCount"></span>
+  </div>
+</div>
+
+<div class="it-wrap" id="itBody"></div>
+
+<script src="/itinerary-data.js" defer></script>
+<script src="/menu.js" defer></script>
+<script defer>
+// `defer` is IGNORED on inline scripts — without waiting for DOMContentLoaded this
+// runs before itinerary-data.js has loaded and renders an empty page.
+document.addEventListener('DOMContentLoaded', function () {
+  var D = window.ITINERARY || [];
+  var KIND = { travel:'🚄', stay:'🏠', eat:'🍽️', do:'★', admin:'📋', milestone:'🎉' };
+  var TAG  = { booked:['t-booked','booked'], tobook:['t-tobook','to book'],
+               plan:['t-plan','plan'], free:['t-free','free'] };
+  var filter = 'all';
+
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function keep(it){
+    if (filter === 'all') return true;
+    if (filter === 'tobook') return it.s === 'tobook';
+    return it.k === filter;
+  }
+
+  function render(){
+    var body = document.getElementById('itBody');
+    var html = '', shown = 0, lastLeg = null;
+
+    D.forEach(function (day) {
+      var items = (day.items || []).filter(keep);
+      // when filtering, hide days that have nothing left
+      if (filter !== 'all' && !items.length) return;
+      shown += items.length;
+
+      var legStart = day.leg !== lastLeg; lastLeg = day.leg;
+      var hasTobook = (day.items || []).some(function (i){ return i.s === 'tobook'; });
+      var dt = new Date(day.d + 'T12:00:00Z');
+      var label = day.wd + ' ' + dt.getUTCDate() + ' ' +
+        ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][dt.getUTCMonth()];
+
+      html += '<div class="day' + (legStart ? ' legstart' : '') + '" data-has-tobook="' + (hasTobook?1:0) + '">' +
+        '<div class="day-h"><span class="day-date">' + label + '</span>' +
+        '<span class="day-city">' + esc(day.city) + '</span></div>' +
+        (day.note && filter === 'all' ? '<div class="day-note">' + esc(day.note) + '</div>' : '');
+
+      if (!items.length) html += '<div class="day-empty">Nothing fixed — rest day.</div>';
+
+      items.forEach(function (i) {
+        var tag = TAG[i.s] || TAG.plan;
+        html += '<div class="item">' +
+          '<span class="i-time' + (i.t ? '' : ' none') + '">' + (i.t ? esc(i.t) : '—') + '</span>' +
+          '<span class="i-kind">' + (KIND[i.k] || '·') + '</span>' +
+          '<span class="i-body"><span class="i-what">' + esc(i.w) +
+            '<span class="i-tag ' + tag[0] + '">' + tag[1] + '</span></span>' +
+            (i.d ? '<span class="i-detail">' + esc(i.d) + '</span>' : '') +
+          '</span></div>';
+      });
+      html += '</div>';
+    });
+
+    body.innerHTML = html;
+    var tb = 0; D.forEach(function (d){ (d.items||[]).forEach(function (i){ if (i.s==='tobook') tb++; }); });
+    document.getElementById('itCount').textContent =
+      filter === 'all' ? (tb + ' still to book') : (shown + ' shown');
+  }
+
+  document.querySelector('.it-controls-in').addEventListener('click', function (e) {
+    var b = e.target.closest('.it-chip'); if (!b) return;
+    filter = b.getAttribute('data-f');
+    [].forEach.call(document.querySelectorAll('.it-chip'), function (c) {
+      c.classList.toggle('on', c === b);
+    });
+    render();
+  });
+
+  render();
+});
+</script>
+</body>
+</html>
