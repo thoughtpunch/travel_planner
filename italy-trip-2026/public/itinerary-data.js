@@ -45,10 +45,10 @@ window.ITINERARY = [
   { t:'', k:'do', s:'plan', w:'Museo Egizio', d:'World’s second-best Egyptian collection. €18 adult, €1 for ages 6–14, €3 for 15–18 — Rhys is still 17, so this is cheap: ~€44 for six. Family ticket €36 for 2 adults + 2 minors is worth asking about.' },
   { t:'', k:'do', s:'plan', w:'Mole Antonelliana + Cinema Museum', d:'The glass lift up the middle of the dome. Or skip the museum and just do the lift.' },
 ]},
-{ d:'2026-09-15', wd:'Tue', city:'TURIN → LIGURIAN COAST', leg:3, note:'⚠️ Train NOT booked. BIMBI GRATIS deadline is Sep 11.', items:[
-  { t:'~10:00', k:'stay', s:'plan', w:'CHECK OUT — Turin', d:'' },
-  { t:'10:40', k:'travel', s:'tobook', w:'Torino Porta Nuova → Chiavari · direct Intercity', d:'2h30, arrives 13:10. ~€62–67 split 4+2. ⚠️ Set the filter to INTERCITY — "Main solutions" buries this and shows slower connections instead. BOOK BY SEP 11.' },
-  { t:'~13:30', k:'stay', s:'booked', w:'CHECK IN — Vista sul Carruggio, Chiavari', d:'Via Vittorio Veneto 16, 16043 Chiavari. €506.54 paid. Station is ~400 m away.' },
+{ d:'2026-09-15', wd:'Tue', city:'TURIN → LIGURIAN COAST', leg:3, note:'Trains BOOKED — PNR N7PZ5N + N7MGC5.', items:[
+  { t:'~09:50', k:'stay', s:'plan', w:'CHECK OUT — Turin', d:'Deadline 11:00. Host Marcello +39 333 822 7352.' },
+  { t:'10:40', k:'travel', s:'booked', w:'Torino Porta Nuova → Chiavari · Intercity 511 · direct', d:'Arrives 13:10. Coach 7 — Dan 18C, Kei 19C, Grey 18D, Keir 19D (PNR N7PZ5N, €31.20, CHILDREN FREE); Rhys 20C, Jude 20D (PNR N7MGC5, €36.40). ⚠️ TAXI to Porta Nuova — 1.2 km from the flat, ~€10. Not Porta Susa, this line does not call there.' },
+  { t:'15:00', k:'stay', s:'booked', w:'CHECK IN — Vista sul Carruggio, Chiavari', d:'Via Vittorio Veneto 16, INTERNO 1, PIANO 1, 16043 Chiavari GE. €506.54 paid. Station is 600 m / 8 min. Arrive ~13:20 vs 15:00 check-in — ~1h40 gap, ask the host about early bag drop. Piano 1 = first floor; lift NOT confirmed.' },
 ]},
 { d:'2026-09-16', wd:'Wed', city:'LIGURIAN COAST', leg:3, note:'', items:[
   { t:'', k:'do', s:'plan', w:'Cinque Terre by train', d:'Chiavari sits OUTSIDE the Cinque Terre card zone. Buy Chiavari→Levanto as a normal regional (~€26 for six), then decide on the park card separately.' },
@@ -60,9 +60,9 @@ window.ITINERARY = [
   { t:'', k:'milestone', s:'plan', w:'🎂 Rhys turns 18', d:'From today he pays FULL adult at every Italian state museum — the €2 EU reduced rate is not open to Americans. Anything state-run you wanted him free at had to happen before today.' },
   { t:'', k:'eat', s:'tobook', w:'Rhys’s birthday dinner — seafood over the Mediterranean', d:'And his first legal drink. Worth reserving ahead.' },
 ]},
-{ d:'2026-09-19', wd:'Sat', city:'COAST → FLORENCE', leg:4, note:'⚠️ Train NOT booked. FrecciaFAMILY deadline is SEP 4 — the tightest on the whole trip. Grandma joins today.', items:[
+{ d:'2026-09-19', wd:'Sat', city:'COAST → FLORENCE', leg:4, note:'Train BOOKED. PARTY OF 7 — Grandma came for Rhys’s 18th (one night in Chiavari) and rides to Florence with us.', items:[
   { t:'~10:00', k:'stay', s:'plan', w:'CHECK OUT — Chiavari', d:'' },
-  { t:'11:27', k:'travel', s:'tobook', w:'Chiavari → Firenze S.M.N.', d:'3h41, 1 change, arrives 15:08. ~€91–92 split 4+2. ★ BOOK BY SEP 4. The 09:58 costs the same but takes 4h35 with three changes — take the 11:27.' },
+  { t:'09:31', k:'travel', s:'booked', w:'Chiavari → Firenze S.M.N. · Intercity 505, change at Pisa', d:'Pisa Centrale 11:07, ⚠️ 23-min change, RV 4030 at 11:30, arrives 12:33. PARTY OF 7. Coach 4 — Dan 18A, Kei 18B, Grey 19A, Keir 19B (PNR N7SKJN, €51.00); Rhys 18C, Jude 18D, Nancy 19C (PNR N7S4TN, €61.80). ⚠️ Seats cover the Pisa leg only — the Florence train is a Regionale, open seating. Leave the flat 09:10.' },
   { t:'~15:30', k:'stay', s:'booked', w:'CHECK IN — San Frediano, Florence', d:'Via dell’Orto, 50124 Firenze. 7 nights. $1,937.57 paid. NON-REFUNDABLE. Tassa di soggiorno included.' },
   { t:'', k:'milestone', s:'plan', w:'Grandma arrives — 7 people this week', d:'Budget ~$250–350 extra for the week if she isn’t covering her own meals.' },
 ]},
@@ -82,10 +82,10 @@ window.ITINERARY = [
 { d:'2026-09-25', wd:'Fri', city:'FLORENCE', leg:4, note:'', items:[
   { t:'19:00', k:'do', s:'tobook', w:'Vasari Corridor — Friday night opening', d:'€24pp advance, ~€107 for six. Friday evenings 7–11pm through Nov 20. The Medici’s private passage above the Ponte Vecchio, at night. Cheapest special thing on the trip.' },
 ]},
-{ d:'2026-09-26', wd:'Sat', city:'FLORENCE → ROME', leg:5, note:'⚠️ Train NOT booked, deadline Sep 11. Grandma leaves.', items:[
-  { t:'~08:00', k:'stay', s:'plan', w:'CHECK OUT — Florence', d:'' },
-  { t:'08:59', k:'travel', s:'tobook', w:'Firenze S.M.N. → Roma Termini · Frecciarossa', d:'1h41 direct, arrives 10:40. ~€88–91 split 4+2. BOOK BY SEP 11.' },
-  { t:'~11:30', k:'stay', s:'booked', w:'CHECK IN — Domus Flavii, Rome', d:'Appio-Tuscolano, Metro A. 7 nights. $2,285.24 — ⚠️ charges to PayPal on SEP 13, make sure that account is funded.' },
+{ d:'2026-09-26', wd:'Sat', city:'FLORENCE → ROME', leg:5, note:'Train BOOKED (PNR N7T7W5). Grandma leaves Florence.', items:[
+  { t:'~10:00', k:'stay', s:'plan', w:'CHECK OUT — Florence', d:'Train is not until 13:48 — ask Edoardo to hold the bags and have a last lunch in the Oltrarno.' },
+  { t:'13:48', k:'travel', s:'booked', w:'Firenze S.M.N. → Roma Termini · Frecciarossa 9415 · PNR N7T7W5', d:'Direct, 1h47, arrives 15:35. €50.00 + €55.80 split 4+2, FrecciaFAMILY applied. Coach 5 — Dan 15A, Kei 15B, Grey 16A, Keir 16B (PNR N7T7W5, €50.00, FrecciaFAMILY); Rhys 14A, Jude 14B (PNR N7UFZN, €55.80). Taxi from Termini (~€12–15) rather than Metro A — Re di Roma has stairs.' },
+  { t:'16:00', k:'stay', s:'booked', w:'CHECK IN — Domus Flavii, Rome', d:'Via Appia Nuova 185, int 9, 00182 Roma — on Piazza Re di Roma, 150 m from Metro A. 7 nights. $2,285.24 — ⚠️ charges to PayPal on SEP 13, make sure that account is funded.' },
   { t:'', k:'eat', s:'plan', w:'Dan’s free evening #1', d:'Dan works 4–11pm Mon–Fri, so Sat 26 and Sun 27 are his ONLY free nights in Rome. Front-load anything after dark.' },
 ]},
 { d:'2026-09-27', wd:'Sun', city:'ROME', leg:5, note:'🎯 FREE VATICAN — last Sunday of the month.', items:[

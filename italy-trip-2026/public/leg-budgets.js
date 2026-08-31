@@ -116,12 +116,12 @@ window.LEG_BUDGETS = [
    {
     "key": "getHere",
     "label": "Getting here",
-    "lo": 71,
-    "avg": 71,
-    "hi": 71,
+    "lo": 84,
+    "avg": 84,
+    "hi": 84,
     "fixed": true,
-    "badge": "to book",
-    "note": "Milano P. Garibaldi → Torino P. Nuova, FrecciaDAYS all six"
+    "badge": "paid",
+    "note": "PAID €83.60 — Frecciarossa 9304, PNR NY2TU5, one booking of six"
    },
    {
     "key": "groceries",
@@ -169,19 +169,19 @@ window.LEG_BUDGETS = [
    }
   ],
   "total": {
-   "lo": 763,
-   "avg": 879,
-   "hi": 1089
+   "lo": 776,
+   "avg": 892,
+   "hi": 1102
   },
   "spend": {
-   "lo": 405,
-   "avg": 521,
-   "hi": 731
+   "lo": 418,
+   "avg": 534,
+   "hi": 744
   },
   "perDay": {
-   "lo": 203,
-   "avg": 261,
-   "hi": 366
+   "lo": 209,
+   "avg": 267,
+   "hi": 372
   },
   "shortlist": []
  },
@@ -206,12 +206,12 @@ window.LEG_BUDGETS = [
    {
     "key": "getHere",
     "label": "Getting here",
-    "lo": 62,
-    "avg": 62,
-    "hi": 62,
+    "lo": 68,
+    "avg": 68,
+    "hi": 68,
     "fixed": true,
-    "badge": "to book",
-    "note": "Torino → Chiavari, direct IC, BIMBI GRATIS + YOUNG split"
+    "badge": "paid",
+    "note": "PAID €67.60 — Intercity 511 direct, PNR N7PZ5N + N7MGC5, split 4+2"
    },
    {
     "key": "groceries",
@@ -259,19 +259,19 @@ window.LEG_BUDGETS = [
    }
   ],
   "total": {
-   "lo": 1612,
-   "avg": 1954,
-   "hi": 2366
+   "lo": 1618,
+   "avg": 1960,
+   "hi": 2372
   },
   "spend": {
-   "lo": 1140,
-   "avg": 1482,
-   "hi": 1894
+   "lo": 1146,
+   "avg": 1488,
+   "hi": 1900
   },
   "perDay": {
-   "lo": 285,
-   "avg": 371,
-   "hi": 474
+   "lo": 287,
+   "avg": 372,
+   "hi": 475
   },
   "shortlist": [
    {
@@ -305,12 +305,12 @@ window.LEG_BUDGETS = [
    {
     "key": "getHere",
     "label": "Getting here",
-    "lo": 91,
-    "avg": 91,
-    "hi": 91,
+    "lo": 113,
+    "avg": 113,
+    "hi": 113,
     "fixed": true,
-    "badge": "to book",
-    "note": "Chiavari → Firenze SMN, FrecciaFAMILY + Super Economy split"
+    "badge": "paid",
+    "note": "PAID €112.80 — IC 505 + RV via Pisa, PNR N7SKJN + N7S4TN. Party of 7, Grandma rides along"
    },
    {
     "key": "groceries",
@@ -358,19 +358,19 @@ window.LEG_BUDGETS = [
    }
   ],
   "total": {
-   "lo": 3177,
-   "avg": 3688,
-   "hi": 4309
+   "lo": 3199,
+   "avg": 3710,
+   "hi": 4331
   },
   "spend": {
-   "lo": 1507,
-   "avg": 2018,
-   "hi": 2639
+   "lo": 1529,
+   "avg": 2040,
+   "hi": 2661
   },
   "perDay": {
-   "lo": 215,
-   "avg": 288,
-   "hi": 377
+   "lo": 218,
+   "avg": 291,
+   "hi": 380
   },
   "shortlist": [
    {
@@ -400,12 +400,12 @@ window.LEG_BUDGETS = [
    {
     "key": "getHere",
     "label": "Getting here",
-    "lo": 88,
-    "avg": 88,
-    "hi": 88,
+    "lo": 106,
+    "avg": 106,
+    "hi": 106,
     "fixed": true,
-    "badge": "to book",
-    "note": "Firenze SMN → Roma Termini, FrecciaFAMILY + FrecciaYOUNG"
+    "badge": "paid",
+    "note": "PAID €105.80 — Frecciarossa 9415 13:48, PNR N7T7W5 + N7UFZN, FrecciaFAMILY"
    },
    {
     "key": "groceries",
@@ -453,19 +453,19 @@ window.LEG_BUDGETS = [
    }
   ],
   "total": {
-   "lo": 3823,
-   "avg": 4332,
-   "hi": 4951
+   "lo": 3841,
+   "avg": 4350,
+   "hi": 4969
   },
   "spend": {
-   "lo": 1853,
-   "avg": 2362,
-   "hi": 2981
+   "lo": 1871,
+   "avg": 2380,
+   "hi": 2999
   },
   "perDay": {
-   "lo": 265,
-   "avg": 337,
-   "hi": 426
+   "lo": 267,
+   "avg": 340,
+   "hi": 428
   },
   "shortlist": [
    {
@@ -500,7 +500,7 @@ window.LEG_BUDGETS = [
     "hi": 170,
     "fixed": true,
     "badge": "to book",
-    "note": "Roma Termini → Venezia S. Lucia, FrecciaFAMILY + FrecciaYOUNG"
+    "note": "⚠️ THE LAST LEG TO BUY — Roma Termini → Venezia S. Lucia, split 4+2"
    },
    {
     "key": "groceries",
