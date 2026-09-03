@@ -418,6 +418,8 @@ function Activities({ data, updateActivity, reload }) {
   const [batchTotal, setBatchTotal] = useState(0)
   const [batchBusy, setBatchBusy] = useState(false)
   const [batchError, setBatchError] = useState('')
+  const [filtersOpen, setFiltersOpen] = useState(() => !window.matchMedia('(max-width: 700px)').matches)
+  const [mapOpen, setMapOpen] = useState(true)
   const initialStop = Number(initialUrlState.filters.where[0] || remembered || 1)
   const [draft, setDraft] = useState({ title: '', stop_ordinal: initialStop, location: '', estimated_cost: '', scheduled_date: '' })
   useEffect(() => { sessionStorage.removeItem('activityStop') }, [])
@@ -488,6 +490,13 @@ function Activities({ data, updateActivity, reload }) {
     const cost = partyCost(item)
     return item.selection_status !== 'skipped' && cost && cost.midpoint > REALISTIC_LIMIT_EUR && !item.source_details?.is_shortlist
   }).length : 0
+  const appliedFilterLabels = Object.entries(filters).flatMap(([group, values]) => values.map(value => (
+    filterOptions[group].find(([optionValue]) => optionValue === value)?.[1]
+  )).filter(Boolean))
+  if (query) appliedFilterLabels.push(`“${query}”`)
+  if (mustDo) appliedFilterLabels.push('Must-do')
+  if (realistic) appliedFilterLabels.push('Realistic budget')
+  const filterSummary = appliedFilterLabels.join(', ') || 'Everything'
   const singleStop = filters.where.length === 1 ? data.stops.find(stop => String(stop.ordinal) === filters.where[0]) : null
   const stopActivities = singleStop ? data.activities.filter(item => item.stop_ordinal === singleStop.ordinal && item.selection_status !== 'skipped') : []
   const resetFilters = (showEverything = false) => {
@@ -554,40 +563,51 @@ function Activities({ data, updateActivity, reload }) {
       <button className="primary">Save activity</button>
     </form>}
     <section className="selection-summary"><strong>{selected.length} picked</strong><span>{selected.filter(a => a.scheduled_date).length} on the itinerary</span><span>{selected.filter(a => !a.scheduled_date).length} need a date</span><span>{fmtMoney(selectedTotal, 'EUR')} tracked</span></section>
-    <section className="activity-explorer" aria-label="Activity explorer filters">
-      <div className="activity-search-row">
-        <input type="search" placeholder="Search title, place, description…" value={query} onChange={e => setQuery(e.target.value)} />
-        <button type="button" className={mustDo ? 'filter-toggle active' : 'filter-toggle'} onClick={() => setMustDo(value => !value)}>★ Must-do only</button>
-        <button type="button" className={realistic ? 'filter-toggle active' : 'filter-toggle'} onClick={() => setRealistic(value => !value)}>💸 Realistic budget</button>
-        <button type="button" className="filter-reset" onClick={() => resetFilters()}>Reset</button>
-        <strong className="activity-count">{showingHidden ? `${shown.length} shown` : `${shown.length} of ${activeCount}`}</strong>
-      </div>
-      <div className="activity-budget-note">{hiddenForBudget ? `${hiddenForBudget} over ~$200 hidden` : 'All price levels shown'}</div>
-      <div className="activity-filter-row" key={filterMenuVersion}>
-        <FilterMenu label="Where" group="where" selected={filters.where} toggle={toggleFilter} options={filterOptions.where} />
-        <FilterMenu label="Budget" group="price" selected={filters.price} toggle={toggleFilter} options={filterOptions.price} />
-        <FilterMenu label="Who" group="who" selected={filters.who} toggle={toggleFilter} options={filterOptions.who} />
-        <FilterMenu label="How far" group="reach" selected={filters.reach} toggle={toggleFilter} options={filterOptions.reach} />
-        <FilterMenu label="Type" group="type" selected={filters.type} toggle={toggleFilter} options={filterOptions.type} />
-        <FilterMenu label="Status" group="status" selected={filters.status} toggle={toggleFilter} options={filterOptions.status} />
-        <label className="activity-sort"><span>Sort</span><select value={sort} onChange={event => setSort(event.target.value)}>{ACTIVITY_SORT_OPTIONS.map(([value, text]) => <option key={value} value={value}>{text}</option>)}</select></label>
+    <details className="activity-filter-shell" open={filtersOpen} onToggle={event => setFiltersOpen(event.currentTarget.open)}>
+      <summary className="activity-panel-toggle"><strong>Filters</strong><span title={filterSummary}>{filterSummary}</span><b>{shown.length} shown</b></summary>
+      <section className="activity-explorer" aria-label="Activity explorer filters">
+        <div className="activity-search-row">
+          <input type="search" placeholder="Search title, place, description…" value={query} onChange={e => setQuery(e.target.value)} />
+          <button type="button" className={mustDo ? 'filter-toggle active' : 'filter-toggle'} onClick={() => setMustDo(value => !value)}>★ Must-do only</button>
+          <button type="button" className={realistic ? 'filter-toggle active' : 'filter-toggle'} onClick={() => setRealistic(value => !value)}>💸 Realistic budget</button>
+          <button type="button" className="filter-reset" onClick={() => resetFilters()}>Reset</button>
+          <strong className="activity-count">{showingHidden ? `${shown.length} shown` : `${shown.length} of ${activeCount}`}</strong>
+        </div>
+        <div className="activity-budget-note">{hiddenForBudget ? `${hiddenForBudget} over ~$200 hidden` : 'All price levels shown'}</div>
+        <div className="activity-filter-row" key={filterMenuVersion}>
+          <FilterMenu label="Where" group="where" selected={filters.where} toggle={toggleFilter} options={filterOptions.where} />
+          <FilterMenu label="Budget" group="price" selected={filters.price} toggle={toggleFilter} options={filterOptions.price} />
+          <FilterMenu label="Who" group="who" selected={filters.who} toggle={toggleFilter} options={filterOptions.who} />
+          <FilterMenu label="How far" group="reach" selected={filters.reach} toggle={toggleFilter} options={filterOptions.reach} />
+          <FilterMenu label="Type" group="type" selected={filters.type} toggle={toggleFilter} options={filterOptions.type} />
+          <FilterMenu label="Status" group="status" selected={filters.status} toggle={toggleFilter} options={filterOptions.status} />
+          <label className="activity-sort"><span>Sort</span><select value={sort} onChange={event => setSort(event.target.value)}>{ACTIVITY_SORT_OPTIONS.map(([value, text]) => <option key={value} value={value}>{text}</option>)}</select></label>
+        </div>
+      </section>
+    </details>
+    <section className="activity-workspace">
+      <details className="activity-map-shell" open={mapOpen} onToggle={event => setMapOpen(event.currentTarget.open)}>
+        <summary className="activity-panel-toggle"><strong>Map</strong><span>Keep it open while browsing</span><b>{shown.length} pins</b></summary>
+        {mapOpen && <ActivityMap activities={shown} stops={data.stops} onPlan={planOne} />}
+      </details>
+      <div className="activity-scroll" aria-label="Scrollable activity results">
+        <header className="activity-scroll-head"><strong>Activities</strong><span>{shown.length} shown · scroll this list</span></header>
+        {selectedItems.length > 0 && <aside className="batch-bar" role="toolbar" aria-label="Selected activity actions">
+          <strong>{selectedItems.length} selected</strong>
+          <button type="button" className="primary" onClick={planSelected} disabled={batchBusy}>Plan / book selected</button>
+          <button type="button" className="batch-hide" onClick={() => changeVisibility(selectedItems.map(item => item.id), selectedItems.every(item => item.selection_status === 'skipped') ? 'restore' : 'hide')} disabled={batchBusy}>{selectedItems.every(item => item.selection_status === 'skipped') ? 'Restore selected' : 'Hide selected'}</button>
+          <button type="button" className="batch-clear" onClick={() => setSelectedIds(new Set())} disabled={batchBusy}>Clear</button>
+        </aside>}
+        {batchError && <p className="modal-error batch-error">{batchError}</p>}
+        {singleStop && <section className="leg-cost-summary"><strong>{singleStop.name}</strong><span>{fmtDate(singleStop.date_start)}–{fmtDate(singleStop.date_end)}</span><span><b>{stopActivities.filter(item => partyCost(item)?.midpoint === 0).length}</b> free</span><span><b>{stopActivities.filter(item => { const cost = partyCost(item); return cost && cost.midpoint > 0 && cost.midpoint <= EASY_YES_EUR }).length}</b> under $100</span><span><b>{stopActivities.filter(item => { const cost = partyCost(item); return cost && cost.midpoint > EASY_YES_EUR && cost.midpoint <= REALISTIC_LIMIT_EUR }).length}</b> $100–200</span></section>}
+        {curated.length > 0 && <section className="curated-summary"><strong>Shortlist</strong><span>{curated.length} picked · <b>{fmtMoney(curatedTotal, 'EUR')}</b> ≈ {fmtMoney(Math.round(curatedTotal * 1.16), 'USD')}</span><span>{curated.filter(item => (partyCost(item)?.midpoint ?? 0) > REALISTIC_LIMIT_EUR).length} over $200</span></section>}
+        <div className="activity-results-head"><span>Plan</span><span>Activity and details</span><span>Party cost</span></div>
+        <div className="activity-list">
+          {shown.map(item => <ActivityRow key={item.id} item={item} selected={selectedIds.has(item.id)} onToggle={() => toggleSelected(item.id)} onPlan={() => planOne(item)} onVisibility={() => changeVisibility([item.id], item.selection_status === 'skipped' ? 'restore' : 'hide')} busy={batchBusy} />)}
+          {shown.length === 0 && <div className="activity-empty"><strong>No activities match those filters.</strong><button type="button" onClick={showingHidden ? showAllHidden : () => resetFilters(true)}>{showingHidden ? 'Show all hidden activities' : 'Show everything'}</button></div>}
+        </div>
       </div>
     </section>
-    <ActivityMap activities={shown} stops={data.stops} onPlan={planOne} />
-    {selectedItems.length > 0 && <aside className="batch-bar" role="toolbar" aria-label="Selected activity actions">
-      <strong>{selectedItems.length} selected</strong>
-      <button type="button" className="primary" onClick={planSelected} disabled={batchBusy}>Plan / book selected</button>
-      <button type="button" className="batch-hide" onClick={() => changeVisibility(selectedItems.map(item => item.id), selectedItems.every(item => item.selection_status === 'skipped') ? 'restore' : 'hide')} disabled={batchBusy}>{selectedItems.every(item => item.selection_status === 'skipped') ? 'Restore selected' : 'Hide selected'}</button>
-      <button type="button" className="batch-clear" onClick={() => setSelectedIds(new Set())} disabled={batchBusy}>Clear</button>
-    </aside>}
-    {batchError && <p className="modal-error batch-error">{batchError}</p>}
-    {singleStop && <section className="leg-cost-summary"><strong>{singleStop.name}</strong><span>{fmtDate(singleStop.date_start)}–{fmtDate(singleStop.date_end)}</span><span><b>{stopActivities.filter(item => partyCost(item)?.midpoint === 0).length}</b> free</span><span><b>{stopActivities.filter(item => { const cost = partyCost(item); return cost && cost.midpoint > 0 && cost.midpoint <= EASY_YES_EUR }).length}</b> under $100</span><span><b>{stopActivities.filter(item => { const cost = partyCost(item); return cost && cost.midpoint > EASY_YES_EUR && cost.midpoint <= REALISTIC_LIMIT_EUR }).length}</b> $100–200</span></section>}
-    {curated.length > 0 && <section className="curated-summary"><strong>Shortlist</strong><span>{curated.length} picked · <b>{fmtMoney(curatedTotal, 'EUR')}</b> ≈ {fmtMoney(Math.round(curatedTotal * 1.16), 'USD')}</span><span>{curated.filter(item => (partyCost(item)?.midpoint ?? 0) > REALISTIC_LIMIT_EUR).length} over $200</span></section>}
-    <div className="activity-results-head"><span>Plan</span><span>Activity and details</span><span>Party cost</span></div>
-    <div className="activity-list">
-      {shown.map(item => <ActivityRow key={item.id} item={item} selected={selectedIds.has(item.id)} onToggle={() => toggleSelected(item.id)} onPlan={() => planOne(item)} onVisibility={() => changeVisibility([item.id], item.selection_status === 'skipped' ? 'restore' : 'hide')} busy={batchBusy} />)}
-      {shown.length === 0 && <div className="activity-empty"><strong>No activities match those filters.</strong><button type="button" onClick={showingHidden ? showAllHidden : () => resetFilters(true)}>{showingHidden ? 'Show all hidden activities' : 'Show everything'}</button></div>}
-    </div>
     {planning && <ActivityModal key={planning.id} item={planning} stop={data.stops.find(stop => stop.ordinal === planning.stop_ordinal)} update={updateActivity} reload={reload} close={closePlanning} onSaved={advancePlanning} queueLabel={batchPlanning ? `${batchTotal - planningQueue.length} of ${batchTotal} selected` : ''} hasNext={batchPlanning && planningQueue.length > 0} />}
   </div>
 }
