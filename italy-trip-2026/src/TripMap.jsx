@@ -43,7 +43,7 @@ export default function TripMap({ stops, legs }) {
       <div className="pop-sub">{stop.subtitle}</div>
       <div className="pop-dates">{stop.nights} nights</div>
       <p className="pop-note">{stop.summary}</p>
-      <a className="pop-link" href={`/activities?stop=${stop.ordinal}`}>See activities</a>
+      <a className="pop-link" href={`/activities?where=${encodeURIComponent(stop.slug.replace(/-/g, '_'))}`}>See activities</a>
     </div></Popup></Marker>)}
   </MapContainer></div>
 }

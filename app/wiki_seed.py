@@ -8,6 +8,7 @@ SQLite is authoritative and edits made in the app survive deploys/restarts.
 from __future__ import annotations
 
 import csv
+import json
 import re
 from pathlib import Path
 
@@ -135,6 +136,12 @@ def _load_shortlist() -> set[str]:
     return set(json5.loads(source[start:end]))
 
 
+def _load_activity_coordinates() -> dict[str, dict]:
+    path = LEGACY_ROOT / "tools" / "activity-coordinates.json"
+    with path.open(encoding="utf-8") as handle:
+        return json.load(handle)
+
+
 def _seed_settings(session) -> None:
     if session.get(WikiSetting, "trip") is None:
         session.add(WikiSetting(key="trip", value={
@@ -224,6 +231,7 @@ def _seed_activities(session) -> None:
         for activity in session.scalars(select(ActivityOption)).all()
     }
     preexisting_keys = set(existing)
+    coordinates = _load_activity_coordinates()
     duplicate_counts: dict[str, int] = {}
     for row in _read_csv(LEGACY_ROOT / "public" / "adventures.csv"):
         base_key = f'{row.get("Leg", "0")}-{_slug(row.get("Title", "activity"))}'
@@ -231,10 +239,13 @@ def _seed_activities(session) -> None:
         source_key = base_key if duplicate_counts[base_key] == 1 else f"{base_key}-{duplicate_counts[base_key]}"
         activity = existing.get(source_key)
         if activity is None:
+            geocode = coordinates.get(source_key, {})
             activity = ActivityOption(
                 source_key=source_key,
                 stop_ordinal=int(row.get("Leg") or 0),
                 location=row.get("City", ""), region=row.get("Region", ""),
+                latitude=geocode.get("latitude"), longitude=geocode.get("longitude"),
+                geocode_precision=geocode.get("precision"),
                 title=row.get("Title", ""), description=row.get("Description", ""),
                 audience=row.get("Ideal for", "all"), category=row.get("Category", "sight"),
                 travel_scope=_travel_scope(row.get("Reach", "base")),
@@ -292,9 +303,12 @@ def _seed_activities(session) -> None:
             f"Kid fit: {row.get('Kid-friendly', '')}" if row.get("Kid-friendly") else "",
         ]))
         if activity is None:
+            geocode = coordinates.get(source_key, {})
             activity = ActivityOption(
                 source_key=source_key, stop_ordinal=7,
                 location=row.get("Location", ""), region=row.get("Region", ""),
+                latitude=geocode.get("latitude"), longitude=geocode.get("longitude"),
+                geocode_precision=geocode.get("precision"),
                 title=row.get("Park", ""), description=description,
                 audience="kids", category="bikepark", travel_scope="day",
                 estimated_cost_text="", logistics=row.get("Reachable notes", ""),

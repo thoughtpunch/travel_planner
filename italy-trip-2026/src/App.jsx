@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { api } from './api.js'
+import ActivityMap from './ActivityMap.jsx'
 import TripMap from './TripMap.jsx'
 
 const VIEWS = [
@@ -143,29 +144,73 @@ const itineraryTime = value => isFlexibleTime(value) ? 'All day / time TBD' : va
 const ACTIVITY_FILTER_PARAMS = {
   where: 'where', price: 'budget', who: 'who', reach: 'reach', type: 'type', status: 'status',
 }
-const ACTIVITY_SORTS = new Set(['leg', 'title', 'city', 'region', 'cost-low', 'cost-high'])
+const ACTIVITY_SORT_OPTIONS = [
+  ['leg', 'Trip order'], ['title', 'Title'], ['city', 'City'], ['region', 'Region'],
+  ['cost-low', 'Party cost: low first'], ['cost-high', 'Party cost: high first'],
+]
 
-function activityStateFromUrl(fallbackStop = 0) {
+const urlToken = value => String(value || '')
+  .normalize('NFKD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[’']/g, '')
+  .replace(/&/g, ' and ')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '_')
+  .replace(/^_+|_+$/g, '')
+
+const filterUrlValue = (options, value) => {
+  const option = options.find(([optionValue]) => optionValue === value)
+  return urlToken(option?.[1] || value)
+}
+
+const filterValueFromUrl = (options, rawValue) => {
+  const token = urlToken(rawValue)
+  return options.find(([value, label]) => (
+    rawValue === value || token === urlToken(value) || token === urlToken(label)
+  ))?.[0]
+}
+
+const activityFilterOptions = data => {
+  const usedCategories = [...new Set(data.activities.map(item => item.category).filter(Boolean))]
+  return {
+    where: data.stops
+      .filter(stop => data.activities.some(item => item.stop_ordinal === stop.ordinal))
+      .map(stop => [String(stop.ordinal), stop.name]),
+    price: PRICE_BANDS.map(([key, label]) => [key, label]),
+    who: PEOPLE_FILTERS,
+    reach: Object.entries(REACH_LABELS),
+    type: usedCategories.map(key => [key, `${CATEGORY_ICONS[key] || '✨'} ${CATEGORY_LABELS[key] || key}`]),
+    status: [['want', 'Want'], ['booked', 'Booked'], ['cancelled', 'Cancelled'], ['skip', 'Won’t do (hidden)'], ['none', 'Unplanned']],
+  }
+}
+
+function activityStateFromUrl(options, fallbackStop = 0) {
   const params = new URLSearchParams(location.search)
-  const values = name => params.getAll(name).flatMap(value => value.split(',')).filter(Boolean)
-  const where = values('where')
+  const values = (name, group) => [...new Set(params.getAll(name)
+    .flatMap(value => value.split(','))
+    .map(value => filterValueFromUrl(options[group], value))
+    .filter(Boolean))]
+  const where = values('where', 'where')
   const legacyStop = params.get('stop')
-  if (!where.length && legacyStop) where.push(legacyStop)
+  if (!where.length && legacyStop) {
+    const stop = filterValueFromUrl(options.where, legacyStop)
+    if (stop) where.push(stop)
+  }
   if (!where.length && fallbackStop) where.push(String(fallbackStop))
-  const requestedSort = params.get('sort') || 'leg'
+  const requestedSort = filterValueFromUrl(ACTIVITY_SORT_OPTIONS, params.get('sort')) || 'leg'
   return {
     filters: {
       where,
-      price: values('budget'),
-      who: values('who'),
-      reach: values('reach'),
-      type: values('type'),
-      status: values('status'),
+      price: values('budget', 'price'),
+      who: values('who', 'who'),
+      reach: values('reach', 'reach'),
+      type: values('type', 'type'),
+      status: values('status', 'status'),
     },
     query: params.get('q') || '',
     mustDo: params.get('must') === '1',
     realistic: params.get('realistic') !== '0',
-    sort: ACTIVITY_SORTS.has(requestedSort) ? requestedSort : 'leg',
+    sort: requestedSort,
   }
 }
 
@@ -357,7 +402,8 @@ function Itinerary({ data }) {
 
 function Activities({ data, updateActivity, reload }) {
   const remembered = Number(sessionStorage.getItem('activityStop') || 0)
-  const initialUrlState = useMemo(() => activityStateFromUrl(remembered), []) // eslint-disable-line react-hooks/exhaustive-deps
+  const filterOptions = useMemo(() => activityFilterOptions(data), [data])
+  const initialUrlState = useMemo(() => activityStateFromUrl(filterOptions, remembered), []) // eslint-disable-line react-hooks/exhaustive-deps
   const [filters, setFilters] = useState(initialUrlState.filters)
   const [query, setQuery] = useState(initialUrlState.query)
   const [mustDo, setMustDo] = useState(initialUrlState.mustDo)
@@ -378,18 +424,18 @@ function Activities({ data, updateActivity, reload }) {
   useEffect(() => {
     const params = new URLSearchParams()
     Object.entries(ACTIVITY_FILTER_PARAMS).forEach(([group, param]) => {
-      filters[group].forEach(value => params.append(param, value))
+      filters[group].forEach(value => params.append(param, filterUrlValue(filterOptions[group], value)))
     })
     if (query) params.set('q', query)
     if (mustDo) params.set('must', '1')
     if (!realistic) params.set('realistic', '0')
-    if (sort !== 'leg') params.set('sort', sort)
+    if (sort !== 'leg') params.set('sort', filterUrlValue(ACTIVITY_SORT_OPTIONS, sort))
     const search = params.toString()
     const nextUrl = `${location.pathname}${search ? `?${search}` : ''}`
     if (`${location.pathname}${location.search}` !== nextUrl) {
       history.replaceState(history.state, '', nextUrl)
     }
-  }, [filters, query, mustDo, realistic, sort])
+  }, [filters, query, mustDo, realistic, sort, filterOptions])
 
   const toggleFilter = (group, value) => setFilters(current => ({
     ...current,
@@ -398,7 +444,6 @@ function Activities({ data, updateActivity, reload }) {
   const hiddenCount = data.activities.filter(item => item.selection_status === 'skipped').length
   const activeCount = data.activities.length - hiddenCount
   const showingHidden = filters.status.includes('skip')
-  const usedCategories = [...new Set(data.activities.map(item => item.category).filter(Boolean))]
   const shown = data.activities.filter(item => {
     const people = audienceKeys(item.audience)
     const searchText = `${item.title} ${item.location} ${item.region} ${item.audience} ${item.description} ${item.logistics} ${item.category}`.toLowerCase()
@@ -519,15 +564,16 @@ function Activities({ data, updateActivity, reload }) {
       </div>
       <div className="activity-budget-note">{hiddenForBudget ? `${hiddenForBudget} over ~$200 hidden` : 'All price levels shown'}</div>
       <div className="activity-filter-row" key={filterMenuVersion}>
-        <FilterMenu label="Where" group="where" selected={filters.where} toggle={toggleFilter} options={data.stops.filter(stop => data.activities.some(item => item.stop_ordinal === stop.ordinal)).map(stop => [String(stop.ordinal), stop.name])} />
-        <FilterMenu label="Budget" group="price" selected={filters.price} toggle={toggleFilter} options={PRICE_BANDS.map(([key,label]) => [key,label])} />
-        <FilterMenu label="Who" group="who" selected={filters.who} toggle={toggleFilter} options={PEOPLE_FILTERS} />
-        <FilterMenu label="How far" group="reach" selected={filters.reach} toggle={toggleFilter} options={Object.entries(REACH_LABELS)} />
-        <FilterMenu label="Type" group="type" selected={filters.type} toggle={toggleFilter} options={usedCategories.map(key => [key, `${CATEGORY_ICONS[key] || '✨'} ${CATEGORY_LABELS[key] || key}`])} />
-        <FilterMenu label="Status" group="status" selected={filters.status} toggle={toggleFilter} options={[["want","Want"],["booked","Booked"],["cancelled","Cancelled"],["skip","Won\u2019t do (hidden)"],["none","Unplanned"]]} />
-        <label className="activity-sort"><span>Sort</span><select value={sort} onChange={event => setSort(event.target.value)}><option value="leg">Trip order</option><option value="title">Title</option><option value="city">City</option><option value="region">Region</option><option value="cost-low">Party cost: low first</option><option value="cost-high">Party cost: high first</option></select></label>
+        <FilterMenu label="Where" group="where" selected={filters.where} toggle={toggleFilter} options={filterOptions.where} />
+        <FilterMenu label="Budget" group="price" selected={filters.price} toggle={toggleFilter} options={filterOptions.price} />
+        <FilterMenu label="Who" group="who" selected={filters.who} toggle={toggleFilter} options={filterOptions.who} />
+        <FilterMenu label="How far" group="reach" selected={filters.reach} toggle={toggleFilter} options={filterOptions.reach} />
+        <FilterMenu label="Type" group="type" selected={filters.type} toggle={toggleFilter} options={filterOptions.type} />
+        <FilterMenu label="Status" group="status" selected={filters.status} toggle={toggleFilter} options={filterOptions.status} />
+        <label className="activity-sort"><span>Sort</span><select value={sort} onChange={event => setSort(event.target.value)}>{ACTIVITY_SORT_OPTIONS.map(([value, text]) => <option key={value} value={value}>{text}</option>)}</select></label>
       </div>
     </section>
+    <ActivityMap activities={shown} stops={data.stops} onPlan={planOne} />
     {selectedItems.length > 0 && <aside className="batch-bar" role="toolbar" aria-label="Selected activity actions">
       <strong>{selectedItems.length} selected</strong>
       <button type="button" className="primary" onClick={planSelected} disabled={batchBusy}>Plan / book selected</button>
@@ -569,8 +615,12 @@ function FilterMenu({ label, group, selected, toggle, options }) {
     toggle(group, value)
     if (menu.current) menu.current.open = false
   }
+  const selectedText = selected
+    .map(value => options.find(([optionValue]) => optionValue === value)?.[1])
+    .filter(Boolean)
+    .join(', ')
   return <details className="filter-menu" ref={menu}>
-    <summary>{label}{selected.length > 0 && <b>{selected.length}</b>}</summary>
+    <summary className={selected.length ? 'has-selection' : ''} aria-label={`${label}: ${selectedText || 'Any'}`} title={selectedText || label}><span>{selectedText || label}</span></summary>
     <div className="filter-menu-panel">{options.map(([value, text]) => <button type="button" key={value} className={selected.includes(value) ? 'active' : ''} onClick={() => choose(value)}>{text}</button>)}</div>
   </details>
 }

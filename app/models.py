@@ -275,6 +275,9 @@ class ActivityOption(Base):
     stop_ordinal: Mapped[int]
     location: Mapped[str]
     region: Mapped[str] = mapped_column(default="")
+    latitude: Mapped[float | None] = mapped_column(default=None)
+    longitude: Mapped[float | None] = mapped_column(default=None)
+    geocode_precision: Mapped[str | None] = mapped_column(default=None)
     title: Mapped[str]
     description: Mapped[str] = mapped_column(Text, default="")
     audience: Mapped[str] = mapped_column(default="all")

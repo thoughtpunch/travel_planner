@@ -37,6 +37,9 @@ BookingStatus = Literal["booked", "estimate", "cancelled"]
 class ActivityPatch(BaseModel):
     title: str | None = Field(default=None, min_length=1, max_length=240)
     location: str | None = None
+    latitude: float | None = Field(default=None, ge=-90, le=90)
+    longitude: float | None = Field(default=None, ge=-180, le=180)
+    geocode_precision: str | None = Field(default=None, max_length=40)
     description: str | None = None
     selection_status: ActivityStatus | None = None
     scheduled_date: str | None = None
@@ -56,6 +59,9 @@ class ActivityCreate(BaseModel):
     title: str = Field(min_length=1, max_length=240)
     stop_ordinal: int = Field(ge=0, le=8)
     location: str = ""
+    latitude: float | None = Field(default=None, ge=-90, le=90)
+    longitude: float | None = Field(default=None, ge=-180, le=180)
+    geocode_precision: str | None = Field(default=None, max_length=40)
     description: str = ""
     audience: str = "all"
     category: str = "sight"
@@ -195,7 +201,9 @@ def _activity_dict(
 ) -> dict:
     return {
         "id": item.id, "source_key": item.source_key, "stop_ordinal": item.stop_ordinal,
-        "location": item.location, "region": item.region, "title": item.title,
+        "location": item.location, "region": item.region,
+        "latitude": item.latitude, "longitude": item.longitude,
+        "geocode_precision": item.geocode_precision, "title": item.title,
         "description": item.description,
         "audience": item.audience, "category": item.category,
         "travel_scope": item.travel_scope, "estimated_cost_text": item.estimated_cost_text,
@@ -466,6 +474,12 @@ def patch_activity(activity_id: int, patch: ActivityPatch) -> dict:
             item.title = patch.title
         if "location" in fields:
             item.location = patch.location or ""
+        if "latitude" in fields:
+            item.latitude = patch.latitude
+        if "longitude" in fields:
+            item.longitude = patch.longitude
+        if "geocode_precision" in fields:
+            item.geocode_precision = patch.geocode_precision or None
         if "description" in fields:
             item.description = patch.description or ""
         if "selection_status" in fields and patch.selection_status is not None:
@@ -643,7 +657,9 @@ def create_activity(payload: ActivityCreate) -> dict:
         stamp = int(datetime.now(UTC).timestamp() * 1000)
         item = ActivityOption(
             source_key=f"manual-{stamp}", stop_ordinal=payload.stop_ordinal,
-            location=payload.location, title=payload.title, description=payload.description,
+            location=payload.location, latitude=payload.latitude, longitude=payload.longitude,
+            geocode_precision=payload.geocode_precision,
+            title=payload.title, description=payload.description,
             audience=payload.audience,
             category=payload.category, travel_scope=payload.travel_scope,
             estimated_cost_cents=_to_cents(payload.estimated_cost), currency=payload.currency.upper(),

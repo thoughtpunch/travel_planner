@@ -23,6 +23,7 @@ COPY alembic ./alembic
 COPY alembic.ini ./alembic.ini
 COPY italy-trip-2026/public ./italy-trip-2026/public
 COPY italy-trip-2026/tools/activities-seed.csv ./italy-trip-2026/tools/activities-seed.csv
+COPY italy-trip-2026/tools/activity-coordinates.json ./italy-trip-2026/tools/activity-coordinates.json
 COPY --from=frontend /build/app/static/wiki-dist ./app/static/wiki-dist
 EXPOSE 8080
 CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]

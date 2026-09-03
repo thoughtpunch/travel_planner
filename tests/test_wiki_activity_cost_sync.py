@@ -293,6 +293,66 @@ def test_selected_activity_can_be_scheduled_without_a_time(wiki_client):
     assert saved["scheduled_time"] == ""
 
 
+def test_seeded_activity_coordinates_are_exposed_and_not_overwritten(wiki_client):
+    wiki = wiki_client.get("/api/wiki").json()
+    activity = next(
+        item for item in wiki["activities"]
+        if item["source_key"] == "1-duomo-rooftop-terraces"
+    )
+    assert activity["latitude"] == pytest.approx(45.4641669)
+    assert activity["longitude"] == pytest.approx(9.1916121)
+    assert activity["geocode_precision"] == "manual"
+
+    response = wiki_client.patch(f"/api/wiki/activities/{activity['id']}", json={
+        "latitude": 45.47,
+        "longitude": 9.2,
+        "geocode_precision": "manual",
+    })
+    assert response.status_code == 200
+
+    from app.wiki_seed import seed_wiki
+    seed_wiki()
+
+    saved = next(
+        item for item in wiki_client.get("/api/wiki").json()["activities"]
+        if item["id"] == activity["id"]
+    )
+    assert saved["latitude"] == pytest.approx(45.47)
+    assert saved["longitude"] == pytest.approx(9.2)
+    assert saved["geocode_precision"] == "manual"
+
+
+def test_manual_activity_coordinates_can_be_created_and_cleared(wiki_client):
+    response = wiki_client.post("/api/wiki/activities", json={
+        "title": "Mapped Milan stop",
+        "stop_ordinal": 1,
+        "location": "Milan",
+        "latitude": 45.4642,
+        "longitude": 9.19,
+        "geocode_precision": "venue",
+    })
+    assert response.status_code == 201
+    activity = response.json()
+    assert activity["latitude"] == pytest.approx(45.4642)
+    assert activity["longitude"] == pytest.approx(9.19)
+    assert activity["geocode_precision"] == "venue"
+
+    cleared = wiki_client.patch(f"/api/wiki/activities/{activity['id']}", json={
+        "latitude": None,
+        "longitude": None,
+        "geocode_precision": None,
+    })
+    assert cleared.status_code == 200
+    assert cleared.json()["latitude"] is None
+    assert cleared.json()["longitude"] is None
+    assert cleared.json()["geocode_precision"] is None
+
+    invalid = wiki_client.patch(f"/api/wiki/activities/{activity['id']}", json={
+        "latitude": 91,
+    })
+    assert invalid.status_code == 422
+
+
 def test_itinerary_day_and_item_full_crud(wiki_client):
     wiki = wiki_client.get("/api/wiki").json()
     day = next(item for item in wiki["days"] if item["date"] == "2026-09-26")
