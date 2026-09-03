@@ -1,21 +1,21 @@
 from __future__ import annotations
 
-import logging
 import base64
 import hmac
+import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse
-from fastapi.staticfiles import StaticFiles  # noqa: F401
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy import inspect
 from starlette.requests import Request
 
 from .api import wiki as wiki_api
 from .config import settings
-from .db import engine, get_session
+from .db import engine
 from .wiki_seed import seed_wiki
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -61,7 +61,10 @@ async def family_login(request: Request, call_next):
             {"detail": "Family login required"}, status_code=401,
             headers={"WWW-Authenticate": 'Basic realm="Italy 2026", charset="UTF-8"'},
         )
-    return await call_next(request)
+    response = await call_next(request)
+    if request.url.path.startswith("/api/") or response.headers.get("content-type", "").startswith("text/html"):
+        response.headers["Cache-Control"] = "no-store"
+    return response
 
 app.include_router(wiki_api.router)
 

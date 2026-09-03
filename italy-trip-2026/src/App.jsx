@@ -140,6 +140,35 @@ const hasExactTime = value => /^\d{2}:\d{2}$/.test(value || '')
 const isFlexibleTime = value => !value || /^all[ -]?day$/i.test(value.trim())
 const itineraryTime = value => isFlexibleTime(value) ? 'All day / time TBD' : value
 
+const ACTIVITY_FILTER_PARAMS = {
+  where: 'where', price: 'budget', who: 'who', reach: 'reach', type: 'type', status: 'status',
+}
+const ACTIVITY_SORTS = new Set(['leg', 'title', 'city', 'region', 'cost-low', 'cost-high'])
+
+function activityStateFromUrl(fallbackStop = 0) {
+  const params = new URLSearchParams(location.search)
+  const values = name => params.getAll(name).flatMap(value => value.split(',')).filter(Boolean)
+  const where = values('where')
+  const legacyStop = params.get('stop')
+  if (!where.length && legacyStop) where.push(legacyStop)
+  if (!where.length && fallbackStop) where.push(String(fallbackStop))
+  const requestedSort = params.get('sort') || 'leg'
+  return {
+    filters: {
+      where,
+      price: values('budget'),
+      who: values('who'),
+      reach: values('reach'),
+      type: values('type'),
+      status: values('status'),
+    },
+    query: params.get('q') || '',
+    mustDo: params.get('must') === '1',
+    realistic: params.get('realistic') !== '0',
+    sort: ACTIVITY_SORTS.has(requestedSort) ? requestedSort : 'leg',
+  }
+}
+
 function calendarUrl(activity) {
   if (!activity.scheduled_date) return ''
   const compact = value => value.replace(/[-:]/g, '')
@@ -327,13 +356,13 @@ function Itinerary({ data }) {
 }
 
 function Activities({ data, updateActivity, reload }) {
-  const remembered = Number(sessionStorage.getItem('activityStop') || new URLSearchParams(location.search).get('stop') || 0)
-  const emptyFilters = () => ({ where: remembered ? [String(remembered)] : [], price: [], who: [], reach: [], type: [], status: [] })
-  const [filters, setFilters] = useState(emptyFilters)
-  const [query, setQuery] = useState('')
-  const [mustDo, setMustDo] = useState(false)
-  const [realistic, setRealistic] = useState(true)
-  const [sort, setSort] = useState('leg')
+  const remembered = Number(sessionStorage.getItem('activityStop') || 0)
+  const initialUrlState = useMemo(() => activityStateFromUrl(remembered), []) // eslint-disable-line react-hooks/exhaustive-deps
+  const [filters, setFilters] = useState(initialUrlState.filters)
+  const [query, setQuery] = useState(initialUrlState.query)
+  const [mustDo, setMustDo] = useState(initialUrlState.mustDo)
+  const [realistic, setRealistic] = useState(initialUrlState.realistic)
+  const [sort, setSort] = useState(initialUrlState.sort)
   const [filterMenuVersion, setFilterMenuVersion] = useState(0)
   const [adding, setAdding] = useState(false)
   const [planning, setPlanning] = useState(null)
@@ -343,8 +372,24 @@ function Activities({ data, updateActivity, reload }) {
   const [batchTotal, setBatchTotal] = useState(0)
   const [batchBusy, setBatchBusy] = useState(false)
   const [batchError, setBatchError] = useState('')
-  const [draft, setDraft] = useState({ title: '', stop_ordinal: remembered || 1, location: '', estimated_cost: '', scheduled_date: '' })
+  const initialStop = Number(initialUrlState.filters.where[0] || remembered || 1)
+  const [draft, setDraft] = useState({ title: '', stop_ordinal: initialStop, location: '', estimated_cost: '', scheduled_date: '' })
   useEffect(() => { sessionStorage.removeItem('activityStop') }, [])
+  useEffect(() => {
+    const params = new URLSearchParams()
+    Object.entries(ACTIVITY_FILTER_PARAMS).forEach(([group, param]) => {
+      filters[group].forEach(value => params.append(param, value))
+    })
+    if (query) params.set('q', query)
+    if (mustDo) params.set('must', '1')
+    if (!realistic) params.set('realistic', '0')
+    if (sort !== 'leg') params.set('sort', sort)
+    const search = params.toString()
+    const nextUrl = `${location.pathname}${search ? `?${search}` : ''}`
+    if (`${location.pathname}${location.search}` !== nextUrl) {
+      history.replaceState(history.state, '', nextUrl)
+    }
+  }, [filters, query, mustDo, realistic, sort])
 
   const toggleFilter = (group, value) => setFilters(current => ({
     ...current,
@@ -359,8 +404,8 @@ function Activities({ data, updateActivity, reload }) {
     const searchText = `${item.title} ${item.location} ${item.region} ${item.audience} ${item.description} ${item.logistics} ${item.category}`.toLowerCase()
     const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
     const cost = partyCost(item)
-    return (item.selection_status !== 'skipped' || showingHidden)
-      && (!filters.where.length || filters.where.includes(String(item.stop_ordinal)))
+    if (item.selection_status === 'skipped' && !showingHidden) return false
+    return (!filters.where.length || filters.where.includes(String(item.stop_ordinal)))
       && (!filters.price.length || filters.price.some(key => PRICE_BANDS.find(band => band[0] === key)?.[2](cost)))
       && (!filters.who.length || people.includes('all') || people.some(person => filters.who.includes(person)))
       && (!filters.reach.length || filters.reach.includes(item.travel_scope))
@@ -451,7 +496,7 @@ function Activities({ data, updateActivity, reload }) {
   const add = async (event) => {
     event.preventDefault()
     await api.createActivity({ ...draft, stop_ordinal: Number(draft.stop_ordinal), estimated_cost: draft.estimated_cost === '' ? null : Number(draft.estimated_cost), scheduled_date: draft.scheduled_date || null })
-    setAdding(false); setDraft({ title: '', stop_ordinal: stop || 1, location: '', estimated_cost: '', scheduled_date: '' }); await reload()
+    setAdding(false); setDraft({ title: '', stop_ordinal: initialStop, location: '', estimated_cost: '', scheduled_date: '' }); await reload()
   }
   return <div className="page activities-page">
     <PageHead title="Activities" intro={`${activeCount} researched options${hiddenCount ? ` · ${hiddenCount} hidden` : ''}. Choose one, give it a date, and it appears on the itinerary.`} actions={<button className="primary" onClick={() => setAdding(!adding)}>Add activity</button>} />
