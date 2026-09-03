@@ -136,11 +136,15 @@ const budgetImpact = cost => cost.booking_status === 'cancelled'
   ? toUSD(cost.net_paid_amount || 0, cost.currency)
   : toUSD(cost.amount || 0, cost.currency)
 
+const hasExactTime = value => /^\d{2}:\d{2}$/.test(value || '')
+const isFlexibleTime = value => !value || /^all[ -]?day$/i.test(value.trim())
+const itineraryTime = value => isFlexibleTime(value) ? 'All day / time TBD' : value
+
 function calendarUrl(activity) {
   if (!activity.scheduled_date) return ''
   const compact = value => value.replace(/[-:]/g, '')
   let dates
-  if (activity.scheduled_time) {
+  if (hasExactTime(activity.scheduled_time)) {
     const start = new Date(`${activity.scheduled_date}T${activity.scheduled_time}:00Z`)
     const end = new Date(start.getTime() + 2 * 60 * 60 * 1000)
     const stamp = date => date.toISOString().slice(0, 19).replace(/[-:]/g, '')
@@ -291,6 +295,14 @@ function Itinerary({ data }) {
     const byDate = {}
     data.activities.filter(a => a.scheduled_date && ['selected', 'booked', 'done'].includes(a.selection_status))
       .forEach(a => { (byDate[a.scheduled_date] ||= []).push(a) })
+    Object.values(byDate).forEach(items => items.sort((a, b) => {
+      const aFlexible = isFlexibleTime(a.scheduled_time)
+      const bFlexible = isFlexibleTime(b.scheduled_time)
+      if (aFlexible !== bFlexible) return aFlexible ? -1 : 1
+      return hasExactTime(a.scheduled_time) && hasExactTime(b.scheduled_time)
+        ? a.scheduled_time.localeCompare(b.scheduled_time)
+        : a.title.localeCompare(b.title)
+    }))
     return byDate
   }, [data.activities])
   const days = data.days.map(day => ({ ...day, scheduled: scheduled[day.date] || [] })).filter(day => {
@@ -306,9 +318,9 @@ function Itinerary({ data }) {
     <div className="timeline">{days.map(day => <article className="day" key={day.id}>
       <div className="date-rail"><time><b>{fmtDate(day.date, { weekday: 'short' }).split(' ')[0]}</b>{fmtDate(day.date)}</time><i /></div>
       <div className="day-body"><header><h2>{day.city}</h2>{day.note && <p>{day.note}</p>}</header>
-        {day.scheduled.map(activity => <div className="event scheduled" key={`a-${activity.id}`}><time>{activity.scheduled_time || '—'}</time><div><strong>{activity.title}</strong><Status value={activity.selection_status} /><p>{activity.location}{activity.actual_cost != null ? ` · ${fmtMoney(activity.actual_cost, activity.currency)}` : ''} · <a href={calendarUrl(activity)} target="_blank" rel="noreferrer">Google Calendar</a></p></div></div>)}
+        {day.scheduled.map(activity => <div className={`event scheduled${isFlexibleTime(activity.scheduled_time) ? ' flexible-time' : ''}`} key={`a-${activity.id}`}><time>{itineraryTime(activity.scheduled_time)}</time><div><strong>{activity.title}</strong><Status value={activity.selection_status} /><p>{activity.location}{activity.actual_cost != null ? ` · ${fmtMoney(activity.actual_cost, activity.currency)}` : ''} · <a href={calendarUrl(activity)} target="_blank" rel="noreferrer">Google Calendar</a></p></div></div>)}
         {day.items.filter(item => filter === 'all' ? true : filter === 'tobook' ? item.status === 'tobook' : filter === 'activities' ? false : item.kind === filter).map(item =>
-          <div className="event" key={item.id}><time>{item.time || '—'}</time><div><strong>{item.title}</strong><Status value={item.status} /><p>{item.detail}</p></div></div>)}
+          <div className={`event${isFlexibleTime(item.time) ? ' flexible-time' : ''}`} key={item.id}><time>{itineraryTime(item.time)}</time><div><strong>{item.title}</strong><Status value={item.status} /><p>{item.detail}</p></div></div>)}
       </div>
     </article>)}</div>
   </div>
@@ -557,7 +569,7 @@ function ActivityRow({ item, selected, onToggle, onPlan, onVisibility, busy }) {
       </div>
       <div className="activity-plan">
         <Status value={item.selection_status} />
-        <span>{item.scheduled_date ? `${fmtDate(item.scheduled_date)}${item.scheduled_time ? ` at ${item.scheduled_time}` : ''}` : 'No date'}</span>
+        <span>{item.scheduled_date ? `${fmtDate(item.scheduled_date)} · ${itineraryTime(item.scheduled_time)}` : 'No date'}</span>
         <label className="activity-select"><input type="checkbox" checked={selected} onChange={onToggle} /><span>Select</span></label>
         <div className="activity-plan-actions">
           <button type="button" className="hide-action" onClick={onVisibility} disabled={busy}>{item.selection_status === 'skipped' ? 'Restore' : 'Hide'}</button>
