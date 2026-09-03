@@ -21,9 +21,12 @@ def test_alembic_upgrade_then_downgrade(tmp_path):
     command.upgrade(cfg, "head")
 
     engine = create_engine(db_url)
-    tables = set(inspect(engine).get_table_names())
+    inspector = inspect(engine)
+    tables = set(inspector.get_table_names())
     expected = {"alembic_version", "config", "leg", "run", "fare", "itinerary"}
     assert expected.issubset(tables), f"missing tables: {expected - tables}"
+    activity_columns = {column["name"] for column in inspector.get_columns("activity_option")}
+    assert {"latitude", "longitude", "geocode_precision"}.issubset(activity_columns)
 
     command.downgrade(cfg, "base")
     tables = set(inspect(engine).get_table_names())

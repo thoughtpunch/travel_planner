@@ -196,3 +196,23 @@ description = "Run Vitest unit tests"
 dir = "web"
 depends = ["web:install"]
 run = "npm test"
+
+# ---- Italy 2026 operational wiki ----
+
+[tasks."wiki:dev"]
+description = "Italy wiki frontend on :5181 (API must be running on :8000)"
+dir = "italy-trip-2026"
+run = "npm run dev"
+
+[tasks."wiki:build"]
+description = "Build the Italy wiki into app/static/wiki-dist"
+dir = "italy-trip-2026"
+run = "npm run build"
+
+[tasks."wiki:serve"]
+description = "Migrate, build, seed and serve the production-shaped Italy wiki"
+run = [
+  "uv run alembic upgrade head",
+  "cd italy-trip-2026 && npm run build",
+  "uv run trip-planner serve --host 0.0.0.0",
+]

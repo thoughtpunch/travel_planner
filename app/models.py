@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 from typing import Any
 
-from sqlalchemy import JSON, ForeignKey
+from sqlalchemy import JSON, Boolean, ForeignKey, Text
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -157,3 +157,184 @@ class ShortlistItem(Base):
     tags: Mapped[list[str]] = mapped_column(JSON, default=list)
     order_index: Mapped[int] = mapped_column(default=0)
     created_at: Mapped[datetime] = mapped_column(default=utcnow)
+
+
+# Italy 2026 operational wiki -------------------------------------------------
+#
+# These tables deliberately live beside the earlier fare-search models.  The
+# fare engine remains available for historical work, while the public app now
+# reads and writes the family trip's durable, human-maintained facts here.
+
+
+class WikiSetting(Base):
+    __tablename__ = "wiki_setting"
+
+    key: Mapped[str] = mapped_column(primary_key=True)
+    value: Mapped[dict[str, Any]] = mapped_column(JSON)
+    updated_at: Mapped[datetime] = mapped_column(default=utcnow)
+
+
+class WikiStop(Base):
+    __tablename__ = "wiki_stop"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    slug: Mapped[str] = mapped_column(unique=True, index=True)
+    ordinal: Mapped[int]
+    name: Mapped[str]
+    subtitle: Mapped[str] = mapped_column(default="")
+    date_start: Mapped[str]
+    date_end: Mapped[str]
+    nights: Mapped[int]
+    summary: Mapped[str] = mapped_column(Text, default="")
+    accent: Mapped[str] = mapped_column(default="#173F5F")
+    latitude: Mapped[float | None] = mapped_column(default=None)
+    longitude: Mapped[float | None] = mapped_column(default=None)
+
+
+class WikiTraveler(Base):
+    __tablename__ = "wiki_traveler"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    ordinal: Mapped[int]
+    name: Mapped[str]
+    role: Mapped[str] = mapped_column(default="family")
+    birth_date: Mapped[str | None] = mapped_column(default=None)
+    notes: Mapped[str] = mapped_column(Text, default="")
+
+
+class WikiLeg(Base):
+    __tablename__ = "wiki_leg"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    source_key: Mapped[str] = mapped_column(unique=True, index=True)
+    ordinal: Mapped[int]
+    date: Mapped[str]
+    from_stop: Mapped[str]
+    to_stop: Mapped[str]
+    mode: Mapped[str]
+    departure_time: Mapped[str] = mapped_column(default="")
+    arrival_time: Mapped[str] = mapped_column(default="")
+    origin: Mapped[str] = mapped_column(default="")
+    destination: Mapped[str] = mapped_column(default="")
+    service: Mapped[str] = mapped_column(default="")
+    booking_status: Mapped[str] = mapped_column(default="plan")
+    confirmation: Mapped[str] = mapped_column(default="")
+    party_size: Mapped[int] = mapped_column(default=6)
+    cost_cents: Mapped[int | None] = mapped_column(default=None)
+    currency: Mapped[str] = mapped_column(default="EUR")
+    notes: Mapped[str] = mapped_column(Text, default="")
+
+
+class WikiStay(Base):
+    __tablename__ = "wiki_stay"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    source_key: Mapped[str] = mapped_column(unique=True, index=True)
+    stop_slug: Mapped[str] = mapped_column(index=True)
+    name: Mapped[str]
+    address: Mapped[str] = mapped_column(default="")
+    checkin_date: Mapped[str]
+    checkin_time: Mapped[str] = mapped_column(default="")
+    checkout_date: Mapped[str]
+    checkout_time: Mapped[str] = mapped_column(default="")
+    booking_status: Mapped[str] = mapped_column(default="booked")
+    confirmation: Mapped[str] = mapped_column(default="")
+    cost_source_key: Mapped[str] = mapped_column(default="")
+    notes: Mapped[str] = mapped_column(Text, default="")
+
+
+class WikiDay(Base):
+    __tablename__ = "wiki_day"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    date: Mapped[str] = mapped_column(unique=True, index=True)
+    weekday: Mapped[str]
+    city: Mapped[str]
+    stop_ordinal: Mapped[int]
+    note: Mapped[str] = mapped_column(Text, default="")
+
+
+class WikiItineraryItem(Base):
+    __tablename__ = "wiki_itinerary_item"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    day_id: Mapped[int] = mapped_column(ForeignKey("wiki_day.id"), index=True)
+    ordinal: Mapped[int]
+    time: Mapped[str] = mapped_column(default="")
+    kind: Mapped[str]
+    status: Mapped[str]
+    title: Mapped[str]
+    detail: Mapped[str] = mapped_column(Text, default="")
+
+
+class ActivityOption(Base):
+    __tablename__ = "activity_option"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    source_key: Mapped[str] = mapped_column(unique=True, index=True)
+    stop_ordinal: Mapped[int]
+    location: Mapped[str]
+    region: Mapped[str] = mapped_column(default="")
+    latitude: Mapped[float | None] = mapped_column(default=None)
+    longitude: Mapped[float | None] = mapped_column(default=None)
+    geocode_precision: Mapped[str | None] = mapped_column(default=None)
+    title: Mapped[str]
+    description: Mapped[str] = mapped_column(Text, default="")
+    audience: Mapped[str] = mapped_column(default="all")
+    category: Mapped[str] = mapped_column(default="sight")
+    travel_scope: Mapped[str] = mapped_column(default="base")
+    estimated_cost_text: Mapped[str] = mapped_column(default="")
+    estimated_cost_cents: Mapped[int | None] = mapped_column(default=None)
+    actual_cost_cents: Mapped[int | None] = mapped_column(default=None)
+    currency: Mapped[str] = mapped_column(default="EUR")
+    logistics: Mapped[str] = mapped_column(Text, default="")
+    url: Mapped[str] = mapped_column(default="")
+    map_url: Mapped[str] = mapped_column(default="")
+    image_url: Mapped[str] = mapped_column(Text, default="")
+    is_featured: Mapped[bool] = mapped_column(Boolean, default=False)
+    source_details: Mapped[dict] = mapped_column(JSON, default=dict)
+    notes: Mapped[str] = mapped_column(Text, default="")
+    selection_status: Mapped[str] = mapped_column(default="option")
+    scheduled_date: Mapped[str | None] = mapped_column(default=None)
+    scheduled_time: Mapped[str] = mapped_column(default="")
+    user_url: Mapped[str] = mapped_column(default="")
+    is_archived: Mapped[bool] = mapped_column(Boolean, default=False)
+    updated_at: Mapped[datetime] = mapped_column(default=utcnow)
+
+
+class ActivityAttachment(Base):
+    __tablename__ = "activity_attachment"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    activity_id: Mapped[int] = mapped_column(ForeignKey("activity_option.id"), index=True)
+    filename: Mapped[str]
+    storage_key: Mapped[str] = mapped_column(unique=True)
+    content_type: Mapped[str] = mapped_column(default="application/octet-stream")
+    size_bytes: Mapped[int]
+    created_at: Mapped[datetime] = mapped_column(default=utcnow)
+
+
+class TripCost(Base):
+    __tablename__ = "trip_cost"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    activity_id: Mapped[int | None] = mapped_column(
+        ForeignKey("activity_option.id", ondelete="SET NULL"), unique=True, index=True, default=None
+    )
+    source_key: Mapped[str] = mapped_column(unique=True, index=True)
+    category: Mapped[str]
+    label: Mapped[str]
+    amount_cents: Mapped[int | None] = mapped_column(default=None)
+    currency: Mapped[str] = mapped_column(default="USD")
+    booking_status: Mapped[str] = mapped_column(default="estimate")
+    payment_status: Mapped[str] = mapped_column(default="unknown")
+    paid_cents: Mapped[int] = mapped_column(default=0)
+    refunded_cents: Mapped[int] = mapped_column(default=0)
+    paid_date: Mapped[str | None] = mapped_column(default=None)
+    refund_date: Mapped[str | None] = mapped_column(default=None)
+    due_date: Mapped[str | None] = mapped_column(default=None)
+    payment_reference: Mapped[str] = mapped_column(Text, default="")
+    note: Mapped[str] = mapped_column(Text, default="")
+    url: Mapped[str] = mapped_column(default="")
+    is_archived: Mapped[bool] = mapped_column(Boolean, default=False)
+    updated_at: Mapped[datetime] = mapped_column(default=utcnow)

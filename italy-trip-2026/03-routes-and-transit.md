@@ -1,5 +1,7 @@
 # 03 — Routes & Transit
 
+> ⚠️ **Superseded in part by [`DECISIONS-2026-08-30.md`](DECISIONS-2026-08-30.md)** (30 Aug 2026): lodging is **$9,262** not $8,955 (Rome was $308 light), trains are **€483 via a 4+2 split booking** not €561–788, and every activity is now priced for the party of six. `public/*.html` remains the source of truth.
+
 > Rebuilt 21 Aug 2026 from the deployed site (`public/trains.html`, `public/plan.html`,
 > `public/dolomites.html`). The HTML pages are the source of truth; where this doc and a
 > page disagree, the page wins. **The rental car is now booked** — Budget ref

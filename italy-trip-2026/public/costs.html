@@ -31,6 +31,12 @@
   .ct-tag{ font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.5px; text-transform:uppercase; padding:2px 7px; border-radius:10px; white-space:nowrap }
   .ct-tag.booked{ background:rgba(107,142,90,0.16); color:#4f6b3f }
   .ct-tag.estimate{ background:rgba(140,123,107,0.16); color:var(--stone) }
+  /* payment state — has the money actually moved? */
+  .ct-tag.paid{ background:rgba(107,142,90,0.22); color:#3f5c30 }
+  .ct-tag.partial{ background:rgba(212,160,23,0.20); color:#8a6400 }
+  .ct-tag.pending{ background:rgba(196,83,26,0.16); color:#a8461a }
+  .ct-tag.unknown{ background:rgba(85,96,110,0.16); color:#55606E }
+  .ct-paymeta{ display:block; font-family:'DM Mono',monospace; font-size:10.5px; color:var(--stone); margin-top:3px; white-space:nowrap }
 
   table.ct-table td.ct-amt{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums }
   .ct-catrow td{ font-family:'DM Mono',monospace; font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--terra); padding-top:18px }
@@ -98,6 +104,13 @@
     </div>
   </div>
 
+  <div class="ct-hero-total" style="margin-top:18px">
+    <div class="ct-figure"><div class="ct-num" id="num-paid" style="font-size:clamp(24px,4vw,36px);color:#4f6b3f">—</div><div class="ct-lab">Money actually paid</div></div>
+    <div class="ct-figure"><div class="ct-num" id="num-owed" style="font-size:clamp(24px,4vw,36px);color:#a8461a">—</div><div class="ct-lab">Owed — charge scheduled</div></div>
+    <div class="ct-figure"><div class="ct-num" id="num-unknown" style="font-size:clamp(24px,4vw,36px);color:#55606E">—</div><div class="ct-lab">Status unknown — chase</div></div>
+  </div>
+  <p style="font-size:13px;color:var(--stone);margin-top:10px" id="next-charge"></p>
+
   <div class="ct-actions">
     <button class="ct-btn" id="btn-reset">Reset to defaults</button>
     <span class="ct-saved" id="saved-note">saved ✓</span>
@@ -109,14 +122,28 @@
 <section class="base-section" style="border-top:2px solid var(--ink)">
   <div class="section-label">— The ledger</div>
   <h2 class="section-title">Committed &amp; <em>planned</em></h2>
-  <p class="section-intro">Almost all of this is now real money: <strong>both flights, all eight stays and the rental car are booked and paid</strong>. Only two lines are still <span class="ct-tag estimate">estimate</span> — the <strong>5 intercity rail legs</strong> and the car's <strong>fuel and autostrada tolls</strong>. Overwrite either amount and it saves.</p>
-  <div style="overflow-x:auto">
+  <p class="section-intro">Everything here is <em>booked</em> — but booked is not the same as <em>paid</em>. The <strong>Payment</strong> column tracks where the money actually is: <span class="ct-tag paid">paid</span> has cleared, <span class="ct-tag pending">pending</span> has a scheduled charge date, <span class="ct-tag unknown">unknown ?</span> means nobody has checked yet. Both flights and Chiavari have cleared; the Dolomites (Sep 7) and the last Malpensa night (Oct 9) are scheduled against the 8341 Chase Sapphire and have taken <strong>nothing</strong> so far. Overwrite any amount and it saves.</p>
+  <div class="table-scroll" style="overflow-x:auto">
     <table class="ct-table">
-      <thead><tr><th>Line item</th><th></th><th class="num">Amount (USD)</th></tr></thead>
+      <thead><tr><th>Line item</th><th></th><th>Payment</th><th class="num">Amount (USD)</th></tr></thead>
       <tbody id="ledger-body"><!-- rendered --></tbody>
     </table>
   </div>
   <p style="font-size:13px;color:var(--stone);margin-top:12px" id="ledger-note"></p>
+</section>
+
+<!-- ── PER-LEG BUDGET ROLLUP ── -->
+<section class="base-section" style="border-top:2px solid var(--ink)">
+  <div class="section-label">— Leg by leg</div>
+  <h2 class="section-title">What each stop <em>actually costs</em></h2>
+  <p class="section-intro">The same snapshot that appears on every city page, gathered in one table. <strong>Spend</strong> excludes lodging, which is already booked. Every figure is the total for the whole party in EUR.</p>
+  <div class="table-scroll" style="overflow-x:auto">
+    <table class="ct-table" id="legroll">
+      <thead><tr><th>Leg</th><th class="num">Nts</th><th class="num">Lodging</th><th class="num">Lean</th><th class="num">Likely</th><th class="num">Loose</th><th class="num">Per day</th></tr></thead>
+      <tbody id="legroll-body"></tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--stone);margin-top:12px" id="legroll-note"></p>
 </section>
 
 <!-- ── THE DAILY MODEL (sliders) ── -->
@@ -142,6 +169,7 @@
 </footer>
 
 <script src="/costs-data.js"></script>
+<script src="/leg-budgets.js"></script>
 <script>
 (function(){
   var KEY = 'tripCostsV1';
@@ -177,16 +205,28 @@
     D.fixed.forEach(function(it){ if(!byCat[it.cat]){ byCat[it.cat]=[]; cats.push(it.cat); } byCat[it.cat].push(it); });
     cats.forEach(function(cat){
       var cr = document.createElement('tr'); cr.className='ct-catrow';
-      cr.innerHTML = '<td colspan="3">'+cat+'</td>'; body.appendChild(cr);
+      cr.innerHTML = '<td colspan="4">'+cat+'</td>'; body.appendChild(cr);
       byCat[cat].forEach(function(it){
         var val = amountOf(it);
         var tr = document.createElement('tr');
         var tag = '<span class="ct-tag '+it.status+'">'+it.status+'</span>';
         var note = it.note ? ' <span style="color:var(--stone);font-size:12px">· '+it.note+'</span>' : '';
         var labelHtml = it.url ? '<a href="'+it.url+'" target="_blank" rel="noopener">'+it.label+'</a>' : it.label;
+
+        // payment cell: state + when the money moves (or moved)
+        var pay = it.pay || 'unknown';
+        var payLabel = pay === 'unknown' ? 'unknown ?' : pay;
+        var meta = '';
+        if (pay === 'paid' && it.paidDate) meta = 'paid ' + it.paidDate;
+        else if (pay === 'partial') meta = 'paid ' + fmt(it.paidUsd||0) + (it.dueDate ? ' · rest ' + it.dueDate : '');
+        else if (pay === 'pending') meta = it.dueDate ? 'charges ' + it.dueDate : 'not charged yet';
+        else meta = 'verify';
+        if (it.payRef) meta += ' · ' + it.payRef;
+
         tr.innerHTML =
           '<td>'+labelHtml+note+'</td>'+
           '<td>'+tag+'</td>'+
+          '<td><span class="ct-tag '+pay+'">'+payLabel+'</span><span class="ct-paymeta">'+meta+'</span></td>'+
           '<td class="ct-amt"><input class="ct-amt-input" type="number" inputmode="numeric" data-id="'+it.id+'" placeholder="—" value="'+(val!=null?val:'')+'"></td>';
         body.appendChild(tr);
       });
@@ -196,7 +236,41 @@
         var v = inp.value === '' ? null : parseFloat(inp.value);
         if (v == null || isNaN(v)) delete state.overrides[inp.dataset.id];
         else state.overrides[inp.dataset.id] = v;
-        recompute(); persist();
+        recompute();
+
+  // ── per-leg rollup (same data the city-page cards use) ──
+  (function () {
+    var LB = window.LEG_BUDGETS, RATE = window.EUR_USD || 1.16;
+    if (!LB) return;
+    var body = document.getElementById('legroll-body'); if (!body) return;
+    var e = function (n) { return '€' + Math.round(n).toLocaleString('en-US'); };
+    var t = { lodge:0, lo:0, avg:0, hi:0 }, nights = 0;
+    body.innerHTML = LB.map(function (b) {
+      var lodge = b.rows[0].avg;
+      t.lodge += lodge; t.lo += b.spend.lo; t.avg += b.spend.avg; t.hi += b.spend.hi; nights += b.nights;
+      return '<tr><td><a href="' + b.page + '" style="color:var(--terra)">' + b.city + '</a>' +
+        '<br><span style="color:var(--stone);font-size:11px">' + b.dates + '</span></td>' +
+        '<td class="num">' + b.nights + '</td>' +
+        '<td class="num" style="color:var(--stone)">' + e(lodge) + '</td>' +
+        '<td class="num">' + e(b.spend.lo) + '</td>' +
+        '<td class="num" style="color:var(--terra);font-weight:500">' + e(b.spend.avg) + '</td>' +
+        '<td class="num">' + e(b.spend.hi) + '</td>' +
+        '<td class="num">' + e(b.perDay.avg) + '</td></tr>';
+    }).join('') +
+      '<tr style="border-top:2px solid var(--ink)"><td class="total">All legs</td>' +
+      '<td class="num total">' + nights + '</td>' +
+      '<td class="num total">' + e(t.lodge) + '</td>' +
+      '<td class="num total">' + e(t.lo) + '</td>' +
+      '<td class="num total" style="color:var(--terra)">' + e(t.avg) + '</td>' +
+      '<td class="num total">' + e(t.hi) + '</td>' +
+      '<td class="num total">' + e(t.avg / nights) + '</td></tr>';
+    document.getElementById('legroll-note').innerHTML =
+      'Spend excludes the ' + e(t.lodge) + ' of booked lodging. Likely spend is <strong>' + e(t.avg) +
+      ' ≈ $' + Math.round(t.avg * RATE).toLocaleString('en-US') + '</strong> across ' + nights +
+      ' nights — about $' + Math.round(t.avg / nights * RATE) + '/day for all six. ' +
+      'The Malpensa airport night is on the ledger above but has no city page, so it is not in this table.';
+  })();
+ persist();
       });
     });
   }
@@ -239,6 +313,24 @@
     return { booked:booked, all:all };
   }
 
+  // ── cash position: what has actually left the account, vs what hasn't ──
+  function cashPosition(){
+    var paid=0, owed=0, unknown=0, upcoming=[];
+    D.fixed.forEach(function(it){
+      var v = amountOf(it); if (v==null) return;
+      var pay = it.pay || 'unknown';
+      if (pay === 'unknown'){ unknown += v; return; }
+      var p = it.paidUsd != null ? it.paidUsd : (pay==='paid' ? v : 0);
+      // if the user overrode the amount, a "paid in full" row tracks the new amount
+      if (pay === 'paid' && state.overrides[it.id] != null) p = v;
+      paid += p;
+      var rest = v - p;
+      if (rest > 0.005){ owed += rest; upcoming.push({ label:it.label, amt:rest, due:it.dueDate||'' }); }
+    });
+    upcoming.sort(function(a,b){ return (a.due||'9999').localeCompare(b.due||'9999'); });
+    return { paid:paid, owed:owed, unknown:unknown, upcoming:upcoming };
+  }
+
   function recompute(){
     var vg = variableGround();
     var fx = fixedTotals();
@@ -265,11 +357,22 @@
       ' · transit ' + fmt(vg.transit) + ' · misc ' + fmt(vg.misc) +
       ' = <strong>' + fmt(vg.total) + '</strong> over ' + D.days + ' days.';
 
+    // ── cash position tiles + next scheduled charge ──
+    var cash = cashPosition();
+    document.getElementById('num-paid').textContent    = fmt(cash.paid);
+    document.getElementById('num-owed').textContent    = fmt(cash.owed);
+    document.getElementById('num-unknown').textContent = fmt(cash.unknown);
+    var nUnknown = D.fixed.filter(function(it){ return (it.pay||'unknown')==='unknown'; }).length;
+    var next = cash.upcoming.filter(function(u){ return u.due; })[0];
+    document.getElementById('next-charge').innerHTML =
+      (next ? 'Next scheduled charge: <strong>' + next.due + '</strong> — ' + fmt(next.amt) + ' (' + next.label.split('·')[0].trim() + '). ' : '') +
+      (nUnknown ? '<strong>' + nUnknown + '</strong> line' + (nUnknown>1?'s':'') + ' still have an unconfirmed payment status — that’s ' + fmt(cash.unknown) + ' you can’t yet call paid.' : 'Every line has a confirmed payment status.');
+
     // ledger note: any booked-but-unentered?
     var missing = D.fixed.filter(function(it){ return it.status==='booked' && amountOf(it)==null; });
     document.getElementById('ledger-note').innerHTML = missing.length
       ? '⚠︎ ' + missing.length + ' booked stay' + (missing.length>1?'s':'') + ' still need an amount — type it above to fold it into the total.'
-      : 'All booked line items have amounts. Only the rail legs and the fuel/tolls line are still estimates — overwrite either and the total updates.';
+      : 'Two columns, two different questions. <strong>booked/estimate</strong> = is the cost real yet. <strong>paid/pending/unknown</strong> = has the money actually left the account. A row can be booked and still unpaid — the Dolomites and the last Malpensa night both are.';
   }
 
   // ── wire budget input + reset ──

@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     validation_top_n: int = 5
     envelope_long_gap_days: int = 30
     primary_source: Literal["fli", "fast-flights", "mock"] = "fli"
+    upload_dir: str = "./uploads"
+    enable_legacy_fare_api: bool = True
+    app_username: str = "barrett"
+    app_password: str = ""
 
 
 settings = Settings()

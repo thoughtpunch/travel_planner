@@ -1,0 +1,2144 @@
+{
+  "1-aperitivo-culture-camparino-in-galleria": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-bagatti-valsecchi-house-museum": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-bar-luce-at-fondazione-prada": {
+    "latitude": 45.4443737,
+    "longitude": 9.2053306,
+    "precision": "manual",
+    "label": "Bar Luce"
+  },
+  "1-bergamo-walk-the-venetian-walls": {
+    "latitude": 45.6944947,
+    "longitude": 9.6698727,
+    "precision": "area",
+    "label": "Bergamo"
+  },
+  "1-bernina-railway-from-tirano": {
+    "latitude": 46.2156719,
+    "longitude": 10.1731777,
+    "precision": "area",
+    "label": "Tirano"
+  },
+  "1-branca-tower": {
+    "latitude": 45.4732851,
+    "longitude": 9.1728848,
+    "precision": "venue",
+    "label": "Torre Branca"
+  },
+  "1-brera-pinacoteca": {
+    "latitude": 45.4722421,
+    "longitude": 9.1884071,
+    "precision": "venue",
+    "label": "Pinacoteca di Brera"
+  },
+  "1-brera-district-orto-botanico-di-brera": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-brescia-santa-giulia-and-the-winged-victory": {
+    "latitude": 45.5398022,
+    "longitude": 10.2200214,
+    "precision": "area",
+    "label": "Brescia"
+  },
+  "1-cimitero-monumentale": {
+    "latitude": 45.4877229,
+    "longitude": 9.1778008,
+    "precision": "venue",
+    "label": "Cimitero Monumentale"
+  },
+  "manual-1788458409404": {
+    "latitude": 45.46555,
+    "longitude": 9.19139,
+    "precision": "manual",
+    "label": "Cioccolatitaliani Duomo"
+  },
+  "1-classic-milanese-food-crawl": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-cremona-violin-making-workshop": {
+    "latitude": 45.1334796,
+    "longitude": 10.0248716,
+    "precision": "area",
+    "label": "Cremona"
+  },
+  "1-crespi-d-adda-the-company-town-frozen-in-1878": {
+    "latitude": 45.596327,
+    "longitude": 9.5356772,
+    "precision": "area",
+    "label": "Crespi d'Adda"
+  },
+  "1-duomo-rooftop-terraces": {
+    "latitude": 45.4641669,
+    "longitude": 9.1916121,
+    "precision": "manual",
+    "label": "Duomo di Milano"
+  },
+  "1-duomo-archaeological-area-battistero": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-duomo-la-scala-kids-treasure-hunt": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-galleria-vittorio-emanuele-ii-bull-heel-spin": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-gelato-the-galleria": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-highline-galleria-skywalk": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-leonardo-science-museum-the-toti-submarine": {
+    "latitude": 45.4617812,
+    "longitude": 9.1705869,
+    "precision": "manual",
+    "label": "Museo Nazionale Scienza e Tecnologia Leonardo da Vinci"
+  },
+  "1-monte-san-giorgio-fossils-besano": {
+    "latitude": 45.8890392,
+    "longitude": 8.8903883,
+    "precision": "area",
+    "label": "Besano"
+  },
+  "1-mottolino-bike-park-livigno-the-full-dh-park-2-night-trip": {
+    "latitude": 46.5381734,
+    "longitude": 10.1359928,
+    "precision": "area",
+    "label": "Livigno"
+  },
+  "1-museo-alfa-romeo-arese": {
+    "latitude": 45.5579656,
+    "longitude": 9.047162,
+    "precision": "venue",
+    "label": "Museo Storico Alfa Romeo"
+  },
+  "1-museo-di-storia-naturale-mineral-gem-hall": {
+    "latitude": 45.472734,
+    "longitude": 9.2024419,
+    "precision": "venue",
+    "label": "Museo di Storia Naturale"
+  },
+  "1-museum-of-senses": {
+    "latitude": 45.4809278,
+    "longitude": 9.1904539,
+    "precision": "venue",
+    "label": "Museum Of The Senses"
+  },
+  "1-navigli-canals-aperitivo": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-orrido-di-nesso-lake-como": {
+    "latitude": 45.9917589,
+    "longitude": 9.264881,
+    "precision": "area",
+    "label": "Lago di Como"
+  },
+  "1-panzerotti-at-luini": {
+    "latitude": 45.465785,
+    "longitude": 9.1915481,
+    "precision": "manual",
+    "label": "Luini"
+  },
+  "1-rocca-di-angera-lake-maggiore": {
+    "latitude": 45.9510936,
+    "longitude": 8.6341652,
+    "precision": "area",
+    "label": "Lago Maggiore"
+  },
+  "1-sacro-monte-di-varese-the-chapel-staircase": {
+    "latitude": 45.8617627,
+    "longitude": 8.7923357,
+    "precision": "venue",
+    "label": "Sacro Monte di Varese"
+  },
+  "1-san-bernardino-alle-ossa-bone-chapel": {
+    "latitude": 45.4626193,
+    "longitude": 9.1955592,
+    "precision": "venue",
+    "label": "Chiesa di San Bernardino alle Ossa"
+  },
+  "1-sforza-castle-michelangelo-s-rondanini-pieta": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "manual-1788458409077": {
+    "latitude": 45.4656942,
+    "longitude": 9.191145,
+    "precision": "manual",
+    "label": "Spontini Duomo"
+  },
+  "1-the-last-supper-cenacolo-vinciano": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "1-wwii-air-raid-shelter-piazza-grandi": {
+    "latitude": 45.4641943,
+    "longitude": 9.1896346,
+    "precision": "area",
+    "label": "Milano"
+  },
+  "2-aperitivo-at-piazza-vittorio-veneto": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-bicerin-at-caffe-al-bicerin": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-chocolate-making-experience": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-damanhur-temples-of-humankind": {
+    "latitude": 45.4290436,
+    "longitude": 7.7541526,
+    "precision": "venue",
+    "label": "Damanhur Crea"
+  },
+  "2-forte-di-bard": {
+    "latitude": 45.6080622,
+    "longitude": 7.7450105,
+    "precision": "venue",
+    "label": "Forte di Bard"
+  },
+  "2-gianduiotto-and-the-chocolate-crawl": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-grotta-di-bossea": {
+    "latitude": 44.2415929,
+    "longitude": 7.8399071,
+    "precision": "venue",
+    "label": "Grotta di Bossea"
+  },
+  "2-ivrea-the-olivetti-company-town": {
+    "latitude": 45.451803,
+    "longitude": 7.8932496,
+    "precision": "area",
+    "label": "Ivrea"
+  },
+  "2-la-mandria-park-forest-gravel-spin": {
+    "latitude": 45.1663934,
+    "longitude": 7.5693639,
+    "precision": "manual",
+    "label": "Parco La Mandria"
+  },
+  "2-mauto-national-automobile-museum": {
+    "latitude": 45.0313979,
+    "longitude": 7.6743588,
+    "precision": "venue",
+    "label": "MAUTO"
+  },
+  "2-magic-turin-black-and-white-squares-walk": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-mole-antonelliana-glass-lift-cinema-museum": {
+    "latitude": 45.0689888,
+    "longitude": 7.6931918,
+    "precision": "venue",
+    "label": "Mole Antonelliana"
+  },
+  "2-museo-egizio": {
+    "latitude": 45.068435,
+    "longitude": 7.6843506,
+    "precision": "venue",
+    "label": "Museo Egizio"
+  },
+  "2-museo-lombroso-criminal-anthropology": {
+    "latitude": 45.0497552,
+    "longitude": 7.6797632,
+    "precision": "venue",
+    "label": "Museo di antropologia criminale Cesare Lombroso"
+  },
+  "2-museo-regionale-di-scienze-naturali": {
+    "latitude": 45.0646287,
+    "longitude": 7.6886914,
+    "precision": "venue",
+    "label": "Museo Regionale di Scienze Naturali"
+  },
+  "2-museum-of-illusions": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-novara-climb-inside-the-san-gaudenzio-dome": {
+    "latitude": 45.4464036,
+    "longitude": 8.619655,
+    "precision": "area",
+    "label": "Novara"
+  },
+  "2-palazzo-reale-the-royal-armoury": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-pila-bike-park-aosta-kids-park-sep-11-13-only": {
+    "latitude": 45.687269,
+    "longitude": 7.3108236,
+    "precision": "area",
+    "label": "Pila"
+  },
+  "2-reggia-di-venaria-the-savoy-hunting-palace": {
+    "latitude": 45.1350897,
+    "longitude": 7.6246748,
+    "precision": "venue",
+    "label": "Reggia di Venaria"
+  },
+  "2-sacra-di-san-michele": {
+    "latitude": 45.0979911,
+    "longitude": 7.3430477,
+    "precision": "manual",
+    "label": "Sacra di San Michele"
+  },
+  "2-superga-rack-railway": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-the-lingotto-rooftop-test-track-pista-500": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-the-pietro-micca-tunnels": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-the-arcades-piazza-san-carlo": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-torino-sotterranea-underground-turin": {
+    "latitude": 45.0677551,
+    "longitude": 7.6824892,
+    "precision": "area",
+    "label": "Torino"
+  },
+  "2-truffle-hunt-with-dogs-langhe": {
+    "latitude": 44.7010046,
+    "longitude": 8.0360277,
+    "precision": "area",
+    "label": "ATL Alba Bra Langhe e Roero"
+  },
+  "3-a-stretch-of-the-blue-trail": {
+    "latitude": 44.1222144,
+    "longitude": 9.7132501,
+    "precision": "area",
+    "label": "Cinque Terre"
+  },
+  "3-a-swim-small-boat-day": {
+    "latitude": 44.1222144,
+    "longitude": 9.7132501,
+    "precision": "area",
+    "label": "Cinque Terre"
+  },
+  "3-antro-del-corchia-apuan-alps-cave": {
+    "latitude": 44.0613167,
+    "longitude": 10.2788792,
+    "precision": "area",
+    "label": "Parco naturale regionale delle Alpi Apuane"
+  },
+  "3-baia-del-silenzio-sestri-levante": {
+    "latitude": 44.2698698,
+    "longitude": 9.3940291,
+    "precision": "venue",
+    "label": "Baia del Silenzio"
+  },
+  "3-camogli-the-portofino-headland": {
+    "latitude": 44.3511373,
+    "longitude": 9.1524917,
+    "precision": "area",
+    "label": "Camogli"
+  },
+  "3-camogli-to-san-fruttuoso-by-boat": {
+    "latitude": 44.3511373,
+    "longitude": 9.1524917,
+    "precision": "area",
+    "label": "Camogli"
+  },
+  "3-christ-of-the-abyss-snorkel-san-fruttuoso": {
+    "latitude": 44.3164082,
+    "longitude": 9.1750792,
+    "precision": "area",
+    "label": "San Fruttuoso"
+  },
+  "3-cinque-terre-sea-kayak-caves-cliffs": {
+    "latitude": 44.1222144,
+    "longitude": 9.7132501,
+    "precision": "area",
+    "label": "Cinque Terre"
+  },
+  "3-da-giovanni-abbey-cove": {
+    "latitude": 44.3164082,
+    "longitude": 9.1750792,
+    "precision": "area",
+    "label": "San Fruttuoso"
+  },
+  "3-ferry-gelato-and-focaccia-crawl": {
+    "latitude": 44.1222144,
+    "longitude": 9.7132501,
+    "precision": "area",
+    "label": "Cinque Terre"
+  },
+  "3-finale-ligure-kids-mtb-school-ages-7-11": {
+    "latitude": 44.1691474,
+    "longitude": 8.3435917,
+    "precision": "area",
+    "label": "Finale Ligure"
+  },
+  "3-focaccia-di-recco-and-the-pesto-homeland": {
+    "latitude": 44.3618483,
+    "longitude": 9.1433114,
+    "precision": "area",
+    "label": "Recco"
+  },
+  "3-genoa-the-palazzi-dei-rolli-on-via-garibaldi": {
+    "latitude": 44.40726,
+    "longitude": 8.9338624,
+    "precision": "area",
+    "label": "Genova"
+  },
+  "3-genoa-the-sacro-catino-holy-grail": {
+    "latitude": 44.40726,
+    "longitude": 8.9338624,
+    "precision": "area",
+    "label": "Genova"
+  },
+  "3-genoa-walk-through-a-real-submarine": {
+    "latitude": 44.40726,
+    "longitude": 8.9338624,
+    "precision": "area",
+    "label": "Genova"
+  },
+  "3-genova-aquarium": {
+    "latitude": 44.4101445,
+    "longitude": 8.9262906,
+    "precision": "venue",
+    "label": "Acquario di Genova"
+  },
+  "3-genova-righi-adventure-park": {
+    "latitude": 44.40726,
+    "longitude": 8.9338624,
+    "precision": "area",
+    "label": "Genova"
+  },
+  "3-grotte-di-equi": {
+    "latitude": 44.1667118,
+    "longitude": 10.1528708,
+    "precision": "venue",
+    "label": "Museo delle Grotte di Equi"
+  },
+  "3-guvano-and-hidden-coves-by-kayak": {
+    "latitude": 44.1349412,
+    "longitude": 9.6827757,
+    "precision": "area",
+    "label": "Vernazza"
+  },
+  "3-il-gigante-the-bombed-sea-god": {
+    "latitude": 44.1458899,
+    "longitude": 9.6489881,
+    "precision": "area",
+    "label": "Monterosso"
+  },
+  "3-l-altro-eden": {
+    "latitude": 44.3292361,
+    "longitude": 9.2150879,
+    "precision": "manual",
+    "label": "L'Altro Eden"
+  },
+  "3-make-pesto-by-hand": {
+    "latitude": 44.4145389,
+    "longitude": 8.9223495,
+    "precision": "area",
+    "label": "Via Jacopo da Levanto"
+  },
+  "3-michelin-room-on-the-bay-of-silence": {
+    "latitude": 44.2714526,
+    "longitude": 9.3958627,
+    "precision": "area",
+    "label": "Sestri Levante"
+  },
+  "3-monterosso-beach-the-coastal-ferry": {
+    "latitude": 44.1458899,
+    "longitude": 9.6489881,
+    "precision": "area",
+    "label": "Monterosso"
+  },
+  "3-monterosso-s-salt-cured-anchovies": {
+    "latitude": 44.1458899,
+    "longitude": 9.6489881,
+    "precision": "area",
+    "label": "Monterosso"
+  },
+  "3-portofino-park-family-mountain-bike-day": {
+    "latitude": 44.303253,
+    "longitude": 9.2095582,
+    "precision": "area",
+    "label": "Portofino"
+  },
+  "3-portovenere-the-byron-grotto": {
+    "latitude": 44.0506605,
+    "longitude": 9.8344585,
+    "precision": "area",
+    "label": "Portovenere"
+  },
+  "3-ristorante-belforte": {
+    "latitude": 44.1348811,
+    "longitude": 9.6817396,
+    "precision": "venue",
+    "label": "Belforte"
+  },
+  "3-ristorante-la-camogliese": {
+    "latitude": 44.348372,
+    "longitude": 9.1548428,
+    "precision": "venue",
+    "label": "La Camogliese"
+  },
+  "3-ristorante-dei-castelli": {
+    "latitude": 44.2714526,
+    "longitude": 9.3958627,
+    "precision": "area",
+    "label": "Sestri Levante"
+  },
+  "3-santa-margherita-portofino-harbour-dinner": {
+    "latitude": 44.303253,
+    "longitude": 9.2095582,
+    "precision": "area",
+    "label": "Portofino"
+  },
+  "3-sciacchetra-and-a-terrace-aperitivo": {
+    "latitude": 44.1063262,
+    "longitude": 9.7274815,
+    "precision": "area",
+    "label": "Manarola"
+  },
+  "3-sea-cliff-climbing-at-muzzerone": {
+    "latitude": 44.0506605,
+    "longitude": 9.8344585,
+    "precision": "area",
+    "label": "Portovenere"
+  },
+  "3-seafront-trattoria-di-mare-chiavari": {
+    "latitude": 44.3175701,
+    "longitude": 9.3244561,
+    "precision": "area",
+    "label": "Chiavari"
+  },
+  "3-the-way-of-the-sanctuaries": {
+    "latitude": 44.1222144,
+    "longitude": 9.7132501,
+    "precision": "area",
+    "label": "Cinque Terre"
+  },
+  "3-the-vineyard-monorail-trains": {
+    "latitude": 44.1155993,
+    "longitude": 9.7291764,
+    "precision": "area",
+    "label": "Volastra"
+  },
+  "3-torre-aurora-the-pirate-watchtower": {
+    "latitude": 44.1458899,
+    "longitude": 9.6489881,
+    "precision": "area",
+    "label": "Monterosso"
+  },
+  "3-via-dell-amore-finally-reopened": {
+    "latitude": 44.1222144,
+    "longitude": 9.7132501,
+    "precision": "area",
+    "label": "Cinque Terre"
+  },
+  "4-a-chianti-wine-day": {
+    "latitude": 43.6069451,
+    "longitude": 11.3320081,
+    "precision": "area",
+    "label": "Greve in Chianti"
+  },
+  "4-a-modena-food-morning": {
+    "latitude": 44.6458885,
+    "longitude": 10.9255707,
+    "precision": "area",
+    "label": "Modena"
+  },
+  "4-abetone-gravity-park-teens-september-weekends-only": {
+    "latitude": 44.1444997,
+    "longitude": 10.6644636,
+    "precision": "area",
+    "label": "Abetone"
+  },
+  "4-aquaflor-build-your-own-perfume": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-archiginnasio-the-anatomical-theatre": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-bargello-sculpture-museum": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-bike-the-walls-of-lucca": {
+    "latitude": 43.8428381,
+    "longitude": 10.502876,
+    "precision": "area",
+    "label": "Lucca"
+  },
+  "4-boboli-and-bardini-gardens": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-brancacci-chapel-oltrarno-santo-spirito": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-brunelleschi-s-dome-climb": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-buchette-del-vino-the-wine-windows": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-carrara-4-4-marble-quarry-tour": {
+    "latitude": 44.0796519,
+    "longitude": 10.0977529,
+    "precision": "area",
+    "label": "Carrara"
+  },
+  "4-cassini-s-sundial-and-the-unfinished-facade-san-petronio": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-chianti-hills-private-family-mtb": {
+    "latitude": 43.6069451,
+    "longitude": 11.3320081,
+    "precision": "area",
+    "label": "Greve in Chianti"
+  },
+  "4-elba-rio-marina-mining-park-minerals": {
+    "latitude": 42.8269025,
+    "longitude": 10.4091249,
+    "precision": "area",
+    "label": "Rio Marina area"
+  },
+  "4-eph-mera-build-your-own-perfume-formula": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-experience-on-the-road-street-escape-game": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-fiesole-etruscan-roman-ruins": {
+    "latitude": 43.8066689,
+    "longitude": 11.2930735,
+    "precision": "area",
+    "label": "Fiesole"
+  },
+  "4-florentine-paper-marbling-workshop": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-florentine-wood-inlay-intarsia-class": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-fresh-egg-pasta-tiramisu": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-fresh-pasta-gelato-class": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-gelato-santo-stefano-s-seven-churches": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-gelato-museum-carpigiani": {
+    "latitude": 44.5466843,
+    "longitude": 11.1933259,
+    "precision": "area",
+    "label": "Anzola dell'Emilia"
+  },
+  "4-grand-tour-italia-food-park": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-hzero-miniature-railway-world": {
+    "latitude": 43.7725102,
+    "longitude": 11.2490481,
+    "precision": "venue",
+    "label": "Museo Hzero"
+  },
+  "4-hands-on-artisan-workshop": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-il-porcellino-rub-the-boar-s-nose": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-la-finestrella-di-via-piella": {
+    "latitude": 44.4987626,
+    "longitude": 11.3452134,
+    "precision": "area",
+    "label": "Via Piella area"
+  },
+  "4-la-specola-minerals-anatomical-waxes": {
+    "latitude": 43.7645776,
+    "longitude": 11.2471164,
+    "precision": "venue",
+    "label": "La Specola"
+  },
+  "4-labirinto-della-masone-bamboo-maze": {
+    "latitude": 44.8539645,
+    "longitude": 10.1474351,
+    "precision": "venue",
+    "label": "Labirinto della Masone"
+  },
+  "4-le-arti-orafe-set-your-own-gemstone": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-leonardo-interactive-museum": {
+    "latitude": 43.7749655,
+    "longitude": 11.2590086,
+    "precision": "venue",
+    "label": "Museo interattivo Leonardo da Vinci"
+  },
+  "4-mercato-centrale-san-lorenzo-gelato-crawl": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-metallo-nobile-silver-ring-pendant": {
+    "latitude": 43.7665124,
+    "longitude": 11.2499033,
+    "precision": "venue",
+    "label": "Metallo Nobile scuola di oreficeria"
+  },
+  "4-modena-the-duomo-and-the-ghirlandina": {
+    "latitude": 44.6458885,
+    "longitude": 10.9255707,
+    "precision": "area",
+    "label": "Modena"
+  },
+  "4-modena-traditional-balsamic-acetaia": {
+    "latitude": 44.6458885,
+    "longitude": 10.9255707,
+    "precision": "area",
+    "label": "Modena"
+  },
+  "4-motor-valley-ferrari-lamborghini-ducati": {
+    "latitude": 44.5255217,
+    "longitude": 10.8663607,
+    "precision": "area",
+    "label": "Maranello"
+  },
+  "4-museo-galileo": {
+    "latitude": 43.7676642,
+    "longitude": 11.2559063,
+    "precision": "venue",
+    "label": "Museo Galileo - Istituto e Museo di Storia della Scienza"
+  },
+  "4-museo-per-la-memoria-di-ustica": {
+    "latitude": 44.5133871,
+    "longitude": 11.3503397,
+    "precision": "venue",
+    "label": "Museo per la Memoria di Ustica"
+  },
+  "4-one-big-hitter-uffizi-or-accademia": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-officina-di-santa-maria-novella-world-s-oldest-pharmacy": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-osteria-del-sole": {
+    "latitude": 44.4937873,
+    "longitude": 11.3443528,
+    "precision": "venue",
+    "label": "Osteria del Sole"
+  },
+  "4-palazzo-poggi-the-university-s-wunderkammer": {
+    "latitude": 44.496778,
+    "longitude": 11.3523444,
+    "precision": "venue",
+    "label": "Palazzo Poggi"
+  },
+  "4-palazzo-vecchio-secret-passages": {
+    "latitude": 43.7691435,
+    "longitude": 11.2561399,
+    "precision": "venue",
+    "label": "Palazzo Vecchio"
+  },
+  "4-pasta-class-with-unlimited-wine-medieval-tower": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-pietrasanta-the-marble-carving-town": {
+    "latitude": 43.9589031,
+    "longitude": 10.2332031,
+    "precision": "area",
+    "label": "Pietrasanta"
+  },
+  "4-pisa-leaning-tower-the-death-fresco": {
+    "latitude": 43.7159395,
+    "longitude": 10.4018624,
+    "precision": "area",
+    "label": "Pisa"
+  },
+  "4-pizza-gelato-from-scratch-florencetown": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-pizza-gelato-small-group-viator": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-quadrilatero-market-food-crawl": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-renaissance-medici-tales-walking-tour": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-san-gimignano-the-town-of-towers": {
+    "latitude": 43.4677993,
+    "longitude": 11.0432115,
+    "precision": "area",
+    "label": "San Gimignano"
+  },
+  "4-scarperia-knife-blade-making": {
+    "latitude": 43.9960778,
+    "longitude": 11.3550688,
+    "precision": "area",
+    "label": "Scarperia"
+  },
+  "4-scuola-del-cuoio-the-leather-school": {
+    "latitude": 43.7684096,
+    "longitude": 11.2636825,
+    "precision": "venue",
+    "label": "Scuola del Cuoio"
+  },
+  "4-siena-piazza-del-campo-and-the-striped-duomo": {
+    "latitude": 43.3185536,
+    "longitude": 11.3316533,
+    "precision": "area",
+    "label": "Siena"
+  },
+  "4-stibbert-museum-armor-and-samurai": {
+    "latitude": 43.792721,
+    "longitude": 11.2551385,
+    "precision": "venue",
+    "label": "Museo Stibbert"
+  },
+  "4-stratagemma-board-game-caf": {
+    "latitude": 43.7738289,
+    "longitude": 11.2574542,
+    "precision": "venue",
+    "label": "Stratagemma"
+  },
+  "4-studio-galleria-romanelli-clay-sculpture": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-the-buontalenti-grotto-in-boboli": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-the-dark-side-of-florence-mysteries-legends": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-the-two-towers-climb-asinelli": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-the-vasari-corridor": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-the-feast-ragu-tortellini-in-brodo-mortadella": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-the-porticoes-walk-to-san-luca": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-the-three-arrows-of-corte-isolani": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-the-tortellino-and-venus-s-navel": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-the-whispering-telephone-voltone-del-podesta": {
+    "latitude": 44.4938203,
+    "longitude": 11.3426327,
+    "precision": "area",
+    "label": "Bologna"
+  },
+  "4-the-window-that-can-never-be-closed": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-tuscan-farm-cook-day": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-uffizi-family-treasure-hunt": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-val-d-orcia-pienza": {
+    "latitude": 43.0109544,
+    "longitude": 11.5685932,
+    "precision": "area",
+    "label": "Val d'Orcia"
+  },
+  "4-villa-la-petraia-villa-di-castello": {
+    "latitude": 43.7697955,
+    "longitude": 11.2556404,
+    "precision": "area",
+    "label": "Firenze"
+  },
+  "4-volterra-carve-alabaster": {
+    "latitude": 43.400337,
+    "longitude": 10.860019,
+    "precision": "area",
+    "label": "Volterra"
+  },
+  "4-zecchi-the-renaissance-color-shop": {
+    "latitude": 43.7719765,
+    "longitude": 11.2568016,
+    "precision": "venue",
+    "label": "Zecchi"
+  },
+  "5-adventure-rooms-roma-escape-room": {
+    "latitude": 41.9070884,
+    "longitude": 12.5388221,
+    "precision": "venue",
+    "label": "Adventure Rooms"
+  },
+  "5-aperitivo-in-trastevere-testaccio-food": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-appia-antica-off-road-ride-caffarella": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-basilica-di-san-clemente-3-layers-down": {
+    "latitude": 41.8891952,
+    "longitude": 12.4975379,
+    "precision": "venue",
+    "label": "Basilica di San Clemente"
+  },
+  "5-bocca-della-verita": {
+    "latitude": 41.8882567,
+    "longitude": 12.4815441,
+    "precision": "venue",
+    "label": "Bocca della Verità"
+  },
+  "5-bomarzo-the-park-of-the-monsters": {
+    "latitude": 42.4917509,
+    "longitude": 12.2482395,
+    "precision": "venue",
+    "label": "Parcheggio P2 Bosco Sacro di Bomarzo"
+  },
+  "5-borghese-gallery": {
+    "latitude": 41.9142493,
+    "longitude": 12.4921863,
+    "precision": "venue",
+    "label": "Casino Nobile di Villa Borghese"
+  },
+  "5-calcata": {
+    "latitude": 42.2197263,
+    "longitude": 12.4259417,
+    "precision": "area",
+    "label": "Calcata"
+  },
+  "5-capuchin-crypt-the-bone-chapel": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-castel-sant-angelo": {
+    "latitude": 41.9031178,
+    "longitude": 12.4663427,
+    "precision": "venue",
+    "label": "Castel Sant’Angelo"
+  },
+  "5-catacombs-appian-way": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-centrale-montemartini": {
+    "latitude": 41.8665472,
+    "longitude": 12.478015,
+    "precision": "venue",
+    "label": "Centrale Montemartini"
+  },
+  "5-cerveteri-the-banditaccia-tomb-streets": {
+    "latitude": 42.0064639,
+    "longitude": 12.0994919,
+    "precision": "venue",
+    "label": "Cerveteri-Necropoli della Banditaccia"
+  },
+  "5-civita-di-bagnoregio-the-dying-city": {
+    "latitude": 42.6270611,
+    "longitude": 12.0907844,
+    "precision": "area",
+    "label": "Bagnoregio"
+  },
+  "5-colosseum-underground": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-domus-aurea-nero-s-buried-palace-vr": {
+    "latitude": 41.8912624,
+    "longitude": 12.4951112,
+    "precision": "venue",
+    "label": "Domus Aurea"
+  },
+  "5-evening-centro-walk-pantheon-trevi-navona": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-explora-children-s-museum-villa-borghese": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-falconer-for-a-day-la-selvotta": {
+    "latitude": 42.082521,
+    "longitude": 12.400273,
+    "precision": "area",
+    "label": "Formello"
+  },
+  "5-frasassi-caves-the-ancona-abyss": {
+    "latitude": 43.429655,
+    "longitude": 12.934965,
+    "precision": "area",
+    "label": "Genga"
+  },
+  "5-fresh-pasta-roman-sauces-walks-of-italy": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-galleria-doria-pamphilj": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-garbatella-neighborhood": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-gladiator-school-scuola-gladiatori": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-hadrian-s-villa-villa-adriana": {
+    "latitude": 41.9407843,
+    "longitude": 12.7762889,
+    "precision": "venue",
+    "label": "Villa Adriana"
+  },
+  "5-museo-delle-anime-del-purgatorio": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-museum-of-the-holy-souls-in-purgatory": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-orvieto-the-double-helix-well-caves": {
+    "latitude": 42.7186152,
+    "longitude": 12.1087907,
+    "precision": "area",
+    "label": "Orvieto"
+  },
+  "5-palazzo-spada-the-forced-perspective-trick": {
+    "latitude": 41.8939189,
+    "longitude": 12.4722254,
+    "precision": "venue",
+    "label": "Palazzo Spada"
+  },
+  "5-pitigliano-the-vie-cave": {
+    "latitude": 42.634827,
+    "longitude": 11.673549,
+    "precision": "area",
+    "label": "Pitigliano"
+  },
+  "5-pizza-gelato-class-for-kids": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-private-golf-cart-tour-with-pickup": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-pyramid-of-cestius-and-non-catholic-cemetery": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-quartiere-coppede": {
+    "latitude": 41.9183644,
+    "longitude": 12.5021894,
+    "precision": "venue",
+    "label": "Quartiere Coppedè"
+  },
+  "5-quartiere-copped": {
+    "latitude": 41.9183644,
+    "longitude": 12.5021894,
+    "precision": "venue",
+    "label": "Quartiere Coppedè"
+  },
+  "5-roman-forum-family-treasure-hunt": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-rome-3-in-1-cooking-class-fettuccine-ravioli-tiramisu": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-san-clemente-s-buried-city": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-san-paolo-fuori-le-mura": {
+    "latitude": 41.8586971,
+    "longitude": 12.4767833,
+    "precision": "venue",
+    "label": "Basilica di San Paolo fuori le mura"
+  },
+  "5-stadium-of-domitian-under-piazza-navona": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-stained-glass-course-trastevere": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-studio-cassio-roman-micromosaic-jewellery": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-studio-cassio-cut-a-real-roman-marble-mosaic": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-tarot-garden-giardino-dei-tarocchi": {
+    "latitude": 42.4548792,
+    "longitude": 11.4195148,
+    "precision": "area",
+    "label": "Capalbio"
+  },
+  "5-tarquinia-the-painted-etruscan-tombs": {
+    "latitude": 42.2532394,
+    "longitude": 11.7591747,
+    "precision": "area",
+    "label": "Tarquinia"
+  },
+  "5-technotown-villa-torlonia": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-the-aventine-keyhole": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-the-catacombs": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-torre-argentina-cat-sanctuary": {
+    "latitude": 41.8949726,
+    "longitude": 12.4766282,
+    "precision": "venue",
+    "label": "Colonia felina di Torre Argentina"
+  },
+  "5-vatican-museums-sistine-chapel-st-peter-s": {
+    "latitude": 41.8933203,
+    "longitude": 12.4829321,
+    "precision": "area",
+    "label": "Roma"
+  },
+  "5-vicus-caprarius-the-city-of-water": {
+    "latitude": 41.9004309,
+    "longitude": 12.4840951,
+    "precision": "venue",
+    "label": "Area archeologica Vicus Caprarius: La Città dell’Acqua"
+  },
+  "5-villa-d-este-the-fountain-garden-at-tivoli": {
+    "latitude": 41.9629665,
+    "longitude": 12.7959903,
+    "precision": "venue",
+    "label": "Villa d'Este"
+  },
+  "6-borges-labyrinth-san-giorgio-maggiore": {
+    "latitude": 45.4292835,
+    "longitude": 12.342414,
+    "precision": "area",
+    "label": "Fondazione Giorgio Cini"
+  },
+  "6-burano-torcello-islands": {
+    "latitude": 45.4866354,
+    "longitude": 12.4168912,
+    "precision": "area",
+    "label": "Burano"
+  },
+  "6-burano-s-crooked-campanile-and-lace-museum": {
+    "latitude": 45.4866354,
+    "longitude": 12.4168912,
+    "precision": "area",
+    "label": "Burano"
+  },
+  "6-ca-macana-papier-m-ch-mask-from-the-mould": {
+    "latitude": 45.4340653,
+    "longitude": 12.3255659,
+    "precision": "venue",
+    "label": "Ca' Macana"
+  },
+  "6-canalside-anniversary-dinner-venice": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-cannaregio-and-the-jewish-ghetto": {
+    "latitude": 45.4453,
+    "longitude": 12.3267,
+    "precision": "area",
+    "label": "Cannaregio and Ghetto area"
+  },
+  "6-carnival-mask-making-workshop": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-climb-the-campanile-clock-tower": {
+    "latitude": 45.4340361,
+    "longitude": 12.3390443,
+    "precision": "manual",
+    "label": "Campanile di San Marco"
+  },
+  "6-colli-euganei-mtb-in-the-volcanic-hills": {
+    "latitude": 45.3106318,
+    "longitude": 11.7100786,
+    "precision": "area",
+    "label": "Colli Euganei"
+  },
+  "6-doge-s-palace-secret-itineraries": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-ferrara-castello-estense": {
+    "latitude": 44.8372737,
+    "longitude": 11.6186451,
+    "precision": "area",
+    "label": "Ferrara"
+  },
+  "6-ferrara-palazzo-dei-diamanti": {
+    "latitude": 44.8372737,
+    "longitude": 11.6186451,
+    "precision": "area",
+    "label": "Ferrara"
+  },
+  "6-ferrara-via-delle-volte-the-city-walls": {
+    "latitude": 44.8372737,
+    "longitude": 11.6186451,
+    "precision": "area",
+    "label": "Ferrara"
+  },
+  "6-get-lost-on-purpose": {
+    "latitude": 45.4126742,
+    "longitude": 12.3764896,
+    "precision": "area",
+    "label": "Lido di Venezia"
+  },
+  "6-grand-canal-by-vaporetto-line-1": {
+    "latitude": 45.437773,
+    "longitude": 12.3355904,
+    "precision": "area",
+    "label": "Grand Canal"
+  },
+  "6-grotta-gigante-the-giant-cavern": {
+    "latitude": 45.7099193,
+    "longitude": 13.764572,
+    "precision": "venue",
+    "label": "Grotta Gigante / Briškovska jama"
+  },
+  "6-grotte-di-oliero-by-boat": {
+    "latitude": 45.8435538,
+    "longitude": 11.6681485,
+    "precision": "venue",
+    "label": "Grotte di Oliero"
+  },
+  "6-hidden-city-treasure-hunt": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-homo-faber-if-dates-align": {
+    "latitude": 45.4292835,
+    "longitude": 12.342414,
+    "precision": "area",
+    "label": "Fondazione Giorgio Cini"
+  },
+  "6-kayak-the-lagoon-hidden-canals": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-learn-to-row-venetian-style": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-libreria-acqua-alta": {
+    "latitude": 45.4380556,
+    "longitude": 12.3422689,
+    "precision": "venue",
+    "label": "Libreria Acqua Alta"
+  },
+  "6-lido-beach-vaporetto-rides": {
+    "latitude": 45.4164594,
+    "longitude": 12.3706115,
+    "precision": "area",
+    "label": "Lido"
+  },
+  "6-macacoadventures-venice-scavenger-hunt": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-murano-burano-by-private-boat-small-group": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-murano-watch-glassblowing-make-a-bead": {
+    "latitude": 45.4554971,
+    "longitude": 12.3510992,
+    "precision": "area",
+    "label": "Murano"
+  },
+  "6-museo-nicolis-cars-machines": {
+    "latitude": 45.3681669,
+    "longitude": 10.8666861,
+    "precision": "venue",
+    "label": "Museo Nicolis dell’Auto, della Tecnica e della Meccanica"
+  },
+  "6-museo-del-precinema-magic-lanterns": {
+    "latitude": 45.4002,
+    "longitude": 11.87592,
+    "precision": "manual",
+    "label": "Museo del Precinema"
+  },
+  "6-musica-a-palazzo-opera-room-by-room": {
+    "latitude": 45.4319867,
+    "longitude": 12.3322833,
+    "precision": "venue",
+    "label": "Musica A Palazzo"
+  },
+  "6-natural-history-museum": {
+    "latitude": 45.4416653,
+    "longitude": 12.3285362,
+    "precision": "venue",
+    "label": "Museo di Storia Naturale di Venezia"
+  },
+  "6-padua-day-trip": {
+    "latitude": 45.3984428,
+    "longitude": 11.8956829,
+    "precision": "area",
+    "label": "Padova"
+  },
+  "6-peggy-guggenheim-accademia": {
+    "latitude": 45.43083,
+    "longitude": 12.33154,
+    "precision": "area",
+    "label": "Accademia area"
+  },
+  "6-rialto-market-cicchetti-crawl": {
+    "latitude": 45.4392,
+    "longitude": 12.3346,
+    "precision": "area",
+    "label": "Rialto area"
+  },
+  "6-rialto-market-shop-cook-with-a-venetian-chef": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-row-venice-row-standing-up-like-a-gondolier": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-san-michele-the-cemetery-island": {
+    "latitude": 45.446794,
+    "longitude": 12.347131,
+    "precision": "manual",
+    "label": "San Michele"
+  },
+  "6-san-pelagio-minotaur-mirror-mazes": {
+    "latitude": 45.31425,
+    "longitude": 11.82192,
+    "precision": "manual",
+    "label": "Castello di San Pelagio"
+  },
+  "6-scala-contarini-del-bovolo": {
+    "latitude": 45.4348095,
+    "longitude": 12.3345459,
+    "precision": "venue",
+    "label": "Scala Contarini del Bovolo"
+  },
+  "6-scuola-grande-di-san-rocco": {
+    "latitude": 45.436542,
+    "longitude": 12.3252684,
+    "precision": "venue",
+    "label": "Scuola Grande di San Rocco"
+  },
+  "6-squero-di-san-trovaso": {
+    "latitude": 45.4303381,
+    "longitude": 12.3260217,
+    "precision": "venue",
+    "label": "Squero de San Trovaso"
+  },
+  "6-st-mark-s-basilica-golden-mosaics": {
+    "latitude": 45.4344,
+    "longitude": 12.3398,
+    "precision": "manual",
+    "label": "St Mark's Basilica"
+  },
+  "6-the-venetian-arsenal": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-the-plague-islands-by-boat": {
+    "latitude": 45.4126742,
+    "longitude": 12.3764896,
+    "precision": "area",
+    "label": "Lido di Venezia"
+  },
+  "6-the-traghetto-crossing": {
+    "latitude": 45.4126742,
+    "longitude": 12.3764896,
+    "precision": "area",
+    "label": "Lido di Venezia"
+  },
+  "6-torcello-s-devil-s-bridge-and-attila-s-throne": {
+    "latitude": 45.4971455,
+    "longitude": 12.4152848,
+    "precision": "area",
+    "label": "Isola Torcello"
+  },
+  "6-tour-of-the-real-hidden-venice": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-venetian-cicchetti-cooking-class": {
+    "latitude": 45.4371908,
+    "longitude": 12.3345898,
+    "precision": "area",
+    "label": "Venezia"
+  },
+  "6-verona-the-arena-and-the-roman-city": {
+    "latitude": 45.4384958,
+    "longitude": 10.9924122,
+    "precision": "area",
+    "label": "Verona"
+  },
+  "6-vicenza-palladio-s-city-la-rotonda": {
+    "latitude": 45.546277,
+    "longitude": 11.5566829,
+    "precision": "area",
+    "label": "Vicenza"
+  },
+  "bikepark-alpe-di-mera": {
+    "latitude": 45.74567,
+    "longitude": 8.08797,
+    "precision": "manual",
+    "label": "Alpe di Mera"
+  },
+  "7-alpe-di-siusi-europe-s-biggest-meadow": {
+    "latitude": 46.531056,
+    "longitude": 11.6247091,
+    "precision": "area",
+    "label": "Seiser Alm - Mont de Sëuc - Alpe di Siusi"
+  },
+  "bikepark-amiata-freeride-bike-resort": {
+    "latitude": 42.8874263,
+    "longitude": 11.623274,
+    "precision": "area",
+    "label": "Monte Amiata"
+  },
+  "7-baking-class-sweet-temptations": {
+    "latitude": 46.5752077,
+    "longitude": 11.6721382,
+    "precision": "area",
+    "label": "Urtijëi - St. Ulrich in Gröden - Ortisei"
+  },
+  "bikepark-bardonecchia-bike-park": {
+    "latitude": 45.078339,
+    "longitude": 6.703205,
+    "precision": "area",
+    "label": "Bardonecchia"
+  },
+  "7-bistrot-b24-fromagerie-fondue-raclette": {
+    "latitude": 46.5551877,
+    "longitude": 11.7600992,
+    "precision": "area",
+    "label": "Sëlva - Wolkenstein - Selva di Val Gardena"
+  },
+  "7-bletterbach-the-fossil-canyon": {
+    "latitude": 46.3622546,
+    "longitude": 11.401779,
+    "precision": "venue",
+    "label": "Bletterbach"
+  },
+  "bikepark-bormio-bike-park": {
+    "latitude": 46.4676705,
+    "longitude": 10.3774659,
+    "precision": "area",
+    "label": "Bormio"
+  },
+  "bikepark-breuil-cervinia-bike-park": {
+    "latitude": 45.9356034,
+    "longitude": 7.6304397,
+    "precision": "area",
+    "label": "Breuil-Cervinia"
+  },
+  "7-cable-cars-plural": {
+    "latitude": 46.3586171,
+    "longitude": 11.4159643,
+    "precision": "area",
+    "label": "Dolomiten UNESCO Welterbe GEOPARC Bletterbach - Dolomiti Patrimonio Mondiale UNESCO - GEOPARC Bletterbach"
+  },
+  "bikepark-caldirock-caldirola": {
+    "latitude": 44.7281939,
+    "longitude": 9.1503825,
+    "precision": "area",
+    "label": "Caldirola"
+  },
+  "bikepark-carosello-3000-mountain-park": {
+    "latitude": 46.5381734,
+    "longitude": 10.1359928,
+    "precision": "area",
+    "label": "Livigno"
+  },
+  "7-castel-roncolo-schloss-runkelstein": {
+    "latitude": 46.5175012,
+    "longitude": 11.3589132,
+    "precision": "venue",
+    "label": "Castel Roncolo - Schloss Runkelstein"
+  },
+  "3-rest-and-beach-day-on-the-tigullio": {
+    "latitude": 44.3167,
+    "longitude": 9.3247,
+    "precision": "area",
+    "label": "Ligurian coast area"
+  },
+  "3-village-hopping-by-ferry": {
+    "latitude": 44.3167,
+    "longitude": 9.3247,
+    "precision": "area",
+    "label": "Ligurian coast area"
+  },
+  "4-il-ciocco-bike-park-barga-family-trails-pump-track": {
+    "latitude": 44.0739178,
+    "longitude": 10.484263,
+    "precision": "area",
+    "label": "Il Ciocco and Barga area"
+  },
+  "6-villa-foscari-la-malcontenta": {
+    "latitude": 45.435278,
+    "longitude": 12.201111,
+    "precision": "manual",
+    "label": "Villa Foscari"
+  },
+  "6-villa-pisani-labyrinth-stra": {
+    "latitude": 45.408889,
+    "longitude": 12.011944,
+    "precision": "manual",
+    "label": "Villa Pisani"
+  },
+  "6-wave-murano-glass-blow-your-own-glass": {
+    "latitude": 45.455817,
+    "longitude": 12.3518915,
+    "precision": "venue",
+    "label": "Wave Murano Glass"
+  },
+  "7-a-family-hike-a-rifugio-lunch": {
+    "latitude": 46.3586171,
+    "longitude": 11.4159643,
+    "precision": "area",
+    "label": "Dolomiten UNESCO Welterbe GEOPARC Bletterbach - Dolomiti Patrimonio Mondiale UNESCO - GEOPARC Bletterbach"
+  },
+  "bikepark-abetone-gravity-park": {
+    "latitude": 44.1444997,
+    "longitude": 10.6644636,
+    "precision": "area",
+    "label": "Abetone"
+  },
+  "7-abinea-day-spa-dan-kei-s-massage": {
+    "latitude": 46.5475389,
+    "longitude": 11.6084644,
+    "precision": "area",
+    "label": "Kastelruth - Castelrotto"
+  },
+  "bikepark-cimone-bike-park": {
+    "latitude": 44.23,
+    "longitude": 10.78,
+    "precision": "manual",
+    "label": "Cimone Bike Park"
+  },
+  "7-cinque-torri-open-air-war-museum": {
+    "latitude": 46.51,
+    "longitude": 12.05194,
+    "precision": "manual",
+    "label": "Cinque Torri"
+  },
+  "7-col-raiser-puez-odle-walks": {
+    "latitude": 46.5590697,
+    "longitude": 11.7154906,
+    "precision": "area",
+    "label": "Santa Cristina Gherdëina - St. Christina in Gröden - Santa Cristina Valgardena"
+  },
+  "7-cooking-lesson-at-anna-s-farm-curijel": {
+    "latitude": 46.5551877,
+    "longitude": 11.7600992,
+    "precision": "area",
+    "label": "Sëlva - Wolkenstein - Selva di Val Gardena"
+  },
+  "bikepark-cortina-bike-park-dolomiti": {
+    "latitude": 46.5685125,
+    "longitude": 12.1323186,
+    "precision": "area",
+    "label": "Cortina d'Ampezzo"
+  },
+  "bikepark-dolomiti-paganella-bike": {
+    "latitude": 46.1572963,
+    "longitude": 11.0055111,
+    "precision": "area",
+    "label": "Paganella"
+  },
+  "7-dolomiti-paganella-bike-park-andalo": {
+    "latitude": 46.1617028,
+    "longitude": 11.0076097,
+    "precision": "area",
+    "label": "Andalo"
+  },
+  "7-earth-pyramids-of-ritten": {
+    "latitude": 46.4984781,
+    "longitude": 11.3547399,
+    "precision": "area",
+    "label": "Bolzano - Bozen"
+  },
+  "bikepark-fassa-bike-park": {
+    "latitude": 46.4776736,
+    "longitude": 11.7665039,
+    "precision": "area",
+    "label": "Canazei e Campitello Al Loro Caduta (World War I & World War II)"
+  },
+  "bikepark-finale-outdoor-region": {
+    "latitude": 44.1691474,
+    "longitude": 8.3435917,
+    "precision": "area",
+    "label": "Finale Ligure"
+  },
+  "bikepark-folgaria-bike-park": {
+    "latitude": 45.9025878,
+    "longitude": 11.1866151,
+    "precision": "area",
+    "label": "Folgaria"
+  },
+  "7-get-buried-in-a-hay-bath": {
+    "latitude": 46.5177697,
+    "longitude": 11.5027759,
+    "precision": "area",
+    "label": "Völs am Schlern - Fiè allo Sciliar"
+  },
+  "7-gostner-schwaige-alpine-dairy-hut": {
+    "latitude": 46.531056,
+    "longitude": 11.6247091,
+    "precision": "area",
+    "label": "Seiser Alm - Mont de Sëuc - Alpe di Siusi"
+  },
+  "7-hike-cheese-workshop": {
+    "latitude": 46.531056,
+    "longitude": 11.6247091,
+    "precision": "area",
+    "label": "Seiser Alm - Mont de Sëuc - Alpe di Siusi"
+  },
+  "bikepark-il-ciocco-bike-park": {
+    "latitude": 44.0739178,
+    "longitude": 10.484263,
+    "precision": "area",
+    "label": "Barga"
+  },
+  "bikepark-kronplatz-bike-park": {
+    "latitude": 46.7731822,
+    "longitude": 11.9424864,
+    "precision": "manual",
+    "label": "Kronplatz Bike Park"
+  },
+  "7-kronplatz-bike-park-lift-served-mtb": {
+    "latitude": 46.7731822,
+    "longitude": 11.9424864,
+    "precision": "area",
+    "label": "Kronplatz"
+  },
+  "bikepark-la-thuile-bike-park": {
+    "latitude": 45.6971464,
+    "longitude": 6.9182886,
+    "precision": "area",
+    "label": "La Thuile"
+  },
+  "7-lagazuoi-wwi-tunnels-in-the-mountain": {
+    "latitude": 46.5516886,
+    "longitude": 12.0053185,
+    "precision": "area",
+    "label": "Lech de Lagació"
+  },
+  "7-lago-di-braies": {
+    "latitude": 46.6947208,
+    "longitude": 12.0858434,
+    "precision": "venue",
+    "label": "Pragser Wildsee - Lago di Braies"
+  },
+  "7-lago-di-carezza": {
+    "latitude": 46.410865,
+    "longitude": 11.575992,
+    "precision": "manual",
+    "label": "Lago di Carezza"
+  },
+  "bikepark-madesimo-madebike": {
+    "latitude": 46.4362982,
+    "longitude": 9.3584136,
+    "precision": "area",
+    "label": "Madesimo"
+  },
+  "7-messner-mountain-museum-firmian": {
+    "latitude": 46.4801079,
+    "longitude": 11.3046368,
+    "precision": "venue",
+    "label": "Messner Mountain Museum Firmian"
+  },
+  "bikepark-monte-livata-simbruini": {
+    "latitude": 41.9267153,
+    "longitude": 13.0944317,
+    "precision": "area",
+    "label": "Subiaco"
+  },
+  "bikepark-monte-terminillo-mtb": {
+    "latitude": 42.4733035,
+    "longitude": 12.9973605,
+    "precision": "area",
+    "label": "Monte Terminillo"
+  },
+  "bikepark-mottolino-bike-park": {
+    "latitude": 46.5381734,
+    "longitude": 10.1359928,
+    "precision": "area",
+    "label": "Livigno"
+  },
+  "7-museum-gherd-ina-ortisei": {
+    "latitude": 46.5738835,
+    "longitude": 11.6745514,
+    "precision": "venue",
+    "label": "Museum Gherdëina"
+  },
+  "7-museum-ladin-ciastel-de-tor": {
+    "latitude": 46.6807328,
+    "longitude": 11.8932393,
+    "precision": "venue",
+    "label": "Museum Ladin Ćiastel de Tor"
+  },
+  "7-otzi-the-iceman": {
+    "latitude": 46.4984781,
+    "longitude": 11.3547399,
+    "precision": "area",
+    "label": "Bolzano - Bozen"
+  },
+  "bikepark-pila-bike-park": {
+    "latitude": 45.687269,
+    "longitude": 7.3108236,
+    "precision": "area",
+    "label": "Pila"
+  },
+  "7-pizzeria-bachler-the-5-minute-pizza-fallback": {
+    "latitude": 46.5674494,
+    "longitude": 11.5586468,
+    "precision": "venue",
+    "label": "Pizzeria Bachler"
+  },
+  "bikepark-ponte-di-legno-tonale-bike-park": {
+    "latitude": 46.2558246,
+    "longitude": 10.5125605,
+    "precision": "area",
+    "label": "Ponte di Legno - Passo Tonale"
+  },
+  "bikepark-prato-nevoso-bike-park": {
+    "latitude": 44.2552915,
+    "longitude": 7.7855885,
+    "precision": "area",
+    "label": "Prato Nevoso"
+  },
+  "7-prosecco-hills-of-conegliano-and-valdobbiadene": {
+    "latitude": 45.9037297,
+    "longitude": 12.2653108,
+    "precision": "area",
+    "label": "Conegliano"
+  },
+  "7-ridnaun-mine-world-the-show-tunnel": {
+    "latitude": 46.8855695,
+    "longitude": 11.2845425,
+    "precision": "area",
+    "label": "Ratschings - Racines"
+  },
+  "7-roter-hahn-farm-bread-strudel-baking": {
+    "latitude": 46.5475389,
+    "longitude": 11.6084644,
+    "precision": "area",
+    "label": "Kastelruth - Castelrotto"
+  },
+  "bikepark-swup-bike-park-campo-felice": {
+    "latitude": 42.2279571,
+    "longitude": 13.4766759,
+    "precision": "area",
+    "label": "Rocca di Cambio"
+  },
+  "bikepark-san-domenico-sando-bike": {
+    "latitude": 46.2603811,
+    "longitude": 8.2210954,
+    "precision": "area",
+    "label": "San Domenico di Varzo"
+  },
+  "7-sassolungo-the-coffin-lift": {
+    "latitude": 46.5080689,
+    "longitude": 11.7673265,
+    "precision": "area",
+    "label": "Jouf de Sela - Passo Sella - Sellajoch"
+  },
+  "bikepark-sauze-d-oulx-bike-park": {
+    "latitude": 45.0270271,
+    "longitude": 6.8583464,
+    "precision": "area",
+    "label": "Sauze d'Oulx"
+  },
+  "7-sciliar-catinaccio-the-world-heritage-massif-above-the-house": {
+    "latitude": 46.4904235,
+    "longitude": 11.5750531,
+    "precision": "venue",
+    "label": "Naturpark Schlern-Rosengarten – Parco naturale dello Sciliar-Catinaccio"
+  },
+  "7-seceda-the-knife-edge-ridge": {
+    "latitude": 46.6005922,
+    "longitude": 11.7257836,
+    "precision": "venue",
+    "label": "Secëda - Monte Seceda"
+  },
+  "7-the-drowned-village-of-reschensee": {
+    "latitude": 46.81072,
+    "longitude": 10.53661,
+    "precision": "manual",
+    "label": "Reschensee drowned tower"
+  },
+  "7-the-great-scenic-drives": {
+    "latitude": 46.3586171,
+    "longitude": 11.4159643,
+    "precision": "area",
+    "label": "Dolomiten UNESCO Welterbe GEOPARC Bletterbach - Dolomiti Patrimonio Mondiale UNESCO - GEOPARC Bletterbach"
+  },
+  "7-toboggan-runs-playgrounds": {
+    "latitude": 46.5752077,
+    "longitude": 11.6721382,
+    "precision": "area",
+    "label": "Urtijëi - St. Ulrich in Gröden - Ortisei"
+  },
+  "7-torggelen-at-a-mountain-farm": {
+    "latitude": 46.4984781,
+    "longitude": 11.3547399,
+    "precision": "area",
+    "label": "Bolzano - Bozen"
+  },
+  "bikepark-trail-arena-val-gardena": {
+    "latitude": 46.6218892,
+    "longitude": 11.758186,
+    "precision": "area",
+    "label": "Schwarzwald - Selva Nera"
+  },
+  "7-trail-arena-val-gardena-family-flow-trails": {
+    "latitude": 46.5760331,
+    "longitude": 11.6483076,
+    "precision": "area",
+    "label": "Gherdëina - Grödnertal - Val Gardena"
+  },
+  "7-trauttmansdorff-gardens-touriseum": {
+    "latitude": 46.6713536,
+    "longitude": 11.1646348,
+    "precision": "area",
+    "label": "Meran - Merano"
+  },
+  "7-tsch-tscherhof-grey-s-12th-birthday-dinner": {
+    "latitude": 46.5565843,
+    "longitude": 11.5223282,
+    "precision": "venue",
+    "label": "Appartment Tschötscherhof"
+  },
+  "7-t-rggelen-the-autumn-farm-dinner": {
+    "latitude": 46.5961672,
+    "longitude": 11.5287628,
+    "precision": "area",
+    "label": "Eisacktal - Valle Isarco"
+  },
+  "7-val-gardena-villages-ladin-woodcarving": {
+    "latitude": 46.5752077,
+    "longitude": 11.6721382,
+    "precision": "area",
+    "label": "Urtijëi - St. Ulrich in Gröden - Ortisei"
+  },
+  "7-val-di-fassa-predazzo-geology-trails": {
+    "latitude": 46.3123614,
+    "longitude": 11.6026938,
+    "precision": "area",
+    "label": "Predazzo"
+  },
+  "bikepark-val-di-sole-bike-park": {
+    "latitude": 46.31299,
+    "longitude": 10.8328315,
+    "precision": "area",
+    "label": "Commezzadura"
+  },
+  "7-via-ferrata-averau-gran-cir": {
+    "latitude": 46.549819,
+    "longitude": 11.8083893,
+    "precision": "area",
+    "label": "Ju de Frara - Grödner Joch - Passo Gardena"
+  },
+  "7-watch-a-woodcarver-work": {
+    "latitude": 46.5752077,
+    "longitude": 11.6721382,
+    "precision": "area",
+    "label": "Urtijëi - St. Ulrich in Gröden - Ortisei"
+  },
+  "7-wine-on-a-sunny-hut-terrace": {
+    "latitude": 46.3586171,
+    "longitude": 11.4159643,
+    "precision": "area",
+    "label": "Dolomiten UNESCO Welterbe GEOPARC Bletterbach - Dolomiti Patrimonio Mondiale UNESCO - GEOPARC Bletterbach"
+  },
+  "7-wood-carving-class-relief-carving-ortisei": {
+    "latitude": 46.5752077,
+    "longitude": 11.6721382,
+    "precision": "area",
+    "label": "Urtijëi - St. Ulrich in Gröden - Ortisei"
+  }
+}

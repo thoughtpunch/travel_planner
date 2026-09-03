@@ -844,3 +844,95 @@
   .who-family { color: var(--ochre); }
   .who-adult { color: var(--adriatic); }
   .stop-hero-meta { display:flex; gap:22px; flex-wrap:wrap; margin-top:10px; font-family:'DM Mono',monospace; font-size:12px; color:rgba(245,240,232,0.85); }
+
+  /* ══════════════════════════════════════════════════════════════════════
+   * RESPONSIVE — added 2026-08-30. Everything above is the desktop design;
+   * this block adapts it for tablets and phones. Shared by 21 pages, so a
+   * change here lands sitewide. Breakpoints: 900 / 720 / 560 / 400.
+   * ════════════════════════════════════════════════════════════════════ */
+
+  /* Never let the page itself scroll sideways — long content scrolls in its
+     own container instead (see .table-scroll / [data-scroll] below). */
+  html, body { max-width: 100%; overflow-x: hidden; }
+  /* Stop iOS from auto-inflating type in landscape. */
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  /* Long URLs/refs (conf numbers, addresses) must not force the page wide. */
+  p, li, td, th, h1, h2, h3, h4 { overflow-wrap: break-word; }
+  img { max-width: 100%; height: auto; }
+
+  /* Any table that can't fit gets its own scroller with a soft edge hint. */
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  @media (max-width: 900px) {
+    main { padding: 0 28px 64px; }
+    .masthead { padding: 64px 28px 52px; }
+    nav.toc { padding: 12px 28px; }
+    footer { padding: 52px 28px; }
+    section { padding: 60px 0 20px; }
+  }
+
+  @media (max-width: 720px) {
+    main { padding: 0 20px 56px; }
+    .masthead { padding: 48px 20px 40px; }
+    .masthead::before { width: 200px; height: 200px; border-width: 38px; top: -60px; right: -60px; }
+    .masthead::after { display: none; }
+    nav.toc { padding: 10px 20px; }
+    nav.toc ul { gap: 20px; }
+    footer { padding: 44px 20px; }
+    section { padding: 48px 0 18px; }
+    section:first-of-type { padding-top: 36px; }
+
+    .trip-tagline { font-size: 16px; margin-bottom: 26px; }
+    .trip-meta { gap: 18px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    .card { padding: 18px; }
+
+    /* Tables: tighten, and let them scroll inside their wrapper. */
+    table { font-size: 13px; }
+    th, td { padding: 9px 10px; }
+    .table-scroll table { min-width: 560px; }
+  }
+
+  @media (max-width: 560px) {
+    main { padding: 0 16px 48px; }
+    .masthead { padding: 40px 16px 32px; }
+    nav.toc { padding: 9px 16px; }
+    footer { padding: 36px 16px; }
+    section { padding: 40px 0 16px; }
+    body { font-size: 15.5px; line-height: 1.6; }
+
+    /* Nav gets edge-to-edge scroll so the last item isn't clipped. */
+    nav.toc ul { gap: 16px; padding-right: 16px; }
+    nav.toc a { padding: 8px 0; }          /* taller tap target */
+
+    .trip-meta { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .meta-value { font-size: 14px; }
+    .big-num { font-size: 30px; }
+    .card { padding: 15px; }
+    .tags { gap: 5px; }
+
+    table { font-size: 12.5px; }
+    th, td { padding: 8px 9px; }
+    th { font-size: 9px; letter-spacing: 1px; }
+
+    /* Callouts and quotes lose their big indents. */
+    .callout { padding: 14px 16px; }
+    blockquote { padding-left: 14px; }
+  }
+
+  @media (max-width: 400px) {
+    main { padding: 0 13px 44px; }
+    .masthead { padding: 34px 13px 28px; }
+    .trip-meta { grid-template-columns: 1fr; }
+    th, td { padding: 7px 8px; }
+  }
+
+  /* Coarse pointers (touch): give every interactive thing a real target. */
+  @media (pointer: coarse) {
+    nav.toc a, .toc a { min-height: 40px; display: inline-flex; align-items: center; }
+    a { text-underline-offset: 2px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }

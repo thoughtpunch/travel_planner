@@ -1,5 +1,7 @@
 # Canonical facts · 21 Aug 2026
 
+> ⚠️ **Superseded in part by [`DECISIONS-2026-08-30.md`](DECISIONS-2026-08-30.md)** (30 Aug 2026): lodging is **$9,262** not $8,955 (Rome was $308 light), trains are **€483 via a 4+2 split booking** not €561–788, and every activity is now priced for the party of six. `public/*.html` remains the source of truth.
+
 **The HTML pages in `public/` are the source of truth.** The numbered markdown docs
 (`01-` … `09-`) drifted badly and are being rebuilt from the site. When this file and a
 page disagree, the page wins.

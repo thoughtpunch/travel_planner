@@ -1,5 +1,7 @@
 # 09 — Booking Checklist
 
+> ⚠️ **Superseded in part by [`DECISIONS-2026-08-30.md`](DECISIONS-2026-08-30.md)** (30 Aug 2026): lodging is **$9,262** not $8,955 (Rome was $308 light), trains are **€483 via a 4+2 split booking** not €561–788, and every activity is now priced for the party of six. `public/*.html` remains the source of truth.
+
 **Priority order, not calendar order.** It's **Aug 21, 2026** — the trip is **~3 weeks out** (depart BWI Thu Sep 10, land Milan MXP 21:55 Fri Sep 11). That's a different posture than a month ago: there is no longer a "book it next week" tier. Anything on this page that isn't done inside the next ten days is either going to cost more or stop existing.
 
 Flights are **booked & paid**: **$5,346** Icelandair BWI⇄Milan (ref **AMBVO4**), plus **$1,870.74** Avianca SJO⇄IAD positioning (ref **AABDA8**, Sep 9 – Nov 17). Economy Light means 1 carry-on each and no checked bags — we're carry-on only by design, so there's nothing left to buy. The only flight-adjacent task is *packing* one bag each that covers both Dolomites cold and coast/city warm.

@@ -1,0 +1,14 @@
+.git
+.venv
+node_modules
+web
+tests
+docs
+openspec
+trip_planner.db
+*.pyc
+__pycache__
+italy-trip-2026/node_modules
+italy-trip-2026/app
+italy-trip-2026/*.md
+italy-trip-2026/api

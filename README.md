@@ -1,143 +1,90 @@
-# Trip Planner — Multi-Leg Flight Fare Orchestrator (MLFO)
+# Italy 2026 trip wiki
 
-Phase 1: Python backend + SQLite + minimal Jinja UI, no Vue yet.
+The live application is the Barrett family’s operational trip reference for
+September 11–October 15, 2026. It keeps the itinerary, transport legs, stays,
+activity choices and cost ledger in a real SQLite database.
 
-What it does: sweeps a configurable **leg × gateway × date** matrix with the
-`fast-flights` scraper, then re-queries the top N candidates per structure via
-SerpAPI Google Flights **at full passenger count** to confirm the fare is
-actually available for the party. Fares are classified `LEAD` vs `VALIDATED`,
-and the budget verdict uses **validated fares only**.
+The trip shape is booked. The app is for looking up facts and managing the
+remaining variable pieces:
 
-It also prices two itinerary structures side-by-side:
-- **A** — three one-ways (SJO → EU gateway → DC → SJO)
-- **B** — nested envelope (SJO⇄DC outer round-trip + DC⇄EU inner round-trip)
+- choose, schedule and cost activities;
+- see scheduled activities appear automatically on the dated itinerary;
+- update booked, paid, cancelled and refunded costs in a shared ledger;
+- keep travel legs, confirmations, stays and traveler constraints in separate
+  durable tables.
 
-…and reports which one wins empirically.
+## Run locally
 
-## Why the LEAD/VALIDATED split exists
-
-`fast-flights` scrapes Google Flights' display fare. Google's display fare is
-the cheapest fare in the lowest fare bucket, which **frequently is not
-available for 6 seats**. Booking against a display fare is the dominant
-failure mode for party-of-6 travel. Every scraper fare is therefore a `LEAD`,
-and the validation pass re-queries SerpAPI at the configured passenger count
-to confirm the fare exists for the whole party before it can be promoted to
-`VALIDATED`. Budget verdicts ignore leads.
-
-## Setup
-
-Requires [mise](https://mise.jdx.dev) — it brings in pinned Python 3.12 and
-uv automatically. `fast-flights` is pinned to the GitHub fork
-(`thoughtpunch/flights`) in `pyproject.toml` so every install pulls the
-current head.
+Prerequisites: Python 3.12, `uv`, Node 22 and npm.
 
 ```bash
-cd trip_planner
-cp .env.example .env          # add your SERPAPI_KEY
-mise trust                    # one-time, approve mise.toml
-mise run dev                  # installs deps, runs migrations, seeds, starts server
+uv sync --extra dev
+uv run alembic upgrade head
+cd italy-trip-2026 && npm ci && npm run build && cd ..
+uv run trip-planner serve
 ```
 
-`mise run dev` migrates the DB on first run; for explicit control use
-`mise run migrate` (= `alembic upgrade head`) and `mise run seed`.
+Open <http://127.0.0.1:8000>. On first start, the app imports the legacy Italy
+itinerary and CSV ledgers into empty wiki tables. Later starts only add missing
+source rows; edits made in the app are not overwritten.
 
-That's it — http://127.0.0.1:8000.
+For frontend work, run the API on port 8000 and `npm run dev` inside
+`italy-trip-2026/`; Vite serves the wiki on port 5181 and proxies `/api`.
 
-### mise tasks
+## Data model
 
-| Task           | What it does                                                |
-|----------------|-------------------------------------------------------------|
-| `mise run dev`   | Start dev server with auto-reload (idempotent first-run)   |
-| `mise run setup` | Install + migrate DB + seed engagement configs             |
-| `mise run migrate` | Run pending Alembic migrations to head                   |
-| `mise run revision -- "msg"` | Create a new auto-generated Alembic revision   |
-| `mise run test`  | Run the test suite                                         |
-| `mise run seed`  | (Re-)seed Structures A and B                               |
-| `mise run quota` | Show SerpAPI monthly quota usage                           |
-| `mise run run -- 1` | Execute a run for config #1, print top results synchronously |
-| `mise run reset` | Delete the local SQLite DB                                 |
-| `mise run clean` | Remove DB + venv + caches                                  |
+Alembic owns the schema. The operational tables are:
 
-If you'd rather skip mise: `uv sync --extra dev && uv run trip-planner serve`.
+| Table | Purpose |
+|---|---|
+| `wiki_traveler` | Party members, birthdays and constraints |
+| `wiki_stop` | The eight bases and their dates |
+| `wiki_leg` | Dated flights, trains, boats and car transfers |
+| `wiki_stay` | Check-in/out facts, addresses and confirmations |
+| `wiki_day` | One row per itinerary date |
+| `wiki_itinerary_item` | Fixed events on a day |
+| `activity_option` | Complete researched activity record: description, audience, image, maps, logistics, source detail, selection and schedule |
+| `activity_attachment` | Ticket and confirmation files stored on the mounted volume |
+| `trip_cost` | Shared booked/estimated/payment ledger |
+| `wiki_setting` | Small trip-wide settings such as the budget |
 
-## CLI
+`activity_option.scheduled_date` is the link into the itinerary. An activity
+with status `selected`, `booked` or `done` and a date is rendered on that day.
+The date picker and API restrict that date to the activity's `wiki_stop`
+arrival-through-departure range.
+Every active choice also owns one `trip_cost` row through
+`trip_cost.activity_id`. Changes made on either Activities or Costs are applied
+to both records in one database transaction. Cancelling removes an activity
+from the active itinerary while retaining its paid, refunded and net amounts;
+archiving either side archives both without destroying the history.
+Activities marked `Won't do` remain in SQLite but are excluded from the normal
+catalogue. The dedicated Status filter reveals them so they can be restored.
 
-```
-trip-planner db upgrade               # apply Alembic migrations (alias for `alembic upgrade head`)
-trip-planner db revision -m "msg"     # create a new Alembic revision (--autogenerate optional)
-trip-planner seed                     # seed the two engagement configs
-trip-planner configs                  # list configs
-trip-planner quota                    # SerpAPI quota status
-trip-planner run <config>             # run synchronously, print top results
-trip-planner serve                    # start the FastAPI server
-```
+## Fly.io
 
-### DB migrations
-
-Schema changes go through Alembic. The on-disk shape is wire-compatible with
-the pre-migration SQLModel era — to carry an existing `trip_planner.db`
-forward, run `alembic stamp head` (or `uv run alembic stamp head`) once
-before the next `mise run migrate`. The server refuses to start against a
-DB without an `alembic_version` table and tells you what to run.
-
-## HTTP API
-
-| Method | Path                                | Purpose                            |
-|--------|-------------------------------------|------------------------------------|
-| GET    | `/api/configs`                      | List configs                       |
-| POST   | `/api/configs`                      | Create config                      |
-| GET    | `/api/configs/{id}`                 | Get config                         |
-| PUT    | `/api/configs/{id}`                 | Replace config                     |
-| DELETE | `/api/configs/{id}`                 | Delete config                      |
-| POST   | `/api/runs?config_id={id}`          | Trigger an async run               |
-| GET    | `/api/runs`                         | List runs                          |
-| GET    | `/api/runs/{id}`                    | Run status                         |
-| GET    | `/api/runs/{id}/results`            | Ranked itineraries + verdict       |
-| GET    | `/api/runs/estimate/{config_id}`    | Pre-run SerpAPI call estimate      |
-| GET    | `/api/quota`                        | Monthly SerpAPI usage              |
-
-The SerpAPI key is **server-side only**; it never appears in responses or in
-the frontend.
-
-## Configuration (`.env`)
-
-| Var                          | Default                          | Notes                                  |
-|------------------------------|----------------------------------|----------------------------------------|
-| `SERPAPI_KEY`                | (empty)                          | Without this, validation is skipped    |
-| `SERPAPI_MONTHLY_CEILING`    | 240                              | Hard cap; calls above this `SKIPPED_QUOTA` |
-| `DATABASE_URL`               | `sqlite:///./trip_planner.db`    |                                        |
-| `DEFAULT_CURRENCY`           | `USD`                            |                                        |
-| `FARE_TTL_SECONDS`           | 86400                            | After this, VALIDATED → STALE         |
-| `VALIDATION_TOLERANCE_PCT`   | 15                               | Validated-vs-lead price tolerance      |
-| `VALIDATION_TOP_N`           | 5                                | Per structure                          |
-| `ENVELOPE_LONG_GAP_DAYS`     | 30                               | Beyond this, inner RT gets LONG_GAP   |
-| `PRIMARY_SOURCE`             | `fli`                            | Sweep scraper: `fli` (default) or `fast-flights` (legacy, one-cycle rollback) |
-
-## Failure modes the design defends against
-
-1. **Reporting a lead as bookable** → `LEAD` / `VALIDATED` separation; budget
-   verdict uses validated only.
-2. **6-seat collapse** → mandatory validation pass at full party.
-3. **Scraper outage producing silent wrong answers** → empty/exception →
-   SerpAPI fallback; empty is NEVER recorded as confirmed "no flights".
-4. **SerpAPI bill surprise** → quota tracker + hard ceiling + pre-run
-   estimate.
-5. **Stale prices presented as current** → `fetched_at` + TTL + `STALE`
-   downgrade.
-6. **Envelope assumed cheaper without evidence** → both structures priced;
-   `LONG_GAP` flag when the inner round-trip exceeds the configured gap.
-
-## Out of scope (Phase 1)
-
-Booking, payment, seat maps, award/points, hotels, train ticketing, Vue UI.
-The Vue 3 + PrimeVue SPA is Phase 2.
-
-## Tests
+The app is configured as `barrett-italy-2026` in `fly.toml`. SQLite lives on a
+single persistent Fly volume mounted at `/data`; do not scale this deployment
+past one Machine without moving to a network database.
 
 ```bash
-uv run pytest -v
+fly volumes create trip_data --region iad --size 1 --app barrett-italy-2026
+fly deploy
+fly status
 ```
 
-The `fast_flights` contract test pins the v3.0rc1 schema attributes the
-adapter relies on. If the upstream fork's data model drifts, that test fails
-loudly rather than producing silent wrong fares downstream.
+The container runs `alembic upgrade head` before starting the server. Health is
+available at `/healthz`. Production sets `APP_PASSWORD` as a Fly secret; the
+site and API use browser-native HTTP Basic authentication with username
+`barrett`.
+
+## Legacy source files
+
+The old static site is retained under `italy-trip-2026/public/` as import history
+only and is no longer copied into the Vite build (`publicDir: false`). The seed
+imports `itinerary-data.js`, `adventures.csv`, `bikeparks.csv`, `costs.csv`, and
+the normalized `tools/activities-seed.csv`. SQLite is authoritative after that
+initial import.
+
+The earlier multi-leg fare-search backend remains in `app/` for historical
+compatibility, but is disabled in the production container and is no longer the
+public home page.

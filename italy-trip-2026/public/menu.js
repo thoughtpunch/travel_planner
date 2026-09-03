@@ -47,6 +47,7 @@
     {
       title: 'Planning',
       links: [
+        { label: '📅 Day by day · every fixed time', href: '/itinerary' },
         { label: '★ Considerations · reshape?', href: '/considerations' },
         { label: 'Trains · lines + costs', href: '/trains' },
         { label: 'Stays · belt strategy', href: '/housing' },
