@@ -12,6 +12,8 @@ dependencies = [
     "pydantic-settings>=2.6",
     "httpx>=0.28",
     "python-dotenv>=1.0",
+    "json5>=0.9",
+    "python-multipart>=0.0.20",
     "typer>=0.15",
     "fast-flights",
     "flights",

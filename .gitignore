@@ -12,6 +12,7 @@ build/
 
 # SPA build output (built via 'mise run web:build')
 app/static/web-dist/
+app/static/wiki-dist/
 web/node_modules/
 web/dist/
 web/.vite/

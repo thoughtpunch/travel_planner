@@ -3,5 +3,13 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: { port: 5181 },
+  publicDir: false,
+  build: {
+    outDir: '../app/static/wiki-dist',
+    emptyOutDir: true,
+  },
+  server: {
+    port: 5181,
+    proxy: { '/api': 'http://127.0.0.1:8000', '/healthz': 'http://127.0.0.1:8000' },
+  },
 })

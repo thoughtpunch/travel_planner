@@ -38,17 +38,17 @@ window.ITINERARY = [
   { t:'~10:30', k:'stay', s:'plan', w:'CHECK OUT — Via Dugnani', d:'' },
   { t:'10:35', k:'travel', s:'plan', w:'Leave the flat', d:'400 m to Sant’Agostino (M2) → 5 stops to Garibaldi FS → 3 min into the station. ~20 min total.' },
   { t:'11:15', k:'travel', s:'booked', w:'★ FRECCIAROSSA 9304 · Milano Porta Garibaldi → Torino', d:'PNR NY2TU5 · €83.60 · Coach 8: Dan 7D, Rhys 7C, Grey 7B, Kei 8D, Jude 8C, Keir 8B. Doors close 11:14. NOT Centrale — it has no direct Turin trains this morning.' },
-  { t:'12:08', k:'travel', s:'plan', w:'GET OFF AT TORINO PORTA SUSA', d:'Not Porta Nuova. 6-min walk → tram 13 (9 min) → Sant’Ottavio → 230 m. Porta Nuova would mean a 1.1 km walk.' },
+  { t:'12:20', k:'travel', s:'plan', w:'ARRIVE AT TORINO PORTA NUOVA', d:'Stay aboard to the final stop. The flat on Via San Massimo is about 1.1 km away; take a short taxi with the luggage.' },
   { t:'~12:30', k:'stay', s:'booked', w:'CHECK IN — "Mole" House, Turin', d:'Via San Massimo 9, 10123 Torino. 2BR/1 bath. $415.71 paid. Reservation HMMSR2JEC5.' },
 ]},
 { d:'2026-09-14', wd:'Mon', city:'TURIN', leg:2, note:'One full day in Turin.', items:[
   { t:'', k:'do', s:'plan', w:'Museo Egizio', d:'World’s second-best Egyptian collection. €18 adult, €1 for ages 6–14, €3 for 15–18 — Rhys is still 17, so this is cheap: ~€44 for six. Family ticket €36 for 2 adults + 2 minors is worth asking about.' },
   { t:'', k:'do', s:'plan', w:'Mole Antonelliana + Cinema Museum', d:'The glass lift up the middle of the dome. Or skip the museum and just do the lift.' },
 ]},
-{ d:'2026-09-15', wd:'Tue', city:'TURIN → LIGURIAN COAST', leg:3, note:'Trains BOOKED — PNR N7PZ5N + N7MGC5.', items:[
-  { t:'~09:50', k:'stay', s:'plan', w:'CHECK OUT — Turin', d:'Deadline 11:00. Host Marcello +39 333 822 7352.' },
-  { t:'10:40', k:'travel', s:'booked', w:'Torino Porta Nuova → Chiavari · Intercity 511 · direct', d:'Arrives 13:10. Coach 7 — Dan 18C, Kei 19C, Grey 18D, Keir 19D (PNR N7PZ5N, €31.20, CHILDREN FREE); Rhys 20C, Jude 20D (PNR N7MGC5, €36.40). ⚠️ TAXI to Porta Nuova — 1.2 km from the flat, ~€10. Not Porta Susa, this line does not call there.' },
-  { t:'15:00', k:'stay', s:'booked', w:'CHECK IN — Vista sul Carruggio, Chiavari', d:'Via Vittorio Veneto 16, INTERNO 1, PIANO 1, 16043 Chiavari GE. €506.54 paid. Station is 600 m / 8 min. Arrive ~13:20 vs 15:00 check-in — ~1h40 gap, ask the host about early bag drop. Piano 1 = first floor; lift NOT confirmed.' },
+{ d:'2026-09-15', wd:'Tue', city:'TURIN → DAMANHUR → LIGURIAN COAST', leg:3, note:'Damanhur Classic Visit selected. FR 8623 still needs booking.', items:[
+  { t:'07:45', k:'stay', s:'plan', w:'CHECK OUT — Turin', d:'Take all luggage in the pre-booked NCC to Vidracco. Host Marcello +39 333 822 7352.' },
+  { t:'15:15', k:'travel', s:'tobook', w:'Torino Porta Nuova → Chiavari · Frecciarossa 8623', d:'Replacement after Damanhur; arrives 17:44. Book for six. The cancelled Intercity 511 used PNRs N7PZ5N / N7MGC5; the €31.20 Bimbi Gratis refund is recorded in the rail ledger.' },
+  { t:'~18:00', k:'stay', s:'booked', w:'CHECK IN — Vista sul Carruggio, Chiavari', d:'Via Vittorio Veneto 16, INTERNO 1, PIANO 1, 16043 Chiavari GE. €506.54 paid. Station is 600 m / 8 min. Piano 1 = first floor; lift NOT confirmed.' },
 ]},
 { d:'2026-09-16', wd:'Wed', city:'LIGURIAN COAST', leg:3, note:'', items:[
   { t:'', k:'do', s:'plan', w:'Cinque Terre by train', d:'Chiavari sits OUTSIDE the Cinque Terre card zone. Buy Chiavari→Levanto as a normal regional (~€26 for six), then decide on the park card separately.' },
@@ -83,7 +83,8 @@ window.ITINERARY = [
   { t:'19:00', k:'do', s:'tobook', w:'Vasari Corridor — Friday night opening', d:'€24pp advance, ~€107 for six. Friday evenings 7–11pm through Nov 20. The Medici’s private passage above the Ponte Vecchio, at night. Cheapest special thing on the trip.' },
 ]},
 { d:'2026-09-26', wd:'Sat', city:'FLORENCE → ROME', leg:5, note:'Train BOOKED (PNR N7T7W5). Grandma leaves Florence.', items:[
-  { t:'~10:00', k:'stay', s:'plan', w:'CHECK OUT — Florence', d:'Train is not until 13:48 — ask Edoardo to hold the bags and have a last lunch in the Oltrarno.' },
+  { t:'~10:00', k:'stay', s:'plan', w:'CHECK OUT — Florence', d:'Verified checkout deadline is 10:00. Take all luggage to Firenze S.M.N.' },
+  { t:'~10:30', k:'admin', s:'plan', w:'DROP BAGS — KiPoint, Firenze S.M.N.', d:'Leave all luggage at the station KiPoint. Collect it by about 13:20 for the 13:48 Frecciarossa.' },
   { t:'13:48', k:'travel', s:'booked', w:'Firenze S.M.N. → Roma Termini · Frecciarossa 9415 · PNR N7T7W5', d:'Direct, 1h47, arrives 15:35. €50.00 + €55.80 split 4+2, FrecciaFAMILY applied. Coach 5 — Dan 15A, Kei 15B, Grey 16A, Keir 16B (PNR N7T7W5, €50.00, FrecciaFAMILY); Rhys 14A, Jude 14B (PNR N7UFZN, €55.80). Taxi from Termini (~€12–15) rather than Metro A — Re di Roma has stairs.' },
   { t:'16:00', k:'stay', s:'booked', w:'CHECK IN — Domus Flavii, Rome', d:'Via Appia Nuova 185, int 9, 00182 Roma — on Piazza Re di Roma, 150 m from Metro A. 7 nights. $2,285.24 — ⚠️ charges to PayPal on SEP 13, make sure that account is funded.' },
   { t:'', k:'eat', s:'plan', w:'Dan’s free evening #1', d:'Dan works 4–11pm Mon–Fri, so Sat 26 and Sun 27 are his ONLY free nights in Rome. Front-load anything after dark.' },
@@ -151,7 +152,7 @@ window.ITINERARY = [
 { d:'2026-10-14', wd:'Wed', city:'DOLOMITES → MALPENSA', leg:8, note:'A scenic drive, explicitly NOT a sightseeing day.', items:[
   { t:'08:30', k:'travel', s:'plan', w:'Leave Laion — A22 to Riva del Garda', d:'Then the cliff-cut Gardesana Occidentale down Garda’s west shore. ⚠️ Riva–Limone closes for rockfall — check ANAS that morning; fallback A22 → Verona → A4.' },
   { t:'12:30', k:'eat', s:'tobook', w:'Long lunch at Gargnano', d:'La Tortuga / La Baia d’Oro / Alla Fassa — small, reserve ahead.' },
-  { t:'~16:30', k:'stay', s:'booked', w:'CHECK IN — Osteria della Pista, Casorate Sempione', d:'Via Verbano 1. 9 minutes from MXP, restaurant downstairs. $406, charges Oct 9.' },
+  { t:'14:00–15:00', k:'stay', s:'booked', w:'CHECK IN — Osteria della Pista, Casorate Sempione', d:'The property approved this early check-in window. Via Verbano 1, 9 minutes from MXP, restaurant downstairs. $406, charges Oct 9.' },
 ]},
 { d:'2026-10-15', wd:'Thu', city:'MALPENSA → HOME', leg:8, note:'Non-refundable transatlantic. No heroics.', items:[
   { t:'12:00', k:'travel', s:'booked', w:'★ DROP THE CAR — MXP Terminal 1', d:'Budget ref 02391839US2. Hard deadline.' },
